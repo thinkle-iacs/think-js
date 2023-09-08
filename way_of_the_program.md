@@ -342,12 +342,13 @@ anything on paper. It displays a value on the screen's console. In this case, th
 is
 
 
-Here is an example from Mr. Hinkle's class:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+Here is an example from Mr. Hinkle's class.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
 import {TextInterface} from './textInterface';
 let ti = new TextInterface();
 ti.output("Hello, World!");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example is slightly more complicated, but for now let's just focus on 
 the last line, which enables us to say "Hello, World" onto a webpage instead
