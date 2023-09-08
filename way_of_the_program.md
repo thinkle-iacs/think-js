@@ -341,6 +341,22 @@ This is an example of using ``console.log``, Javascript's **print function**, wh
 anything on paper. It displays a value on the screen's console. In this case, the result shown
 is
 
+
+Here is an example from Mr. Hinkle's class:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+import {TextInterface} from './textInterface';
+let ti = new TextInterface();
+ti.output("Hello, World!");
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example is slightly more complicated, but for now let's just focus on 
+the last line, which enables us to say "Hello, World" onto a webpage instead
+of just into the JavaScript console. We do so by using other code written
+for this class.
+
+Here is a model repl.it with the TextInterface code ready to roll:
+[FIXME]
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
 Hello, World!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
