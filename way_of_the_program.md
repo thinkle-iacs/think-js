@@ -341,8 +341,26 @@ This is an example of using ``console.log``, Javascript's **print function**, wh
 anything on paper. It displays a value on the screen's console. In this case, the result shown
 is
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+Hello, World!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The quotation marks in the program mark the beginning and end of the value;
+they don't appear in the result.
 
-Here is an example from Mr. Hinkle's class.
+Some people judge the quality of a programming language by the simplicity of
+the Hello, World! program. By this standard, Javascript does about as well as
+possible.
+
+The `console` in `console.log` refers to the debugging console that web browsers
+provide in the "Inspect" view of a website, or to the terminal if running Javascript
+on a server using node.js
+
+In web programming, the console is not visible to your end users, so this "hello world"
+is a little disappointing. If you insert it onto a webpage it will say nothing! Creating
+a website that prints outputs is more complicated, but for the purposes of
+this class, we can use a simple "library" to enable inputs and outputs on a webpage
+you can see. Here's what a "hello world" looks like using the simple TextInterface library
+(this is a library created for this class):
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
 import {TextInterface} from './textInterface';
@@ -356,17 +374,7 @@ of just into the JavaScript console. We do so by using other code written
 for this class.
 
 Here is a model repl.it with the TextInterface code ready to roll:
-[FIXME]
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
-Hello, World!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The quotation marks in the program mark the beginning and end of the value;
-they don't appear in the result.
-
-Some people judge the quality of a programming language by the simplicity of
-the Hello, World! program. By this standard, Javascript does about as well as
-possible.
+[Text Interface Example](https://replit.com/@ThomasHinkle/Text-Interface-Library#main.js)
 
 
 Comments

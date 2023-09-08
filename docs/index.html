@@ -1297,24 +1297,35 @@ class="sourceCode numberSource javascript numberLines"><code class="sourceCode j
 <strong>print function</strong>, which doesn’t actually print anything
 on paper. It displays a value on the screen’s console. In this case, the
 result shown is</p>
-<p>Here is an example from Mr. Hinkle’s class.</p>
 <div class="sourceCode" id="cb3"><pre
-class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> {TextInterface} <span class="im">from</span> <span class="st">&#39;./textInterface&#39;</span><span class="op">;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">let</span> ti <span class="op">=</span> <span class="kw">new</span> <span class="fu">TextInterface</span>()<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>ti<span class="op">.</span><span class="fu">output</span>(<span class="st">&quot;Hello, World!&quot;</span>)<span class="op">;</span></span></code></pre></div>
-<p>This example is slightly more complicated, but for now let’s just
-focus on the last line, which enables us to say “Hello, World” onto a
-webpage instead of just into the JavaScript console. We do so by using
-other code written for this class.</p>
-<p>Here is a model repl.it with the TextInterface code ready to roll:
-[FIXME]</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> World!</span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> World!</span></code></pre></div>
 <p>The quotation marks in the program mark the beginning and end of the
 value; they don’t appear in the result.</p>
 <p>Some people judge the quality of a programming language by the
 simplicity of the Hello, World! program. By this standard, Javascript
 does about as well as possible.</p>
+<p>The <code>console</code> in <code>console.log</code> refers to the
+debugging console that web browsers provide in the “Inspect” view of a
+website, or to the terminal if running Javascript on a server using
+node.js</p>
+<p>In web programming, the console is not visible to your end users, so
+this “hello world” is a little disappointing. If you insert it onto a
+webpage it will say nothing! Creating a website that prints outputs is
+more complicated, but for the purposes of this class, we can use a
+simple “library” to enable inputs and outputs on a webpage you can see.
+Here’s what a “hello world” looks like using the simple TextInterface
+library (this is a library created for this class):</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> {TextInterface} <span class="im">from</span> <span class="st">&#39;./textInterface&#39;</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">let</span> ti <span class="op">=</span> <span class="kw">new</span> <span class="fu">TextInterface</span>()<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>ti<span class="op">.</span><span class="fu">output</span>(<span class="st">&quot;Hello, World!&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<p>This example is slightly more complicated, but for now let’s just
+focus on the last line, which enables us to say “Hello, World” onto a
+webpage instead of just into the JavaScript console. We do so by using
+other code written for this class.</p>
+<p>Here is a model repl.it with the TextInterface code ready to roll: <a
+href="https://replit.com/@ThomasHinkle/Text-Interface-Library#main.js">Text
+Interface Example</a></p>
 </section>
 <section id="comments" class="level2">
 <h2>Comments</h2>
