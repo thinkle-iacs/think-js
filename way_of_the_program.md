@@ -47,10 +47,6 @@ The engine that translates and runs Javascript is called the **Javascript Interp
 All modern web browser (Firefox, Chrome, Safari, MS Edge/IE, etc) ship with a Javascript
 interpreter. You can also install a stand-alone interpreter on your computer.
 
-The longer code examples in this book will use [Repl.it](https://repl.it), an online
-programming platform and community. Code listings include links to the "repl" that you can
-copy ("fork") and experiment with.
-
 There are two ways to use the interpreter: *interactive or immediate mode* and *script
 mode*. In immediate mode, you type Javascript expressions into the interpreter's console,
 and the interpreter immediately shows the result. This is the an example of the repl.it
@@ -64,26 +60,33 @@ Copyright (c) 2014-2015 Sebastian McKenzie
 => 4
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The ``2+2`` is entered at the **Javascript prompt**. The ``⠕`` token indicates a statement entered at the prompt.
+The `2+2` is entered at the **JavaScript prompt**. The `⠕` token indicates a statement entered at the prompt.
 The interpreter uses the prompt to indicate that it is ready for
-instructions. We typed ``2 + 2`` and hit ``enter`` the interpreter evaluated our expression, and replied ``4``,
-and on the next line it gave a new prompt. In this case, ``4`` is the **output** and it is indicated as output
-in our console by the ``=>`` token.
+instructions. We typed `2 + 2` and hit `enter`, the interpreter evaluated our expression, and replied `4`,
+and on the next line, it gave a new prompt. In this case, `4` is the **output** and it is indicated as output
+in our console by the `=>` token.
+
+You can access a JavaScript prompt also in the "developer tools" of your browser, so
+it's usually easy to try out some JavaScript expressions any time you are browsing
+the web.
 
 Alternatively, you can write a program in a file and use the interpreter to
 execute the contents of the file. Such a file is called a **script**. Scripts have the
 advantage that they can be saved to disk, printed, shared, and so on.
 
-For example, we created a file named ``main.js`` using our text editor.
-By convention, files that contain Javascript programs have names that end with
-``.js``, but they are just plain-text files.
-
-To execute the program in repl.it, we simply click the "run" button. The output is shown in the console.
+For example, we created a file named `main.js` using our text editor.
+By convention, files that contain JavaScript programs have names that end with
+`.js`, but they are just plain-text files.
 
 Working directly in the interpreter is convenient for testing short bits of code because you
 get immediate feedback. Think of it as scratch paper used to help you work out
-problems. Anything longer than a few lines should be put into a script.
+problems. Anything longer than a few lines should be put into a file.
+
+In practice, JavaScript is usually written in files that then have to be referenced
+in webpages, which are written in a language called HTML. For beginner classes, teachers
+will often start with a platform that makes it easy to write JavaScript and see the output,
+such as [CodePen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), or [Replit](https://replit.com/).
+
 
 What is a program?
 ------------------
@@ -453,7 +456,7 @@ Turtle Graphics
 In the late 1960s, Seymor Papert's group at MIT introduced [LOGO Turtle](https://en.wikipedia.org/wiki/Turtle_graphics)
 as a way to teach computer programming to kids. After learning the basic turtle commands (also called an API), you can make surprising computer graphics programs with only a little bit of code.
 
-We're using a version of Turtle that has been written for Javascript. [Thanks to Morgan McGuire at Casual Effects for the code.](https://casual-effects.com/codeheart/turtle/index.html).
+We're using a version of Turtle that has been written for Javascript. 
 
 As we've seen, a program and algorithms consist of a number of commands or statements
 that execute in an order described by the program. There are many libraries
@@ -466,44 +469,39 @@ and to draw shapes and patterns.
 Here's a short turtle graphics program.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
-// set up the "pen" color and width
-setWidth(30);
-setColor("red");
+// Set up the pen properties
+// Set up the pen properties
+turtle.setStrokeStyle("blue");
+turtle.setLineWidth(10);
 
-// move forward 100px to draw a red line
-fd(100);
+turtle.setSpeed(5);
 
-wait(1);
+turtle.forward(100); // Up stroke
+turtle.right(180); // Back down
+turtle.forward(50);
+turtle.left(90);
+turtle.forward(50); // Across "H"
+turtle.left(90); // up stroke (left)
+turtle.forward(50);
+turtle.right(180);
+turtle.forward(100); // back down
 
-// raise the pen "pen up -- pu()", then return the turtle
-// to Y coordinate 0 and move it to X coordinate 100
-pu();
-setY(0);
-setX(100)
-pd();
+// Over...
+turtle.left(90);
+turtle.penUp();
+turtle.forward(50);
+turtle.left(90);
 
-wait(1);
+// Draw an "i"
+turtle.penDown();
+turtle.forward(60);
+turtle.penUp();
+turtle.forward(10);
+turtle.left(90);
+turtle.penDown();
+turtle.setStrokeStyle("deepPink")
+turtle.arc(10, 360);
 
-// draw a blue line
-setColor("blue");
-fd(100);
-
-wait(1);
-
-// move turtle to the top left quadrant
-pu();
-setY(300);
-setX(-300)
-pd();
-
-// draw a "DeepPink" circle
-setColor("DeepPink");
-startFill("DeepPink");
-arc(360, 80);
-endFill();
-
-// hide the turtle
-ht();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When we run this program, we draw this image:
@@ -511,161 +509,147 @@ When we run this program, we draw this image:
 <img src="figs/turtle-first.png" class="figure-img img-fluid" alt="2 colored lines and a circle drawn with turtle graphics">
 <figcaption class="figure-caption border-top">
 The picture drawn by this program.<br>
-**[Run and remix this code on repl.it](https://repl.it/@mcuringa/turtle)**
+**[Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)**
 </figcaption>
 </figure>
 
-Turtle programs use the metaphor of a turtle moving around drawing with a pen.
-To move the turtle without drawing, you call the "pen up" method, or `pu()`,
-as we do on lines 12 and 26. The turtle is plotted on an x,y plane
-(also called a [Cartesian Plane](https://en.wikipedia.org/wiki/Cartesian_coordinate_system)). The `x` coordinate specifies the horizontal
-position of the turtle and the `y` coordinate specifies the vertical position
-of the turtle. In this plane, (0, 0) is in the middle of the window. Negative
-`x` coordinates are to the left of the center, and negative `y` coordinates
-are below the center. We call the `setX()` and `setY()` methods to move
-the turtle's position. If the pen is down, it draws while we move. If it's up,
-turtle moves without a trace. Notice how we draw a "DeepPink" circle, starting
-on line 32? Because our Javascript program executes in a web browser, we can
-use any of the "named colors" that are part of the web development standard.
-[You can find all of the name colors here.](https://www.w3schools.com/colors/colors_names.asp)
+### Turtle Programs with Real-Turtle Library
 
-Turtle documentation
---------------------
-To fully use the turtle API, you will need to read and understand the documentation.
-Part of becoming a programmer and thinking like a computer scientist includes
-the ability to read (and write!) technical documentation. No programmer remembers
-every possible language feature or available commands. Before you begin the exercises
-and lab for this chapter, review the full
+Turtle programs use the metaphor of a turtle moving around drawing with a
+pen. To move the turtle without drawing, you call the "pen up" method, or
+`penUp()`. The turtle is plotted on an x,y plane (also called a
+[Cartesian Plane](https://en.wikipedia.org/wiki/Cartesian_coordinate_system)).
+The `x` coordinate specifies the horizontal position of the turtle, and the `y`
+coordinate specifies the vertical position of the turtle. In this plane, (0, 0)
+is in the middle of the window. Negative `x` coordinates are to the left of the
+center, and negative `y` coordinates are below the center. We call the
+`goto(x, y)` method to move the turtle's position. If the pen is down, it draws
+while we move; if it's up, the turtle moves without a trace.
 
+Notice how we can draw a "DeepPink" circle using the `arc()` method? Because our
+JavaScript program executes in a web browser, we can use any of the "named
+colors" that are part of the web development standard. [You can find all of the
+named colors here.](https://www.w3schools.com/colors/colors_names.asp)
 
-`fd(distance)`
+### Understanding Dot Syntax in Turtle Programs
 
-:   Move forward the given distance.
+In your turtle programs, you'll see commands written like this:
+`turtle.forward(100)`. Let’s break down what this means.
 
-`bk(distance)`
+- **`turtle`**: This is the object we're working with—imagine it as the turtle
+  itself. It is provided by the library we are using. In other JavaScript
+  libraries, you will see other objects. In the browser, there are built-in
+  objects to represent the `window` and `document` a browser is on, for example.
+- **Dot (`.`)**: The dot connects the turtle to an action we want it to
+  perform. 
+- **`forward(100)`**: This is the action or command we're giving the
+  turtle—in this case, to move forward by 100 steps.
 
-:   Move backward the given distance.
+**So, what does `turtle.forward(100)` do?**
 
-`rt(angle)`
+It’s like saying, "Hey turtle, move forward by 100 steps!" The dot helps tell
+the computer that the action belongs to the turtle.
 
-:   Turn right (clockwise) in place.
+### Turtle Documentation
 
-`rt(angle, radius)`
+To fully use the turtle API, you will need to read and understand the
+documentation. Part of becoming a programmer and thinking like a computer
+scientist includes the ability to read (and write!) technical documentation. No
+programmer remembers every possible language feature or available commands.
+Before you begin the exercises and lab for this chapter, review the full
+documentation below:
 
-:   Turn right (clockwise) in an arc of the given radius.
+---
 
-`lt(angle)`
+**Movement Commands:**
 
-:   Turn left (counterclockwise) in place.
+- **`forward(steps)`**
+  - Move forward the given distance in pixels.
 
-`lt(angle, radius)`
+- **`back(steps)`**
+  - Move backward the given distance in pixels.
 
-:   Turn left (counterclockwise) in an arc of the given radius.
+- **`right(degrees)`**
+  - Turn right (clockwise) by the given number of degrees.
 
-`arc(angle, radius)`
+- **`left(degrees)`**
+  - Turn left (counterclockwise) by the given number of degrees.
 
-:   Draw an arc around the turtle, without moving the turtle. The angle is relative to the current heading.
+- **`arc(radius, angle, counterclockwise)`**
+  - Draw an arc with the specified radius and angle. Optionally specify the
+    direction as counterclockwise with a boolean.
 
-`pu()`
+**Pen Control:**
 
-:   Pick the pen up to temporarily move without drawing.
+- **`penUp()`**
+  - Pick the pen up to temporarily move without drawing.
 
-`pd()`
+- **`penDown()`**
+  - Put the pen down to resume drawing.
 
-:   Put the pen down to resume drawing.
+**Drawing Style:**
 
-`ht()`
+- **`setStrokeStyle(style)`**
+  - Set the pen color using a CSS color string, gradient, or pattern.
 
-:   Hide the turtle.
+- **`setLineWidth(width)`**
+  - Set the pen width in pixels.
 
-`setColor(color)`
+**Drawing Shapes:**
 
-:   Set the pen color by name such as RED or CSS color string such as "#FF0041".
+- **`beginPath()`**
+  - Start a new path for drawing.
 
-`setColor(r, g, b)`
+- **`closePath()`**
+  - Close the current path.
 
-:   Set the pen color based on three RGB values each between zero and one.
+- **`stroke()`**
+  - Draw the stroke (outline) of the current path.
 
-`setColor(r, g, b, a)`
+- **`fill()`**
+  - Fill the current path with the active fill style.
 
-:   Set the pen color based on three RGB values and an opacity value, each between zero and one.
+**Turtle Appearance and Behavior:**
 
-`startFill(color)`
+- **`setIcon(icon)`**
+  - Set the turtle's appearance using an emoji or icon.
 
-:   Start drawing a filled region of the given color. Must end with `endFill()`
+- **`setSize(size)`**
+  - Set the size of the turtle in pixels.
 
-`startFill(r, g, b)`
+- **`setSpeed(speed)`**
+  - Set the speed of the turtle's movements. Speed ranges from 0 (super slow)
+    to 1 (blazing fast).
 
-:   Start drawing a filled region with color given by three RGB values, each between zero and one.
+**Text Drawing:**
 
-`setColor(r, g, b, a)`
+- **`fillText(text)`**
+  - Write text on the canvas, filled with the current fill style.
 
-:   Start drawing a region filled by three RGB values and an opacity value, each between zero and one.
+- **`strokeText(text)`**
+  - Write text on the canvas with a border but no fill.
 
-`endFill()`
 
-:   End drawing a filled region and actually fill it. If the pen is down, then the outline will also be stroked.
+**Example: Drawing a Circle**
 
-`setPosition(x, y)`
+```javascript
+turtle.setStrokeStyle("DeepPink");
+turtle.setLineWidth(5);
+turtle.beginPath();
+turtle.arc(50, 360);  // Full circle with a radius of 50 pixels
+turtle.stroke();
+```
 
-:   Sets the absolute position. If the pen is down, draws a line to that position.
+Note: the library used in these examples is fully documented and updated [here](https://github.com/leonceaklin/real-turtle). 
+This is one of many turtle libraries; we are using it because it works in Codepen for our examples
+and it animates the drawings which makes understanding how your drawings work easier.
 
-`setX(x)`
-
-:   Sets the absolute x-axis position. If the pen is down, draws a line to that position.
-
-`getX()`
-
-:   Returns the absolute x-axis position.
-
-`setY(x)`
-
-:   Sets the absolute y-axis position. If the pen is down, draws a line to that position.
-
-`getY()`
-
-:   Returns the absolute y-axis position.
-
-`setWidth(width)`
-
-:   Sets the pen width.
-
-`setHeading(degrees)`
-
-:   Sets the current heading in degrees measured clockwise from the upwards vertical axis. North = 0, East = 90, South = 180, West = 270.
-
-`getHeading()`
-
-:   Returns the current heading in degrees measured clockwise from the upwards vertical axis. North = 0, East = 90, South = 180, West = 270.
-
-`setScale(s)`
-
-:   Scales all distances (but not x and y coordinates or pen width) by this factor. Useful for reusing drawing commands for different size objects. 1.0 is the default scale.
-
-`getScale()`
-
-:   Returns the current drawing scale.
-
-`setSpeed(speed)`
-
-:   Sets the number of commands executed before showing the next frame of animation. Defaults to 1. Can be set to Infinity to draw the entire image at once. Does not affect wait times.
-
-`clear(color)`
-
-:   Clears the screen to the specified color
-
-`clear(r, g, b)`
-
-:   Clears the screen to the specified color
-
-`wait(seconds)`
-
-:   Pauses drawing for approximately this many seconds. Useful for creating animations. Not affected by setSpeed.
-
+Like all turtle libraries, this is designed for beginner learning and shouldn't be used
+to take on major projects.
 
 Turtle Exercises 1
 ------------------
-[Turtle Exercises 1 Repl](https://repl.it/@mcuringa/turtle-exercises)
+[Turtle Exercises 1](https://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
 
 1. Use `turtle` to draw a red square with a pink border
 2. Draw three circles, side-by-side. The first one should be blue, the second green, the third red.
@@ -674,7 +658,7 @@ Turtle Exercises 1
 
 First Turtle Lab
 ----------------
-[First Turtle Lab Repl](https://repl.it/@mcuringa/csc-602-lab1)
+[First Turtle Lab ](hhttps://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
 
 Our first lab presents an open-ended exercise, just to get you started.
 Use turtle graphics to draw a picture. We suggest you spend about
