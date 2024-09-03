@@ -3,48 +3,28 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Change to your default branch if different
+      - main  # Adjust to your default branch
 
 jobs:
   build_site:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     # Step 1: Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Step 2: Set up the environment
-    - name: Set up Pandoc and necessary tools
-      run: sudo apt-get install pandoc
+    # Step 2: Set up Pandoc
+    - name: Install Pandoc
+      run: sudo apt-get update && sudo apt-get install -y pandoc
 
-    # Step 3: Execute the build script
-    - name: Run build script
-      run: |
-        # Recreate the build process
-        function listing {
-          cp $2 $3;
-          echo "<div class='listingSrcCode'>" >> $3;
-          echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}" >> $3;
-          cat $1 >> $3;
-          echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" >> $3;
-          echo "</div>" >> $3;
-        }
+    # Step 3: Run the custom build script
+    - name: Build the site
+      run: bash build.sh
 
-        listing ./examples/jsgui-demo.js jsgui-notes.md  ./work/jsgui-src.md;
-        listing ./examples/tip-calculator.js tip-notes.md  ./work/tip-src.md;
-        listing ./examples/school-data/school-report.mjs school-report-notes.md  ./work/school-report-src.md;
-        listing ./examples/spells/spells.js spells-notes.md  ./work/spells-src.md;
-
-        CHAPTERS="forward.md way_of_the_program.md variables.md functions.md assert-exercises.md ./work/tip-src.md conditionals.md iteration.md while.md strings.md arrays.md ./work/school-report-src.md school-data-exercises.md maps.md gui.md ./work/jsgui-src.md  ./work/spells-src.md code-listings.md preface.md fdl-1.3.md";
-
-        pandoc -o ./docs/index.html --mathml --highlight-style zenburn -t html5 --template=tmpl/tmpl.html -s --toc --toc-depth=2 --section-divs -H ./tmpl/style.css $CHAPTERS;
-
-    # Step 4: Commit and push changes (if files are modified)
-    - name: Commit and push changes
-      run: |
-        git config --local user.name "GitHub Action"
-        git config --local user.email "action@github.com"
-        git add docs/
-        git commit -m "Update HTML from markdown" || echo "No changes to commit"
-        git push
+    # Step 4: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
