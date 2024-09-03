@@ -1,0 +1,14 @@
+{
+    "name": "Pandoc Development Environment",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y pandoc",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-vscode.cpptools",
+          "streetsidesoftware.code-spell-checker"
+        ]
+      }
+    },
+    "remoteUser": "vscode"
+  }
