@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Check if the 'work' directory exists; if not, create it
+if [ ! -d "./work" ]; then
+  mkdir ./work
+fi
+
 function listing {
 
 
