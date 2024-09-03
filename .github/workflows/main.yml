@@ -1,11 +1,30 @@
-name: Simple Usage
+name: Build and Deploy
 
-on: push
+on:
+  push:
+    branches:
+      - main  # Change to your default branch if different
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
+    
     steps:
-      - uses: docker://pandoc/core:2.9
-        with:
-          args: "--help" # gets appended to pandoc command
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Convert markdown files to HTML
+    - name: Convert markdown to HTML
+      uses: docker://pandoc/core:2.9
+      with:
+        args: "-s -o docs/index.html src/index.md" # Change paths as needed
+
+    # Step 3: Commit and push changes (if files are modified)
+    - name: Commit and push changes
+      run: |
+        git config --local user.name "GitHub Action"
+        git config --local user.email "action@github.com"
+        git add docs/
+        git commit -m "Update HTML from markdown" || echo "No changes to commit"
+        git push
