@@ -23,11 +23,11 @@ Values and data types
 ---------------------
 
 A **value** is one of the fundamental things --- like a letter or a number ---
-that a program manipulates. The values we have seen so far are ``4`` (the
-result when we added ``2 + 2``), and ``"Hello, World!"``.
+that a program manipulates. The values we have seen so far are `4` (the
+result when we added `2 + 2`), and `"Hello, World!"`.
 
-These values are classified into different **classes**, or **data types**: ``4``
-is an *integer*, and ``"Hello, World!"`` is a *string*,
+These values are classified into different **classes**, or **data types**: `4`
+is an *integer*, and `"Hello, World!"` is a *string*,
 so-called because it contains a string of
 letters. You (and the interpreter) can identify strings because they are
 enclosed in quotation marks.
@@ -54,7 +54,7 @@ is in later chapters.
         >>> type(3.2)
         <class 'float'>
 
-What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they
+What about values like `"17"` and `"3.2"`? They look like numbers, but they
 are in quotation marks like strings.
 
     .. sourcecode:: python3
@@ -66,8 +66,8 @@ are in quotation marks like strings.
 
 They're strings!
 
-Strings in Python can be enclosed in either single quotes (``'``) or double quotes
-(``"``), or three of each (``'''`` or ``"""``)
+Strings in Python can be enclosed in either single quotes (`'`) or double quotes
+(`"`), or three of each (`'''` or `"""`)
 
     .. sourcecode:: pycon
 
@@ -81,8 +81,8 @@ Strings in Python can be enclosed in either single quotes (``'``) or double quot
         <class 'str'>
 
 Double quoted strings can contain single quotes inside them, as in
-``"Bruce's beard"``, and single quoted strings can have double quotes
-inside them, as in ``'The knights who say "Ni!"'``.
+`"Bruce's beard"`, and single quoted strings can have double quotes
+inside them, as in `'The knights who say "Ni!"'`.
 
 Strings enclosed with three occurrences of either quote symbol are
 called triple quoted strings.  They can
@@ -128,7 +128,7 @@ by single quotes.  What do think would happen if the string already
 contained single quotes?
 
 When you type a large integer, you might be tempted to use commas between
-groups of three digits, as in ``42,000``. This is not a legal integer in
+groups of three digits, as in `42,000`. This is not a legal integer in
 Python, but it does mean something else, which is legal:
 
     .. sourcecode:: python3
@@ -162,13 +162,13 @@ The **assignment statement** gives a value to a variable:
         >>> n = 17
         >>> pi = 3.14159
 
-This example makes three assignments. The first assigns the string value ``"What's
-up, Doc?"`` to a variable named ``message``. The second gives the integer
-``17`` to ``n``, and the third assigns the floating-point number ``3.14159`` to
-a variable called ``pi``.
+This example makes three assignments. The first assigns the string value `"What's
+up, Doc?"` to a variable named `message`. The second gives the integer
+`17` to `n``, and the third assigns the floating-point number `3.14159` to
+a variable called `pi`.
 
-The **assignment token**, ``=``, should not be confused with *equals*, which uses
-the token ``==``.  The assignment statement binds a *name*, on the
+The **assignment token**, `=`, should not be confused with *equals*, which uses
+the token `==`.  The assignment statement binds a *name*, on the
 left-hand side of the operator, to a *value*, on the right-hand side.
 This is why you will get an error if you enter:
 
@@ -223,7 +223,7 @@ cannot change to link to a different value half-way through your calculations!*)
         >>> day
         21
 
-You'll notice we changed the value of ``day`` three times, and on the third assignment we even
+You'll notice we changed the value of `day` three times, and on the third assignment we even
 made it refer to a value that was of a different type.
 
 A great deal of programming is about having the computer remember things, e.g. *The number of missed calls on your phone*,
@@ -238,10 +238,10 @@ Variable names and keywords
 **Variable names** can be arbitrarily long. They can contain both letters and
 digits, but they have to begin with a letter or an underscore. Although it is legal to use
 uppercase letters, by convention we don't. If you do, remember that case
-matters. ``Bruce`` and ``bruce`` are different variables.
+matters. `Bruce` and `bruce` are different variables.
 
-The underscore character ( ``_``) can appear in a name. It is often used in
-names with multiple words, such as ``my_name`` or ``price_of_tea_in_china``.
+The underscore character ( `_`) can appear in a name. It is often used in
+names with multiple words, such as `my_name` or `price_of_tea_in_china`.
 
 There are some situations in which names beginning with an underscore have
 special meaning, so a safe rule for beginners is to start all names with a letter.
@@ -257,11 +257,11 @@ If you give a variable an illegal name, you get a syntax error:
         >>> class = "Computer Science 101"
         SyntaxError: invalid syntax
 
-``76trombones`` is illegal because it does not begin with a letter.  ``more$``
+`76trombones` is illegal because it does not begin with a letter.  `more$`
 is illegal because it contains an illegal character, the dollar sign. But
-what's wrong with ``class``?
+what's wrong with `class`?
 
-It turns out that ``class`` is one of the Python **keywords**. Keywords define
+It turns out that `class` is one of the Python **keywords**. Keywords define
 the language's syntax rules and structure, and they cannot be used as variable names.
 
 Python has thirty-something keywords (and every now and again improvements to Python
@@ -285,15 +285,15 @@ they help the programmer document, or remember, what the variable is used for.
 
 .. caution::
    Beginners sometimes confuse "meaningful to the human readers" with "meaningful to the computer".
-   So they'll wrongly think that because they've called some variable ``average`` or ``pi``, it will
-   somehow magically calculate an average, or magically know that the variable ``pi`` should have a
+   So they'll wrongly think that because they've called some variable `average` or `pi`, it will
+   somehow magically calculate an average, or magically know that the variable `pi` should have a
    value like 3.14159.  No! The computer doesn't understand what you intend the variable to mean.
 
    So you'll find some instructors who deliberately don't choose meaningful
    names when they teach beginners --- not because we don't think it is a good habit,
    but because we're trying to reinforce the message that you --- the programmer --- must
    write the program code to calculate the average, and you must write an assignment
-   statement to give the variable ``pi`` the value you want it to have.
+   statement to give the variable `pi` the value you want it to have.
 
 .. index:: statement
 
@@ -302,8 +302,8 @@ Statements
 
 A **statement** is an instruction that the Python interpreter can execute. We
 have only seen the assignment statement so far.  Some other kinds of statements that
-we'll see shortly are ``while`` statements, ``for`` statements, ``if`` statements,
-and ``import`` statements.  (There are other kinds too!)
+we'll see shortly are `while` statements, `for` statements, `if` statements,
+and `import` statements.  (There are other kinds too!)
 
 When you type a statement on the command line, Python executes it.  Statements
 don't produce any result.
@@ -325,8 +325,8 @@ displays the result:
         >>> len("hello")
         5
 
-In this example ``len`` is a built-in Python function that returns the number of characters in a string.
-We've previously seen the ``print`` and the ``type`` functions, so this is our third example of a function!
+In this example `len` is a built-in Python function that returns the number of characters in a string.
+We've previously seen the `print` and the `type` functions, so this is our third example of a function!
 
 The *evaluation of an expression* produces a value, which is why expressions
 can appear on the right hand side of assignment statements. A value all by
@@ -357,9 +357,9 @@ clear::
 
     20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9)*(15-7)
 
-The tokens ``+``, ``-``, and ``*``, and the use of parenthesis for grouping,
-mean in Python what they mean in mathematics. The asterisk (``*``) is the
-token for multiplication, and ``**`` is the token for exponentiation.
+The tokens `+`, `-``, and `*`, and the use of parenthesis for grouping,
+mean in Python what they mean in mathematics. The asterisk (`*`) is the
+token for multiplication, and `**` is the token for exponentiation.
 
     .. sourcecode:: python3
 
@@ -383,7 +383,7 @@ Example: so let us convert 645 minutes into hours:
         >>> hours
         10.75
 
-Oops! In Python 3, the division operator ``/`` always yields a floating point result.
+Oops! In Python 3, the division operator `/` always yields a floating point result.
 What we might have wanted to know was how many *whole* hours there are, and how many minutes remain.
 Python gives us two different flavors of the division operator.
 The second, called **floor division** uses the token `//`.
@@ -411,11 +411,11 @@ that does the division accurately.
 Type converter functions
 ------------------------
 
-Here we'll look at three more Python functions, ``int``, ``float`` and ``str``, which will (attempt to)
-convert their arguments into types ``int``, ``float`` and ``str`` respectively.  We call these
+Here we'll look at three more Python functions, `int`, `float` and `str`, which will (attempt to)
+convert their arguments into types `int`, `float` and `str` respectively.  We call these
 **type converter** functions.
 
-The ``int`` function can take a floating point number or a string, and turn
+The `int` function can take a floating point number or a string, and turn
 it into an int. For floating point numbers, it *discards* the decimal portion
 of the number --- a process we call *truncation towards zero* on
 the number line.  Let us see this in action:
@@ -448,7 +448,7 @@ This last case doesn't look like a number --- what do we expect?
 
 
 
-The type converter ``float`` can turn an integer, a float, or a syntactically legal
+The type converter `float` can turn an integer, a float, or a syntactically legal
 string into a float:
 
     .. sourcecode:: python3
@@ -458,7 +458,7 @@ string into a float:
         >>> float("123.45")
         123.45
 
-The type converter ``str`` turns its argument into a string:
+The type converter `str` turns its argument into a string:
 
     .. sourcecode:: python3
 
@@ -481,25 +481,25 @@ is a useful way to remember the order of operations:
 
 #. **P**\ arentheses have the highest precedence and can be used to force an
    expression to evaluate in the order you want. Since expressions in
-   parentheses are evaluated first, ``2 * (3-1)`` is 4, and ``(1+1)**(5-2)`` is
+   parentheses are evaluated first, `2 * (3-1)` is 4, and `(1+1)**(5-2)` is
    8. You can also use parentheses to make an expression easier to read, as in
-   ``(minute * 100) / 60``, even though it doesn't change the result.
-#. **E**\ xponentiation has the next highest precedence, so ``2**1+1`` is 3 and
-   not 4, and ``3*1**3`` is 3 and not 27.
+   `(minute * 100) / 60`, even though it doesn't change the result.
+#. **E**\ xponentiation has the next highest precedence, so `2**1+1` is 3 and
+   not 4, and `3*1**3` is 3 and not 27.
 #. **M**\ ultiplication and both **D**\ ivision operators have the same precedence, which is
    higher than **A**\ ddition and **S**\ ubtraction, which also have the same
-   precedence. So ``2*3-1`` yields 5 rather than 4, and ``5-2*2`` is 1, not 6.
+   precedence. So `2*3-1` yields 5 rather than 4, and `5-2*2` is 1, not 6.
 #. Operators with the *same* precedence are evaluated from left-to-right. In algebra
    we say they are *left-associative*.  So in
-   the expression ``6-3+2``, the subtraction happens first, yielding 3. We then add
+   the expression `6-3+2`, the subtraction happens first, yielding 3. We then add
    2 to get the result 5. If the operations had been evaluated from
-   right to left, the result would have been ``6-(3+2)``, which is 1.  (The acronym
+   right to left, the result would have been `6-(3+2)`, which is 1.  (The acronym
    PEDMAS could mislead you to thinking that division has higher precedence than multiplication,
    and addition is done ahead of subtraction - don't be misled.
    Subtraction and addition are at the same precedence, and the left-to-right rule applies.)
 
    - Due to some historical quirk, an exception to the left-to-right left-associative rule
-     is the exponentiation operator ``**``, so a useful hint is to always use
+     is the exponentiation operator `**`, so a useful hint is to always use
      parentheses to force exactly the order you want when exponentiation is involved:
 
        .. sourcecode:: python3
@@ -518,7 +518,7 @@ Operations on strings
 ---------------------
 
 In general, you cannot perform mathematical operations on strings, even if the
-strings look like numbers. The following are illegal (assuming that ``message``
+strings look like numbers. The following are illegal (assuming that `message`
 has type string):
 
     .. sourcecode:: python3
@@ -528,8 +528,8 @@ has type string):
         >>> message * "Hello"  # Error
         >>> "15" + 2           # Error
 
-Interestingly, the ``+`` operator does work with strings, but for strings,
-the ``+`` operator represents **concatenation**, not addition.
+Interestingly, the `+` operator does work with strings, but for strings,
+the `+` operator represents **concatenation**, not addition.
 Concatenation means joining the two operands by linking them end-to-end. For example:
 
     .. sourcecode:: python3
@@ -539,17 +539,17 @@ Concatenation means joining the two operands by linking them end-to-end. For exa
         baked_good = " nut bread"
         print(fruit + baked_good)
 
-The output of this program is ``banana nut bread``. The space before the word
-``nut`` is part of the string, and is necessary to produce the space between
+The output of this program is `banana nut bread`. The space before the word
+`nut` is part of the string, and is necessary to produce the space between
 the concatenated strings.
 
-The ``*`` operator also works on strings; it performs repetition. For example,
-``'Fun'*3`` is ``'FunFunFun'``. One of the operands has to be a string; the
+The `*` operator also works on strings; it performs repetition. For example,
+`'Fun'*3` is `'FunFunFun'`. One of the operands has to be a string; the
 other has to be an integer.
 
-On one hand, this interpretation of ``+`` and ``*`` makes sense by analogy with
-addition and multiplication. Just as ``4*3`` is equivalent to ``4+4+4``, we
-expect ``"Fun"*3`` to be the same as ``"Fun"+"Fun"+"Fun"``, and it is. On the
+On one hand, this interpretation of `+` and `*` makes sense by analogy with
+addition and multiplication. Just as `4*3` is equivalent to `4+4+4`, we
+expect `"Fun"*3` to be the same as `"Fun"+"Fun"+"Fun"`, and it is. On the
 other hand, there is a significant way in which string concatenation and
 repetition are different from integer addition and multiplication. Can you
 think of a property that addition and multiplication have that string
@@ -577,12 +577,12 @@ A sample run of this script in PyScripter would pop up a dialog window like this
 
 
 The user of the program can enter the name and click `OK`, and when this happens
-the text that has been entered is returned from the ``input`` function, and in this
-case assigned to the variable ``n``.
+the text that has been entered is returned from the `input` function, and in this
+case assigned to the variable `n`.
 
-Even if you asked the user to enter their age, you would get back a string like ``"17"``.
+Even if you asked the user to enter their age, you would get back a string like `"17"`.
 It would be your job, as the programmer, to convert that string into a int or a float,
-using the ``int`` or ``float`` converter functions we saw earlier.
+using the `int` or `float` converter functions we saw earlier.
 
 .. index:: composition of functions,  function composition
 
@@ -646,7 +646,7 @@ The modulus operator
 
 The **modulus operator** works on integers (and integer expressions) and gives
 the remainder when the first number is divided by the second. In Python, the
-modulus operator is a percent sign (``%``). The syntax is the same as for other
+modulus operator is a percent sign (`%`). The syntax is the same as for other
 operators. It has the same precedence as the multiplication operator.
 
     .. sourcecode:: python3
@@ -661,12 +661,12 @@ operators. It has the same precedence as the multiplication operator.
 So 7 divided by 3 is 2 with a remainder of 1.
 
 The modulus operator turns out to be surprisingly useful. For example, you can
-check whether one number is divisible by another---if ``x % y`` is zero, then
-``x`` is divisible by ``y``.
+check whether one number is divisible by another---if `x % y` is zero, then
+`x` is divisible by `y`.
 
 Also, you can extract the right-most digit or digits from a number.  For
-example, ``x % 10`` yields the right-most digit of ``x`` (in base 10).
-Similarly ``x % 100`` yields the last two digits.
+example, `x % 10` yields the right-most digit of `x` (in base 10).
+Similarly `x % 100` yields the last two digits.
 
 It is also extremely useful for doing conversions, say from seconds,
 to hours, minutes and seconds. So let's write a program to ask the user to enter
@@ -691,7 +691,7 @@ Glossary
 
     assignment statement
         A statement that assigns a value to a name (variable). To the left of
-        the assignment operator, ``=``, is a name. To the right of the
+        the assignment operator, `=`, is a name. To the right of the
         assignment token is an expression which is evaluated by the Python
         interpreter and then assigned to the name. The difference between the
         left and right hand sides of the assignment statement is often
@@ -701,13 +701,13 @@ Glossary
 
                  n = n + 1
 
-        ``n`` plays a very different role on each side of the ``=``. On the
+        `n` plays a very different role on each side of the `=`. On the
         right it is a *value* and makes up part of the *expression* which will
         be evaluated by the Python interpreter before assigning it to the name
         on the left.
 
     assignment token
-        ``=`` is Python's assignment token.  Do not confuse it with *equals*, which
+        `=` is Python's assignment token.  Do not confuse it with *equals*, which
         is an operator for comparing values.
 
     composition
@@ -720,8 +720,8 @@ Glossary
 
     data type
         A set of values. The type of a value determines how it can be used in
-        expressions. So far, the types you have seen are integers (``int``),
-        floating-point numbers (``float``), and strings (``str``).
+        expressions. So far, the types you have seen are integers (`int`),
+        floating-point numbers (`float`), and strings (`str`).
 
     evaluate
         To simplify an expression by performing the operations in order to
@@ -735,11 +735,11 @@ Glossary
         A Python data type which stores *floating-point* numbers.
         Floating-point numbers are stored internally in two parts: a *base* and
         an *exponent*. When printed in the standard format, they look like
-        decimal numbers. Beware of rounding errors when you use ``float``\ s,
+        decimal numbers. Beware of rounding errors when you use `float`\ s,
         and remember that they are only approximate values.
 
     floor division
-        An operator (denoted by the token ``//``) that divides one number by another and
+        An operator (denoted by the token `//`) that divides one number by another and
         yields an integer, or, if the result is not already an integer, it yields
         the next smallest integer.
 
@@ -748,11 +748,11 @@ Glossary
 
     keyword
         A reserved word that is used by the compiler to parse program; you
-        cannot use keywords like ``if``, ``def``, and ``while`` as variable
+        cannot use keywords like `if`, `def`, and `while` as variable
         names.
 
     modulus operator
-        An operator, denoted with a percent sign ( ``%``), that works on
+        An operator, denoted with a percent sign ( `%`), that works on
         integers and yields the remainder when one number is divided by
         another.
 
@@ -773,8 +773,8 @@ Glossary
 
     statement
         An instruction that the Python interpreter can execute.  So far we have
-        only seen the assignment statement, but we will soon meet the ``import``
-        statement and the ``for`` statement.
+        only seen the assignment statement, but we will soon meet the `import`
+        statement and the `for` statement.
 
     str
         A Python data type that holds a string of characters.
@@ -800,19 +800,19 @@ Exercises
 
 #. Take the sentence: *All work and no play makes Jack a dull boy.*
    Store each word in a separate variable, then print out the sentence on
-   one line using ``print``.
-#. Add parenthesis to the expression ``6 * 1 - 2`` to change its value
+   one line using `print`.
+#. Add parenthesis to the expression `6 * 1 - 2` to change its value
    from 4 to -6.
 #. Place a comment before a line of code that previously worked, and
    record what happens when you rerun the program.
-#. Start the Python interpreter and enter ``bruce + 4`` at the prompt.
+#. Start the Python interpreter and enter `bruce + 4` at the prompt.
    This will give you an error:
 
        .. sourcecode:: python3
 
             NameError: name 'bruce' is not defined
 
-   Assign a value to ``bruce`` so that ``bruce + 4`` evaluates to ``10``.
+   Assign a value to `bruce` so that `bruce + 4` evaluates to `10`.
 #. The formula for computing the final amount if one is earning
    compound interest is given on Wikipedia as
 
@@ -827,13 +827,13 @@ Exercises
 #. Evaluate the following numerical expressions in your head, then use
    the Python interpreter to check your results:
 
-    #. ``>>> 5 % 2``
-    #. ``>>> 9 % 5``
-    #. ``>>> 15 % 12``
-    #. ``>>> 12 % 15``
-    #. ``>>> 6 % 6``
-    #. ``>>> 0 % 7``
-    #. ``>>> 7 % 0``
+    #. `>>> 5 % 2`
+    #. `>>> 9 % 5`
+    #. `>>> 15 % 12`
+    #. `>>> 12 % 15`
+    #. `>>> 6 % 6`
+    #. `>>> 0 % 7`
+    #. `>>> 7 % 0`
 
    What happened with the last example? Why? If you were able to correctly
    anticipate the computer's response in all but the last one, it is time to

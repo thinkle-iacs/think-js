@@ -11,7 +11,7 @@ the problem.
 
 The syntax for a **function definition** is:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}        
+~~~~~~~~~```javascript        
 function NAME( PARAMETERS ) {
   STATEMENTS
 }
@@ -34,9 +34,9 @@ pattern:
    the header line.
 3. A closing (right) curly brace.
 
-We've already seen the ``for`` loop which follows this pattern.
+We've already seen the `for` loop which follows this pattern.
 
-So looking again at the function definition, the keyword in the header is ``function``, which is
+So looking again at the function definition, the keyword in the header is `function`, which is
 followed by the name of the function and some *parameters* enclosed in
 parentheses. The parameter list may be empty, or it may contain any number of
 parameters separated from one another by commas. In either case, the parentheses are required.
@@ -67,7 +67,7 @@ function calculateTip (bill, pct) {
 calculateTip(100,18);
 ```
 
-This function is named ``calculateTip``.  It has two parameters: one to tell
+This function is named `calculateTip`.  It has two parameters: one to tell
 the function the amount of the bill, and the other to tell it the percent
 tip to calculate.
 
@@ -77,15 +77,15 @@ functions like **console.log**, **window.input**, and **Number.parseInt**. Funct
 calls contain the name of the function being executed followed by a list
 of values, called *arguments*, which are assigned to the parameters in
 the function definition. So in the last line of the example program
-above, we call the function, and pass ``100`` as the amount of the bill
-and ``18`` as the percentage of the tip. While the function is
-executing, then, the variable ``bill`` refers to the value 100, and the
-variable ``pct`` refers to 18. We can pass either variables (like ``myBill``)
-or literal values (like ``100``) as arguments.
+above, we call the function, and pass `100` as the amount of the bill
+and `18` as the percentage of the tip. While the function is
+executing, then, the variable `bill` refers to the value 100, and the
+variable `pct` refers to 18. We can pass either variables (like `myBill`)
+or literal values (like `100`) as arguments.
 
 Once we've defined a function, we can call it as often as we like, and its
 statements will be executed each time we call it. In the next example, we calculate 3 different
-tip amounts for the same bill, using ``calculateTip`` defined above.
+tip amounts for the same bill, using `calculateTip` defined above.
 
 ```javascript
 let myBill = 100;
@@ -112,7 +112,7 @@ in the [Mozilla project developer's guide](https://developer.mozilla.org/en-US/d
 - Wrap lines so that they don’t exceed 80 characters.
   - This helps users with small displays and makes it possible to have
     several code files side-by-side on larger displays.
-- Use double quotes ``"`` for string literals, except when avoiding inline double quotes
+- Use double quotes `"` for string literals, except when avoiding inline double quotes
 - Use blank lines to separate functions and classes, and larger blocks
   of code inside functions.
 - When possible, put comments on a line of their own.
@@ -129,23 +129,23 @@ in the [Mozilla project developer's guide](https://developer.mozilla.org/en-US/d
 Composition: Functions can call other functions
 --------------------------------------------------
 
-So far, we have looked at the elements of a program—``variables``,
-``expressions``, and ``statements``—in isolation, without talking about how to
+So far, we have looked at the elements of a program—`variables`,
+`expressions`, and `statements`—in isolation, without talking about how to
 combine them.
 
 One of the most useful features of programming languages is their
-ability to take small building blocks and **compose** them. In our ``calculateTip``
-example, we call several Javascript built-in functions: ``toFixed`` to keep our amounts
-to 2 decimal places and ``Number.parseFloat`` to convert the data to a float so that
-we can use ``toFixed``. We use ``console.log`` to print our output on the Javascript
+ability to take small building blocks and **compose** them. In our `calculateTip`
+example, we call several Javascript built-in functions: `toFixed` to keep our amounts
+to 2 decimal places and `Number.parseFloat` to convert the data to a float so that
+we can use `toFixed`. We use `console.log` to print our output on the Javascript
 console. As we will see, we can compose our programs of many functions
 that we define ourselves.
 
 There are some points worth noting here:
 
 * Functions can call other functions.
-* A caller of this function might say ``calculateTip(myBill, 15)``.  The parameters
-  of this function, ``bill`` and ``tip``, are assigned the values of the myBill variable, and
+* A caller of this function might say `calculateTip(myBill, 15)`.  The parameters
+  of this function, `bill` and `tip`, are assigned the values of the myBill variable, and
   the number literal 15, respectively.
 * In the body of the function they are just like any other variable.
 
@@ -203,10 +203,10 @@ Functions that require arguments
 Most functions require arguments: the arguments provide for generalization, allowing the same
 function to work with different data inputs.
 For example, if we want to find the absolute value of a number, we have
-to indicate what the number is. The Javascript ``Math`` class has a built-in function for
+to indicate what the number is. The Javascript `Math` class has a built-in function for
 computing the absolute value:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}        
+~~~~~~~~~```javascript        
 ⠕ Math.abs(5);
 => 5
 ⠕ Math.abs(-5);
@@ -214,15 +214,15 @@ computing the absolute value:
 ```
 
 
-In this example, the arguments to the ``abs`` function are 5 and -5.
+In this example, the arguments to the `abs` function are 5 and -5.
 
-Some functions take more than one argument. For example the function ``calculateTip``
+Some functions take more than one argument. For example the function `calculateTip`
 function we wrote in the example above takes two arguments:
 the amount of the bill and the percent tip to calculate.
 Inside the function, the values that are
 passed get assigned to variables called **parameters**.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+~~~~~~~~~```javascript
 ⠕ calculateTip(87, 10);
 Bill amount: $87
 Tip percentage: 10%
@@ -230,9 +230,9 @@ Total amount due: $8.70
 
 ```
 
-Another built-in function that takes more than one argument is ``Math.max``.
+Another built-in function that takes more than one argument is `Math.max`.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}        
+~~~~~~~~~```javascript        
 ⠕ Math.max(7, 11);
 => 11
 ⠕ Math.max(4, 1, 17, 2, 12);
@@ -241,7 +241,7 @@ Another built-in function that takes more than one argument is ``Math.max``.
 => 503
 ```
 
-``Math.max`` can be passed any number of arguments, separated by commas, and will
+`Math.max` can be passed any number of arguments, separated by commas, and will
 return the largest value passed. The arguments can be either simple values or
 expressions. In the last example, 503 is returned, since it is larger than 33,
 125, and 1. All of the expressions are resolved --- in this case the mathematical
@@ -251,9 +251,9 @@ parameters.
 Functions that return values
 ------------------------------------------------------------------------------
 
-Some functions return values. In the previous section we saw that ``Math.abs``
-and ``Math.max`` return values. ``calculateTip`` does not return a value; it
-uses ``console.log`` to produce output on the screen for the user.
+Some functions return values. In the previous section we saw that `Math.abs`
+and `Math.max` return values. `calculateTip` does not return a value; it
+uses `console.log` to produce output on the screen for the user.
 We can use the return values from functions to compose more complex functions.
 
 A function that returns a value is called a **fruitful function** in this book.
@@ -262,7 +262,7 @@ for its resulting value, but is executed because it does something useful.
 (Languages like Java, C#, C and C++ use the term "void function", other languages like Pascal
 call it a **procedure**.) Even though void functions are not executed
 for their resulting value, Javascript always wants to return something. So if the programmer
-doesn't arrange to return a value, Javascript will automatically return the value ``undefined``.
+doesn't arrange to return a value, Javascript will automatically return the value `undefined`.
 
 How do we write our own fruitful function? Let's look at the standard
 formula for compound interest as an example of a fruitful function:   
@@ -287,30 +287,30 @@ let fnl = finalAmt(toInvest, 0.08, 12, 5);
 console.log("At the end of the period you'll have", fnl);
 ```
 
-* The **return** statement is followed an expression (``a`` in this case). This expression will be
+* The **return** statement is followed an expression (`a` in this case). This expression will be
   evaluated and returned to the caller as the "fruit" of calling this function.
-* We prompted the user for the principal amount. The type of ``toInvest`` is a string, but
+* We prompted the user for the principal amount. The type of `toInvest` is a string, but
   we need a number before we can work with it. Javascript can automatically convert
   it to a number for us when we use it in the calculation. Because it is money, and could have decimal
-  places, we've used the ``Number.parseFloat`` type converter function to parse the string and return a float.
+  places, we've used the `Number.parseFloat` type converter function to parse the string and return a float.
 * Notice how we entered the arguments for 8% interest, compounded 12 times per year, for 5 years.
-* When we run this, if we enter ``100`` when prompted for the amount to invest, we get the output<br>
+* When we run this, if we enter `100` when prompted for the amount to invest, we get the output<br>
   _At the end of the period you'll have 148.9845708301606_<br>
   This is a bit messy with all these decimal places, but remember that
   Javascript doesn't understand that we're working with money: it just does the calculation to
   the best of its ability, without rounding. Later we'll see how to format the string that
   is printed in such a way that it does get nicely rounded to two decimal places before printing.
-* The line ``let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );
+* The line `let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );
 ``
   also shows yet another example
-  of *composition* — we can call a function like ``Number.parseFloat``, and its arguments
-  can be the results of other function calls (like ``window.prompt``) that we've called along the way.
+  of *composition* — we can call a function like `Number.parseFloat`, and its arguments
+  can be the results of other function calls (like `window.prompt`) that we've called along the way.
 
 Notice something else very important here. The name of the variable we pass as an
-argument — ``toInvest`` — has nothing to do with the name of the parameter
-— ``p``.  It is as if  ``p = toInvest`` is executed when ``finalAmt`` is called.
+argument — `toInvest` — has nothing to do with the name of the parameter
+— `p`.  It is as if  `p = toInvest` is executed when `finalAmt` is called.
 It doesn't matter what the value was named in
-the caller, in ``finalAmt`` its name is ``p``.  
+the caller, in `finalAmt` its name is `p`.  
 
 These short variable names are getting quite tricky, so perhaps we'd prefer one of these
 versions instead:       
@@ -350,22 +350,22 @@ function finalAmt (p, r, n, t) {
 
 ```
 
-If we try to use ``a``, outside the function, we'll get an error like this:
+If we try to use `a`, outside the function, we'll get an error like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}        
+~~~~~~~~~```javascript        
 ⠕ a
 ReferenceError: a is not defined
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
 
-The variable ``a`` is local to ``finalAmt``, and is not visible
+The variable `a` is local to `finalAmt`, and is not visible
 outside the function.
 
-Additionally, ``a`` only exists while the function is being executed —
+Additionally, `a` only exists while the function is being executed —
 we call this its **lifetime**.
 When the execution of the function terminates, the local variables are destroyed.
 
 Parameters are also local, and act like local variables.
-For example, the lifetimes of ``p``, ``r``, ``n``, ``t`` begin when ``finalAmt`` is called,
+For example, the lifetimes of `p`, `r``, `n``, `t`` begin when `finalAmt` is called,
 and the lifetime ends when the function completes its execution.   
 
 So it is not possible for a function to set some local variable to a
@@ -403,7 +403,7 @@ compound statement
 
     The syntax of a compound statement looks like this:
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+    ~~~~~~~~~```javascript
     keyword ... :
         statement
         statement ...
@@ -498,29 +498,29 @@ Function Exercises
 ------------------
 
 1.  Write a void (non-fruitful) function to that prints out a "hello" message. Your function
-    should declare 3 parameters: ``firstName``, ``lastName``, and ``title``. ``title`` will be
+    should declare 3 parameters: `firstName`, `lastName`, and `title`. `title` will be
     Mr., Ms., Dr., etc. The function should print a message like this one:
     `Hello Dr. Matthew Curinga.`
 
 
-2. Write a function ``half(num)`` which returns the value of ``num`` divided by 2.
+2. Write a function `half(num)` which returns the value of `num` divided by 2.
 
-3. Write a function ``triple(num)`` which return ``num`` * 3.
+3. Write a function `triple(num)` which return `num` * 3.
 
-4. Write a function ``areaOfACircle(r)`` which returns the area of a circle of radius ``r``.
-   For the value of PI, use the constant ``Math.PI``<br>
+4. Write a function `areaOfACircle(r)` which returns the area of a circle of radius `r`.
+   For the value of PI, use the constant `Math.PI`<br>
    (Hint: if you can't remember how to find the area of a circle, look it up or ask a friend.)
 
-5. Write a function ``hypotenuse(a, b)`` which calculates the hypotenuse of a right triangle
-   when given the length of sides ``a`` and ``b``.
+5. Write a function `hypotenuse(a, b)` which calculates the hypotenuse of a right triangle
+   when given the length of sides `a` and `b`.
    Use the [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) `a^2 + b^2 = c^2`.<br>
    Note, you will need to be able to calculate square roots to solve this problem.
-   You can use the build in math function ``Math.sqrt``.
+   You can use the build in math function `Math.sqrt`.
 
-6. (hard bonus) Write a function called ``distance(x1, y1, x2, y2)`` which calculates the
+6. (hard bonus) Write a function called `distance(x1, y1, x2, y2)` which calculates the
    distance between the point at (x1, y1) and (x2, y2) on a Cartesian Plane. You can
    find the formula for this at <http://www.mathsisfun.com/algebra/distance-2-points.html><br>
-   Use the ``hypotenuse`` function from exercise 5 to compose this function.
+   Use the `hypotenuse` function from exercise 5 to compose this function.
 
 
 Functions Lab
@@ -528,9 +528,9 @@ Functions Lab
 
 This is the first "lab" in our textbook. For this project, you will be asked to write
 a complete program that solves a problem. The labs should break up parts of the program
-into different functions. Your program should start when the ``main()`` function is
-called. ``main`` is not a keyword in Javascript, but in many programming languages there
-is a convention that the starting function is called ``main``. Please take a look at the
+into different functions. Your program should start when the `main()` function is
+called. `main` is not a keyword in Javascript, but in many programming languages there
+is a convention that the starting function is called `main`. Please take a look at the
 Tip Calculator case study below for a sense of how your program should be structured.
 
 For this first lab, too, please pay attention to your [coding style](#coding-style) to

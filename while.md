@@ -131,7 +131,7 @@ of deciding how to modify `n`. In this case, `while` is more suitable.
 
 Here are some examples:
 
-~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ seq3np1(3)
 3, 10, 5, 16, 8, 4, 2, 1.
 ⠕ seq3np1(19)

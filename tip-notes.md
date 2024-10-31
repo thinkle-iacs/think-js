@@ -36,7 +36,7 @@ code** --- they do not affect the execution of the program.
 
 <aside data-line-number="14">
 
-``welcome`` is a very simple **function** --- it does not accept
+`welcome` is a very simple **function** --- it does not accept
 any data in the form of **function parameters** and it does not
 **return** any data using a **return statement**. It simply prints out a
 message to the console.
@@ -46,7 +46,7 @@ message to the console.
 
 <aside data-line-number="30">
 
-The ``calcTip`` function defines 2 **parameters**:
+The `calcTip` function defines 2 **parameters**:
 `bill` and `pct`. These parameters become
 variables within the **function body**. Line 30 uses
 **arithmetic operators** (multiplication here) to
@@ -59,7 +59,7 @@ calculate a new value and store it in the `tip` **variable**.
 
 <aside data-line-number="43">
 
-``askBillAmt`` is a **fruitful function** because
+`askBillAmt` is a **fruitful function** because
 it has a **return statement**. It uses the
 **built-in function** `window.prompt` to ask for data from the
 user of the program. When this function is called, it returns
@@ -69,10 +69,10 @@ the amount of the bill as a float, because it represents money.
 
 <aside data-line-number="61">
 
-``money`` is a small helper function that we
+`money` is a small helper function that we
 wrote to re-use the task of formatting numbers
 as currency with a dollar sign and two decimal places.
-It is called 3 times in ``showResults`` with
+It is called 3 times in `showResults` with
 different **arguments**.
 
 </aside>
@@ -82,18 +82,18 @@ different **arguments**.
 
 <aside data-line-number="70">
 
-``showResults`` defines 3 **parameters** which are used
+`showResults` defines 3 **parameters** which are used
 to pass in all of the data needed to show the results
 of the tip calculation. Notice that the `console.log` statements
 use the **+ operator** to <abbr title="join together">concatenate</abbr>
 strings. Because we are joining **string literals** with variables of
-type `number`. The ``+`` operator automatically converts the numbers to strings.
+type `number`. The `+` operator automatically converts the numbers to strings.
 
 </aside>
 
 <aside data-line-number="90">
 
-``main`` is the first function **called** for
+`main` is the first function **called** for
 this program. It maintains the executive control of the
 program, calling other functions in sequence and passing
 data between functions. All of the other functions have

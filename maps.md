@@ -17,25 +17,25 @@ Mapped data structures _map_ **keys** to **values**. Values can be any type
 (heterogeneous), just like the elements of an array. Sometimes maps are called
 _associative arrays_ since they associate a key with a value. When using
 objects as maps (as we will for most of this chapter), _keys_ should be strings.
-The ``Map`` object in Javascript allows keys to be of any type.
+The `Map` object in Javascript allows keys to be of any type.
 
 As an example, we will create a map to translate English words into
 Spanish. For this map, the keys are strings.
 
 One way to create a map is to start with the empty object and add
-**key:value pairs**. The empty object is denoted by ``{}``:
+**key:value pairs**. The empty object is denoted by `{}`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let eng2sp = {};
 ⠕ eng2sp["one"] = "uno";
 ⠕ eng2sp["two"] = "dos";
 ```
 
-The first assignment creates a map named ``eng2sp``; the other
+The first assignment creates a map named `eng2sp`; the other
 assignments add new key:value pairs to the map. We can print the current
 value of the map in the usual way:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ console.log(eng2sp);
 { one: 'uno', two: 'dos' }
 ```
@@ -49,7 +49,7 @@ contains a key and a value separated by a colon.
 
 The order of the pairs may not be what was expected. Javascript objects don't
 guarantee the that keys are returned in the same order they're inserted
-(``Maps``'s do, however). Javascript uses complex algorithms, designed for very
+(`Maps`'s do, however). Javascript uses complex algorithms, designed for very
 fast access, to determine where the key:value pairs are stored in a map. For our
 purposes we can think of this ordering as unpredictable.
 
@@ -57,7 +57,7 @@ You also might wonder why we use maps at all when the same
 concept of mapping a key to a value could be implemented using an array
 of arrays with key:value pairs:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let eng2spArray = [];
 ⠕ eng2sp[0] = ["one", "uno"];
 ⠕ eng2sp[1] = ["two", "dos"];
@@ -80,7 +80,7 @@ find out.
 Another way to create a map is to provide a list of key:value pairs
 using the same syntax as the previous output:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let eng2sp = {"one": "uno", "two": "dos", "three": "tres"};
 ```
 
@@ -90,12 +90,12 @@ ordering.
 
 Here is how we use a key to look up the corresponding value:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ console.log(eng2sp["two"]);
 dos
 ```
 
-The key ``"two"`` yields the value ``"dos"``.
+The key `"two"` yields the value `"dos"`.
 
 Arrays and strings have been called *sequences*, because their items
 occur in order. The map is the first compound type that we've
@@ -104,11 +104,11 @@ seen that is not a sequence, so we can't index or slice a map.
 Map operations
 --------------
 
-The ``delete`` statement removes a key:value pair from a map. For example,
+The `delete` statement removes a key:value pair from a map. For example,
 the following map contains the names of various fruits and the number of
 each fruit in stock:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let inventory = {"apples": 430, "bananas": 312, "oranges": 525, "pears": 217};   
 ⠕ console.log(inventory);
 { apples: 430, bananas: 312, oranges: 525, pears: 217 }
@@ -116,7 +116,7 @@ each fruit in stock:
 
 If someone buys all of the pears, we can remove the entry from the map:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ delete inventory["pears"];
 ⠕ console.log(inventory);
 { apples: 430, bananas: 312, oranges: 525 }
@@ -125,7 +125,7 @@ If someone buys all of the pears, we can remove the entry from the map:
 Or if we're expecting more pears soon, we might just change the value
 associated with pears:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ inventory["pears"] = 0;
 ⠕ console.log(inventory);
 { apples: 430, bananas: 312, oranges: 525, pears: 0 }
@@ -133,7 +133,7 @@ associated with pears:
 
 A new shipment of bananas arriving could be handled like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ inventory["bananas"] += 200;
 ⠕ console.log(inventory);
 inventory["bananas"] += 200
@@ -163,7 +163,7 @@ Object utility functions
 The built in `Object` library contains many useful functions
 for working with objects as map datatypes.
 
-We can use ``Object.keys()`` to return an array of all of the keys
+We can use `Object.keys()` to return an array of all of the keys
 in a map. Using the keys, we can _iterate_ through the keys
 and values in our map.
 
@@ -179,7 +179,7 @@ console.log(keys);
 
 This produces this output:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 Got key one which maps to value uno
 Got key two which maps to value dos
 Got key three which maps to value tres
@@ -195,18 +195,18 @@ for (let k in eng2sp) {
 }
 ```
 
-The ``Object.values()`` function is similar to `keys()`; it returns an array
+The `Object.values()` function is similar to `keys()`; it returns an array
 containing all of the map's objects:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ Object.values(eng2sp);
 => [ 'uno', 'dos', 'tres' ]
 ```
 
-The ``Object.entries()`` function returns an array of
+The `Object.entries()` function returns an array of
 key:value pair arrays.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 
 ⠕ Object.entries(eng2sp);
 [ [ 'one', 'uno' ], [ 'two', 'dos' ], [ 'three', 'tres' ] ]
@@ -225,7 +225,7 @@ for (let [k, v] of Object.entries(eng2sp)) {
 
 This produces:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 one uno
 two dos
 three tres
@@ -248,7 +248,7 @@ If we try to access a key that isn't in our map, Javascript yields the special
 us to test if a key exists in a map. `in` will always return a boolean result
 (`true` or `false`) indicating the existence of a key.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ eng2sp["one"]
 'uno'
 ⠕ "six" in eng2sp
@@ -273,28 +273,28 @@ to be aware of aliasing. Whenever two variables refer to the same
 object, changes to one affect the other.
 
 If we want to modify a map and keep a copy of the original, use the
-``copy`` method. For example, ``opposites`` is a map that contains pairs
+`copy` method. For example, `opposites` is a map that contains pairs
 of opposites:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let opposites = {"up": "down", "right": "wrong", "yes": "no"};
 ⠕ let alias = opposites;
 ⠕ let copy = Object.assign(opposites);  // a shallow copy
 ```
 
-``alias`` and ``opposites`` refer to the same object; ``copy`` refers to a
-fresh copy of the same map. If we modify ``alias``, ``opposites`` is
+`alias` and `opposites` refer to the same object; `copy` refers to a
+fresh copy of the same map. If we modify `alias`, `opposites` is
 also changed:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ alias["right"] = "left";
 ⠕ opposites["right"];
 'left'
 ```
 
-If we modify ``copy``, ``opposites`` is unchanged:
+If we modify `copy`, `opposites` is unchanged:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ copy["right"] = "privilege";
 ⠕ opposites["right"];
 'left'
@@ -334,7 +334,7 @@ console.log(letterCounts);
 
 Outputs:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 { M: 1, i: 4, s: 4, p: 2 }
 ```
 
@@ -347,8 +347,8 @@ Note that we call `toLowerCase()` on our string because keys, as you should expe
 _case-sensitive_.
 
 It might be more appealing to display the frequency table in alphabetical order. We
-can do that with the ``Object.keys()`` function in the Object library
-and then calling ``sort()`` on our array of keys. We can add this code
+can do that with the `Object.keys()` function in the Object library
+and then calling `sort()` on our array of keys. We can add this code
 to our example above in order to print out the frequency map of letters
 in alphabetical order.
 

@@ -48,10 +48,10 @@ So like strings, tuples are immutable.  Once Python has created a tuple
 in memory, it cannot be changed.
 
 Of course, even if we can't modify the elements of a tuple, we can 
-always make the ``julia`` variable reference a new tuple holding 
+always make the `julia` variable reference a new tuple holding 
 different information.  To construct the new tuple, it is convenient 
 that we can slice parts of the old tuple and join up the bits to 
-make the new tuple.  So  if ``julia`` has a new recent film, we 
+make the new tuple.  So  if `julia` has a new recent film, we 
 could change her variable to reference a new tuple that used some 
 information from the old one:
 
@@ -63,7 +63,7 @@ information from the old one:
 
 To create a tuple with a single element (but you're probably not likely
 to do that too often), we have to include the final comma, because without
-the final comma, Python treats the ``(5)`` below as an integer in parentheses:
+the final comma, Python treats the `(5)` below as an integer in parentheses:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> tup = (5,)
@@ -114,7 +114,7 @@ into the variables/names on the right:
 
 Once in a while, it is useful to swap the values of two variables.  With
 conventional assignment statements, we have to use a temporary variable. For
-example, to swap ``a`` and ``b``:
+example, to swap `a` and `b`:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
 temp = a
@@ -229,17 +229,17 @@ tuple assignment
 Exercises
 ---------
 
-1.  Write a function ``merge_contacts(contact1, contact1)`` that takes two touples as
+1.  Write a function `merge_contacts(contact1, contact1)` that takes two touples as
     parameters. The tuples represent contact records in the form of
     (firstName, lastName, email, phone). This is the specification
     for your function:
     
-    1. The length of both tuples must be 4. If this isn't the case, return ``None``.
-    2. If the emails of both contacts do not match return ``None``
+    1. The length of both tuples must be 4. If this isn't the case, return `None`.
+    2. If the emails of both contacts do not match return `None`
     3. Return a new contact tuple that fills in any missing (i.e. an empty string)
        from contact1 with the information from contact2. If there is
        already data in both contact1 and contact2, leave contact1 alone.
 
-2. Write a function called ``word_len(text)``. This function should use
+2. Write a function called `word_len(text)`. This function should use
    split() to create a list of words and then return a touple with the follwing
    data: shortest word, longest word, avg word length.

@@ -168,7 +168,7 @@ integer 16.
 
 If you try to get the value of a variable that has never been assigned to, you'll get an error:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ let w = x + 1;
 ReferenceError: x is not defined
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,7 +193,7 @@ Abbreviated assignment
 Incrementing a variable is so common that Javascript provides an abbreviated syntax
 for it:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ count = 0;
 ⠕ count++;
 ⠕ count;
@@ -204,7 +204,7 @@ for it:
 as *"plus-plus"*. Javascript offers a different operator
 (`+=` pronounced _"plus-equals"_) for increment values other than 1:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ n = 2;
 ⠕ n += 5;
 ⠕ n;
@@ -212,7 +212,7 @@ as *"plus-plus"*. Javascript offers a different operator
 ~~~~~~~~~~~~~~~~~~~~
 There are similar abbreviations for `--`, `-=`, `*=`, `/=`, and `%=`:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ n = 3;
 ⠕ n--;
 ⠕ n;

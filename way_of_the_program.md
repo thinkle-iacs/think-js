@@ -236,28 +236,28 @@ molecules. And most importantly:
 > *Programming languages are formal languages that have been designed to
 > express computations.*
 
-Formal languages tend to have strict rules about syntax. For example, ``3+3=6``
-is a syntactically correct mathematical statement, but ``3=+6$`` is not.
+Formal languages tend to have strict rules about syntax. For example, `3+3=6`
+is a syntactically correct mathematical statement, but `3=+6$` is not.
 H<sub>2</sub>O is a syntactically correct chemical name, but <sub>2</sub>Zz is
 not.
 
 Syntax rules come in two flavors, pertaining to **tokens** and structure.
 Tokens are the basic elements of the language, such as words, numbers, parentheses,
-commas, and so on. In Javascript, a statement like ``console.log("Happy New Year for ", 2013)``
+commas, and so on. In Javascript, a statement like `console.log("Happy New Year for ", 2013)`
 has 6 tokens: a function name, an open parenthesis (round bracket), a string, a comma, a number, and a close parenthesis.
 
 It is possible to make errors in the way one constructs tokens.  
-One of the problems with ``3=+6$`` is that ``$`` is not a
+One of the problems with `3=+6$` is that `$` is not a
 legal token in mathematics (at least as far as we know). Similarly,
 <sub>2</sub>Zz is not a legal token in chemistry notation because there is no element with the abbreviation
-``Zz``.
+`Zz`.
 
 The second type of syntax rule pertains to the **structure** of a statement—that
-is, the way the tokens are arranged. The statement ``3=+6$`` is structurally
+is, the way the tokens are arranged. The statement `3=+6$` is structurally
 illegal because you can't place a plus sign immediately after an equal sign.
 Similarly, molecular formulas have to have subscripts _after_ the element name,
 not before. And in our Javascript example, if we omitted the comma, or if we changed the two
-parentheses around to say  ``console.log)"Happy New Year for ",2013(`` our statement would still
+parentheses around to say  `console.log)"Happy New Year for ",2013(` our statement would still
 have six legal and valid tokens, but the structure is illegal.
 
 When you read a sentence in English or a statement in a formal language, you
@@ -340,7 +340,7 @@ looks like this: (For scripts, we'll show line numbers to the left of the Javasc
 ```javascript
 console.log("Hello, World!");
 ```
-This is an example of using ``console.log``, Javascript's **print function**, which doesn't actually print
+This is an example of using `console.log`, Javascript's **print function**, which doesn't actually print
 anything on paper. It displays a value on the screen's console. In this case, the result shown
 is
 
@@ -414,7 +414,7 @@ You'll also notice that we've left a blank line in the program. Blank lines
 are also ignored by the interpreter, but comments and blank lines can make your
 programs much easier for humans to parse. Use them liberally!
 
-Javascript also supports multiline comments with the ``/* */`` style.
+Javascript also supports multiline comments with the `/* */` style.
 
 ```javascript
 /*

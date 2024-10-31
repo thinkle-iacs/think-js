@@ -9,8 +9,8 @@ that a program manipulates. Programming `turtle` we have been using values
 like `100` when we write `fd(100)` and `"blue"` in statements like
 `setColor("blue")`.
 
-These values are classified into different **classes**, or **data types**: ``100``
-is an *number*, and ``"blue"`` is a *string*,
+These values are classified into different **classes**, or **data types**: `100`
+is an *number*, and `"blue"` is a *string*,
 so-called because it contains a string of
 letters. You (and the interpreter) can identify strings because they are
 enclosed in quotation marks.
@@ -18,7 +18,7 @@ enclosed in quotation marks.
 If you are not sure what class a value falls into, the Javascript **typeof**  operator can tell you.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ typeof "blue";
 => 'string'
 ⠕ typeof 100;
@@ -31,16 +31,16 @@ interchangeably.  We'll come back to a deeper understanding of what a class
 is in later chapters.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ typeof 3.2;
 => 'number'
 ```
-What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they
+What about values like `"17"` and `"3.2"`? They look like numbers, but they
 are in quotation marks like strings.
 
 ### Strings
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ typeof "17";
 => 'string'
 ⠕ typeof "3.2";
@@ -48,10 +48,10 @@ are in quotation marks like strings.
 ```
 They're strings!
 
-Strings in Javascript can be enclosed in either single quotes (``'``) or double quotes
-(``"``), or "backticks" (` ` `).
+Strings in Javascript can be enclosed in either single quotes (`'`) or double quotes
+(`"`), or "backticks" (` ` `).
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ typeof 'This is a string.';
 => 'string'
 ⠕ typeof "And so is this.";
@@ -61,14 +61,14 @@ Strings in Javascript can be enclosed in either single quotes (``'``) or double 
 ```
 
 Double quoted strings can contain single quotes inside them, as in
-``"Bruce's beard"``, and single quoted strings can have double quotes
-inside them, as in ``'The knights who say "Ni!"'``.
+`"Bruce's beard"`, and single quoted strings can have double quotes
+inside them, as in `'The knights who say "Ni!"'`.
 
 Strings enclosed with the backtick symbol are
 called **template literals**.  Template literals can
 contain either single or double quotes:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 console.log(`"Oh no", she exclaimed, "Ben's bike is broken!"`);
 "Oh no", she exclaimed, "Ben's bike is broken!"
 ⠕
@@ -89,7 +89,7 @@ lines.
 Strings can also be joined use the `+` token which adds strings together
 (also called concatenation).
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let message = "This long message will" +
 ⠕ "... will appear on one line" +
 ⠕ "... when it's logged to the console.";
@@ -104,7 +104,7 @@ value is identical in all cases, and the surrounding quotes are not part of
 the value. But when the interpreter wants to display a string, it has to
 decide which quotes to use to make it look like a string. It usually choose a single quote.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 
 ⠕ 'This is a string.'
 => 'This is a string.'
@@ -120,7 +120,7 @@ as in strings containing double quotes or spanning multiple lines).
 We will learn more about template strings in the chapter on strings.
 
 When you type a large number, you might be tempted to use commas between
-groups of three digits, as in ``42,000``. This is not a legal number in
+groups of three digits, as in `42,000`. This is not a legal number in
 Javascript, and different Javascript interpreters handle it differently. Formal languages are
 strict, the notation is concise, and even the smallest change might
 mean something quite different from what you intended.
@@ -135,23 +135,23 @@ The **let** keyword declares a new variable and
 the **assignment token**, gives a value to a variable:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let message = "What's up, Doc?";
 ⠕ let n = 17;
 ⠕ let pi = 3.14159;
 ```
 
-This example declares three variables and assigns them values. The first assigns the string value ``"What's
-up, Doc?"`` to a variable named ``message``. The second gives the number
-``17`` to ``n``, and the third assigns the number ``3.14159`` to
-a variable called ``pi``.
+This example declares three variables and assigns them values. The first assigns the string value `"What's
+up, Doc?"` to a variable named `message`. The second gives the number
+`17` to `n``, and the third assigns the number `3.14159` to
+a variable called `pi`.
 
-The **assignment token**, ``=``, should not be confused with *equals*, which uses
-the token ``===``.  The assignment statement binds a *name*, on the
+The **assignment token**, `=`, should not be confused with *equals*, which uses
+the token `===`.  The assignment statement binds a *name*, on the
 left-hand side of the operator, to a *value*, on the right-hand side.
 This is why you will get an error if you enter:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 
 ⠕ let 17 = n;
 
@@ -173,7 +173,7 @@ If you ask the interpreter to evaluate a variable, it will produce the value tha
 linked to the variable:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ message
 => 'What's up, Doc?'
 ⠕ n
@@ -187,7 +187,7 @@ You can assign a value to a variable, and later assign a different value to the 
 (*This is different from maths. In maths, if you give `x` the value 3, it
 cannot change to link to a different value half-way through your calculations!*)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let day = "Thursday"
 ⠕ day
 => 'Thursday'
@@ -198,7 +198,7 @@ cannot change to link to a different value half-way through your calculations!*)
 ⠕ day
 => 21
 ```
-You'll notice we changed the value of ``day`` three times, and on the third assignment we even
+You'll notice we changed the value of `day` three times, and on the third assignment we even
 made it refer to a value that was of a different type.   
 
 A great deal of programming is about having the computer remember things, e.g. *The number of missed calls on your phone*,
@@ -209,11 +209,11 @@ Variable names and keywords
 
 **Variable names** and other **identifiers** can be arbitrarily long. They can contain both letters and
 digits, but they have to begin with a letter, the dollar sign `$`, or an underscore `_`.
-Remember that case matters. ``Bruce`` and ``bruce`` are different variables.
+Remember that case matters. `Bruce` and `bruce` are different variables.
 
 In Javascript, capital letters are often used in variables that contain multiple words, such as
-``myName`` or ``thePriceOfTeaInChina``. The underscore character (``_``) can appear in a name, too.
-You may see underscores used to separate multiple words, such as ``my_name`` or ``price_of_tea_in_china``, but
+`myName` or `thePriceOfTeaInChina`. The underscore character (`_`) can appear in a name, too.
+You may see underscores used to separate multiple words, such as `my_name` or `price_of_tea_in_china`, but
 this style is less common in Javascript.
 
 Sometimes programmers start variables with underscores or dollar signs to give them special meanings.
@@ -222,22 +222,22 @@ In this book, all variable names will start with letters.
 If you give a variable an illegal name, you get a syntax error:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let 76trombones = "big parade";
 unknown: Identifier directly after number
 ⠕ let typeof = "Computer Science 101";
 unknown: Unexpected token
 ```
 
-``76trombones`` is illegal because it does not begin with a letter, but
-what's wrong with ``typeof``?
+`76trombones` is illegal because it does not begin with a letter, but
+what's wrong with `typeof`?
 
-It turns out that ``typeof`` is reserved as one of Javascript's **keywords**. Keywords define
+It turns out that `typeof` is reserved as one of Javascript's **keywords**. Keywords define
 the language's syntax rules and structure, and they cannot be used as variable names.
 
 [Javascript has almost forty keywords](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) (different versions of Javascript have slightly different keywords):
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 
 await       finally       protected
 break       for           return
@@ -252,33 +252,35 @@ delete      let           void
 else        new           while
 export      package       with
 extends     private       yield
-
 ```
+
 You might want to keep this list handy. If the interpreter complains about one
 of your variable names and you don't know why, see if it is on this list.
 
 Programmers generally choose names for their variables that are meaningful to
 the human readers of the program—they help the programmer document, or remember, what the variable is used for.
 
-<aside id="meaningful-names">
-   Beginners sometimes confuse "meaningful to the human readers" with "meaningful to the computer".
-   So they'll wrongly think that because they've called some variable ``average`` or ``pi``, it will
-   somehow magically calculate an average, or magically know that the variable ``pi`` should have a
+> **Note
+>
+>   Beginners sometimes confuse "meaningful to the human readers" with 
+"meaningful to the computer".
+> So they'll wrongly think that because they've called some variable `average` or `pi`, it will
+   somehow magically calculate an average, or magically know that the variable `pi` should have a
    value like 3.14159.  No! The computer doesn't understand what you intend the variable to mean.
 
-   So you'll find some instructors who deliberately don't choose meaningful
+>   So you'll find some instructors who deliberately don't choose meaningful
    names when they teach beginners --- not because we don't think it is a good habit,
    but because we're trying to reinforce the message that you --- the programmer --- must
    write the program code to calculate the average, and you must write an assignment
-   statement to give the variable ``pi`` the value you want it to have.
-</aside>
+   statement to give the variable `pi` the value you want it to have.
+
 
 Statements
 ----------
 
 A **statement** is an instruction that the Javascript interpreter can execute. We
 have mostly seen the assignment statement so far.  Some other kinds of statements that
-we'll see shortly are ``while`` statements, ``for`` statements, and ``if`` statements.
+we'll see shortly are `while` statements, `for` statements, and `if` statements.
 (There are other kinds too!)
 
 When you type a statement in the console and hit enter, Javascript executes it. Statements
@@ -291,21 +293,21 @@ An **expression** is a combination of values, variables, operators, and calls to
 type an expression at the Javascript prompt, the interpreter **evaluates** it and
 displays the result:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ 1 + 1;
 => 2
 ⠕ typeof "hello";
 => 'string'
 ```
-In this example ``typeof`` is a Javascript operator that returns the type of a variable or literal data operand.
+In this example `typeof` is a Javascript operator that returns the type of a variable or literal data operand.
 
 The *evaluation of an expression* produces a value, which is why expressions
 can appear on the right hand side of assignment statements. A value all by
 itself is a simple expression, and so is a variable.
 
-These examples show the expression and the value they return indicated by ``=>``.
+These examples show the expression and the value they return indicated by `=>`.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ 17
 => 17;
 ⠕ let y = 3.14;
@@ -327,11 +329,11 @@ clear:
 
     20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9) * (15-7)
 
-The tokens ``+``, ``-``, and ``*``, and the use of parenthesis for grouping,
-mean in Javascript what they mean in mathematics. The asterisk (``*``) is the
-token for multiplication, and ``**`` is the token for exponentiation.
+The tokens `+`, `-`, and `*`, and the use of parenthesis for grouping,
+mean in Javascript what they mean in mathematics. The asterisk (`*`) is the
+token for multiplication, and `**` is the token for exponentiation.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ 2 ** 3
 => 8
 ⠕ 3 ** 2
@@ -347,13 +349,13 @@ expect.
 Example: so let us convert 645 minutes into hours:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let minutes = 645;
 ⠕ let hours = minutes / 60;
 ⠕ hours;
 => 10.75
 ```
-Oops! In Javascript, the division operator ``/`` always yields a floating point (decimal) result.
+Oops! In Javascript, the division operator `/` always yields a floating point (decimal) result.
 What we might have wanted to know was how many *whole* hours there are, and how many minutes remain.
 Javascript provides helpful **Math** functions to allow us to do this.
 `Math.floor()` rounds a number down to the nearest whole number.
@@ -361,7 +363,7 @@ Its result is always a whole number --- and if it has to adjust the number it al
 moves it to the left on the number line. So `Math.floor(6 / 4)` yields `1`, but
 `Math.floor(-6 / 4)` might surprise you!  
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ 7 / 4;
 => 1.75
 ⠕ Math.floor(7 / 4);
@@ -378,12 +380,12 @@ Type conversion
 Here we'll look at some ways to convert data. We call these
 **type converters**.  
 
-The ``Number.parseInt(arg)`` function can take a floating point number or a string, and turn
+The `Number.parseInt(arg)` function can take a floating point number or a string, and turn
 it into an whole number. For floating point numbers, it *discards* the decimal portion
 of the number --- a process we call *truncation towards zero* on
 the number line. Let us see this in action:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ Number.parseInt(3.14);
 => 3
 ⠕ Number.parseInt(3.9999);     // This doesn't round to the closest int!
@@ -400,18 +402,18 @@ the number line. Let us see this in action:
 => 17
 ```
 
-The type converter ``Number.parseFloat(arg)`` can a syntactically legal
+The type converter `Number.parseFloat(arg)` can a syntactically legal
 string into a decimal:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ Number.parseFloat("123.45");
 => 123.45
 ```
 
-The type converter ``String(arg)`` turns its argument into a string:
+The type converter `String(arg)` turns its argument into a string:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ String(17)
 => '17'
 ⠕ String(123.45)
@@ -428,29 +430,29 @@ is a useful way to remember the order of operations:
 
 #. **P**\ arentheses have the highest precedence and can be used to force an
    expression to evaluate in the order you want. Since expressions in
-   parentheses are evaluated first, ``2 * (3-1)`` is 4, and ``(1+1)**(5-2)`` is
+   parentheses are evaluated first, `2 * (3-1)` is 4, and `(1+1)**(5-2)` is
    8. You can also use parentheses to make an expression easier to read, as in
-   ``(minute * 100) / 60``, even though it doesn't change the result.
-#. **E**\ xponentiation has the next highest precedence, so ``2**1+1`` is 3 and
-   not 4, and ``3*1**3`` is 3 and not 27.
+   `(minute * 100) / 60`, even though it doesn't change the result.
+#. **E**\ xponentiation has the next highest precedence, so `2**1+1` is 3 and
+   not 4, and `3*1**3` is 3 and not 27.
 #. **M**\ ultiplication and both **D**\ ivision operators have the same precedence, which is
    higher than **A**\ ddition and **S**\ ubtraction, which also have the same
-   precedence. So ``2*3-1`` yields 5 rather than 4, and ``5-2*2`` is 1, not 6.
+   precedence. So `2*3-1` yields 5 rather than 4, and `5-2*2` is 1, not 6.
 #. Operators with the *same* precedence are evaluated from left-to-right. In algebra
    we say they are *left-associative*.  So in
-   the expression ``6-3+2``, the subtraction happens first, yielding 3. We then add
+   the expression `6-3+2`, the subtraction happens first, yielding 3. We then add
    2 to get the result 5. If the operations had been evaluated from
-   right to left, the result would have been ``6-(3+2)``, which is 1.  (The acronym
+   right to left, the result would have been `6-(3+2)`, which is 1.  (The acronym
    PEDMAS could mislead you to thinking that division has higher precedence than multiplication,
    and addition is done ahead of subtraction - don't be misled.  
    Subtraction and addition are at the same precedence, and the left-to-right rule applies.)
 
    - An exception to the left-to-right left-associative rule
-     is the exponentiation operator ``**``, so a useful hint is to always use
+     is the exponentiation operator `**`, so a useful hint is to always use
      parentheses to force exactly the order you want when exponentiation is involved:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ 2 ** 3 ** 2     // The right-most ** operator gets done first!
 => 512
 ⠕ (2 ** 3) ** 2   // Use parentheses to force the order you want!
@@ -466,7 +468,7 @@ Operations on strings
 If a string looks like a number, Javascript while try to automatically convert it
 to an number in order to execute a mathematical operation.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let message = "4";
 ⠕ message * 2;
 => 8
@@ -478,14 +480,14 @@ If the automatic type conversion fails in a mathematical operation, Javascript
 returns the special *Not a Number* value, `NaN`.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let message = "Hello, world.";
 ⠕ message * 2;
 => NaN
 ```
 
-Interestingly, the ``+`` operator work with strings, but for strings,
-the ``+`` operator represents **concatenation**, not addition.  
+Interestingly, the `+` operator work with strings, but for strings,
+the `+` operator represents **concatenation**, not addition.  
 As we've seen, concatenation means joining the two operands by linking them end-to-end. For example:
 
 ```javascript
@@ -493,13 +495,13 @@ As we've seen, concatenation means joining the two operands by linking them end-
 ⠕ let bakedGood = " nut bread";
 ⠕ console.log(fruit + bakedGood);
 ```
-The output of this program is ``banana nut bread``. The space before the word
-``nut`` is part of the string, and is necessary to produce the space between
+The output of this program is `banana nut bread`. The space before the word
+`nut` is part of the string, and is necessary to produce the space between
 the concatenated strings.
 
 Automatic conversion can be tricky and sometimes lead to unexpected results. Consider:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let age = "24";
 ⠕ age - 10;
 => 14
@@ -522,10 +524,10 @@ Please enter your name:
 ```
 
 The user of the program can type the name and hit `enter`. When this happens
-the text that has been entered is returned from the ``prompt`` function, and in this
-case assigned to the variable ``n``.
+the text that has been entered is returned from the `prompt` function, and in this
+case assigned to the variable `n`.
 
-Even if you asked the user to enter their age, you would get back a string like ``"17"``.
+Even if you asked the user to enter their age, you would get back a string like `"17"`.
 It would be your job, as the programmer, to convert that string into a integer or float before using it,
 if that was required.
 
@@ -583,11 +585,11 @@ The modulus operator
 
 The **modulus operator** works on integers (and integer expressions) and gives
 the _remainder_ when the first number is divided by the second. In Javascript, the
-modulus operator is a percent sign (``%``). The syntax is the same as for other
+modulus operator is a percent sign (`%`). The syntax is the same as for other
 operators. It has the same precedence as the multiplication operator.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ let q = Math.floor(7 / 3);     // This is integer division
 ⠕ q;
 => 2
@@ -598,12 +600,12 @@ operators. It has the same precedence as the multiplication operator.
 So 7 divided by 3 is 2 with a remainder of 1.
 
 The modulus operator turns out to be surprisingly useful. For example, you can
-check whether one number is divisible by another---if ``x % y`` is zero, then
-``x`` is evenly divisible by ``y``.
+check whether one number is divisible by another---if `x % y` is zero, then
+`x` is evenly divisible by `y`.
 
 Also, you can extract the right-most digit or digits from a number.  For
-example, ``x % 10`` yields the right-most digit of ``x`` (in base 10).
-Similarly ``x % 100`` yields the last two digits.
+example, `x % 10` yields the right-most digit of `x` (in base 10).
+Similarly `x % 100` yields the last two digits.
 
 It is also extremely useful for doing conversions, say from seconds,
 to hours, minutes and seconds. So let's write a program to ask the user to enter
@@ -633,13 +635,13 @@ or [the node.js shell with the terminal-only `prompt()` function](https://repl.i
 
 #. Take the sentence: *All work and no play makes Jack a dull boy.*
    Store each word in a separate variable, then print out the sentence on
-   one line using ``console.log()``.
-#. Add parenthesis to the expression ``6 * 1 - 2`` to change its value
+   one line using `console.log()`.
+#. Add parenthesis to the expression `6 * 1 - 2` to change its value
    from 4 to -6.
-#. Start the Javascript interpreter and enter ``bruce + 4`` at the prompt.
+#. Start the Javascript interpreter and enter `bruce + 4` at the prompt.
    This will give you an error: `ReferenceError: bruce is not defined`
 
-   Assign a value to ``bruce`` so that ``bruce + 4`` evaluates to ``10``.
+   Assign a value to `bruce` so that `bruce + 4` evaluates to `10`.
 #. The formula for computing the final amount if one is earning
    compound interest is given on Wikipedia as <img class="d-block img-fluid" src="figs/compoundInterest.png" alt="formula for compound interest">
 
@@ -651,13 +653,13 @@ or [the node.js shell with the terminal-only `prompt()` function](https://repl.i
 #. Evaluate the following numerical expressions in your head, then use
    the Javascript interpreter to check your results:
 
-    #. ``⠕ 5 % 2``
-    #. ``⠕ 9 % 5``
-    #. ``⠕ 15 % 12``
-    #. ``⠕ 12 % 15``
-    #. ``⠕ 6 % 6``
-    #. ``⠕ 0 % 7``
-    #. ``⠕ 7 % 0``
+    #. `⠕ 5 % 2`
+    #. `⠕ 9 % 5`
+    #. `⠕ 15 % 12`
+    #. `⠕ 12 % 15`
+    #. `⠕ 6 % 6`
+    #. `⠕ 0 % 7`
+    #. `⠕ 7 % 0`
 
    What happened with the last example? Why? If you were able to correctly
    anticipate the computer's response in all but the last one, it is time to
@@ -681,17 +683,17 @@ Glossary
 assignment statement
 
 :   A statement that assigns a value to a name (variable). To the left of
-    the assignment operator, ``=``, is a name. To the right of the
+    the assignment operator, `=`, is a name. To the right of the
     assignment token is an expression which is evaluated by the Javascript
     interpreter and then assigned to the name. The difference between the
     left and right hand sides of the assignment statement is often
     confusing to new programmers. In the following assignment:\
-    ``n = n + 1``\
-    ``n`` plays a very different role on each side of the ``=``. On the right it is a *value* and makes up part of the *expression* which will be evaluated by the Javascript interpreter before assigning it to the name on the left.
+    `n = n + 1`\
+    `n` plays a very different role on each side of the `=`. On the right it is a *value* and makes up part of the *expression* which will be evaluated by the Javascript interpreter before assigning it to the name on the left.
 
 assignment token
 
-:   ``=`` is Javascript's assignment token.  Do not confuse it with *equals*, which is an operator for comparing values.
+:   `=` is Javascript's assignment token.  Do not confuse it with *equals*, which is an operator for comparing values.
 
 composition
 
@@ -703,7 +705,7 @@ concatenate
 
 data type
 
-:   A set of values. The type of a value determines how it can be used in expressions. So far, the types you have seen are ``number`` and ``string``.
+:   A set of values. The type of a value determines how it can be used in expressions. So far, the types you have seen are `number` and `string`.
 
 evaluate
 
@@ -715,19 +717,19 @@ expression
 
 float
 
-:   Javascript data type which stores *floating-point* numbers. Although integers and floats are are all of type `number`, floating-point numbers are stored internally in two parts: a *base* and an *exponent*. When printed in the standard format, they look like decimal numbers. Beware of rounding errors when you use ``float``\ s, and remember that they are only approximate values.
+:   Javascript data type which stores *floating-point* numbers. Although integers and floats are are all of type `number`, floating-point numbers are stored internally in two parts: a *base* and an *exponent*. When printed in the standard format, they look like decimal numbers. Beware of rounding errors when you use `float`\ s, and remember that they are only approximate values.
 
 int
 
-:   An integer or whole number. In Javascript, its type is ``number``.
+:   An integer or whole number. In Javascript, its type is `number`.
 
 keyword
 
-:   A reserved word that is used by the compiler to parse program; you cannot use keywords like ``if``, ``function``, and ``while`` as variable names.
+:   A reserved word that is used by the compiler to parse program; you cannot use keywords like `if`, `function`, and `while` as variable names.
 
 modulus operator
 
-:   An operator, denoted with a percent sign ( ``%``), that works on integers and yields the remainder when one number is divided by another.
+:   An operator, denoted with a percent sign ( `%`), that works on integers and yields the remainder when one number is divided by another.
 
 operand
 

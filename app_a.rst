@@ -16,9 +16,9 @@ distinguish among them in order to track them down more quickly:
 
 #. Syntax errors are produced by Python when it is translating the source code
    into byte code. They usually indicate that there is something wrong with the
-   syntax of the program. Example: Omitting the colon at the end of a ``def``
-   statement yields the somewhat redundant message ``SyntaxError: invalid
-   syntax``.
+   syntax of the program. Example: Omitting the colon at the end of a `def`
+   statement yields the somewhat redundant message `SyntaxError: invalid
+   syntax`.
 #. Runtime errors are produced by the runtime system if something goes wrong
    while the program is running. Most runtime error messages include
    information about where the error occurred and what functions were
@@ -38,8 +38,8 @@ Syntax errors
 
 Syntax errors are usually easy to fix once you figure out what they are.
 Unfortunately, the error messages are often not helpful. The most common
-messages are ``SyntaxError: invalid syntax`` and ``SyntaxError: invalid
-token``, neither of which is very informative.
+messages are `SyntaxError: invalid syntax` and `SyntaxError: invalid
+token`, neither of which is very informative.
 
 On the other hand, the message does tell you where in the program the problem
 occurred. Actually, it tells you where Python noticed a problem, which is not
@@ -58,20 +58,20 @@ Here are some ways to avoid the most common syntax errors:
 
 #. Make sure you are not using a Python keyword for a variable name.
 #. Check that you have a colon at the end of the header of every compound
-   statement, including ``for``, ``while``, ``if``, and ``def`` statements.
+   statement, including `for`, `while`, `if`, and `def` statements.
 #. Check that indentation is consistent. You may indent with either spaces or
    tabs but it's best not to mix them. Each level should be nested the same
    amount.
 #. Make sure that any strings in the code have matching quotation marks.
 #. If you have multiline strings with triple quotes (single or double), make
    sure you have terminated the string properly. An unterminated string may
-   cause an ``invalid token`` error at the end of your program, or it may treat
+   cause an `invalid token` error at the end of your program, or it may treat
    the following part of the program as a string until it comes to the next
    string. In the second case, it might not produce an error message at all!
 #. An unclosed bracket --- (, {, or [ --- makes Python continue with the next
    line as part of the current statement. Generally, an error occurs almost
    immediately in the next line.
-#. Check for the classic ``=`` instead of ``==`` inside a conditional.
+#. Check for the classic `=` instead of `==` inside a conditional.
 
 If nothing works, move on to the next section...
 
@@ -119,7 +119,7 @@ If a program stops and seems to be doing nothing, we say it is hanging. Often
 that means that it is caught in an infinite loop or an infinite recursion.
 
 #. If there is a particular loop that you suspect is the problem, add a
-   ``print`` statement immediately before the loop that says entering the loop
+   `print` statement immediately before the loop that says entering the loop
    and another immediately after that says exiting the loop.
 #. Run the program. If you get the first message and not the second, you've got
    an infinite loop. Go to the `Infinite Loop`_ section below.
@@ -139,7 +139,7 @@ Infinite Loop
 -------------
 
 If you think you have an infinite loop and you think you know what loop is
-causing the problem, add a ``print`` statement at the end of the loop that
+causing the problem, add a `print` statement at the end of the loop that
 prints the values of the variables in the condition and the value of the
 condition.
 
@@ -158,17 +158,17 @@ For example:
 
 Now when you run the program, you will see three lines of output for each time
 through the loop. The last time through the loop, the condition should be
-``False``. If the loop keeps going, you will be able to see the values of ``x``
-and ``y``, and you might figure out why they are not being updated correctly.
+`False`. If the loop keeps going, you will be able to see the values of `x`
+and `y`, and you might figure out why they are not being updated correctly.
 
 In a development environment like PyScripter, one can also set a breakpoint
 at the start of the loop, and single-step through the loop.  While you do
-this, inspect the values of ``x`` and ``y`` by hovering your cursor over 
+this, inspect the values of `x` and `y` by hovering your cursor over 
 them. 
 
 Of course, all programming and debugging require that you have a good mental 
 model of what the algorithm ought to be doing: if you don't understand what 
-ought to happen to ``x`` and ``y``, printing or inspecting its value is
+ought to happen to `x` and `y`, printing or inspecting its value is
 of little use. Probably the best place to debug the code is away from 
 your computer, working on your understanding of what should be happening. 
 
@@ -177,7 +177,7 @@ Infinite Recursion
 ------------------
 
 Most of the time, an infinite recursion will cause the program to run for a
-while and then produce a ``Maximum recursion depth exceeded`` error.
+while and then produce a `Maximum recursion depth exceeded` error.
 
 If you suspect that a function or method is causing an infinite recursion,
 start by checking to make sure that there is a base case.  In other words,
@@ -186,7 +186,7 @@ without making a recursive invocation. If not, then you need to rethink the
 algorithm and identify a base case.
 
 If there is a base case but the program doesn't seem to be reaching it, add a
-``print`` statement at the beginning of the function or method that prints the
+`print` statement at the beginning of the function or method that prints the
 parameters. Now when you run the program, you will see a few lines of output
 every time the function or method is invoked, and you will see the parameters.
 If the parameters are not moving toward the base case, you will get some ideas
@@ -202,8 +202,8 @@ Flow of Execution
 -----------------
 
 If you are not sure how the flow of execution is moving through your program,
-add ``print`` statements to the beginning of each function with a message like
-entering function ``foo``, where ``foo`` is the name of the function.
+add `print` statements to the beginning of each function with a message like
+entering function `foo`, where `foo` is the name of the function.
 
 Now when you run the program, it will print a trace of each function as it is
 invoked.
@@ -244,7 +244,7 @@ TypeError
        items does not match or an invalid conversion is called for.
     #. You are passing the wrong number of arguments to a function or
        method. For methods, look at the method definition and check that the
-       first parameter is ``self``. Then look at the method invocation; make
+       first parameter is `self`. Then look at the method invocation; make
        sure you are invoking the method on an object with the right type and
        providing the other arguments correctly.
 
@@ -258,18 +258,18 @@ AttributeError
 IndexError
     The index you are using to access a list, string, or tuple is greater than
     its length minus one. Immediately before the site of the error, add a
-    ``print`` statement to display the value of the index and the length of the
+    `print` statement to display the value of the index and the length of the
     sequence. Is the sequence the right size? Is the index the right value?
 
 
-I added so many ``print`` statements I get inundated with output.
+I added so many `print` statements I get inundated with output.
 -----------------------------------------------------------------
 
-One of the problems with using ``print`` statements for debugging is
+One of the problems with using `print` statements for debugging is
 that you can end up buried in output. There are two ways to proceed:
 simplify the output or simplify the program.
 
-To simplify the output, you can remove or comment out ``print``
+To simplify the output, you can remove or comment out `print`
 statements that aren't helping, or combine them, or format the output
 so it is easier to understand.
 
@@ -319,7 +319,7 @@ that computers run so fast.
 
 You will often wish that you could slow the program down to human
 speed, and with some debuggers you can. But the time it takes to
-insert a few well-placed ``print`` statements is often short compared to
+insert a few well-placed `print` statements is often short compared to
 setting up the debugger, inserting and removing breakpoints, and
 walking the program to where the error is occurring.
 
@@ -386,7 +386,7 @@ types of the intermediate variables and display or inspect their values.
 
 Another problem that can occur with big expressions is that the order of
 evaluation may not be what you expect. For example, if you are translating the
-expression ``x/2pi`` into Python, you might write:
+expression `x/2pi` into Python, you might write:
 
     .. sourcecode:: python3
         
@@ -394,7 +394,7 @@ expression ``x/2pi`` into Python, you might write:
 
 That is not correct because multiplication and division have the same
 precedence and are evaluated from left to right. So this expression computes
-``(x/2)pi``.
+`(x/2)pi`.
 
 A good way to debug expressions is to add parentheses to make the order of
 evaluation explicit:
@@ -412,8 +412,8 @@ precedence.
 I've got a function or method that doesn't return what I expect.
 ----------------------------------------------------------------
 
-If you have a ``return`` statement with a complex expression, you don't have a
-chance to print the ``return`` value before returning. Again, you can use a
+If you have a `return` statement with a complex expression, you don't have a
+chance to print the `return` value before returning. Again, you can use a
 temporary variable. For example, instead of:
 
     .. sourcecode:: python3
@@ -427,7 +427,7 @@ you could write:
         count = self.hands[i].remove_matches()
         return count
 
-Now you have the opportunity to display or inspect the value of ``count`` before
+Now you have the opportunity to display or inspect the value of `count` before
 returning.
 
 
@@ -462,7 +462,7 @@ is just the thing.
 
 Before you bring someone else in, make sure you have exhausted the techniques
 described here. Your program should be as simple as possible, and you should be
-working on the smallest input that causes the error. You should have ``print``
+working on the smallest input that causes the error. You should have `print`
 statements in the appropriate places (and the output they produce should be
 comprehensible). You should understand the problem well enough to describe it
 concisely.

@@ -101,7 +101,7 @@ Javascript. `jsgui` converts a markdown formatted string to html with
 
 <aside data-line-number="88">
 
-``main`` pulls all of our sections together in the order they will be displayed
+`main` pulls all of our sections together in the order they will be displayed
 on the page. `add()` takes multiple arguments of elements to display, separated
 by commas (kind of like the built in `console.log()`)
 

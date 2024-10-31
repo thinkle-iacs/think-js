@@ -16,8 +16,8 @@ Strings
 A compound data type
 --------------------
 
-So far we have seen built-in types like ``int``, ``float``, 
-``bool``, ``str`` and we've seen lists and pairs. 
+So far we have seen built-in types like `int`, `float`, 
+`bool`, `str` and we've seen lists and pairs. 
 Strings, lists, and pairs are qualitatively different from the others because they
 are made up of smaller pieces.  In the case of strings, they're made up of smaller
 strings each containing one **character**.  
@@ -31,7 +31,7 @@ Working with strings as single things
 
 We previously saw that each turtle instance has its own attributes and 
 a number of methods that can be applied to the instance.  For example,
-we could set the turtle's color, and we wrote ``tess.turn(90)``.  
+we could set the turtle's color, and we wrote `tess.turn(90)`.  
 
 Just like a turtle, a string is also an object.  So each string instance 
 has its own attributes and methods.  
@@ -45,12 +45,12 @@ For example:
         >>> tt
         'HELLO, WORLD!'
     
-``upper`` is a method that can be invoked on any string object 
+`upper` is a method that can be invoked on any string object 
 to create a new string, in which all the 
-characters are in uppercase.  (The original string ``ss`` remains unchanged.)
+characters are in uppercase.  (The original string `ss` remains unchanged.)
 
-There are also methods such as ``lower``, ``capitalize``, and
-``swapcase`` that do other interesting stuff.
+There are also methods such as `lower`, `capitalize`, and
+`swapcase` that do other interesting stuff.
 
 To learn what methods are available, you can consult the Help documentation, look for 
 string methods, and read the documentation.  Or, if you're a bit lazier, 
@@ -62,7 +62,7 @@ simply type the following into a PyScripter script:
         ss = "Hello, World!"
         tt = ss.
     
-When you type the period to select one of the methods of ``ss``, PyScripter will pop up a 
+When you type the period to select one of the methods of `ss`, PyScripter will pop up a 
 selection window showing all the methods (there are around 70 of them --- thank goodness we'll only
 use a few of those!) that could be used on your string. 
 
@@ -87,17 +87,17 @@ selects a single character substring from a string:
         >>> print(m)
 
         
-The expression ``fruit[1]`` selects character number 1 from ``fruit``, and creates a new
-string containing just this one character. The variable ``m`` refers to the result. 
-When we display ``m``, we could get a surprise: 
+The expression `fruit[1]` selects character number 1 from `fruit`, and creates a new
+string containing just this one character. The variable `m` refers to the result. 
+When we display `m`, we could get a surprise: 
 
     .. sourcecode:: pycon
 
         a
 
 Computer scientists always start counting
-from zero! The letter at subscript position zero of ``"banana"`` is ``b``.  So at
-position ``[1]`` we have the letter ``a``.
+from zero! The letter at subscript position zero of `"banana"` is `b`.  So at
+position `[1]` we have the letter `a`.
 
 If we want to access the zero-eth letter of a string, we just place 0,
 or any expression that evaluates to 0, inbetween the brackets:
@@ -113,7 +113,7 @@ of an ordered collection, in this case the collection of characters in the strin
 *indicates* which one you want, hence the name. It can be any integer
 expression.
 
-We can use ``enumerate`` to visualize the indices:
+We can use `enumerate` to visualize the indices:
 
     .. sourcecode:: python3
 
@@ -121,7 +121,7 @@ We can use ``enumerate`` to visualize the indices:
         >>> list(enumerate(fruit))
         [(0, 'b'), (1, 'a'), (2, 'n'), (3, 'a'), (4, 'n'), (5, 'a')]
 
-Do not worry about ``enumerate`` at this point, we will see more of it
+Do not worry about `enumerate` at this point, we will see more of it
 in the chapter on lists.
 
 Note that indexing returns a *string* --- Python has no special type for a single character.
@@ -150,7 +150,7 @@ a list:
 Length
 ------
 
-The ``len`` function, when applied to a string, returns the number of characters in a string:
+The `len` function, when applied to a string, returns the number of characters in a string:
 
     .. sourcecode:: python3
         
@@ -168,11 +168,11 @@ this:
         last = fruit[sz]       # ERROR!
 
 That won't work. It causes the runtime error
-``IndexError: string index out of range``. The reason is that there is no
-character at index position 6 in ``"banana"``. 
+`IndexError: string index out of range`. The reason is that there is no
+character at index position 6 in `"banana"`. 
 Because we start counting at zero, the six indexes are
 numbered 0 to 5. To get the last character, we have to subtract 1 from
-the length of ``fruit``:
+the length of `fruit`:
 
     .. sourcecode:: python3
         :linenos:
@@ -181,8 +181,8 @@ the length of ``fruit``:
         last = fruit[sz-1]
 
 Alternatively, we can use **negative indices**, which count backward from the
-end of the string. The expression ``fruit[-1]`` yields the last letter,
-``fruit[-2]`` yields the second to last, and so on.
+end of the string. The expression `fruit[-1]` yields the last letter,
+`fruit[-2]` yields the second to last, and so on.
 
 As you might have guessed, indexing with a negative index also works like this for lists. 
 
@@ -196,13 +196,13 @@ Python code out on the Internet that will use this trick, so it is best to know 
     single: McCloskey, Robert
     single: Make Way for Ducklings    
 
-Traversal and the ``for`` loop
+Traversal and the `for` loop
 ------------------------------
 
 A lot of computations involve processing a string one character at a time.
 Often they start at the beginning, select each character in turn, do something
 to it, and continue until the end. This pattern of processing is called a
-**traversal**. One way to encode a traversal is with a ``while`` statement:
+**traversal**. One way to encode a traversal is with a `while` statement:
 
     .. sourcecode:: python3
         :linenos:
@@ -214,12 +214,12 @@ to it, and continue until the end. This pattern of processing is called a
             ix += 1
 
 This loop traverses the string and displays each letter on a line by itself.
-The loop condition is ``ix < len(fruit)``, so when ``ix`` is equal to the
+The loop condition is `ix < len(fruit)`, so when `ix` is equal to the
 length of the string, the condition is false, and the body of the loop is not
 executed. The last character accessed is the one with the index
-``len(fruit)-1``, which is the last character in the string.
+`len(fruit)-1`, which is the last character in the string.
 
-But we've previously seen how the ``for`` loop can easily iterate over
+But we've previously seen how the `for` loop can easily iterate over
 the elements in a list and it can do so for strings as well:
 
     .. sourcecode:: python3
@@ -229,11 +229,11 @@ the elements in a list and it can do so for strings as well:
             print(c)
 
 Each time through the loop, the next character in the string is assigned to the
-variable ``c``. The loop continues until no characters are left. Here we
-can see the expressive power the ``for`` loop gives us compared to the
+variable `c`. The loop continues until no characters are left. Here we
+can see the expressive power the `for` loop gives us compared to the
 while loop when traversing a string.
 
-The following example shows how to use concatenation and a ``for`` loop to
+The following example shows how to use concatenation and a `for` loop to
 generate an abecedarian series. Abecedarian refers to a series or list in which
 the elements appear in alphabetical order. For example, in Robert McCloskey's
 book *Make Way for Ducklings*, the names of the ducklings are Jack, Kack, Lack,
@@ -287,7 +287,7 @@ slice a list to refer to some sublist of the items in the list:
         >>> print(friends[2:4])
         ['Brad', 'Angelina']
 
-The operator ``[n:m]`` returns the part of the string from the n'th character
+The operator `[n:m]` returns the part of the string from the n'th character
 to the m'th character, including the first but excluding the last. This
 behavior makes sense if you imagine the indices
 pointing *between* the characters, as in the following diagram:
@@ -295,14 +295,14 @@ pointing *between* the characters, as in the following diagram:
     .. image:: illustrations/banana.png
        :alt: 'banana' string
 
-If you imagine this as a piece of paper, the slice operator ``[n:m]`` copies out
-the part of the paper between the ``n`` and ``m`` positions.  Provided ``m`` and ``n`` are
+If you imagine this as a piece of paper, the slice operator `[n:m]` copies out
+the part of the paper between the `n` and `m`` positions.  Provided `m`` and `n` are
 both within the bounds of the string, your result will be of length (m-n).
    
 Three tricks are added to this: if you omit the first index (before the colon), 
 the slice starts at the beginning of the string (or list). If you omit the second index, 
 the slice extends to the end of the string (or list). Similarly, if you provide value for
-``n`` that is bigger than the length of the string (or list), the slice will take all the 
+`n` that is bigger than the length of the string (or list), the slice will take all the 
 values up to the end. (It won't give an "out of range" error like the normal indexing operation
 does.)   Thus:
 
@@ -316,7 +316,7 @@ does.)   Thus:
         >>> fruit[3:999]
         'ana'
 
-What do you think ``s[:]`` means?   What about ``friends[4:]``? 
+What do you think `s[:]` means?   What about `friends[4:]`? 
 
 
 .. index:: string comparison, comparison of strings
@@ -363,7 +363,7 @@ difficult problem is making the program realize that zebras are not fruit.
 Strings are immutable
 ---------------------
 
-It is tempting to use the ``[]`` operator on the left side of an assignment,
+It is tempting to use the `[]` operator on the left side of an assignment,
 with the intention of changing a character in a string.  For example:
 
     .. sourcecode:: python3
@@ -373,8 +373,8 @@ with the intention of changing a character in a string.  For example:
         greeting[0] = 'J'            # ERROR!
         print(greeting)
 
-Instead of producing the output ``Jello, world!``, this code produces the
-runtime error ``TypeError: 'str' object does not support item assignment``.
+Instead of producing the output `Jello, world!`, this code produces the
+runtime error `TypeError: 'str' object does not support item assignment`.
 
 Strings are **immutable**, which means you can't change an existing string. The
 best you can do is create a new string that is a variation on the original:
@@ -387,18 +387,18 @@ best you can do is create a new string that is a variation on the original:
         print(new_greeting)
 
 The solution here is to concatenate a new first letter onto a slice of
-``greeting``. This operation has no effect on the original string.
+`greeting`. This operation has no effect on the original string.
 
 
 .. index::
     single: in operator
     single: operator; in
 
-The ``in`` and ``not in`` operators
+The `in` and `not in` operators
 -----------------------------------
 
-The ``in`` operator tests for membership. When both of the arguments to ``in``
-are strings, ``in`` checks whether the left argument is a substring of the right
+The `in` operator tests for membership. When both of the arguments to `in`
+are strings, `in` checks whether the left argument is a substring of the right
 argument.
 
     .. sourcecode:: python3
@@ -427,14 +427,14 @@ like to think about these edge cases quite carefully!)
         >>> "" in "apple"
         True
     
-The ``not in`` operator returns the logical opposite results of ``in``: 
+The `not in` operator returns the logical opposite results of `in`: 
 
     .. sourcecode:: python3
         
         >>> "x" not in "apple"
         True
 
-Combining the ``in`` operator with string concatenation using ``+``, we can
+Combining the `in` operator with string concatenation using `+`, we can
 write a function that removes all the vowels from a string:
 
     .. sourcecode:: python3
@@ -456,7 +456,7 @@ write a function that removes all the vowels from a string:
 .. index:: traversal, eureka traversal, short-circuit evaluation, pattern of computation,
            computation pattern
 
-A ``find`` function
+A `find` function
 -------------------
 
 What does the following function do?
@@ -482,17 +482,17 @@ What does the following function do?
         test(find("Compsci", "x") == -1)
     
 
-In a sense, ``find`` is the opposite of the indexing operator. Instead of taking
+In a sense, `find` is the opposite of the indexing operator. Instead of taking
 an index and extracting the corresponding character, it takes a character and
 finds the index where that character appears. If the character is not found,
-the function returns ``-1``.
+the function returns `-1`.
 
-This is another example where we see a ``return`` statement inside a loop.
-If ``strng[ix] == ch``, the function returns immediately, breaking out of
+This is another example where we see a `return` statement inside a loop.
+If `strng[ix] == ch`, the function returns immediately, breaking out of
 the loop prematurely.
 
 If the character doesn't appear in the string, then the program exits the loop
-normally and returns ``-1``.
+normally and returns `-1`.
 
 This pattern of computation is sometimes called a **eureka traversal** or
 **short-circuit evaluation**,  because as soon as we find what we are looking for, 
@@ -504,7 +504,7 @@ we can cry "Eureka!", take the short-circuit, and stop looking.
 Looping and counting
 --------------------
 
-The following program counts the number of times the letter ``a`` appears in a
+The following program counts the number of times the letter `a` appears in a
 string, and is another example of the counter pattern introduced in
 :ref:`counting`:
 
@@ -528,7 +528,7 @@ Optional parameters
 -------------------
 
 To find the locations of the second or third occurrence of a character in a
-string, we can modify the ``find`` function, adding a third parameter for the
+string, we can modify the `find` function, adding a third parameter for the
 starting position in the search string:
 
     .. sourcecode:: python3
@@ -544,12 +544,12 @@ starting position in the search string:
             
         test(find2("banana", "a", 2) == 3)
 
-The call ``find2("banana", "a", 2)`` now returns ``3``, the index of the first
+The call `find2("banana", "a", 2)` now returns `3`, the index of the first
 occurrence of "a" in "banana" starting the search at index 2. What does
-``find2("banana", "n", 3)`` return? If you said, 4, there is a good chance you
-understand how ``find2`` works.
+`find2("banana", "n", 3)` return? If you said, 4, there is a good chance you
+understand how `find2` works.
 
-Better still, we can combine ``find`` and ``find2`` using an
+Better still, we can combine `find` and `find2` using an
 **optional parameter**:
 
     .. sourcecode:: python3
@@ -564,15 +564,15 @@ Better still, we can combine ``find`` and ``find2`` using an
             return -1
 
 When a function has an optional parameter, the caller `may` provide a 
-matching argument. If the third argument is provided to ``find``, it gets assigned 
-to ``start``.  But if the caller leaves the argument out, then start is given
-a default value indicated by the assignment ``start=0`` in the function definition.
+matching argument. If the third argument is provided to `find`, it gets assigned 
+to `start`.  But if the caller leaves the argument out, then start is given
+a default value indicated by the assignment `start=0` in the function definition.
  
-So the call ``find("banana", "a", 2)`` to this version of ``find`` behaves just
-like ``find2``, while in the call ``find("banana", "a")``, ``start`` will be
-set to the **default value** of ``0``.
+So the call `find("banana", "a", 2)` to this version of `find` behaves just
+like `find2`, while in the call `find("banana", "a")`, `start` will be
+set to the **default value** of `0`.
 
-Adding another optional parameter to ``find`` makes it search from a starting
+Adding another optional parameter to `find` makes it search from a starting
 position, up to but not including the end position:
 
     .. sourcecode:: python3
@@ -588,13 +588,13 @@ position, up to but not including the end position:
                 ix += 1 
             return -1
 
-The optional value for ``end`` is interesting: we give it a default value ``None`` if the
-caller does not supply any argument.  In the body of the function we test what ``end`` is,
-and if the caller did not supply any argument, we reassign ``end`` to be the length of the string.
-If the caller has supplied an argument for ``end``, however, the caller's value will be used in the loop.
+The optional value for `end` is interesting: we give it a default value `None` if the
+caller does not supply any argument.  In the body of the function we test what `end` is,
+and if the caller did not supply any argument, we reassign `end` to be the length of the string.
+If the caller has supplied an argument for `end`, however, the caller's value will be used in the loop.
 
-The semantics of ``start`` and ``end`` in this function are precisely the same as they are in
-the ``range`` function.
+The semantics of `start` and `end` in this function are precisely the same as they are in
+the `range` function.
 
 Here are some test cases that should pass:  
 
@@ -611,11 +611,11 @@ Here are some test cases that should pass:
 .. index:: module, string module, dir function, dot notation, function type,
            docstring
 
-The built-in ``find`` method
+The built-in `find` method
 ----------------------------
  
-Now that we've done all this work to write a powerful ``find`` function, we can reveal that
-strings already have their own built-in ``find`` method.  It can do everything 
+Now that we've done all this work to write a powerful `find` function, we can reveal that
+strings already have their own built-in `find` method.  It can do everything 
 that our code can do, and more!  
 
     .. sourcecode:: python3
@@ -627,7 +627,7 @@ that our code can do, and more!
         test(ss.find("s", 8, 13) == -1)
         test(ss.find(".") == len(ss)-1)
      
-The built-in ``find`` method is more general than our version. It can find
+The built-in `find` method is more general than our version. It can find
 substrings, not just single characters:
 
     .. sourcecode:: python3
@@ -642,10 +642,10 @@ our own equivalents. But many of the built-in functions and methods make good
 teaching exercises, and the underlying techniques you learn are your building blocks
 to becoming a proficient programmer.
 
-The ``split`` method
+The `split` method
 --------------------
 
-One of the most useful methods on strings is the ``split`` method:
+One of the most useful methods on strings is the `split` method:
 it splits a single multi-word string into a list of individual words, removing
 all the whitespace between them.  (Whitespace means any tabs, newlines, or spaces.)
 This allows us to read input as a single string,
@@ -684,9 +684,9 @@ omitting any punctuation:
             return s_sans_punct
 
 Setting up that first assignment is messy and error-prone.  
-Fortunately, the Python ``string`` module already does it
+Fortunately, the Python `string` module already does it
 for us.  So we will make a slight improvement to this 
-program --- we'll import the ``string`` module and use its definition: 
+program --- we'll import the `string` module and use its definition: 
 
     .. sourcecode:: python3 
         :linenos:
@@ -706,9 +706,9 @@ program --- we'll import the ``string`` module and use its definition:
                                      "Are you very very sure")
 
 
-Composing together this function and the ``split`` method from the previous section
+Composing together this function and the `split` method from the previous section
 makes a useful combination --- we'll clean out the punctuation, and
-``split`` will clean out the newlines and tabs while turning the string into
+`split` will clean out the newlines and tabs while turning the string into
 a list of words:
 
     .. sourcecode:: python3 
@@ -745,7 +745,7 @@ The string format method
 ------------------------
  
 The easiest and most powerful way to format a string in Python 3 is to use the
-``format`` method.  To see how this works, let's start with a few examples:
+`format` method.  To see how this works, let's start with a few examples:
 
     .. sourcecode:: python3
         :linenos:
@@ -771,21 +771,21 @@ Running the script produces:
         I am Alice and I am 10 years old.
         2**10 = 1024 and 4 * 5 = 20.000000
 
-The template string contains *place holders*,  ``... {0} ... {1} ... {2} ...`` etc.   
-The ``format`` method substitutes its arguments into the place holders.
+The template string contains *place holders*,  `... {0} ... {1} ... {2} ...` etc.   
+The `format` method substitutes its arguments into the place holders.
 The numbers in the place holders are indexes that determine which argument
 gets substituted --- make sure you understand line 6 above! 
 
 But there's more!  Each of the replacement fields can also contain a **format specification** ---
-it is always introduced by the ``:`` symbol  (Line 11 above uses one.)  
+it is always introduced by the `:` symbol  (Line 11 above uses one.)  
 This modifies how the substitutions are made into the template, and can control things like:
 
-* whether the field is aligned to the left ``<``, center ``^``, or right ``>``
-* the width allocated to the field within the result string (a number like ``10``)
-* the type of conversion (we'll initially only force conversion to float, ``f``, as we did in
-  line 11 of the code above, or perhaps we'll ask integer numbers to be converted to hexadecimal using ``x``)
+* whether the field is aligned to the left `<`, center `^``, or right `>`
+* the width allocated to the field within the result string (a number like `10`)
+* the type of conversion (we'll initially only force conversion to float, `f`, as we did in
+  line 11 of the code above, or perhaps we'll ask integer numbers to be converted to hexadecimal using `x`)
 * if the type conversion is a float, you can also specify how many decimal places are wanted 
-  (typically, ``.2f`` is useful for working with currencies to two decimal places.)
+  (typically, `.2f` is useful for working with currencies to two decimal places.)
 
 Let's do a few simple and common examples that should be enough for most needs.  If you need to
 do anything more esoteric, use *help* and read all the powerful, gory details.
@@ -870,7 +870,7 @@ First, we'll try to print a table without using string formatting:
 This program prints out a table of various powers of the numbers from 1 to 10.
 (This assumes that the tab width is 8.  You might see
 something even worse than this if you tab width is set to 4.)
-In its current form it relies on the tab character ( ``\t``) to align the
+In its current form it relies on the tab character ( `\t`) to align the
 columns of values, but this breaks down when the values in the table get larger
 than the tab width:
 
@@ -928,15 +928,15 @@ may prove helpful in remembering what you learned.
 
 .. glossary::
 
-    indexing (``[]``)
+    indexing (`[]`)
         Access a single character in a string using its position (starting from
-        0).  Example: ``"This"[2]`` evaluates to ``"i"``.
+        0).  Example: `"This"[2]` evaluates to `"i"`.
 
-    length function (``len``)
+    length function (`len`)
         Returns the number of characters in a string.  Example:
-        ``len("happy")`` evaluates to ``5``.
+        `len("happy")` evaluates to `5`.
 
-    for loop traversal (``for``)
+    for loop traversal (`for`)
         *Traversing* a string means accessing each character in the string, one
         at a time.  For example, the following for loop:
 
@@ -945,26 +945,26 @@ may prove helpful in remembering what you learned.
                 for ch in "Example":
                     ...
 
-        executes the body of the loop 7 times with different values of ``ch`` each time.
+        executes the body of the loop 7 times with different values of `ch` each time.
 
-    slicing (``[:]``)
-        A *slice* is a substring of a string. Example: ``'bananas and
-        cream'[3:6]`` evaluates to ``ana`` (so does ``'bananas and
-        cream'[1:4]``).
+    slicing (`[:]`)
+        A *slice* is a substring of a string. Example: `'bananas and
+        cream'[3:6]` evaluates to `ana` (so does `'bananas and
+        cream'[1:4]`).
 
-    string comparison (``>, <, >=, <=, ==, !=``)
+    string comparison (`>, <, >=, <=, ==, !=`)
         The six common comparison operators work with strings, evaluating according to
         `lexicographical` order.  Examples:
-        ``"apple" < "banana"`` evaluates to ``True``.  ``"Zeta" < "Appricot"``
-        evaluates to ``False``.  ``"Zebra" <= "aardvark"`` evaluates to
-        ``True`` because all upper case letters precede lower case letters.
+        `"apple" < "banana"` evaluates to `True`.  `"Zeta" < "Appricot"`
+        evaluates to `False`.  `"Zebra" <= "aardvark"` evaluates to
+        `True` because all upper case letters precede lower case letters.
 
-    in and not in operator (``in``, ``not in``)
-        The ``in`` operator tests for membership. In the case of
+    in and not in operator (`in`, `not in`)
+        The `in` operator tests for membership. In the case of
         strings, it tests whether one string is contained inside another
-        string.  Examples: ``"heck" in "I'll be checking for you."``
-        evaluates to ``True``.  ``"cheese" in "I'll be checking for
-        you."`` evaluates to ``False``.
+        string.  Examples: `"heck" in "I'll be checking for you."`
+        evaluates to `True`.  `"cheese" in "I'll be checking for
+        you."` evaluates to `False`.
 
 
 Glossary
@@ -987,7 +987,7 @@ Glossary
         code. Docstrings are also used by programming tools to provide interactive help.
 
     dot notation
-        Use of the **dot operator**, ``.``, to access methods and attributes of an object.
+        Use of the **dot operator**, `.`, to access methods and attributes of an object.
 
     immutable data value
         A data value which cannot be modified.  Assignments to elements or
@@ -1009,14 +1009,14 @@ Glossary
         
     short-circuit evaluation
         A style of programming that shortcuts extra work as soon as the 
-        outcome is know with certainty. In this chapter our ``find`` 
+        outcome is know with certainty. In this chapter our `find` 
         function returned as soon as it found what it was looking for; it
         didn't traverse all the rest of the items in the string.
 
     slice
         A part of a string (substring) specified by a range of indices. More
         generally, a subsequence of any sequence type in Python can be created
-        using the slice operator (``sequence[start:stop]``).
+        using the slice operator (`sequence[start:stop]`).
 
     traverse
         To iterate through the elements of a collection, performing a similar
@@ -1024,7 +1024,7 @@ Glossary
 
     whitespace
         Any of the characters that move the cursor without printing visible
-        characters. The constant ``string.whitespace`` contains all the
+        characters. The constant `string.whitespace` contains all the
         white-space characters.
 
 
@@ -1059,7 +1059,7 @@ and put all functions that require tests into that file.
            for letter in prefixes:
                print(letter + suffix)
 
-   so that ``Ouack`` and ``Quack`` are spelled correctly.
+   so that `Ouack` and `Quack` are spelled correctly.
    
 #. Encapsulate
 
@@ -1073,12 +1073,12 @@ and put all functions that require tests into that file.
                    count += 1
            print(count)
 
-   in a function named ``count_letters``, and generalize it so that it accepts
+   in a function named `count_letters`, and generalize it so that it accepts
    the string and the letter as arguments.  Make the function return the number
    of characters, rather than print the answer.  The caller should do the printing.
      
-#. Now rewrite the ``count_letters`` function so that instead of traversing the 
-   string, it repeatedly calls the ``find`` method, with the optional third parameter 
+#. Now rewrite the `count_letters` function so that instead of traversing the 
+   string, it repeatedly calls the `find` method, with the optional third parameter 
    to locate new occurrences of the letter being counted.
    
 #. Assign to a variable in your program a triple-quoted string that contains 
@@ -1144,7 +1144,7 @@ and put all functions that require tests into that file.
             test(remove_letter("b", "") = "")
             test(remove_letter("b", "c") = "c")
 
-#. Write a function that recognizes palindromes. (Hint: use your ``reverse`` function to make this easy!):
+#. Write a function that recognizes palindromes. (Hint: use your `reverse` function to make this easy!):
 
         .. sourcecode:: python3
             :linenos:   

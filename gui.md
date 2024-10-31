@@ -108,7 +108,7 @@ jsgui.add(jsgui.h4("Dog people"));
 jsgui.add(dogPic);
 jsgui.add(jsgui.br());
 jsgui.add(`Some people like dogs. Dogs are loyal friends and
-companions, sad to see you leave and ecstatic when you get home.``);
+companions, sad to see you leave and ecstatic when you get home.`);
 
 ```
 

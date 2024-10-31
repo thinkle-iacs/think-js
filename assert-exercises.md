@@ -57,7 +57,7 @@ to the number of decimal places specified by `p`.
 
 Examples:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ round(2.457, 2);
 => 2.46
 ⠕ round(3.98746144, 4)

@@ -1074,7 +1074,7 @@ call**:
 <class 'int'>
 ```
 
-We have also been using the built-in function ``print()`` which allows
+We have also been using the built-in function `print()` which allows
 us to print a message to the console:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}

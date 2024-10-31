@@ -179,8 +179,8 @@ difficulty understanding functions. The main problem centers around the
 difference between a function definition and a function call, and the related
 distinction between a parameter and an argument. Python comes to the rescue
 with syntax that is nothing short of beautiful. Function definitions begin with
-the keyword ``def``, so I simply tell my students, When you define a function,
-begin with ``def``, followed by the name of the function that you are defining;
+the keyword `def`, so I simply tell my students, When you define a function,
+begin with `def`, followed by the name of the function that you are defining;
 when you call a function, simply call (type) out its name. Parameters go with
 definitions; arguments go with calls. There are no return types, parameter
 types, or reference and value parameters to get in the way, so I am now able to
@@ -286,12 +286,12 @@ Here are some of the key things I've approached differently:
   students to synthesize objects or write their own classes.  So, for example,
   in the chapter about the turtle, we create multiple instances of turtles, 
   talk about their attributes and state (color, position, etc), and we favour 
-  method-call style to move them around, i.e.  ``tess.forward(100)``.  Similarly,
+  method-call style to move them around, i.e.  `tess.forward(100)`.  Similarly,
   when we use random numbers, we avoid the "hidden singleton generator"
   in the random module --- we prefer to create an instance of a generator, and 
   invoke methods on the instance.
-* The ease of constructing lists and the ``for`` loop seem to be winners in Python,
-  so rather than use the traditional command-line ``input`` for data, I've 
+* The ease of constructing lists and the `for` loop seem to be winners in Python,
+  so rather than use the traditional command-line `input` for data, I've 
   favoured using loops and lists right up front, like this:
   
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -301,11 +301,11 @@ for f in friends:
     print(invitation)
 ```
         
-This also means that I bumped ``range`` up for early exposure.  
+This also means that I bumped `range` up for early exposure.  
 I envisage that over time we'll see more opportunities to exploit "early
 lists, early iteration" in its most simple form. 
 
-* I dumped ``doctest``: it is too quirky for my liking.  For example,
+* I dumped `doctest`: it is too quirky for my liking.  For example,
   it fails a test if the spacing between list elements is not precisely the same
   as the output string, or if Python prints a string with single quotes, but
   you wrote up the test case with double quotes. 
@@ -323,13 +323,13 @@ def addlist(xs):
 ```
 
 If you can explain the difference in scope rules and lifetimes 
-between the parameter ``xs`` and the doctest variable ``xs`` elegantly, 
+between the parameter `xs` and the doctest variable `xs` elegantly, 
 please let me know.  Yes, I know doctest creates its own scope behind
 our back, but it is exactly this black magic that we're trying to avoid.  
 From the usual indentation rules, also looks like the doctests are nested
 inside the function scope, but they are not. 
 Students thought that the parameter
-had been given its value by the assignment to ``xs`` in the doctest!    
+had been given its value by the assignment to `xs` in the doctest!    
 
 I also think that keeping the test suite separate from the functions under test
 leads to a cleaner relationship between caller and callee, and gives a better

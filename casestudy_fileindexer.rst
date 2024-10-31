@@ -99,7 +99,7 @@ as a key:value pair in a dictionary.  But first, two observations:
   same later when we write the query program. 
   
 We'll change the code above by setting up a global dictionary, initially empty: 
-The statement ``thedict = {}`` inserted at line 3 will do this.  Then instead of
+The statement `thedict = {}` inserted at line 3 will do this.  Then instead of
 printing the information at line 17, we'll add the filename and path to the 
 dictionary.  The code will need to check whether the key already exists:
 
@@ -328,7 +328,7 @@ Glossary
     JSON
         JavaScript Object Notation is a format for serializing and transporting objects,
         often used between web servers and web browsers that run JavasScript.
-        Python contains a ``json`` module to provide this capability.
+        Python contains a `json` module to provide this capability.
 
     serialization
         Turning an object into a string (or bytes) so that it can be sent over the 
