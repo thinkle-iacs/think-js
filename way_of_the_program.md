@@ -379,6 +379,8 @@ for this class.
 Here is a model repl.it with the TextInterface code ready to roll:
 [Text Interface Example](https://replit.com/@ThomasHinkle/Text-Interface-Library#main.js)
 
+[Codepen TextInterface Example](https://codepen.io/thinkle-iacs/pen/JjQgrGy)
+
 
 Comments
 --------
@@ -510,9 +512,11 @@ When we run this program, we draw this image:
 <img src="figs/turtle-first.png" class="figure-img img-fluid" alt="2 colored lines and a circle drawn with turtle graphics">
 <figcaption class="figure-caption border-top">
 The picture drawn by this program.<br>
-**[Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)**
 </figcaption>
 </figure>
+
+[Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)
+
 
 ### Turtle Programs with Real-Turtle Library
 
