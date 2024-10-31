@@ -428,28 +428,27 @@ depends on the **rules of precedence**. Javascript follows the same precedence
 rules for its mathematical operators that mathematics does. The acronym PEMDAS
 is a useful way to remember the order of operations:
 
-#. **P**\ arentheses have the highest precedence and can be used to force an
+- **P**arentheses have the highest precedence and can be used to force an
    expression to evaluate in the order you want. Since expressions in
    parentheses are evaluated first, `2 * (3-1)` is 4, and `(1+1)**(5-2)` is
    8. You can also use parentheses to make an expression easier to read, as in
    `(minute * 100) / 60`, even though it doesn't change the result.
-#. **E**\ xponentiation has the next highest precedence, so `2**1+1` is 3 and
+- **E**xponentiation has the next highest precedence, so `2**1+1` is 3 and
    not 4, and `3*1**3` is 3 and not 27.
-#. **M**\ ultiplication and both **D**\ ivision operators have the same precedence, which is
-   higher than **A**\ ddition and **S**\ ubtraction, which also have the same
+- **M**ultiplication and both **D**ivision operators have the same precedence, which is
+   higher than **A**ddition and **S**ubtraction, which also have the same
    precedence. So `2*3-1` yields 5 rather than 4, and `5-2*2` is 1, not 6.
-#. Operators with the *same* precedence are evaluated from left-to-right. In algebra
-   we say they are *left-associative*.  So in
-   the expression `6-3+2`, the subtraction happens first, yielding 3. We then add
-   2 to get the result 5. If the operations had been evaluated from
-   right to left, the result would have been `6-(3+2)`, which is 1.  (The acronym
-   PEDMAS could mislead you to thinking that division has higher precedence than multiplication,
-   and addition is done ahead of subtraction - don't be misled.  
-   Subtraction and addition are at the same precedence, and the left-to-right rule applies.)
+- Operators with the *same* precedence are evaluated from left-to-right. In algebra we say they are *left-associative*.  So in
+the expression `6-3+2`, the subtraction happens first, yielding 3. We then add
+2 to get the result 5. If the operations had been evaluated from
+right to left, the result would have been `6-(3+2)`, which is 1.  (The acronym
+PEDMAS could mislead you to thinking that division has higher precedence than multiplication,
+and addition is done ahead of subtraction - don't be misled.  
+Subtraction and addition are at the same precedence, and the left-to-right rule applies.)
 
-   - An exception to the left-to-right left-associative rule
-     is the exponentiation operator `**`, so a useful hint is to always use
-     parentheses to force exactly the order you want when exponentiation is involved:
+- An exception to the left-to-right left-associative rule
+is the exponentiation operator `**`, so a useful hint is to always use
+parentheses to force exactly the order you want when exponentiation is involved:
 
 
 ```javascript
@@ -517,11 +516,7 @@ There is a built-in function in Javascript for getting input from the user:
 ```javascript
 ⠕ let n = window.prompt("Please enter your name: ");
 ```
-If you run this sample in a repl.it prompt, it will open a dialog window with the message:
 
-```
-Please enter your name:
-```
 
 The user of the program can type the name and hit `enter`. When this happens
 the text that has been entered is returned from the `prompt` function, and in this
@@ -530,6 +525,13 @@ case assigned to the variable `n`.
 Even if you asked the user to enter their age, you would get back a string like `"17"`.
 It would be your job, as the programmer, to convert that string into a integer or float before using it,
 if that was required.
+
+Most actual web applications don't use `window.prompt` but instead build user interfaces that respond to user actions. To write code like this requires slightly more advanced techniques, but with the `TextInterface` library, you can use the special `await` keyword which lets you wait for user input, like this:
+
+```javascript
+let n = await ti.prompt("Please enter your name: ");
+```
+
 
 
 Composition
@@ -552,10 +554,18 @@ computes the area of the circle from the formula
 Firstly, we'll do the four steps one at a time:
 
 ```javascript
+let response = await ti.prompt("What is your radius? ");
+let r = Number.parseFloat(response);
+let area = 3.14159 * r**2;
+ti.output("The area is ", area);
+```
+
+Or in pure javascript:
+```javascript
 let response = window.prompt("What is your radius? ");
 let r = Number.parseFloat(response);
 let area = 3.14159 * r**2;
-console.log("The area is ", area);
+window.alert("The area is " + area);
 ```
 
 Now let's compose the first two lines into a single line of code, and compose the
@@ -563,7 +573,7 @@ second two lines into another line of code.
 
 ```javascript
 let r = Number.parseFloat(window.prompt("What is your radius? "));
-console.log("The area is ", 3.14159 * r**2);
+ti.output("The area is " + 3.14159 * r**2);
 ```
 
 If we really wanted to be tricky, we could write it all in one statement:
