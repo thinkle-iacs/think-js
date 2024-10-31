@@ -1,5 +1,5 @@
 <div class='listingSrcCode'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /**
  * tip-calulator.js
  * This example program helps the user
@@ -100,5 +100,5 @@ function main() {
 }
 
 main();
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 </div>

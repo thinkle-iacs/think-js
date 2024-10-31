@@ -9,7 +9,7 @@ surrounding with parentheses.  Recall this example:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> year_born = ("Paris Hilton", 1981)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This is an example of a **data structure** --- a mechanism for grouping and
 organizing data to make it easier to use.
@@ -21,7 +21,7 @@ Although it is not necessary, it is conventional to enclose tuples in parenthese
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> julia = ("Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuples are useful for representing what other languages often call *records* ---
 some related information that belongs together, like your student record.  There is
@@ -34,7 +34,7 @@ selects an element from a tuple.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> julia[2]
 1967
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 But if we try to use item assignment to modify one of the elements of the
 tuple, we get an error:
@@ -42,7 +42,7 @@ tuple, we get an error:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> julia[0] = "X"
 TypeError: 'tuple' object does not support item assignment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 So like strings, tuples are immutable.  Once Python has created a tuple
 in memory, it cannot be changed.
@@ -59,7 +59,7 @@ information from the old one:
 >>> julia = julia[:3] + ("Eat Pray Love", 2010) + julia[5:]
 >>> julia
 ("Julia", "Roberts", 1967, "Eat Pray Love", 2010, "Actress", "Atlanta, Georgia")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To create a tuple with a single element (but you're probably not likely
 to do that too often), we have to include the final comma, because without
@@ -72,7 +72,7 @@ the final comma, Python treats the ``(5)`` below as an integer in parentheses:
 >>> x = (5)
 >>> type(x)
 <class 'int'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuple assignment
 ----------------
@@ -83,7 +83,7 @@ on the right of the assignment.   (We already saw this used for pairs, but it ge
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 (name, surname, b_year, movie, m_year, profession, b_place) = julia
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This does the equivalent of seven assignment statements, all on one easy line.
 One requirement is that the number of variables on the left must match the number
@@ -96,7 +96,7 @@ tuple:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> b = ("Bob", 19, "CS")    # tuple packing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In tuple unpacking, the values in a tuple on the right are 'unpacked'
 into the variables/names on the right:
@@ -110,7 +110,7 @@ into the variables/names on the right:
 19
 >>> studies
 'CS'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Once in a while, it is useful to swap the values of two variables.  With
 conventional assignment statements, we have to use a temporary variable. For
@@ -120,13 +120,13 @@ example, to swap ``a`` and ``b``:
 temp = a
 a = b
 b = temp
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuple assignment solves this problem neatly:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
 (a, b) = (b, a)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The left side is a tuple of variables; the right side is a tuple of values.
 Each value is assigned to its respective variable. All the expressions on the
@@ -139,7 +139,7 @@ right have to be the same:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> (a, b, c, d) = (1, 2, 3)
 ValueError: need more than 3 values to unpack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuples as return values
 -----------------------
@@ -161,7 +161,7 @@ def f(r):
     c = 2 * math.pi * r
     a = math.pi * r * r
     return (c, a)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Composability of Data Structures
 --------------------------------
@@ -177,7 +177,7 @@ students = [
     ("Sarah", ["InfSys", "Accounting", "Economics", "CommLaw"]),
     ("Zuki", ["Sociology", "Economics", "Law", "Stats", "Music"])]
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Tuples items can themselves be other tuples.  For example, we could improve
 the information about our movie stars to hold the full date of birth rather
 than just the year, and we could have a list of some of her movies and dates that they
@@ -193,7 +193,7 @@ julia_more_info = ( ("Julia", "Roberts"), (8, "October", 1967),
       ("Eat Pray Love", 2010),
       ("Mona Lisa Smile", 2003),
       ("Oceans Twelve", 2004) ])
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Notice in this case that the tuple has just five elements --- but each of those in turn
 can be another tuple, a list, a string, or any other kind of Python value.

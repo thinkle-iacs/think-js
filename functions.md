@@ -15,7 +15,7 @@ The syntax for a **function definition** is:
 function NAME( PARAMETERS ) {
   STATEMENTS
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 We can make up any names we want for the functions we create, except that
 we can't use a name that is a Javascript keyword, and the names must follow the rules
@@ -47,7 +47,7 @@ bill. We might write a function to "calculate tip". "calculate tip" is
 an *abstraction*, or a mental chunk, of a number of smaller steps.  So
 let's write a function to capture the pattern of this "building block":
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /*
   Calculate the tip on a bill, given the pct of the tip.
 */
@@ -65,7 +65,7 @@ function calculateTip (bill, pct) {
 
 // find the amount of an 18% tip on a $100 bill
 calculateTip(100,18);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This function is named ``calculateTip``.  It has two parameters: one to tell
 the function the amount of the bill, and the other to tell it the percent
@@ -87,12 +87,12 @@ Once we've defined a function, we can call it as often as we like, and its
 statements will be executed each time we call it. In the next example, we calculate 3 different
 tip amounts for the same bill, using ``calculateTip`` defined above.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let myBill = 100;
 calculateTip(myBill, 15);
 calculateTip(myBill, 18);
 calculateTip(myBill, 20);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 <aside id="coding-style">
 
@@ -211,7 +211,7 @@ computing the absolute value:
 => 5
 ⠕ Math.abs(-5);
 => 5
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 In this example, the arguments to the ``abs`` function are 5 and -5.
@@ -228,7 +228,7 @@ Bill amount: $87
 Tip percentage: 10%
 Total amount due: $8.70
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Another built-in function that takes more than one argument is ``Math.max``.
 
@@ -239,7 +239,7 @@ Another built-in function that takes more than one argument is ``Math.max``.
 => 17
 ⠕ Math.max(3 * 11, 5**3, 512 - 9, 1024**0);
 => 503
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ``Math.max`` can be passed any number of arguments, separated by commas, and will
 return the largest value passed. The arguments can be either simple values or
@@ -269,7 +269,7 @@ formula for compound interest as an example of a fruitful function:
 
 ![](figs/compoundInterest.png)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /*
 Apply the compound interest formula to p
 to produce the final amount.
@@ -285,7 +285,7 @@ function finalAmt (p, r, n, t) {
 let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );
 let fnl = finalAmt(toInvest, 0.08, 12, 5);
 console.log("At the end of the period you'll have", fnl);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 * The **return** statement is followed an expression (``a`` in this case). This expression will be
   evaluated and returned to the caller as the "fruit" of calling this function.
@@ -315,7 +315,7 @@ the caller, in ``finalAmt`` its name is ``p``.
 These short variable names are getting quite tricky, so perhaps we'd prefer one of these
 versions instead:       
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 function finalAmtV2(principalAmount, nominalPercentageRate, numTimesPerYear, years) {
   let a = principalAmount * (1 + nominalPercentageRate / numTimesPerYear) ** (numTimesPerYear * years);
   return a;
@@ -325,7 +325,7 @@ function finalAmtV3(amt, rate, compounded, years) {
   let a = amt * (1 + rate / compounded) ** (compounded * years);
   return a;
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 They all do the same thing. Use your judgment to write code that can be best
 understood by other humans!  
@@ -341,14 +341,14 @@ about what the variables are used for.
 When we declare a new **local variable** inside a function, it only exists inside
 the function, and we cannot use it outside. For example, consider again this function:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 
 function finalAmt (p, r, n, t) {
   let a = p * (1 + r/n) ** (n * t);
   return a;
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If we try to use ``a``, outside the function, we'll get an error like this:
 

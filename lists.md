@@ -428,7 +428,7 @@ changing ``a``:
 >>> b[0] = 5
 >>> a
 [1, 2, 3]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Lists and ``for`` loops
 -----------------------
@@ -600,7 +600,7 @@ Continuing with this example, we show several other list methods:
 >>> mylist.remove(12)             # Remove the first 12 in the list
 >>> mylist
 [3, 5, 5, 5, 9, 11, 12, 27]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Experiment and play with the list methods shown here, and read their documentation until 
 you feel confident that you understand how they work.
@@ -681,7 +681,7 @@ loop
    create a new element 
    append it to result
 return the result
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Let us show another use of this pattern.  Assume you already have a function
 ``is_prime(x)`` that can test if x is prime.  Write a function
@@ -695,7 +695,7 @@ def primes_lessthan(n):
        if is_prime(i):
           result.append(i)
    return result
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 <aside id="list_comp">
 
 List Comprehensions
@@ -722,7 +722,7 @@ default, any number of whitespace characters is considered a word boundary:
 >>> wds = song.split()
 >>> wds
 ['The', 'rain', 'in', 'Spain...']
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 An optional argument called a **delimiter** can be used to specify which
 string to use as the boundary marker between substrings. 
@@ -731,7 +731,7 @@ The following example uses the string ``ai`` as the delimiter:
 ~~~~~~~~~~~~~~~~~~~~~~~{.python}
 >>> song.split("ai")
 ['The r', 'n in Sp', 'n...']
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Notice that the delimiter doesn't appear in the result.
 
@@ -744,7 +744,7 @@ and join the list with the glue between each of the elements:
 >>> s = glue.join(wds)
 >>> s
 'The;rain;in;Spain...'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The list that you glue together (``wds`` in this example) is not modified.  Also, as these
 next examples show, you can use empty glue or multi-character strings as glue:
@@ -754,7 +754,7 @@ next examples show, you can use empty glue or multi-character strings as glue:
 'The --- rain --- in --- Spain...'
 >>> "".join(wds)
 'TheraininSpain...'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 ``list`` and ``range``

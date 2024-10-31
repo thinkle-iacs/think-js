@@ -29,7 +29,7 @@ One way to create a map is to start with the empty object and add
 ⠕ let eng2sp = {};
 ⠕ eng2sp["one"] = "uno";
 ⠕ eng2sp["two"] = "dos";
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The first assignment creates a map named ``eng2sp``; the other
 assignments add new key:value pairs to the map. We can print the current
@@ -38,7 +38,7 @@ value of the map in the usual way:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 ⠕ console.log(eng2sp);
 { one: 'uno', two: 'dos' }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The key:value pairs of the map are separated by commas. Each pair
 contains a key and a value separated by a colon.
@@ -61,7 +61,7 @@ of arrays with key:value pairs:
 ⠕ let eng2spArray = [];
 ⠕ eng2sp[0] = ["one", "uno"];
 ⠕ eng2sp[1] = ["two", "dos"];
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In this example, the zeroeth element of the nested arrays contains the key
 and the first element contains the value. We could retrieve the key:value
@@ -82,7 +82,7 @@ using the same syntax as the previous output:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 ⠕ let eng2sp = {"one": "uno", "two": "dos", "three": "tres"};
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 It doesn't matter what order we write the pairs. The values in a map are
 accessed with keys, not with indices, so there is no need to care about
@@ -93,7 +93,7 @@ Here is how we use a key to look up the corresponding value:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 ⠕ console.log(eng2sp["two"]);
 dos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The key ``"two"`` yields the value ``"dos"``.
 
@@ -112,7 +112,7 @@ each fruit in stock:
 ⠕ let inventory = {"apples": 430, "bananas": 312, "oranges": 525, "pears": 217};   
 ⠕ console.log(inventory);
 { apples: 430, bananas: 312, oranges: 525, pears: 217 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If someone buys all of the pears, we can remove the entry from the map:
 
@@ -120,7 +120,7 @@ If someone buys all of the pears, we can remove the entry from the map:
 ⠕ delete inventory["pears"];
 ⠕ console.log(inventory);
 { apples: 430, bananas: 312, oranges: 525 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Or if we're expecting more pears soon, we might just change the value
 associated with pears:
@@ -129,7 +129,7 @@ associated with pears:
 ⠕ inventory["pears"] = 0;
 ⠕ console.log(inventory);
 { apples: 430, bananas: 312, oranges: 525, pears: 0 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 A new shipment of bananas arriving could be handled like this:
 
@@ -137,7 +137,7 @@ A new shipment of bananas arriving could be handled like this:
 ⠕ inventory["bananas"] += 200;
 ⠕ console.log(inventory);
 inventory["bananas"] += 200
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 <aside id="map-dot-notation">
 
@@ -167,7 +167,7 @@ We can use ``Object.keys()`` to return an array of all of the keys
 in a map. Using the keys, we can _iterate_ through the keys
 and values in our map.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let eng2sp = {"one": "uno", "two": "dos", "three": "tres"};
 let keys = Object.keys(eng2sp);
 for (let i = 0; i < keys.length; i++) {
@@ -175,7 +175,7 @@ for (let i = 0; i < keys.length; i++) {
   console.log("Got key", k, "which maps to value", eng2sp[k]);
 }
 console.log(keys);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This produces this output:
 
@@ -184,16 +184,16 @@ Got key one which maps to value uno
 Got key two which maps to value dos
 Got key three which maps to value tres
 [ 'one', 'two', 'three' ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 It is so common to iterate over the keys in a map that
 Javascript provides a special syntax for this loop.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 for (let k in eng2sp) {
   console.log("Got key", k);
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The ``Object.values()`` function is similar to `keys()`; it returns an array
 containing all of the map's objects:
@@ -201,7 +201,7 @@ containing all of the map's objects:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 ⠕ Object.values(eng2sp);
 => [ 'uno', 'dos', 'tres' ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The ``Object.entries()`` function returns an array of
 key:value pair arrays.
@@ -211,17 +211,17 @@ key:value pair arrays.
 ⠕ Object.entries(eng2sp);
 [ [ 'one', 'uno' ], [ 'two', 'dos' ], [ 'three', 'tres' ] ]
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Combining `Object.entries()` with a Javascript syntax for
 [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment),
 we can easily iterate over the keys and values of a map.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 for (let [k, v] of Object.entries(eng2sp)) {
   console.log(k, v);
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This produces:
 
@@ -229,7 +229,7 @@ This produces:
 one uno
 two dos
 three tres
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This simple example introduces two new Javascript structures. **Destructuring**
 takes the values of an array on the right hand of the assignment operator
@@ -253,7 +253,7 @@ us to test if a key exists in a map. `in` will always return a boolean result
 'uno'
 ⠕ "six" in eng2sp
 false
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Later in the chapter we will see some examples where we use this technique
 to determine if we should update an existing entry in a map or create a new
@@ -280,7 +280,7 @@ of opposites:
 ⠕ let opposites = {"up": "down", "right": "wrong", "yes": "no"};
 ⠕ let alias = opposites;
 ⠕ let copy = Object.assign(opposites);  // a shallow copy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ``alias`` and ``opposites`` refer to the same object; ``copy`` refers to a
 fresh copy of the same map. If we modify ``alias``, ``opposites`` is
@@ -290,7 +290,7 @@ also changed:
 ⠕ alias["right"] = "left";
 ⠕ opposites["right"];
 'left'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If we modify ``copy``, ``opposites`` is unchanged:
 
@@ -298,7 +298,7 @@ If we modify ``copy``, ``opposites`` is unchanged:
 ⠕ copy["right"] = "privilege";
 ⠕ opposites["right"];
 'left'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Counting letters
 ----------------
@@ -315,7 +315,7 @@ codes for letters that appear less frequently.
 
 Maps provide an elegant way to generate a frequency table:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let letterCounts = {};
 let word = "Mississippi";
 word = word.toLowerCase();
@@ -330,13 +330,13 @@ for (let i = 0; i < word.length; i++) {
 }
 console.log(letterCounts);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Outputs:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 { M: 1, i: 4, s: 4, p: 2 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 We start with an empty map. For each letter in the string, we find the
 current count (possibly zero) and increment it. At the end, the map
@@ -359,7 +359,7 @@ for(let i = 0; i < keys.length; i++) {
   let letter = keys[i];
   console.log(`${letter}: ${letterCounts[letter]}`);
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 See the interactive example online at
 <https://repl.it/@mcuringa/MapLetterFrequency>.

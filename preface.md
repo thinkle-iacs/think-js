@@ -124,13 +124,13 @@ class Hello
         System.out.println ("Hello, world.");
     }
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 in the Python version it becomes:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 print("Hello, World!")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Even though this is a trivial example, the advantages of Python stand out.
 Yorktown's Computer Science I course has no prerequisites, so many of the
@@ -299,7 +299,7 @@ friends = ["Zoe", "Joe", "Bill"]
 for f in friends:
     invitation = "Hi " + f + ".  Please come to my party on Saturday!"
     print(invitation)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
         
 This also means that I bumped ``range`` up for early exposure.  
 I envisage that over time we'll see more opportunities to exploit "early
@@ -320,7 +320,7 @@ def addlist(xs):
     9
     """
     return
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If you can explain the difference in scope rules and lifetimes 
 between the parameter ``xs`` and the doctest variable ``xs`` elegantly, 

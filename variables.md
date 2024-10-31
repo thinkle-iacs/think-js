@@ -23,7 +23,7 @@ If you are not sure what class a value falls into, the Javascript **typeof**  op
 => 'string'
 ⠕ typeof 100;
 => 'number'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Not surprisingly, strings are of type `string` and integers are of type `number`.
 In Javascript, both whole numbers and fractions (numbers with decimal points)
 are of type `number`. At this stage, you can treat the words *class* and *type*
@@ -34,7 +34,7 @@ is in later chapters.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 ⠕ typeof 3.2;
 => 'number'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they
 are in quotation marks like strings.
 
@@ -45,7 +45,7 @@ are in quotation marks like strings.
 => 'string'
 ⠕ typeof "3.2";
 => 'string'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 They're strings!
 
 Strings in Javascript can be enclosed in either single quotes (``'``) or double quotes
@@ -58,7 +58,7 @@ Strings in Javascript can be enclosed in either single quotes (``'``) or double 
 => 'string'
 ⠕ typeof `and this is a special type of string...`;
 => 'string'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Double quoted strings can contain single quotes inside them, as in
 ``"Bruce's beard"``, and single quoted strings can have double quotes
@@ -72,10 +72,10 @@ contain either single or double quotes:
 console.log(`"Oh no", she exclaimed, "Ben's bike is broken!"`);
 "Oh no", she exclaimed, "Ben's bike is broken!"
 ⠕
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Template literal strings can even span multiple lines:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 ⠕ let message = `This message will
 ... span several
 ... lines`;
@@ -84,7 +84,7 @@ console.log(message);
 This message will
 span several
 lines.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Strings can also be joined use the `+` token which adds strings together
 (also called concatenation).
@@ -96,7 +96,7 @@ Strings can also be joined use the `+` token which adds strings together
 console.log(message);
 
 This long message will... will appear on one line... when it's logged to the console.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Javascript doesn't care whether you use single or double quotes to surround your strings:
 once it has parsed the text of your program or command, the way it stores the
@@ -112,7 +112,7 @@ decide which quotes to use to make it look like a string. It usually choose a si
 => 'And so is this.'
 ⠕ `This is a string too!`
 => 'This is a string too!'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The code examples in this book will use double quotes as the default, and
 use single quotes and template literals when they make more sense (such
@@ -139,7 +139,7 @@ the **assignment token**, gives a value to a variable:
 ⠕ let message = "What's up, Doc?";
 ⠕ let n = 17;
 ⠕ let pi = 3.14159;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This example declares three variables and assigns them values. The first assigns the string value ``"What's
 up, Doc?"`` to a variable named ``message``. The second gives the number
@@ -156,7 +156,7 @@ This is why you will get an error if you enter:
 ⠕ let 17 = n;
 
 SyntaxError: unexpected token: numeric literal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 _**Tip:** When reading or writing code, say to yourself "n is assigned 17"
 or "n gets the value 17".  Don't say "n equals 17"._
@@ -180,7 +180,7 @@ linked to the variable:
 => 17
 ⠕ pi
 => 3.14159
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 We use variables in a program to "remember" things, perhaps the current score in the video game.
 But variables are *variable*. This means they can change over time, just like the score in a video game.
 You can assign a value to a variable, and later assign a different value to the same variable.  
@@ -197,7 +197,7 @@ cannot change to link to a different value half-way through your calculations!*)
 ⠕ day = 21
 ⠕ day
 => 21
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 You'll notice we changed the value of ``day`` three times, and on the third assignment we even
 made it refer to a value that was of a different type.   
 
@@ -227,7 +227,7 @@ If you give a variable an illegal name, you get a syntax error:
 unknown: Identifier directly after number
 ⠕ let typeof = "Computer Science 101";
 unknown: Unexpected token
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ``76trombones`` is illegal because it does not begin with a letter, but
 what's wrong with ``typeof``?
@@ -253,7 +253,7 @@ else        new           while
 export      package       with
 extends     private       yield
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 You might want to keep this list handy. If the interpreter complains about one
 of your variable names and you don't know why, see if it is on this list.
 
@@ -296,7 +296,7 @@ displays the result:
 => 2
 ⠕ typeof "hello";
 => 'string'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 In this example ``typeof`` is a Javascript operator that returns the type of a variable or literal data operand.
 
 The *evaluation of an expression* produces a value, which is why expressions
@@ -314,7 +314,7 @@ These examples show the expression and the value they return indicated by ``=>``
 => 'string'
 ⠕ y
 => 3.14
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Operators and operands
 ----------------------
@@ -336,7 +336,7 @@ token for multiplication, and ``**`` is the token for exponentiation.
 => 8
 ⠕ 3 ** 2
 => 9
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 When a variable name appears in the place of an operand, it is replaced with
 its value before the operation is performed.
@@ -352,7 +352,7 @@ Example: so let us convert 645 minutes into hours:
 ⠕ let hours = minutes / 60;
 ⠕ hours;
 => 10.75
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Oops! In Javascript, the division operator ``/`` always yields a floating point (decimal) result.
 What we might have wanted to know was how many *whole* hours there are, and how many minutes remain.
 Javascript provides helpful **Math** functions to allow us to do this.
@@ -370,7 +370,7 @@ moves it to the left on the number line. So `Math.floor(6 / 4)` yields `1`, but
 ⠕ let hours = Math.flor(minutes / 60);
 ⠕ hours;
 => 10
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Type conversion
 ---------------
@@ -398,7 +398,7 @@ the number line. Let us see this in action:
 => 2345
 ⠕ Number.parseInt(17); // It even works if arg is already an int
 => 17
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The type converter ``Number.parseFloat(arg)`` can a syntactically legal
 string into a decimal:
@@ -406,7 +406,7 @@ string into a decimal:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 ⠕ Number.parseFloat("123.45");
 => 123.45
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The type converter ``String(arg)`` turns its argument into a string:
 
@@ -416,7 +416,7 @@ The type converter ``String(arg)`` turns its argument into a string:
 => '17'
 ⠕ String(123.45)
 => '123.45'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Order of operations
 -------------------
@@ -455,7 +455,7 @@ is a useful way to remember the order of operations:
 => 512
 ⠕ (2 ** 3) ** 2   // Use parentheses to force the order you want!
 => 64
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The Javascript console in repl.it is great for exploring and experimenting
 with expressions like this. You can fork this repl to try it: <https://repl.it/@mcuringa/ES6-shell>
 
@@ -472,7 +472,7 @@ to an number in order to execute a mathematical operation.
 => 8
 ⠕ message ** 2;
 => 16;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If the automatic type conversion fails in a mathematical operation, Javascript
 returns the special *Not a Number* value, `NaN`.
@@ -482,17 +482,17 @@ returns the special *Not a Number* value, `NaN`.
 ⠕ let message = "Hello, world.";
 ⠕ message * 2;
 => NaN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Interestingly, the ``+`` operator work with strings, but for strings,
 the ``+`` operator represents **concatenation**, not addition.  
 As we've seen, concatenation means joining the two operands by linking them end-to-end. For example:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 ⠕ let fruit = "banana";
 ⠕ let bakedGood = " nut bread";
 ⠕ console.log(fruit + bakedGood);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The output of this program is ``banana nut bread``. The space before the word
 ``nut`` is part of the string, and is necessary to produce the space between
 the concatenated strings.
@@ -505,21 +505,21 @@ Automatic conversion can be tricky and sometimes lead to unexpected results. Con
 => 14
 ⠕ age + 10;
 => '2410'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Input
 -----
 
 There is a built-in function in Javascript for getting input from the user:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 ⠕ let n = window.prompt("Please enter your name: ");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 If you run this sample in a repl.it prompt, it will open a dialog window with the message:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Please enter your name:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The user of the program can type the name and hit `enter`. When this happens
 the text that has been entered is returned from the ``prompt`` function, and in this
@@ -549,27 +549,27 @@ computes the area of the circle from the formula
 
 Firstly, we'll do the four steps one at a time:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let response = window.prompt("What is your radius? ");
 let r = Number.parseFloat(response);
 let area = 3.14159 * r**2;
 console.log("The area is ", area);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Now let's compose the first two lines into a single line of code, and compose the
 second two lines into another line of code.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let r = Number.parseFloat(window.prompt("What is your radius? "));
 console.log("The area is ", 3.14159 * r**2);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If we really wanted to be tricky, we could write it all in one statement:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 console.log("The area is ", 3.14159 * Number.parseFloat(window.prompt("What is your radius? "))**2);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Such compact code may not be the most understandable for humans, but it does
 illustrate how we can compose bigger chunks from our building blocks.
@@ -594,7 +594,7 @@ operators. It has the same precedence as the multiplication operator.
 ⠕ let r  = 7 % 3
 ⠕ r;
 => 1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 So 7 divided by 3 is 2 with a remainder of 1.
 
 The modulus operator turns out to be surprisingly useful. For example, you can
@@ -610,7 +610,7 @@ to hours, minutes and seconds. So let's write a program to ask the user to enter
 some seconds, and we'll convert them into hours, minutes, and remaining seconds.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 ⠕ let totalSecs = Number.parseInt(window.prompt("How many seconds, in total?"));
 ⠕ let hours = Math.floor(totalSecs / 3600);
 ⠕ let secsStillRemaining  = totalSecs % 3600;
@@ -618,7 +618,7 @@ some seconds, and we'll convert them into hours, minutes, and remaining seconds.
 ⠕ let secsFinallyRemaining = secsStillRemaining  % 60;
 ⠕
 ⠕ console.log("Hrs=", hours, "  mins=", minutes, "secs=", secsFinallyRemaining);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Variable Exercises
 ------------------

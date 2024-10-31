@@ -24,7 +24,7 @@ capitalization must be exactly as shown), and the Javascript type is **'boolean'
 => 'boolean'
 ⠕ tyepof True;
 => 'undefined'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 A **Boolean expression** is an expression that evaluates to produce a result which is
 a Boolean value. For example, the operator ``===`` tests if two values are equal.
@@ -38,7 +38,7 @@ It produces (or *yields*) a Boolean value:
 ⠕ let j = "hel";
 ⠕ j + "lo" === "hello";
 true
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In the first statement, the two operands evaluate to equal values, so the expression evaluates
 to ``true``; in the second statement, 5 is not equal to 6, so we get ``false``.
@@ -54,7 +54,7 @@ x < y     // Produce true if x is less than y
 x >= y    // Produce true if x is greater than or equal to y
 x <= y    // Produce true if x is less than or equal to y
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Although these operations are probably familiar, the Javascript symbols are
 different from the mathematical symbols. A common error is to use a single
@@ -72,7 +72,7 @@ variables, printed, etc.
 true
 ⠕ typeof oldEnoughToGetADrivingLicence;
 => 'boolean'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 <aside id="strict-equality">
 **Equality and "sameness" in Javascript**
@@ -98,7 +98,7 @@ type are equal with the strict operator.
 => false
 ⠕ 5 === 5.0; // true because integers and floats are all type `number`
 => true
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In addition to the loose equality with ``==`` there is a loose inequality operator
 using ``!=``. Because loose equality (and inequality) is difficult to predict,
@@ -183,7 +183,7 @@ For example, we are all familiar with school algebra rules, such as:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}    
 n * 0 === 0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 which provides rules for working with Boolean values.
 
 First, the ``&&`` operator:
@@ -195,7 +195,7 @@ y && x === x && y
 x && true === x
 true && x === x
 x && x === x
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Here are some corresponding rules for the ``||`` operator:
 
@@ -206,13 +206,13 @@ y || x === x || y
 x || true === true
 true || x === true
 x || x === x
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Two ``!`` operators cancel each other:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 !(!x) === x
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Conditional execution
 ---------------------
@@ -222,7 +222,7 @@ conditions and change the behavior of the program accordingly. **Conditional
 statements** give us this ability. The simplest form is the **if**
 statement:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (x % 2 == 0) {
   console.log(x, " is even.");
   console.log("Did you know that 2 is the only even number that is prime?");
@@ -231,7 +231,7 @@ else {
   console.log(x, " is odd.") ;
   console.log("Did you know that multiplying two odd numbers always gives an odd result?");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If it is true, then all the indented statements get executed. If not, then all
 the statements indented under the ``else`` clause get executed.
@@ -240,14 +240,14 @@ the statements indented under the ``else`` clause get executed.
 
 The syntax for an ``if`` statement looks like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if BOOLEAN EXPRESSION {
   STATEMENTS_1   // Executed if condition evaluates to true
 }
 else {
   STATEMENTS_2   // Executed if condition evaluates to false
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 As with the function definition from the last chapter and other compound
 statements like ``for``, the ``if`` statement consists of a header line and a body. The header
@@ -273,7 +273,7 @@ Another form of the ``if`` statement is one in which the ``else`` clause is omit
 In this case, when the condition evaluates to ``true``, the statements are
 executed, otherwise the flow of execution continues to the statement after the ``if``.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (x < 0) {
   console.log("The negative number ",  x, " is not valid here.");
   x = 42;
@@ -281,7 +281,7 @@ if (x < 0) {
 }
 
 console.log("The square root of ", x, "is", Math.sqrt(x)) ;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In this case, the print function that outputs the square root is the one after the ``if`` --- it comes
 after our curly braces ended the conditional block.
@@ -298,7 +298,7 @@ Sometimes there are more than two possibilities and we need more than two
 branches. One way to express a computation like that is a **chained
 conditional**:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (x < y) {
   STATEMENTS_A
 }
@@ -308,7 +308,7 @@ else if (x > y) {
 else {
   STATEMENTS_C
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ![](figs/flowchart_chained_conditional.png)        
 
@@ -317,7 +317,7 @@ Again, exactly one branch will be executed. There is no limit of the number of
 is allowed and it must be the last branch in the statement:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (choice === "a") {
   functionOne();
 }
@@ -330,7 +330,7 @@ else if (choice === "c") {
 else {
   console.log("Invalid choice.");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Each condition is checked in order. If the first is false, the next is checked,
 and so on. If one of them is true, the corresponding branch executes, and the
@@ -346,7 +346,7 @@ the previous example as follows:
 
 ![Flowchart of this nested conditional](figs/flowchart_nested_conditional.png)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (x < y) {
   STATEMENTS_A
 }
@@ -358,7 +358,7 @@ else {
     STATEMENTS_C
   }
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The outer conditional contains two branches.
 The second branch contains another ``if`` statement, which
@@ -373,23 +373,23 @@ Logical operators often provide a way to simplify nested conditional
 statements. For example, we can rewrite the following code using a single
 conditional:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (0 < x) {    // Assume x is a number here
   if (x < 10) {
     console.log("x is a positive single digit.");
   }
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The ``console.log`` function is called only if we make it past both the
 conditionals, so instead of the above which uses two ``if`` statements each with
 a simple condition, we could make a more complex condition using the ``&&`` operator. Now we only
 need a single ``if`` statement:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (0 < x && x < 10) {
   console.log("x is a positive single digit.");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The ``return`` statement
 ------------------------
@@ -399,7 +399,7 @@ function is fruitful or void, allows us to terminate the execution of a function
 before (or when) we reach the end. One reason to use an *early return* is if we detect an error
 condition:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 function printSquareRoot(x) {
   if (x <= 0) {
     console.log("Positive numbers only, please.");
@@ -407,7 +407,7 @@ function printSquareRoot(x) {
   }
   console.log("The square root of", x, "is", result)
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The function ``printSquareRoot`` has a parameter named ``x``. The first thing
 it does is check whether ``x`` is less than or equal to 0, in which case it
@@ -423,16 +423,16 @@ the pattern where you test if a single value evaluates to ``true`` or ``false``.
 The Boolean condition can be written without a comparison operator because
 the value itself will be resolves to ``true`` or ``false``.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (email) {
   // send an email...
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Any value that is not ``false``, ``undefined``, ``null``, 0, ``NaN``, or an empty string ('')
 actually **returns true** when tested as a conditional statement. Consider the following code:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let first = "Diego";
 let last = "";
 let email = "diego@example.com";
@@ -452,7 +452,7 @@ if (!last) {
   // because last is an empty string, it evaluates to false
   console.log("Enter your last name!");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In the above example we can say that ``email`` is _truthy_ because it evaluates to ``true``
 even though it doesn't equal ``true``. Likewise, ``last`` is _falsy_ --- it evaluates to ``false``
@@ -472,7 +472,7 @@ without curly braces. You may see:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
 if (!oldEnoughToDrive)
   console.log("You can't rent a car.");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This is identical to
 
@@ -480,7 +480,7 @@ This is identical to
 if (!oldEnoughToDrive) {
   console.log("You can't rent a car.");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Some programmers consider it bad practice to omit curly braces for single statements,
 because it reduces readability and can lead to bugs. We recommend always
@@ -513,63 +513,63 @@ our intentions will usually be clearer if we can eliminate them.
 
 For example, if we wrote this Javascript:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (!(age >= 16)) {
   console.log("Hey, you're too young to get a driving license!");
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 it would probably be clearer to use the simplification laws, and to
 write instead:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (age < 16) {
   console.log("Hey, you're too young to get a driving license!")
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Two powerful simplification laws (called de Morgan's laws) that are often
 helpful when dealing with complicated Boolean expressions are:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 !(x && y)  ===  (!x) || (!y)
 !(x || y)   ===  (!x) && (!y)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 For example, suppose we can slay the dragon only if our magic
 lightsabre sword is charged to 90% or higher,
 and we have 100 or more energy units in our protective shield.
 We find this fragment of Javascript code in the game:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if !((swordCharge >= 0.90) && (shieldEnergy >= 100)) {
   console.log("Your attack has no effect, the dragon fries you to a crisp!");
 }
 else {
   console.log("The dragon crumples in a heap. You rescue the gorgeous prince!");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 de Morgan's laws together with the logical opposites would let us
 rework the condition in a (perhaps) easier to understand way like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (swordCharge < 0.90) || (shieldEnergy < 100) {
   console.log("Your attack has no effect, the dragon fries you to a crisp!");
 }
 else {
   console.log("The dragon crumples in a heap. You rescue the gorgeous prince!");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 We could also get rid of the ``!`` by swapping around the ``then`` and
 ``else`` parts of the conditional. So here is a third version, also equivalent:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (swordCharge >= 0.90) and (shieldEnergy >= 100) {
   console.log("The dragon crumples in a heap. You rescue the gorgeous prince!");
 }
 else {
   console.log("Your attack has no effect, the dragon fries you to a crisp!");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This last version is probably the best of the three, because it very closely matches  
 the initial English statement. Clarity of our code (for other humans),

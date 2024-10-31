@@ -156,7 +156,7 @@ while x > 0 and y < 0:
     print("condition: ", (x > 0 and y < 0))
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Now when you run the program, you will see three lines of output for each time
 through the loop. The last time through the loop, the condition should be
 ``False``. If the loop keeps going, you will be able to see the values of ``x``
@@ -372,7 +372,7 @@ For example:
 self.hands[i].add_card(self.hands[self.find_neighbor(i)].pop_card())
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 This can be rewritten as:
 
 
@@ -382,7 +382,7 @@ picked_card = self.hands[neighbor].pop_card()
 self.hands[i].add_card(picked_card)
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The explicit version is easier to read because the variable names provide
 additional documentation, and it is easier to debug because you can check the
 types of the intermediate variables and display or inspect their values.
@@ -396,7 +396,7 @@ expression ``x/2pi`` into Python, you might write:
 y = x / 2 * math.pi
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 That is not correct because multiplication and division have the same
 precedence and are evaluated from left to right. So this expression computes
 ``(x/2)pi``.
@@ -409,7 +409,7 @@ evaluation explicit:
 y = x / (2 * math.pi)
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Whenever you are not sure of the order of evaluation, use parentheses.  Not
 only will the program be correct (in the sense of doing what you intended), it
 will also be more readable for other people who haven't memorized the rules of
@@ -428,7 +428,7 @@ temporary variable. For example, instead of:
 return self.hands[i].remove_matches()
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 you could write:
 
 
@@ -437,7 +437,7 @@ count = self.hands[i].remove_matches()
 return count
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Now you have the opportunity to display or inspect the value of ``count`` before
 returning.
 

@@ -31,7 +31,7 @@ alex.left(90)             # Tell alex to turn by 90 degrees
 alex.forward(30)          # Complete the second side of a rectangle
 
 wn.mainloop()             # Wait for user to close window
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 When we run this program, a new window pops up:
 
@@ -96,7 +96,7 @@ tess.left(120)
 tess.forward(50)
 
 wn.mainloop()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 When we run this program, this new window pops up, and will remain on the
 screen until we close it.
@@ -161,7 +161,7 @@ alex.forward(50)
 alex.left(90)
 
 wn.mainloop()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Here is what happens when ``alex`` completes his rectangle, and ``tess`` completes her triangle:
 
@@ -212,12 +212,12 @@ for f in ["Joe","Zoe","Brad","Angelina","Zuki","Thandi","Paris"]:
     invite = "Hi " + f + ".  Please come to my party on Saturday!"
     print(invite)
 # more code can follow here ...            
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 When we run this, the output looks like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Hi Joe.  Please come to my party on Saturday!
 Hi Zoe.  Please come to my party on Saturday!
 Hi Brad.  Please come to my party on Saturday!
@@ -225,7 +225,7 @@ Hi Angelina.  Please come to my party on Saturday!
 Hi Zuki.  Please come to my party on Saturday!
 Hi Thandi.  Please come to my party on Saturday!
 Hi Paris.  Please come to my party on Saturday!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 * The variable ``f`` in the ``for`` statement at line 1 is called the **loop variable**.  
   We could have chosen any other variable name instead.
@@ -273,7 +273,7 @@ This does exactly the same, but using just three lines:
 for i in [0,1,2,3]:
     alex.forward(50)
     alex.left(90)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Some observations:
 
@@ -294,7 +294,7 @@ for i in range(4):
     # Executes the body with i = 0, then 1, then 2, then 3
 for x in range(10):
     # Sets x to each of ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 * Computer scientists like to count from 0!
 * ``range`` can deliver a sequence of values to the loop variable in the ``for`` loop.
@@ -313,7 +313,7 @@ So to repeat something four times, a good Python programmer would do this:
 for i in range(4):
     alex.forward(50)
     alex.left(90)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 By now you should be able to see how to change our previous program so that
 ``tess`` can also use a ``for`` loop to draw her equilateral triangle.
@@ -326,7 +326,7 @@ for c in ["yellow", "red", "purple", "blue"]:
     alex.color(c)
     alex.forward(50)
     alex.left(90)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 A variable can also be assigned a value that is a list.  So lists can also be used in
 more general situations, not only in the ``for`` loop.  The code above could be rewritten like this:
@@ -338,7 +338,7 @@ for c in clrs:
     alex.color(c)
     alex.forward(50)
     alex.left(90)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 A few more turtle methods and tricks
@@ -369,7 +369,7 @@ to a different place without drawing a line.   The methods are
 alex.penup()
 alex.forward(100)     # This moves alex, but no line is drawn
 alex.pendown()  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Every turtle can have its own shape.  The ones available "out of the box"
@@ -378,7 +378,7 @@ are ``arrow``, ``blank``, ``circle``, ``classic``, ``square``, ``triangle``, ``t
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
 alex.shape("turtle")   
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ![](figs/alex06.png)
 
@@ -389,7 +389,7 @@ a special meaning --- turn off animation and go as fast as possible.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}      
 alex.speed(10)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 and this will remain after the turtle has moved somewhere else.
 Stamping works, even when the pen is up.
@@ -413,7 +413,7 @@ for i in range(30):
    tess.right(24)           #  ...  and turn her
 
 wn.mainloop()  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ![](figs/tess07.png)
 
@@ -538,7 +538,7 @@ Exercises
 >>> tess.speed(0)
 >>> tess.left(3645)
 >>> tess.forward(-100)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 11. Write a program to draw a shape like this:
 

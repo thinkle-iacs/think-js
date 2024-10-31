@@ -52,14 +52,14 @@ mode*. In immediate mode, you type Javascript expressions into the interpreter's
 and the interpreter immediately shows the result. This is the an example of the repl.it
 interpreter's console:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 Babel Compiler v6.4.4
 Copyright (c) 2014-2015 Sebastian McKenzie
 
 ⠕ 2+2
 => 4
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The `2+2` is entered at the **JavaScript prompt**. The `⠕` token indicates a statement entered at the prompt.
 The interpreter uses the prompt to indicate that it is ready for
 instructions. We typed `2 + 2` and hit `enter`, the interpreter evaluated our expression, and replied `4`,
@@ -337,16 +337,16 @@ Traditionally, the first program written in a new language is called *Hello,
 World!* because all it does is display the words, Hello, World!  In Javascript, the script
 looks like this: (For scripts, we'll show line numbers to the left of the Javascript statements.)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 console.log("Hello, World!");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 This is an example of using ``console.log``, Javascript's **print function**, which doesn't actually print
 anything on paper. It displays a value on the screen's console. In this case, the result shown
 is
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 Hello, World!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The quotation marks in the program mark the beginning and end of the value;
 they don't appear in the result.
 
@@ -365,11 +365,11 @@ this class, we can use a simple "library" to enable inputs and outputs on a webp
 you can see. Here's what a "hello world" looks like using the simple TextInterface library
 (this is a library created for this class):
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 import {TextInterface} from './textInterface';
 let ti = new TextInterface();
 ti.output("Hello, World!");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This example is slightly more complicated, but for now let's just focus on 
 the last line, which enables us to say "Hello, World" onto a webpage instead
@@ -397,7 +397,7 @@ In Javascript, the ` \\ ` token starts a comment.  The rest of the line
 is ignored. Here is a new version of *Hello, World!*.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 //---------------------------------------------------
 // This demo program shows off how elegant Javascript is!
 // Based on the Python program by Joe Soap, December 2010.
@@ -406,14 +406,15 @@ is ignored. Here is a new version of *Hello, World!*.
 
 console.log("Hello, World!");     // Isn't this easy!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
 You'll also notice that we've left a blank line in the program. Blank lines
 are also ignored by the interpreter, but comments and blank lines can make your
 programs much easier for humans to parse. Use them liberally!
 
 Javascript also supports multiline comments with the ``/* */`` style.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /*
 ---------------------------------------------------
   This demo program shows off how elegant Javascript is!
@@ -424,19 +425,19 @@ Javascript also supports multiline comments with the ``/* */`` style.
 
 console.log("Hello, World!");     // Isn't this easy!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 In addition to adding hints and suggestions for human readers,
 comments play an important role in debugging. Because the
 Javascript interpreter doesn't try to run commented lines,
 you can "comment out" sections of your code to isolate errors.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 console.log("Hello, World!");
 // console.log("I am trying to find");
 // console.log("out which line");
 // console.log("of my code isn't");
 // console.log("working the way I expect it to.);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In the above code, only line 1 is interpreted and run as Javascript.
 The other lines are ignored. To debug this program, we can uncomment
@@ -468,7 +469,7 @@ and to draw shapes and patterns.
 
 Here's a short turtle graphics program.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 // Set up the pen properties
 // Set up the pen properties
 turtle.setStrokeStyle("blue");
@@ -502,7 +503,7 @@ turtle.penDown();
 turtle.setStrokeStyle("deepPink")
 turtle.arc(10, 360);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 When we run this program, we draw this image:
 <figure class="border">

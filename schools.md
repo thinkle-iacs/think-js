@@ -408,7 +408,7 @@ def print_compare(compared, a, b):
           str(a.get(word,0)).ljust(6) + "  " + 
           str(b.get(word,0)).ljust(6))
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Neighbor details
 -----------------------

@@ -1072,7 +1072,7 @@ call**:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
 >>> type(32)
 <class 'int'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 We have also been using the built-in function ``print()`` which allows
 us to print a message to the console:
@@ -1080,7 +1080,7 @@ us to print a message to the console:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
 >>> print("Hello, world.")
 Hello, world.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The name of the function is type. The expression in parentheses is
 called the **argument** of the function. The result, for this function,
@@ -1102,7 +1102,7 @@ if it can, or complains otherwise:
 32
 >>> int('Hello')
 ValueError: invalid literal for int() with base 10: 'Hello'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 can convert floating-point values to integers, but it doesn’t round off;
 it chops off the fraction part:
@@ -1112,7 +1112,7 @@ it chops off the fraction part:
 3
 >>> int(-2.3)
 -2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 converts integers and strings to floating-point numbers:
 
@@ -1122,7 +1122,7 @@ converts integers and strings to floating-point numbers:
 32.0
 >>> float('3.14159')
 3.14159
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Finally, str converts its argument to a string:
 
@@ -1133,7 +1133,7 @@ Finally, str converts its argument to a string:
 >>> str(3.14159)
 '3.14159'
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Math functions
@@ -1148,7 +1148,7 @@ Before we can use the module, we have to import it:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
 
 >>> import math
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This statement creates a **module object** named math. If you print the
 module object, you get some information about it:
@@ -1157,7 +1157,7 @@ module object, you get some information about it:
 
 >>> print(math)
 <module 'math' (built-in)>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The module object contains the functions and variables defined in the
 module. To access one of the functions, you have to specify the name of
@@ -1171,7 +1171,7 @@ as a period). This format is called **dot notation**.
 
 >>> radians = 0.7
 >>> height = math.sin(radians)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The first example computes the logarithm base 10 of the signal-to-noise
 ratio. The math module also provides a function called log that computes
@@ -1188,7 +1188,7 @@ divide by 360 and multiply by $2
 >>> radians = degrees / 360.0 * 2 * math.pi
 >>> math.sin(radians)
 0.7071067811865475
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The expression math.pi gets the variable pi from the math module. The
 value of this variable is an approximation of $\pi$, accurate to about
@@ -1201,7 +1201,7 @@ comparing it to the square root of two divided by two:
 
 >>> math.sqrt(2) / 2.0
 0.7071067811865476
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Composition
@@ -1219,7 +1219,7 @@ arithmetic operators:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
 
 x = math.sin(degrees / 360.0 * 2 * math.pi)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 And even function calls:
@@ -1227,7 +1227,7 @@ And even function calls:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
 
 x = math.exp(math.log(x+1))
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Almost anywhere you can put a value, you can put an arbitrary
 expression, with one exception: the left side of an assignment statement
@@ -1241,7 +1241,7 @@ syntax error[^3].
 >>> hours * 60 = minutes                 # wrong!
 SyntaxError: can't assign to operator
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Adding new functions
@@ -1259,7 +1259,7 @@ Here is an example:
 def print_lyrics():
     print("I'm a lumberjack, and I'm okay.")
     print("I sleep all night and I work all day.")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 
@@ -1294,7 +1294,7 @@ complete:
     ...     print("I'm a lumberjack, and I'm okay.")
     ...     print("I sleep all night and I work all day.")
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To end the function, you have to enter an empty line (this is not
 necessary in a script).
@@ -1307,7 +1307,7 @@ Defining a function creates a variable with the same name.
 <function print_lyrics at 0xb7e99e9c>
 >>> print(type(print_lyrics))
 <class 'function'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 The value of `print_lyrics` is a **function object**, which has type
@@ -1321,7 +1321,7 @@ functions:
 >>> print_lyrics()
 I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Once you have defined a function, you can use it inside another
 function. For example, to repeat the previous refrain, we could write a
@@ -1330,7 +1330,7 @@ function called `repeat_lyrics`:
     def repeat_lyrics():
         print_lyrics()
         print_lyrics()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 And then call `repeat_lyrics`:
@@ -1342,7 +1342,7 @@ I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 But that’s not really how the song goes.
@@ -1364,7 +1364,7 @@ program looks like this:
         print_lyrics()
 
     repeat_lyrics()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This program contains two function definitions: `print_lyrics` and
 `repeat_lyrics`. Function definitions get executed just like other
@@ -1434,7 +1434,7 @@ an argument:
 def print_twice(bruce):
     print(bruce)
     print(bruce)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This function assigns the argument to a parameter named bruce. When the
 function is called, it prints the value of the parameter (whatever it
@@ -1453,7 +1453,7 @@ Spam
 >>> print_twice(math.pi)
 3.14159265359
 3.14159265359
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The same rules of composition that apply to built-in functions also
 apply to user-defined functions, so we can use any kind of expression as
@@ -1467,7 +1467,7 @@ Spam Spam Spam Spam
 >>> print_twice(math.cos(math.pi))
 -1.0
 -1.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The argument is evaluated before the function is called, so in the
 examples the expressions `'Spam '*4` and math.cos(math.pi) are only
@@ -1481,7 +1481,7 @@ You can also use a variable as an argument:
     >>> print_twice(michael)
     Eric, the half a bee.
     Eric, the half a bee.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The name of the variable we pass as an argument (michael) has nothing to
 do with the name of the parameter (bruce). It doesn’t matter what the

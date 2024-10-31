@@ -15,7 +15,7 @@ Array values
 There are several ways to create a new array; the simplest is to enclose the
 elements in square brackets (``[`` and ``]``):
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let ps = [10, 20, 30, 40];
 let qs = ["spam", "bungee", "swallow"];
 let empty = [];
@@ -26,7 +26,7 @@ strings. The third is an **empty array** --- it's waiting for us to add
 elements. The elements of an array don't have to be the same type. The following
 array contains a string, a number, and (amazingly) another array:
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let zs = ["hello", 5, [10, 20]];
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -89,7 +89,7 @@ intervening indices.
 
 It is common to use a loop variable as a list index.
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let horsemen = ["war", "famine", "pestilence", "death"];
 
 for (let i = 0; i < horsemen.length; i++) {
@@ -398,7 +398,7 @@ changing ``a``:
 ⠕ b[0] = 5
 ⠕ a
 [ 1, 2, 3 ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Array parameters
 ----------------
@@ -411,7 +411,7 @@ is only one underlying array object.
 For example, the function below takes an array as an
 argument and multiplies each element in the array by 2:
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /**
  * Overwrite each element in `t` with double its value
  */
@@ -424,7 +424,7 @@ function doubleStuff (t) {
 
 If we add the following onto our script:
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let things = [2, 5, 9];
 doubleStuff(things);
 console.log(things);
@@ -450,7 +450,7 @@ A **pure function** does not produce side effects. It communicates with the
 calling program only through parameters, which it does not modify, and a return
 value. Here is ``doubleStuff`` written as a pure function:
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /**
  * Double the value of each element in array `t`
  * and return a new array with the doubled values
@@ -523,7 +523,7 @@ Let us show another use of this pattern. Assume you already have a function
 ``isPrime(x)`` that can test if x is prime. Write a function
 to return an array of all prime numbers less than n:
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /**
  * Return an array of all prime numbers less than n.
  */
@@ -597,7 +597,7 @@ below we look at section [Martin Luther King Jr's 1963 "I have a dream ..." spee
 (https://www.archives.gov/files/press/exhibits/dream-speech.pdf)
 in order to count the number of times the word _dream_ occurs.
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let text = `I say to you today, my friends, so even
 though we face the difficulties of today and tomorrow,
 I still have a dream. It is a dream deeply rooted in
@@ -636,7 +636,7 @@ Nested arrays
 A nested array is an array that appears as an element in another array. In this
 array, the element with index 3 is a nested array:
 
-~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 ⠕ let nested = ["hello", 2.0, 5, [10, 20]];
 ~~~~~~~~~~~~~~~~~~~~~~~
 
