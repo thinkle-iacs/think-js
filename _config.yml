@@ -1,0 +1,13 @@
+title: How to Think Like a Computer Scientist (JavaScript)
+description: A site built with Jekyll and GitHub Pages
+remote_theme: pages-themes/primer
+highlighter: rouge
+markdown: kramdown
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+safe: true
+exclude:
+  - vendor

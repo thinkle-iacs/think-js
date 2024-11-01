@@ -10,5 +10,10 @@
         ]
       }
     },
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    "features": {
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "latest"
+        }
+    }
   }
