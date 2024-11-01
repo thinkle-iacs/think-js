@@ -11,7 +11,7 @@ the problem.
 
 The syntax for a **function definition** is:
 
-~~~~~~~~~```javascript        
+```javascript        
 function NAME( PARAMETERS ) {
   STATEMENTS
 }
@@ -206,7 +206,7 @@ For example, if we want to find the absolute value of a number, we have
 to indicate what the number is. The Javascript `Math` class has a built-in function for
 computing the absolute value:
 
-~~~~~~~~~```javascript        
+```javascript        
 ⠕ Math.abs(5);
 => 5
 ⠕ Math.abs(-5);
@@ -222,7 +222,7 @@ the amount of the bill and the percent tip to calculate.
 Inside the function, the values that are
 passed get assigned to variables called **parameters**.
 
-~~~~~~~~~```javascript
+```javascript
 ⠕ calculateTip(87, 10);
 Bill amount: $87
 Tip percentage: 10%
@@ -232,7 +232,7 @@ Total amount due: $8.70
 
 Another built-in function that takes more than one argument is `Math.max`.
 
-~~~~~~~~~```javascript        
+```javascript        
 ⠕ Math.max(7, 11);
 => 11
 ⠕ Math.max(4, 1, 17, 2, 12);
@@ -300,8 +300,7 @@ console.log("At the end of the period you'll have", fnl);
   Javascript doesn't understand that we're working with money: it just does the calculation to
   the best of its ability, without rounding. Later we'll see how to format the string that
   is printed in such a way that it does get nicely rounded to two decimal places before printing.
-* The line `let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );
-``
+* The line `let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );`
   also shows yet another example
   of *composition* — we can call a function like `Number.parseFloat`, and its arguments
   can be the results of other function calls (like `window.prompt`) that we've called along the way.
@@ -352,10 +351,10 @@ function finalAmt (p, r, n, t) {
 
 If we try to use `a`, outside the function, we'll get an error like this:
 
-~~~~~~~~~```javascript        
+```javascript        
 ⠕ a
 ReferenceError: a is not defined
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+```
 
 The variable `a` is local to `finalAmt`, and is not visible
 outside the function.
@@ -365,7 +364,7 @@ we call this its **lifetime**.
 When the execution of the function terminates, the local variables are destroyed.
 
 Parameters are also local, and act like local variables.
-For example, the lifetimes of `p`, `r``, `n``, `t`` begin when `finalAmt` is called,
+For example, the lifetimes of `p`, `r`, `n`, `t`` begin when `finalAmt` is called,
 and the lifetime ends when the function completes its execution.   
 
 So it is not possible for a function to set some local variable to a
@@ -378,23 +377,26 @@ to the caller.
 Glossary
 -------------------------------
 
-argument
+---
+**argument**
 
-:    A value provided to a function when the function is called. This value
+A value provided to a function when the function is called. This value
     is assigned to the corresponding parameter in the function.  The argument
     can be the result of an expression which may involve operators,
     operands and calls to other fruitful functions.
 
-body
+---
+**body**
 
-:    The second part of a compound statement. The body consists of a
+The second part of a compound statement. The body consists of a
     sequence of statements all indented the same amount from the beginning
     of the header.  The standard amount of indentation used within the
     Python community is 4 spaces.
 
-compound statement
+---
+**compound statement**
 
-:    A statement that consists of two parts:
+A statement that consists of two parts:
 
     1. header - which begins with a keyword determining the statement
        type, and ends with a colon.
@@ -409,89 +411,105 @@ compound statement
         statement ...
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-flow of execution
+---
+**flow of execution**
 
-:   The order in which statements are executed during a program run.
+The order in which statements are executed during a program run.
 
-frame
+---
+**frame**
 
-:   A box in a stack diagram that represents a function call. It contains
+A box in a stack diagram that represents a function call. It contains
     the local variables and parameters of the function.
 
-function
+---
+**function**
 
-:   A named sequence of statements that performs some useful operation.
+A named sequence of statements that performs some useful operation.
     Functions may or may not take parameters and may or may not produce a
     result.
 
-function call
+---
+**function call**
 
-:   A statement that executes a function. It consists of the name of the
+A statement that executes a function. It consists of the name of the
     function followed by a list of arguments enclosed in parentheses.
 
-function composition
+---
+**function composition**
 
-:   Using the output from one function call as the input to another.
+Using the output from one function call as the input to another.
 
-function definition
+---
+**function definition**
 
-:   A statement that creates a new function, specifying its name,
+A statement that creates a new function, specifying its name,
     parameters, and the statements it executes.
 
-fruitful function
+---
+**fruitful function**
 
-:   A function that returns a value when it is called.
+A function that returns a value when it is called.
 
-header line
+---
+**header line**
 
-:   The first part of a compound statement. A header line begins with a keyword and
+The first part of a compound statement. A header line begins with a keyword and
     ends with a colon (:)
 
-import statement
+---
+**import statement**
 
-:   A statement which permits functions and variables defined in another Python
+A statement which permits functions and variables defined in another Python
     module to be brought into the environment of another script.  To use the
     features of the turtle, we need to first import the turtle module.
 
-lifetime
+---
+**lifetime**
 
-:   Variables and objects have lifetimes — they are created at some point during
+Variables and objects have lifetimes — they are created at some point during
     program execution, and will be destroyed at some time.
 
-local variable
+---
+**local variable**
 
-:   A variable defined inside a function. A local variable can only be used
+A variable defined inside a function. A local variable can only be used
     inside its function.  Parameters of a function are also a special kind
     of local variable.
 
-parameter
+---
+**parameter**
 
-:   A name used inside a function to refer to the value which was passed
+A name used inside a function to refer to the value which was passed
     to it as an argument.
 
-refactor
+---
+**refactor**
 
-:   A fancy word to describe reorganizing our program code, usually to make
+A fancy word to describe reorganizing our program code, usually to make
     it more understandable.  Typically, we have a program that is already working,
     then we go back to "tidy it up".  It often involves choosing better variable
     names, or spotting repeated patterns and moving that code into a function.    
 
-stack diagram
+---
+**stack diagram**
 
-:   A graphical representation of a stack of functions, their variables,
+A graphical representation of a stack of functions, their variables,
     and the values to which they refer.
 
-traceback
+---
+**traceback**
 
-:   A list of the functions that are executing, printed when a runtime
+A list of the functions that are executing, printed when a runtime
     error occurs. A traceback is also commonly referred to as a
     *stack trace*, since it lists the functions in the order in which they
     are stored in the
     [runtime stack](http://en.wikipedia.org/wiki/Runtime_stack).
 
-void function
+---
+**void function**
 
-:    The opposite of a fruitful function: one that does not return a value.  It is
+The opposite of a fruitful function: one that does not return a value.  It is
     executed for the work it does, rather than for the value it returns.
 
 Function Exercises
