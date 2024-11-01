@@ -8,6 +8,14 @@
 The Adelphi University Mod of _Think Python_ ports to Javascript the [_Learning with Python 3 (RLE)_ edition by Peter Wentworth](http://openbookproject.net/thinkcs/python/english3e/).
 
 **Copyright Notice**
+Copyright (C) 2024. Thomas M. Hinkle.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with Invariant Sections being Foreword, Preface, and Contributor List, no
+Front-Cover Texts, and no Back-Cover Texts. A copy of the license is
+included in the section entitled "GNU Free Documentation License".
 
 Copyright (C) 2018. Matthew X. Curinga.
 
@@ -24,9 +32,16 @@ Forward
 A very brief forward to the Javascript edition
 ----------------------------------------------
 
+Note: this latest JavaScript edition has been edited by Thomas Hinkle
+for use at Innovation Academy Charter School. I have built a simple
+Text Interface library and updated the turtle examples. Matt Curinga
+had built this book to use repl.it for examples, but in the summer of
+2024, repl.it discontinued its educational offerings. As a result, I'm
+translating the examples to work as simple Codepen pages.
+
 In the Ed Tech department at Adelphi, we have switched our introductory
 programming courses from Python to Javascript. Javascript has many of the
-features we like about Python, but also offers easy congiguration and
+features we like about Python, but also offers easy configuration and
 a path to developing web and mobile apps without introducing additional
 programming languages. Most of the text is a straight port of the Python
 text, with some details to the specific Javascript features. The chapters
