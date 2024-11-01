@@ -512,19 +512,19 @@ Glossary
 
 Exercises
 ---------
-#. Write a program that prints `We like Python's turtles!` 1000 times. 
+1. Write a program that prints `We like Python's turtles!` 1000 times. 
 
-#. Give three attributes of your cellphone object.  Give three methods of your cellphone.  
+1. Give three attributes of your cellphone object.  Give three methods of your cellphone.  
 
-#. Write a program that uses a for loop to print
+1. Write a program that uses a for loop to print
      |  `One of the months of the year is January`
      |  `One of the months of the year is February`
      |  ...
      
-#. Suppose our turtle `tess` is at heading 0 --- facing east.  We execute the statement
+1. Suppose our turtle `tess` is at heading 0 --- facing east.  We execute the statement
    `tess.left(3645)`.  What does `tess` do, and what is her final heading?
      
-#. Assume you have the assignment `xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]`
+1. Assume you have the assignment `xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]`
     
    a. Write a loop that prints each of the numbers on a new line.
    b. Write a loop that prints each number and its square on a new line.
@@ -534,7 +534,7 @@ Exercises
    d. Print the product of all the numbers in the list. 
       (product means all multiplied together)   
       
-#. Use `for` loops to make a turtle draw these regular polygons 
+1. Use `for` loops to make a turtle draw these regular polygons 
    (regular means all sides the same lengths, all angles the same):  
   
    * An equilateral triangle    
@@ -542,20 +542,20 @@ Exercises
    * A hexagon (six sides)    
    * An octagon (eight sides)
       
-#. .. _drunk_pirate_problem:
+1. .. _drunk_pirate_problem:
 
    A drunk pirate makes a random turn and then takes 100 steps forward, makes another random turn, 
    takes another 100 steps, turns another random amount, etc.  A social science student records the angle of each turn
    before the next 100 steps are taken. Her experimental data is `[160, -43, 270, -97, -43, 200, -940, 17, -86]`.  
    (Positive angles are counter-clockwise.)  Use a turtle to draw the path taken by our drunk friend.   
    
-#. Enhance your program above to also tell us what the drunk pirate's heading is after he has finished stumbling
+1. Enhance your program above to also tell us what the drunk pirate's heading is after he has finished stumbling
    around.  (Assume he begins at heading 0).   
  
-#. If you were going to draw a regular polygon with 18 sides, what angle would you need to 
+1. If you were going to draw a regular polygon with 18 sides, what angle would you need to 
    turn the turtle at each corner?
    
-#. At the interactive prompt, anticipate what each of the following lines will do, and 
+1. At the interactive prompt, anticipate what each of the following lines will do, and 
    then record what happens. Score yourself, giving yourself one point for each one you 
    anticipate correctly:
    
@@ -573,7 +573,7 @@ Exercises
             >>> tess.left(3645)
             >>> tess.forward(-100)
    
-#. Write a program to draw a shape like this:
+1. Write a program to draw a shape like this:
 
         .. image:: illustrations/star.png
    
@@ -588,14 +588,14 @@ Exercises
      draw its lines if its pen is down.  The method is invoked as `tess.hideturtle()` .  To make the
      turtle visible again, use `tess.showturtle()` .
      
-#. Write a program to draw a face of a clock that looks something like this:
+1. Write a program to draw a face of a clock that looks something like this:
     
         .. image:: illustrations/tess_clock1.png
       
    
-#. Create a turtle, and assign it to a variable.  When you ask for its type, what do you get?
+1. Create a turtle, and assign it to a variable.  When you ask for its type, what do you get?
 
-#. What is the collective noun for turtles?  (Hint: they don't come in *herds*.)
+1. What is the collective noun for turtles?  (Hint: they don't come in *herds*.)
 
-#. What the collective noun for pythons?  Is a python a viper?  Is a python venomous?  
+1. What the collective noun for pythons?  Is a python a viper?  Is a python venomous?  
     

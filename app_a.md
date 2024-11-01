@@ -14,17 +14,17 @@ Debugging
 Different kinds of errors can occur in a program, and it is useful to
 distinguish among them in order to track them down more quickly:
 
-#. Syntax errors are produced by Python when it is translating the source code
+1. Syntax errors are produced by Python when it is translating the source code
    into byte code. They usually indicate that there is something wrong with the
    syntax of the program. Example: Omitting the colon at the end of a `def`
    statement yields the somewhat redundant message `SyntaxError: invalid
    syntax`.
-#. Runtime errors are produced by the runtime system if something goes wrong
+1. Runtime errors are produced by the runtime system if something goes wrong
    while the program is running. Most runtime error messages include
    information about where the error occurred and what functions were
    executing. Example: An infinite recursion eventually causes a runtime error
    of maximum recursion depth exceeded.
-#. Semantic errors are problems with a program that compiles and runs but
+1. Semantic errors are problems with a program that compiles and runs but
    doesn't do the right thing. Example: An expression may not be evaluated in
    the order you expect, yielding an unexpected result.
 
@@ -56,22 +56,22 @@ might be.
 
 Here are some ways to avoid the most common syntax errors:
 
-#. Make sure you are not using a Python keyword for a variable name.
-#. Check that you have a colon at the end of the header of every compound
+1. Make sure you are not using a Python keyword for a variable name.
+1. Check that you have a colon at the end of the header of every compound
    statement, including `for`, `while`, `if`, and `def` statements.
-#. Check that indentation is consistent. You may indent with either spaces or
+1. Check that indentation is consistent. You may indent with either spaces or
    tabs but it's best not to mix them. Each level should be nested the same
    amount.
-#. Make sure that any strings in the code have matching quotation marks.
-#. If you have multiline strings with triple quotes (single or double), make
+1. Make sure that any strings in the code have matching quotation marks.
+1. If you have multiline strings with triple quotes (single or double), make
    sure you have terminated the string properly. An unterminated string may
    cause an `invalid token` error at the end of your program, or it may treat
    the following part of the program as a string until it comes to the next
    string. In the second case, it might not produce an error message at all!
-#. An unclosed bracket --- (, {, or [ --- makes Python continue with the next
+1. An unclosed bracket --- (, {, or [ --- makes Python continue with the next
    line as part of the current statement. Generally, an error occurs almost
    immediately in the next line.
-#. Check for the classic `=` instead of `==` inside a conditional.
+1. Check for the classic `=` instead of `==` inside a conditional.
 
 If nothing works, move on to the next section...
 
@@ -118,20 +118,20 @@ My program hangs.
 If a program stops and seems to be doing nothing, we say it is hanging. Often
 that means that it is caught in an infinite loop or an infinite recursion.
 
-#. If there is a particular loop that you suspect is the problem, add a
+1. If there is a particular loop that you suspect is the problem, add a
    `print` statement immediately before the loop that says entering the loop
    and another immediately after that says exiting the loop.
-#. Run the program. If you get the first message and not the second, you've got
+1. Run the program. If you get the first message and not the second, you've got
    an infinite loop. Go to the `Infinite Loop`_ section below.
-#. Most of the time, an infinite recursion will cause the program to run for a
+1. Most of the time, an infinite recursion will cause the program to run for a
    while and then produce a RuntimeError: Maximum recursion depth exceeded
    error. If that happens, go to the `Infinite Recursion`_ section below.
-#. If you are not getting this error but you suspect there is a problem with a
+1. If you are not getting this error but you suspect there is a problem with a
    recursive method or function, you can still use the techniques in the
    `Infinite Recursion`_ section.
-#. If neither of those steps works, start testing other loops and other
+1. If neither of those steps works, start testing other loops and other
    recursive functions and methods.
-#. If that doesn't work, then it is possible that you don't understand the flow
+1. If that doesn't work, then it is possible that you don't understand the flow
    of execution in your program. Go to the `Flow of Execution`_ section below.
 
 
@@ -331,13 +331,13 @@ My program doesn't work.
 You should ask yourself these questions:
 
 
-#. Is there something the program was supposed to do but which doesn't
+1. Is there something the program was supposed to do but which doesn't
    seem to be happening? Find the section of the code that performs that
    function and make sure it is executing when you think it should.
-#. Is something happening that shouldn't? Find code in your program
+1. Is something happening that shouldn't? Find code in your program
    that performs that function and see if it is executing when it
    shouldn't.
-#. Is a section of code producing an effect that is not what you
+1. Is a section of code producing an effect that is not what you
    expected? Make sure that you understand the code in question,
    especially if it involves invocations to functions or methods in other
    Python modules. Read the documentation for the functions you invoke.
@@ -448,10 +448,10 @@ I'm really, really stuck and I need help.
 First, try getting away from the computer for a few minutes. Computers emit
 waves that affect the brain, causing these effects:
 
-#. Frustration and/or rage.
-#. Superstitious beliefs (the computer hates me) and magical thinking (the
+1. Frustration and/or rage.
+1. Superstitious beliefs (the computer hates me) and magical thinking (the
    program only works when I wear my hat backward).
-#. Random-walk programming (the attempt to program by writing every possible
+1. Random-walk programming (the attempt to program by writing every possible
    program and choosing the one that does the right thing).
 
 If you find yourself suffering from any of these symptoms, get up and go for a
@@ -481,11 +481,11 @@ concisely.
 When you bring someone in to help, be sure to give them the information they
 need:
 
-#. If there is an error message, what is it and what part of the program does
+1. If there is an error message, what is it and what part of the program does
    it indicate?
-#. What was the last thing you did before this error occurred? What were the
+1. What was the last thing you did before this error occurred? What were the
    last lines of code that you wrote, or what is the new test case that fails?
-#. What have you tried so far, and what have you learned?
+1. What have you tried so far, and what have you learned?
 
 Good instructors and helpers will also do something that should not 
 offend you: they won't believe when you tell them *"I'm sure all the input

@@ -1027,7 +1027,7 @@ Exercises
 ---------
 
 
-#. What is the Python interpreter's response to the following?
+1. What is the Python interpreter's response to the following?
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -1038,7 +1038,7 @@ Exercises
    happens if `start < stop` and `step < 0`? Write a rule for the
    relationships among `start`, `stop`, and `step`.
    
-#. Consider this fragment of code: 
+1. Consider this fragment of code: 
 
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -1052,7 +1052,7 @@ Exercises
    Does this fragment create one or two turtle instances?  Does setting
    the color of `alex` also change the color of `tess`?  Explain in detail.
    
-#. Draw a state snapshot for `a` and `b` before and after the third line of
+1. Draw a state snapshot for `a` and `b` before and after the third line of
    the following Python code is executed:
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -1061,7 +1061,7 @@ Exercises
             b = a[:]
             b[0] = 5
 
-#. What will be the output of the following program?
+1. What will be the output of the following program?
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
            
@@ -1073,7 +1073,7 @@ Exercises
 
    Provide a *detailed* explanation of the results.
      
-#. Lists can be used to represent mathematical *vectors*.  In this exercise
+1. Lists can be used to represent mathematical *vectors*.  In this exercise
    and several that follow you will write functions to perform standard
    operations on vectors.  Create a script named `vectors.py` and 
    write Python code to pass the tests in each case.
@@ -1088,7 +1088,7 @@ Exercises
            test(add_vectors([1, 2], [1, 4]) == [2, 6])
            test(add_vectors([1, 2, 1], [1, 4, 3]) == [2, 6, 4])
  
-#. Write a function `scalar_mult(s, v)` that takes a number, `s`, and a
+1. Write a function `scalar_mult(s, v)` that takes a number, `s`, and a
    list, `v` and returns the `scalar multiple
    <http://en.wikipedia.org/wiki/Scalar_multiple>`__ of `v` by `s`. : 
 
@@ -1098,7 +1098,7 @@ Exercises
             test(scalar_mult(3, [1, 0, -1]) == [3, 0, -3])
             test(scalar_mult(7, [3, 0, 5, 11, 2]) == [21, 0, 35, 77, 14])
 
-#. Write a function `dot_product(u, v)` that takes two lists of numbers of
+1. Write a function `dot_product(u, v)` that takes two lists of numbers of
    the same length, and returns the sum of the products of the corresponding
    elements of each (the `dot_product
    <http://en.wikipedia.org/wiki/Dot_product>`__).
@@ -1109,13 +1109,13 @@ Exercises
             test(dot_product([1, 2], [1, 4]) ==  9)
             test(dot_product([1, 2, 1], [1, 4, 3]) == 12)
       
-#. *Extra challenge for the mathematically inclined*: Write a function
+1. *Extra challenge for the mathematically inclined*: Write a function
    `cross_product(u, v)` that takes two lists of numbers of length 3 and
    returns their
    `cross product <http://en.wikipedia.org/wiki/Cross_product>`__.  You should
    write your own tests.       
              
-#. Describe the relationship between `" ".join(song.split())` and
+1. Describe the relationship between `" ".join(song.split())` and
    `song` in the fragment of code below. 
    Are they the same for all strings assigned to `song`? 
    When would they be different? 
@@ -1124,7 +1124,7 @@ Exercises
     
             song = "The rain in Spain..."
    
-#. Write a function `replace(s, old, new)` that replaces all occurrences of
+1. Write a function `replace(s, old, new)` that replaces all occurrences of
    `old` with `new` in a string `s`: 
    
     ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -1140,7 +1140,7 @@ Exercises
 
    *Hint*: use the `split` and `join` methods.
           
-#. Suppose you want to swap around the values in two variables.  You decide
+1. Suppose you want to swap around the values in two variables.  You decide
    to factor this out into a reusable function, and write this code:
 
     ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}

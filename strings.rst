@@ -1034,7 +1034,7 @@ Exercises
 We suggest you create a single file containing the test scaffolding from our previous chapters,
 and put all functions that require tests into that file. 
 
-#. What is the result of each of the following:
+1. What is the result of each of the following:
 
     .. sourcecode:: python3
     
@@ -1048,7 +1048,7 @@ and put all functions that require tests into that file.
         >>> "apple" > "pineapple"
         >>> "pineapple" < "Peach"
     
-#. Modify:
+1. Modify:
 
        .. sourcecode:: python3
            :linenos:
@@ -1061,7 +1061,7 @@ and put all functions that require tests into that file.
 
    so that `Ouack` and `Quack` are spelled correctly.
    
-#. Encapsulate
+1. Encapsulate
 
        .. sourcecode:: python3
            :linenos:
@@ -1077,11 +1077,11 @@ and put all functions that require tests into that file.
    the string and the letter as arguments.  Make the function return the number
    of characters, rather than print the answer.  The caller should do the printing.
      
-#. Now rewrite the `count_letters` function so that instead of traversing the 
+1. Now rewrite the `count_letters` function so that instead of traversing the 
    string, it repeatedly calls the `find` method, with the optional third parameter 
    to locate new occurrences of the letter being counted.
    
-#. Assign to a variable in your program a triple-quoted string that contains 
+1. Assign to a variable in your program a triple-quoted string that contains 
    your favourite paragraph of text --- perhaps a poem, a speech, instructions
    to bake a cake, some inspirational verses, etc.
 
@@ -1093,7 +1093,7 @@ and put all functions that require tests into that file.
 
            Your text contains 243 words, of which 109 (44.8%) contain an "e".      
 
-#. Print a neat looking multiplication table like this:
+1. Print a neat looking multiplication table like this:
 
        .. sourcecode:: pycon
        
@@ -1112,7 +1112,7 @@ and put all functions that require tests into that file.
           11:    11  22  33  44  55  66  77  88  99 110 121 132
           12:    12  24  36  48  60  72  84  96 108 120 132 144
 
-#. Write a function that reverses its string argument, and satisfies these tests:
+1. Write a function that reverses its string argument, and satisfies these tests:
 
        .. sourcecode:: python3
            :linenos:
@@ -1122,7 +1122,7 @@ and put all functions that require tests into that file.
            test(reverse("") == "")
            test(reverse("a") == "a")
    
-#. Write a function that mirrors its argument:
+1. Write a function that mirrors its argument:
 
        .. sourcecode:: python3
            :linenos:
@@ -1132,7 +1132,7 @@ and put all functions that require tests into that file.
            test(mirror("") == "")
            test(mirror("a") == "aa")
 
-#. Write a function that removes all occurrences of a given letter from a string:
+1. Write a function that removes all occurrences of a given letter from a string:
     
         .. sourcecode:: python3
             :linenos:   
@@ -1144,7 +1144,7 @@ and put all functions that require tests into that file.
             test(remove_letter("b", "") = "")
             test(remove_letter("b", "c") = "c")
 
-#. Write a function that recognizes palindromes. (Hint: use your `reverse` function to make this easy!):
+1. Write a function that recognizes palindromes. (Hint: use your `reverse` function to make this easy!):
 
         .. sourcecode:: python3
             :linenos:   
@@ -1157,7 +1157,7 @@ and put all functions that require tests into that file.
             test(is_palindrome("a"))
             # test(is_palindrome(""))    # Is an empty string a palindrome?
 
-#. Write a function that counts how many times a substring occurs in a string: 
+1. Write a function that counts how many times a substring occurs in a string: 
    
         .. sourcecode:: python3
             :linenos: 
@@ -1169,7 +1169,7 @@ and put all functions that require tests into that file.
             test(count("nanan", "banana") == 0)
             test(count("aaa", "aaaaaa") == 4)
    
-#. Write a function that removes the first occurrence of a string from another string: 
+1. Write a function that removes the first occurrence of a string from another string: 
 
         .. sourcecode:: python3
             :linenos: 
@@ -1179,7 +1179,7 @@ and put all functions that require tests into that file.
             test(remove("iss", "Mississippi") == "Missippi")
             test(remove("eggs", "bicycle") == "bicycle")
  
-#. Write a function that removes all occurrences of a string from another string: 
+1. Write a function that removes all occurrences of a string from another string: 
 
         .. sourcecode:: python3
             :linenos: 

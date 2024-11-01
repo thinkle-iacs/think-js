@@ -524,7 +524,7 @@ Glossary
 Exercises
 ---------
 
-#. Write a program that reads a string and returns a
+1. Write a program that reads a string and returns a
    table of the letters of the alphabet in alphabetical order which occur in
    the string together with the number of times each letter occurs. Case should 
    be ignored. A sample output of the program when the user enters the data 
@@ -547,7 +547,7 @@ Exercises
        u  1
        w  2
 
-#. Give the Python interpreter's response to each of the following from a
+1. Give the Python interpreter's response to each of the following from a
    continuous interpreter session:
 
    a.
@@ -608,7 +608,7 @@ Exercises
            add_fruit(new_inventory, "strawberries", 25)
            test(new_inventory["strawberries"] == 35)      
 
-#. Write a program called `alice_words.py` that creates a text file named
+1. Write a program called `alice_words.py` that creates a text file named
    `alice_words.txt` containing an alphabetical listing of all the words, and the
    number of times each occurs, in the text version of `Alice's Adventures in Wonderland`.  
    (You can obtain a free plain text version of the book, along with many others, from 
@@ -628,5 +628,5 @@ Exercises
 
    How many times does the word `alice` occur in the book?
    
-#. What is the longest word in Alice in Wonderland? How many characters does it have?
+1. What is the longest word in Alice in Wonderland? How many characters does it have?
 

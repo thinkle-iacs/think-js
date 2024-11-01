@@ -635,24 +635,18 @@ some seconds, and we'll convert them into hours, minutes, and remaining seconds.
 Variable Exercises
 ------------------
 
-To complete these exercises, open up a Javascript interpreter in repl.it.
-You can test things out in the right-side interactive window, and write your
-solutions in the Javascript source file on the left side. You might want to
-comment out the code you're not working on, so that the output is less confusing.
+To complete these exercises, open up a Javascript interpreter (you can find one in the inspector in your browser, or you can use [jsconsole.com](https://jsconsole.com/))
 
-[Fork the standard ES6 Shell with `window.prompt()`](https://repl.it/@mcuringa/ES6-shell)
-or [the node.js shell with the terminal-only `prompt()` function](https://repl.it/@mcuringa/prompt)
-
-#. Take the sentence: *All work and no play makes Jack a dull boy.*
+1. Take the sentence: *All work and no play makes Jack a dull boy.*
    Store each word in a separate variable, then print out the sentence on
    one line using `console.log()`.
-#. Add parenthesis to the expression `6 * 1 - 2` to change its value
+1. Add parenthesis to the expression `6 * 1 - 2` to change its value
    from 4 to -6.
-#. Start the Javascript interpreter and enter `bruce + 4` at the prompt.
+1. Start the Javascript interpreter and enter `bruce + 4` at the prompt.
    This will give you an error: `ReferenceError: bruce is not defined`
 
    Assign a value to `bruce` so that `bruce + 4` evaluates to `10`.
-#. The formula for computing the final amount if one is earning
+1. The formula for computing the final amount if one is earning
    compound interest is given on Wikipedia as <img class="d-block img-fluid" src="figs/compoundInterest.png" alt="formula for compound interest">
 
    Write a Javascript program that assigns the principal amount of $10000 to variable `P`,
@@ -660,28 +654,28 @@ or [the node.js shell with the terminal-only `prompt()` function](https://repl.i
    Set variable `t` to be the number of years the money will be compounded for.
    Calculate and print the final amount after `t` years.
 
-#. Evaluate the following numerical expressions in your head, then use
+1. Evaluate the following numerical expressions in your head, then use
    the Javascript interpreter to check your results:
 
-    #. `⠕ 5 % 2`
-    #. `⠕ 9 % 5`
-    #. `⠕ 15 % 12`
-    #. `⠕ 12 % 15`
-    #. `⠕ 6 % 6`
-    #. `⠕ 0 % 7`
-    #. `⠕ 7 % 0`
+    1. `⠕ 5 % 2`
+    1. `⠕ 9 % 5`
+    1. `⠕ 15 % 12`
+    1. `⠕ 12 % 15`
+    1. `⠕ 6 % 6`
+    1. `⠕ 0 % 7`
+    1. `⠕ 7 % 0`
 
    What happened with the last example? Why? If you were able to correctly
    anticipate the computer's response in all but the last one, it is time to
    move on. If not, take time now to make up examples of your own. Explore the
    modulus operator until you are confident you understand how it works.
 
-#. You look at the clock and it is exactly 2pm. You set an alarm to go off
+1. You look at the clock and it is exactly 2pm. You set an alarm to go off
    in 51 hours. At what time does the alarm go off? (Hint: you could count on
    your fingers, but this is not what we're after. If you are tempted
    to count on your fingers, change the 51 to 5100.)
 
-#. Write a Javascript program to solve the general version of the above problem.
+1. Write a Javascript program to solve the general version of the above problem.
    Create a variable `hrs` to represent the number of hours to wait.  
    Your program should output what the time will be on the clock when the alarm goes off,
    regardless of the value that `hrs` holds.
@@ -689,90 +683,102 @@ or [the node.js shell with the terminal-only `prompt()` function](https://repl.i
 
 Glossary
 --------
+**assignment statement**  
+A statement that assigns a value to a name (variable). To the left of the assignment operator, `=`, is a name. To the right of the assignment token is an expression which is evaluated by the Javascript interpreter and then assigned to the name. The difference between the left and right hand sides of the assignment statement is often confusing to new programmers. In the following assignment:  
+`n = n + 1`  
+`n` plays a very different role on each side of the `=`. On the right it is a *value* and makes up part of the *expression* which will be evaluated by the Javascript interpreter before assigning it to the name on the left.
 
-assignment statement
+---
 
-:   A statement that assigns a value to a name (variable). To the left of
-    the assignment operator, `=`, is a name. To the right of the
-    assignment token is an expression which is evaluated by the Javascript
-    interpreter and then assigned to the name. The difference between the
-    left and right hand sides of the assignment statement is often
-    confusing to new programmers. In the following assignment:\
-    `n = n + 1`\
-    `n` plays a very different role on each side of the `=`. On the right it is a *value* and makes up part of the *expression* which will be evaluated by the Javascript interpreter before assigning it to the name on the left.
+**assignment token**  
+`=` is Javascript's assignment token. Do not confuse it with *equals*, which is an operator for comparing values.
 
-assignment token
+---
 
-:   `=` is Javascript's assignment token.  Do not confuse it with *equals*, which is an operator for comparing values.
+**composition**  
+The ability to combine simple expressions and statements into compound statements and expressions in order to represent complex computations concisely.
 
-composition
+---
 
-:   The ability to combine simple expressions and statements into compound statements and expressions in order to represent complex computations concisely.
+**concatenate**  
+To join two strings end-to-end.
 
-concatenate
+---
 
-:   To join two strings end-to-end.
+**data type**  
+A set of values. The type of a value determines how it can be used in expressions. So far, the types you have seen are `number` and `string`.
 
-data type
+---
 
-:   A set of values. The type of a value determines how it can be used in expressions. So far, the types you have seen are `number` and `string`.
+**evaluate**  
+To simplify an expression by performing the operations in order to yield a single value.
 
-evaluate
+---
 
-:   To simplify an expression by performing the operations in order to yield a single value.
+**expression**  
+A combination of variables, operators, and values that represents a single result value.
 
-expression
+---
 
-:   A combination of variables, operators, and values that represents a single result value.
+**float**  
+Javascript data type which stores *floating-point* numbers. Although integers and floats are all of type `number`, floating-point numbers are stored internally in two parts: a *base* and an *exponent*. When printed in the standard format, they look like decimal numbers. Beware of rounding errors when you use `float`s, and remember that they are only approximate values.
 
-float
+---
 
-:   Javascript data type which stores *floating-point* numbers. Although integers and floats are are all of type `number`, floating-point numbers are stored internally in two parts: a *base* and an *exponent*. When printed in the standard format, they look like decimal numbers. Beware of rounding errors when you use `float`\ s, and remember that they are only approximate values.
+**int**  
+An integer or whole number. In Javascript, its type is `number`.
 
-int
+---
 
-:   An integer or whole number. In Javascript, its type is `number`.
+**keyword**  
+A reserved word that is used by the compiler to parse program; you cannot use keywords like `if`, `function`, and `while` as variable names.
 
-keyword
+---
 
-:   A reserved word that is used by the compiler to parse program; you cannot use keywords like `if`, `function`, and `while` as variable names.
+**modulus operator**  
+An operator, denoted with a percent sign (`%`), that works on integers and yields the remainder when one number is divided by another.
 
-modulus operator
+---
 
-:   An operator, denoted with a percent sign ( `%`), that works on integers and yields the remainder when one number is divided by another.
+**operand**  
+One of the values on which an operator operates.
 
-operand
+---
 
-:   One of the values on which an operator operates.
+**operator**  
+A special symbol that represents a simple computation like addition, multiplication, or string concatenation.
 
-operator
+---
 
-:   A special symbol that represents a simple computation like addition, multiplication, or string concatenation.
+**rules of precedence**  
+The set of rules governing the order in which expressions involving multiple operators and operands are evaluated.
 
-rules of precedence
+---
 
-:   The set of rules governing the order in which expressions involving multiple operators and operands are evaluated.
+**state snapshot**  
+A graphical representation of a set of variables and the values to which they refer, taken at a particular instant during the program's execution.
 
-state snapshot
+---
 
-:   A graphical representation of a set of variables and the values to which they refer, taken at a particular instant during the program's execution.
+**statement**  
+An instruction that the Javascript interpreter can execute. So far we have mostly seen the assignment statement.
 
-statement
+---
 
-:   An instruction that the Javascript interpreter can execute. So far we have mostly seen the assignment statement.
+**string**  
+A Javascript data type that holds a string of characters (e.g., textual data).
 
-string
+---
 
-:   A Javascript data type that holds a string of characters (e.g. textual data).
+**value**  
+A number or string (or other things to be named later) that can be stored in a variable or computed in an expression.
 
-value
+---
 
-:   A number or string (or other things to be named later) that can be stored in a variable or computed in an expression.
+**variable**  
+A name that refers to a value.
 
-variable
+---
 
-:   A name that refers to a value.
-
-variable name
-
-:   A name given to a variable. Variable names in Javascript consist of a sequence of letters (a..z, A..Z, $, and _) and digits (0..9) that begins with a letter.  In best programming practice, variable names should be chosen so that they describe their use in the program, making the program *self documenting*.
+**variable name**  
+A name given to a variable. Variable names in Javascript consist of a sequence of letters (a..z, A..Z, $, and _) and digits (0..9) that begins with a letter. In best programming practice, variable names should be chosen so that they describe their use in the program, making the program *self-documenting*.

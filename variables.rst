@@ -479,17 +479,17 @@ depends on the **rules of precedence**. Python follows the same precedence
 rules for its mathematical operators that mathematics does. The acronym PEMDAS
 is a useful way to remember the order of operations:
 
-#. **P**\ arentheses have the highest precedence and can be used to force an
+1. **P**\ arentheses have the highest precedence and can be used to force an
    expression to evaluate in the order you want. Since expressions in
    parentheses are evaluated first, `2 * (3-1)` is 4, and `(1+1)**(5-2)` is
    8. You can also use parentheses to make an expression easier to read, as in
    `(minute * 100) / 60`, even though it doesn't change the result.
-#. **E**\ xponentiation has the next highest precedence, so `2**1+1` is 3 and
+1. **E**\ xponentiation has the next highest precedence, so `2**1+1` is 3 and
    not 4, and `3*1**3` is 3 and not 27.
-#. **M**\ ultiplication and both **D**\ ivision operators have the same precedence, which is
+1. **M**\ ultiplication and both **D**\ ivision operators have the same precedence, which is
    higher than **A**\ ddition and **S**\ ubtraction, which also have the same
    precedence. So `2*3-1` yields 5 rather than 4, and `5-2*2` is 1, not 6.
-#. Operators with the *same* precedence are evaluated from left-to-right. In algebra
+1. Operators with the *same* precedence are evaluated from left-to-right. In algebra
    we say they are *left-associative*.  So in
    the expression `6-3+2`, the subtraction happens first, yielding 3. We then add
    2 to get the result 5. If the operations had been evaluated from
@@ -798,14 +798,14 @@ Exercises
 ---------
 
 
-#. Take the sentence: *All work and no play makes Jack a dull boy.*
+1. Take the sentence: *All work and no play makes Jack a dull boy.*
    Store each word in a separate variable, then print out the sentence on
    one line using `print`.
-#. Add parenthesis to the expression `6 * 1 - 2` to change its value
+1. Add parenthesis to the expression `6 * 1 - 2` to change its value
    from 4 to -6.
-#. Place a comment before a line of code that previously worked, and
+1. Place a comment before a line of code that previously worked, and
    record what happens when you rerun the program.
-#. Start the Python interpreter and enter `bruce + 4` at the prompt.
+1. Start the Python interpreter and enter `bruce + 4` at the prompt.
    This will give you an error:
 
        .. sourcecode:: python3
@@ -813,7 +813,7 @@ Exercises
             NameError: name 'bruce' is not defined
 
    Assign a value to `bruce` so that `bruce + 4` evaluates to `10`.
-#. The formula for computing the final amount if one is earning
+1. The formula for computing the final amount if one is earning
    compound interest is given on Wikipedia as
 
        .. image:: illustrations/compoundInterest.png
@@ -824,7 +824,7 @@ Exercises
    Then have the program prompt the user for the number of years `t` that the money will
    be compounded for.  Calculate and print the final amount after `t` years.
 
-#. Evaluate the following numerical expressions in your head, then use
+1. Evaluate the following numerical expressions in your head, then use
    the Python interpreter to check your results:
 
     #. `>>> 5 % 2`
@@ -840,11 +840,11 @@ Exercises
    move on. If not, take time now to make up examples of your own. Explore the
    modulus operator until you are confident you understand how it works.
 
-#. You look at the clock and it is exactly 2pm.  You set an alarm to go off
+1. You look at the clock and it is exactly 2pm.  You set an alarm to go off
    in 51 hours.  At what time does the alarm go off?  (Hint: you could count on
    your fingers, but this is not what we're after.  If you are tempted
    to count on your fingers, change the 51 to 5100.)
 
-#. Write a Python program to solve the general version of the above problem.
+1. Write a Python program to solve the general version of the above problem.
    Ask the user for the time now (in hours), and ask for the number of hours to wait.
    Your program should output what the time will be on the clock when the alarm goes off.

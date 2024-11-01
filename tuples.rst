@@ -253,12 +253,12 @@ Glossary
 Exercises
 ---------
 
-#.  We've said nothing in this chapter about whether you can pass tuples as
+1.  We've said nothing in this chapter about whether you can pass tuples as
     arguments to a function. Construct a small Python example to test whether
     this is possible, and write up your findings.
 
-#.  Is a pair a generalization of a tuple, or is a tuple a generalization of a pair?
+1.  Is a pair a generalization of a tuple, or is a tuple a generalization of a pair?
 
-#.  Is a pair a kind of tuple, or is a tuple a kind of pair?
+1.  Is a pair a kind of tuple, or is a tuple a kind of pair?
 
 

@@ -534,4 +534,4 @@ Glossary
 Exercises
 ---------
 
-#. Modify `cmp` so that Aces are ranked higher than Kings.
+1. Modify `cmp` so that Aces are ranked higher than Kings.
