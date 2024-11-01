@@ -426,57 +426,70 @@ or to put her pen down and draw a line, or to change her shape, etc.)
 
 Glossary
 --------
-attribute
+---
+**attribute**
 
-:   Some state or value that belongs to a particular object.  For example, `tess` has a color.
+Some state or value that belongs to a particular object.  For example, `tess` has a color.
 
-canvas
+---
+**canvas**
 
-:   A surface within a window where drawing takes place.
+A surface within a window where drawing takes place.
 
-control flow
+---
+**control flow**
 
-:   See *flow of execution* in the next chapter.
+See *flow of execution* in the next chapter.
 
-for loop
+---
+**for loop**
 
-:   A statement in Python for convenient repetition of statements in the *body* of the loop.
+A statement in Python for convenient repetition of statements in the *body* of the loop.
 
-loop body
+---
+**loop body**
 
-:   Any number of statements nested inside a loop. The nesting is indicated by the fact that the statements are indented under the for loop statement.
+Any number of statements nested inside a loop. The nesting is indicated by the fact that the statements are indented under the for loop statement.
 
-loop variable
+---
+**loop variable**
 
-:   A variable used as part of a for loop. It is assigned a different value on each iteration of the loop.
+A variable used as part of a for loop. It is assigned a different value on each iteration of the loop.
 
-instance
+---
+**instance**
 
-:   An object of a certain type, or class.  `tess` and `alex` are different instances of the class `Turtle`.
+An object of a certain type, or class.  `tess` and `alex` are different instances of the class `Turtle`.
 
-method
+---
+**method**
 
-:   A function that is attached to an object.  Invoking or activating the method causes the object to respond in some way, e.g. `forward` is the method when we say `tess.forward(100)`.
+A function that is attached to an object.  Invoking or activating the method causes the object to respond in some way, e.g. `forward` is the method when we say `tess.forward(100)`.
 
-invoke
+---
+**invoke**
 
-:   An object has methods.  We use the verb invoke to mean *activate the method*.  Invoking a method is done by putting parentheses after the method name, with some possible arguments.  So  `tess.forward()` is an invocation of the `forward` method.
+An object has methods.  We use the verb invoke to mean *activate the method*.  Invoking a method is done by putting parentheses after the method name, with some possible arguments.  So  `tess.forward()` is an invocation of the `forward` method.
 
-module
+---
+**module**
 
-:   A file containing Python definitions and statements intended for use in other Python programs. The contents of a module are made available to the other program by using the `import` statement.
+A file containing Python definitions and statements intended for use in other Python programs. The contents of a module are made available to the other program by using the `import` statement.
 
-object
+---
+**object**
 
-:   A "thing" to which a variable can refer.  This could be a screen window, or one of the turtles we have created.
+A "thing" to which a variable can refer.  This could be a screen window, or one of the turtles we have created.
 
-range
+---
+**range**
 
-:   A built-in function in Python for generating sequences of integers.  It is especially useful when we need to write a for loop that executes a fixed number of times.
+A built-in function in Python for generating sequences of integers.  It is especially useful when we need to write a for loop that executes a fixed number of times.
 
-terminating condition
+---
+**terminating condition**
 
-:   A condition that occurs which causes a loop to stop repeating its body. In the `for` loops we saw in this chapter, the terminating condition has been when there are no more elements to assign to the loop variable.
+A condition that occurs which causes a loop to stop repeating its body. In the `for` loops we saw in this chapter, the terminating condition has been when there are no more elements to assign to the loop variable.
 
 
 

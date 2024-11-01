@@ -100,26 +100,31 @@ symbolic computation, such as searching and replacing text in a document or
 The details look different in different languages, but a few basic instructions
 appear in just about every language:
 
-input
+---
+**input**
 
-:    Get data from the keyboard, a file, or some other device.
+Get data from the keyboard, a file, or some other device.
 
-output
+---
+**output**
 
-:    Display data on the screen or send data to a file or other device.
+Display data on the screen or send data to a file or other device.
 
-math
+---
+**math**
 
-:    Perform basic mathematical operations like addition and multiplication.
+Perform basic mathematical operations like addition and multiplication.
 
-conditional execution
+---
+**conditional execution**
 
-:    Check for certain conditions and execute the appropriate sequence of
+Check for certain conditions and execute the appropriate sequence of
     statements.
 
-repetition
+---
+**repetition**
 
-:    Perform some action repeatedly, usually with some variation.
+Perform some action repeatedly, usually with some variation.
 
 Believe it or not, that's pretty much all there is to it. Every program you've
 ever used, no matter how complicated, is made up of instructions that look more
@@ -276,22 +281,25 @@ structure, syntax, and semantics—there are many differences:
 Glossary
 ---------
 
-ambiguity
+---
+**ambiguity**
 
-:    Natural languages are full of ambiguity, which people deal with by
+Natural languages are full of ambiguity, which people deal with by
      using contextual clues and other information. Formal languages are
      designed to be nearly or completely unambiguous, which means that any
      statement has exactly one meaning, regardless of context.
 
-redundancy
+---
+**redundancy**
 
-:   In order to make up for ambiguity and reduce misunderstandings, natural
+In order to make up for ambiguity and reduce misunderstandings, natural
     languages employ lots of redundancy. As a result, they are often
     verbose.  Formal languages are less redundant and more concise.
 
-literalness
+---
+**literalness**
 
-:   Formal languages mean exactly what they say.  On the other hand, natural languages
+Formal languages mean exactly what they say.  On the other hand, natural languages
     are full of idiom and metaphor. If someone says, "The
     other shoe fell", there is probably no shoe and nothing falling.  
     You'll need to find the
@@ -303,21 +311,24 @@ time adjusting to formal languages. In some ways, the difference between formal
 and natural language is like the difference between poetry and prose, but more
 so:
 
-poetry
+---
+**poetry**
 
-:   Words are used for their sounds as well as for their meaning, and the
+Words are used for their sounds as well as for their meaning, and the
     whole poem together creates an effect or emotional response. Ambiguity
     is not only common but often deliberate.
 
-prose
+---
+**prose**
 
-:   The literal meaning of words is more important, and the structure
+The literal meaning of words is more important, and the structure
     contributes more meaning. Prose is more amenable to analysis than
     poetry but still often ambiguous.
 
-program
+---
+**program**
 
-:   The meaning of a computer program is unambiguous and literal, and can
+The meaning of a computer program is unambiguous and literal, and can
     be understood entirely by analysis of the tokens and structure.
 
 Here are some suggestions for reading programs (and other formal languages).
@@ -675,125 +686,151 @@ the content of your drawing is up to you.
 Glossary
 --------
 
-algorithm
+---
+**algorithm**
 
-:   A set of specific steps for solving a category of problems.
+A set of specific steps for solving a category of problems.
 
-bug
+---
+**bug**
 
-:   An error in a program.
+An error in a program.
 
-comment
+---
+**comment**
 
-:   Information in a program that is meant for other programmers (or anyone
+Information in a program that is meant for other programmers (or anyone
     reading the source code) and has no effect on the execution of the
     program.    
 
-debugging
+---
+**debugging**
 
-:   The process of finding and removing any of the three kinds of
+The process of finding and removing any of the three kinds of
     programming errors.
 
-exception
+---
+**exception**
 
-:   Another name for a runtime error.
+Another name for a runtime error.
 
-formal language
+---
+**formal language**
 
-:   Any one of the languages that people have designed for specific
+Any one of the languages that people have designed for specific
     purposes, such as representing mathematical ideas or computer programs;
     all programming languages are formal languages.
 
-high-level language
+---
+**high-level language**
 
-:   A programming language like Javascript that is designed to be easy for
+A programming language like Javascript that is designed to be easy for
     humans to read and write.
 
-immediate mode
+---
+**immediate mode**
 
-:   A style of using Javascript where we type expressions at the command prompt, and
+A style of using Javascript where we type expressions at the command prompt, and
     the results are shown immediately.  Contrast with **script**, and see the
     entry under **Javascript shell**.
 
-interpreter
+---
+**interpreter**
 
-:   The engine that executes your Javascript scripts or expressions.
+The engine that executes your Javascript scripts or expressions.
 
-low-level language
+---
+**low-level language**
 
-:   A programming language that is designed to be easy for a computer to
+A programming language that is designed to be easy for a computer to
     execute; also called machine language or assembly language.
 
-natural language
+---
+**natural language**
 
-:   Any one of the languages that people speak that evolved naturally.
+Any one of the languages that people speak that evolved naturally.
 
-object code
+---
+**object code**
 
-:   The output of the compiler after it translates the program.
+The output of the compiler after it translates the program.
 
-parse
+---
+**parse**
 
-:   To examine a program and analyze the syntactic structure.
+To examine a program and analyze the syntactic structure.
 
-portability
+---
+**portability**
 
-:   A property of a program that can run on more than one kind of computer.
+A property of a program that can run on more than one kind of computer.
 
-print function
+---
+**print function**
 
-:   A function used in a program or script that causes the Javascript interpreter to
+A function used in a program or script that causes the Javascript interpreter to
     display a value on its output device.
 
-problem solving
+---
+**problem solving**
 
-:   The process of formulating a problem, finding a solution, and
+The process of formulating a problem, finding a solution, and
     expressing the solution.
 
-program
+---
+**program**
 
-:   a sequence of instructions that specifies to a computer actions and
+a sequence of instructions that specifies to a computer actions and
     computations to be performed.
 
-Javascript console
+---
+**Javascript console**
 
-:   An interactive user interface to the Javascript interpreter. The user of a
+An interactive user interface to the Javascript interpreter. The user of a
     Javascript shell types commands at the prompt, and presses the return
     key to send these commands immediately to the interpreter for
     processing.
 
-runtime error
+---
+**runtime error**
 
-:   An error that does not occur until the program has started to execute
+An error that does not occur until the program has started to execute
     but that prevents the program from continuing.
 
-script
+---
+**script**
 
-:   A program stored in a file (usually one that will be interpreted).
+A program stored in a file (usually one that will be interpreted).
 
-semantic error
+---
+**semantic error**
 
-:   An error in a program that makes it do something other than what the
+An error in a program that makes it do something other than what the
     programmer intended.
 
-semantics
+---
+**semantics**
 
-:   The meaning of a program.
+The meaning of a program.
 
-source code
+---
+**source code**
 
-:   A program in a high-level language before being compiled.
+A program in a high-level language before being compiled.
 
-syntax
+---
+**syntax**
 
-:   The structure of a program.
+The structure of a program.
 
-syntax error
+---
+**syntax error**
 
-:   An error in a program that makes it impossible to parse --- and
+An error in a program that makes it impossible to parse --- and
     therefore impossible to interpret.
 
-token
+---
+**token**
 
-:   One of the basic elements of the syntactic structure of a program,
+One of the basic elements of the syntactic structure of a program,
     analogous to a word in a natural language.

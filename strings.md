@@ -740,78 +740,92 @@ You can [learn more about template strings from the docs](https://developer.mozi
 
 ## Glossary
 
-compound data type
+---
+**compound data type**
 
-:  A data type in which the values are made up of components, or elements,
+A data type in which the values are made up of components, or elements,
    that are themselves values.
 
-default value
+---
+**default value**
 
-:  The value given to an optional parameter if no argument for it is
+The value given to an optional parameter if no argument for it is
    provided in the function call.
 
-dot notation
+---
+**dot notation**
 
-:  Use of the **dot operator**, `.`, to access methods and properties of an object.
+Use of the **dot operator**, `.`, to access methods and properties of an object.
 
-immutable data value
+---
+**immutable data value**
 
-:  A data value which cannot be modified. Assignments to elements or
+A data value which cannot be modified. Assignments to elements or
    slices (sub-parts) of immutable values cause a runtime error.
 
-index
+---
+**index**
 
-:  A variable or value used to select a member of an ordered collection, such as
+A variable or value used to select a member of an ordered collection, such as
    a character from a string, or an element from a list.
 
-indexing (`[]`)
+---
+**indexing (`[]`)**
 
-:  Access a single character in a string using its position (starting from
+Access a single character in a string using its position (starting from
    0). Example: `"This"[2]` evaluates to `"i"`.
 
-length property (`string.length`)
+---
+**length property (`string.length`)**
 
-:  Returns the number of characters in a string. Example:
+Returns the number of characters in a string. Example:
    `"happy".length` evaluates to `5`.
 
-mutable data value
+---
+**mutable data value**
 
-:  A data value which can be modified. The types of all mutable values
+A data value which can be modified. The types of all mutable values
    are compound types. Lists and dictionaries are mutable; strings
    and tuples are not.
 
-optional parameter
+---
+**optional parameter**
 
-:  A parameter written in a function header with an assignment to a
+A parameter written in a function header with an assignment to a
    default value which it will receive if no corresponding argument is
    given for it in the function call.
 
-regular expression
+---
+**regular expression**
 
-:  A pattern expressed using the regular expression language to
+A pattern expressed using the regular expression language to
    find a substring within string.
 
-short-circuit evaluation
+---
+**short-circuit evaluation**
 
-:  A style of programming that shortcuts extra work as soon as the
+A style of programming that shortcuts extra work as soon as the
    outcome is know with certainty. In this chapter our `find`
    function returned as soon as it found what it was looking for; it
    didn't traverse all the rest of the items in the string.
 
-substring
+---
+**substring**
 
-:  A part of a string (substring) specified by a range of indices. More
+A part of a string (substring) specified by a range of indices. More
    generally, a subsequence of any sequence type in Javascript can be created
    using the `substring` method of string: `"testing".substring(0,4)`.
 
-traverse
+---
+**traverse**
 
-:  To iterate through the elements of a collection, performing a similar
+To iterate through the elements of a collection, performing a similar
    operation on each.
 
-whitespace
+---
+**whitespace**
 
-:  Any of the characters that move the cursor without printing visible
+Any of the characters that move the cursor without printing visible
    characters. Whitespace in Javascript can be represented by the 
    regular expression `/\s/`.
 

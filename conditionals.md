@@ -595,83 +595,99 @@ We think of our code as our creation, our work of art! We make it great.
 Glossary
 --------
 
-block
+---
+**block**
 
-:   A group of consecutive statements with the same indentation.
+A group of consecutive statements with the same indentation.
 
-body
+---
+**body**
 
-:   The block of statements in a compound statement that follows the
+The block of statements in a compound statement that follows the
     header.
 
-Boolean algebra
+---
+**Boolean algebra**
 
-:   Some rules for rearranging and reasoning about Boolean expressions.
+Some rules for rearranging and reasoning about Boolean expressions.
 
-Boolean expression
+---
+**Boolean expression**
 
-:   An expression that is either true or false.
+An expression that is either true or false.
 
-Boolean value
+---
+**Boolean value**
 
-:   There are exactly two Boolean values: `true` and `false`. Boolean
+There are exactly two Boolean values: `true` and `false`. Boolean
     values result when a Boolean expression is evaluated by the Javascript
     interpreter. They have type `'boolean'`.
 
-branch
+---
+**branch**
 
-:   One of the possible paths of the flow of execution determined by
+One of the possible paths of the flow of execution determined by
     conditional execution.
 
-chained conditional
+---
+**chained conditional**
 
-:   A conditional branch with more than two possible flows of execution. In
+A conditional branch with more than two possible flows of execution. In
     Javascript chained conditionals are written with `if ... else if ... else`
     statements.
 
-comparison operator
+---
+**comparison operator**
 
-:   Javascript operators that compare two values: `===`, `!==`, `>`,
+Javascript operators that compare two values: `===`, `!==`, `>`,
     `<`, `>=`, and `<=`.
 
-condition
+---
+**condition**
 
-:   The Boolean expression in a conditional statement that determines which
+The Boolean expression in a conditional statement that determines which
     branch is executed.
 
-conditional statement
+---
+**conditional statement**
 
-:   A statement that controls the flow of execution depending on some
+A statement that controls the flow of execution depending on some
     condition. In Javascript the keywords `if`, `else if`, and `else` are
     used for conditional statements.
 
-logical operator
+---
+**logical operator**
 
-:   One of the operators that combines Boolean expressions: (and) `&&`,
+One of the operators that combines Boolean expressions: (and) `&&`,
     (or) `||`, and (not) `!`.
 
-nesting
+---
+**nesting**
 
-:   One program structure within another, such as a conditional statement
+One program structure within another, such as a conditional statement
     inside a branch of another conditional statement.
 
-prompt
+---
+**prompt**
 
-:   A visual cue that tells the user that the system is ready to accept input data.
+A visual cue that tells the user that the system is ready to accept input data.
 
-truth table
+---
+**truth table**
 
-:   A concise table of Boolean values that can describe the semantics
+A concise table of Boolean values that can describe the semantics
     of an operator.
 
-type conversion
+---
+**type conversion**
 
-:   An explicit function call that takes a value of one type and computes a
+An explicit function call that takes a value of one type and computes a
     corresponding value of another type.
 
-wrapping code in a function
+---
+**wrapping code in a function**
 
-:   The process of adding a function header and parameters to a sequence
+The process of adding a function header and parameters to a sequence
     of program statements is often referred to as "wrapping the code in
     a function". This process is very useful whenever the program
     statements in question are going to be used multiple times. It is
