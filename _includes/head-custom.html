@@ -78,4 +78,15 @@
     }
   });
 });
+// Make external links open in new tab
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a'); // Select all anchor tags
+    links.forEach(link => {
+      if (link.href.includes('://') && !link.target) {
+        link.setAttribute('target', '_blank'); // Set target to _blank for external links
+        link.setAttribute('rel', 'noopener noreferrer'); // Optional: enhance security
+      }
+    });
+  });
+
 </script>
