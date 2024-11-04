@@ -385,6 +385,8 @@ This example is slightly more complicated, but for now let's just focus on
 the last line, which enables us to say "Hello, World" onto a webpage instead
 of just into the JavaScript console. Here is a Codepen which is set up with the `TextInterface` library already available so you can see a "hello world" on a page:
 
+{% include codepen.html user="thinkle" id="wvVxXee" %}
+
 Here is a codepen ready to work: [Hello World Example](https://codepen.io/thinkle/pen/wvVxXee)
 
 
@@ -520,6 +522,9 @@ When we run this program, we draw this image:
 The picture drawn by this program.<br>
 </figcaption>
 </figure>
+
+{% include codepen.html  id="OJewwWb" %}
+
 
 [Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)
 
@@ -660,16 +665,19 @@ to take on major projects.
 
 Turtle Exercises 1
 ------------------
-[Turtle Exercises 1](https://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
+[Turtle Exercises 1](https://codepen.io/thinkle-iacs/pen/abejKPb?editors=0011)
 
 1. Use `turtle` to draw a red square with a pink border
 2. Draw three circles, side-by-side. The first one should be blue, the second green, the third red.
 3. Draw a triangle.
 4. (bonus) Draw a 5-pointed star. _Hint:_ draw this on a piece of paper first
 
+
+{% include codepen.html id="abejKPb" %}
+
 First Turtle Lab
 ----------------
-[First Turtle Lab ](hhttps://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
+[First Turtle Lab ](https://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
 
 Our first lab presents an open-ended exercise, just to get you started.
 Use turtle graphics to draw a picture. We suggest you spend about
