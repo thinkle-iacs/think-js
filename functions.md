@@ -71,6 +71,10 @@ This function is named `calculateTip`.  It has two parameters: one to tell
 the function the amount of the bill, and the other to tell it the percent
 tip to calculate.
 
+Here is the same `calculateTip` function implemented using the TextInterface library:
+{% include codepen.html id="yLmqEmw" user="thinkle" %}
+
+
 Defining a new function does not make the function run. To do that we
 need a **function call**. We've already seen how to call some built-in
 functions like **console.log**, **window.input**, and **Number.parseInt**. Function
@@ -94,37 +98,34 @@ calculateTip(myBill, 18);
 calculateTip(myBill, 20);
 ```
 
-<aside id="coding-style">
 
-**Coding Style**
+> ### Coding Style
+>
+>  Now that you are about to write longer, more complex pieces of Javascript,
+  it is a good time to talk about coding style. Most languages can be
+  written (or more concise, formatted) in different styles; some are more
+  readable than others. Making it easy for others to read your code is
+  always a good idea, and adopting a nice coding style helps tremendously
+  for that.
+>
+>  For our Javascript, we will follow the coding style described in the [Mozilla project developer's guide](https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style). Here are the most important points extracted for you:
+>
+>  - Use 2-space indentation, and no tabs.
+>  - Wrap lines so that they don’t exceed 80 characters.
+>    - This helps users with small displays and makes it possible to have
+      several code files side-by-side on larger displays.
+>  - Use double quotes `"` for string literals, except when avoiding inline double quotes
+>  - Use blank lines to separate functions and classes, and larger blocks
+    of code inside functions.
+>  - When possible, put comments on a line of their own.
+>  - Use spaces around operators and after commas, but not directly inside
+    bracketing constructs: a = f(1, 2) + g(3, 4).
+>  - Name your variables, classes, and functions consistently; the convention is to use
+    CamelCase for identifier names.
+>  - Don’t use fancy encodings if your code is meant to be used in
+    international environments. Use UTF-8 or plain ASCII.
+    - Likewise, don’t use non-ASCII characters in identifiers.`
 
-Now that you are about to write longer, more complex pieces of Javascript,
-it is a good time to talk about coding style. Most languages can be
-written (or more concise, formatted) in different styles; some are more
-readable than others. Making it easy for others to read your code is
-always a good idea, and adopting a nice coding style helps tremendously
-for that.
-
-For our Javascript, we will follow the coding style described
-in the [Mozilla project developer's guide](https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Coding_Style). Here are the most important points extracted for you:
-
-- Use 2-space indentation, and no tabs.
-- Wrap lines so that they don’t exceed 80 characters.
-  - This helps users with small displays and makes it possible to have
-    several code files side-by-side on larger displays.
-- Use double quotes `"` for string literals, except when avoiding inline double quotes
-- Use blank lines to separate functions and classes, and larger blocks
-  of code inside functions.
-- When possible, put comments on a line of their own.
-- Use spaces around operators and after commas, but not directly inside
-  bracketing constructs: a = f(1, 2) + g(3, 4).
-- Name your variables, classes, and functions consistently; the convention is to use
-  CamelCase for identifier names.
-- Don’t use fancy encodings if your code is meant to be used in
-  international environments. Use UTF-8 or plain ASCII.
-  - Likewise, don’t use non-ASCII characters in identifiers.
-
-</aside>
 
 Composition: Functions can call other functions
 --------------------------------------------------
@@ -268,6 +269,8 @@ How do we write our own fruitful function? Let's look at the standard
 formula for compound interest as an example of a fruitful function:   
 
 ![](figs/compoundInterest.png)
+
+{% include codepen.html user='thinkle' id='XWvBBKJ' %}
 
 ```javascript
 /*
