@@ -1,0 +1,6 @@
+Note: we have moved from Pandoc to a simple github-pages jekyll build.
+
+To run, we can use:
+
+bundle exec jekyll serve
+
