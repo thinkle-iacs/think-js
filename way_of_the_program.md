@@ -49,8 +49,7 @@ interpreter. You can also install a stand-alone interpreter on your computer.
 
 There are two ways to use the interpreter: *interactive or immediate mode* and *script
 mode*. In immediate mode, you type Javascript expressions into the interpreter's console,
-and the interpreter immediately shows the result. This is the an example of the repl.it
-interpreter's console:
+and the interpreter immediately shows the result. You can open a JavaScript console in any browser using the developer tools (usually under "inspect," then "console"). You can also use a standalone JavaScript console at [jsconsole.com](https://jsconsole.com).
 
 ```sh
 Babel Compiler v6.4.4
@@ -384,13 +383,9 @@ ti.output("Hello, World!");
 
 This example is slightly more complicated, but for now let's just focus on 
 the last line, which enables us to say "Hello, World" onto a webpage instead
-of just into the JavaScript console. We do so by using other code written
-for this class.
+of just into the JavaScript console. Here is a Codepen which is set up with the `TextInterface` library already available so you can see a "hello world" on a page:
 
-Here is a model repl.it with the TextInterface code ready to roll:
-[Text Interface Example](https://replit.com/@ThomasHinkle/Text-Interface-Library#main.js)
-
-[Codepen TextInterface Example](https://codepen.io/thinkle-iacs/pen/JjQgrGy)
+Here is a codepen ready to work: [Hello World Example](https://codepen.io/thinkle/pen/wvVxXee)
 
 
 Comments
