@@ -20,7 +20,9 @@ refers to our first turtle `alex`, but we can choose another
 name if we follow the naming rules from the previous chapter).
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 
 import turtle     # Allows us to use turtles
 wn = turtle.Screen()      # Creates a playground for turtles
@@ -81,7 +83,9 @@ lines that are different from the previous example (and we've used a different
 variable name for this turtle):
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 import turtle
 wn = turtle.Screen()
 wn.bgcolor("lightgreen")      # Set the window background color
@@ -128,7 +132,9 @@ methods --- so `alex` might draw with a thin black pen and be at some position,
 while `tess` might be going in her own direction with a fat pink pen.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 
 import turtle
 wn = turtle.Screen() # Set up the window and its attributes
@@ -207,7 +213,9 @@ Python's **for** loop solves this for us.   Let's say we have some friends, and
 we'd like to send them each an email inviting them to our party.  We don't
 quite know how to send email yet, so for the moment we'll just print a message for each friend:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 for f in ["Joe","Zoe","Brad","Angelina","Zuki","Thandi","Paris"]:
     invite = "Hi " + f + ".  Please come to my party on Saturday!"
     print(invite)
@@ -269,7 +277,9 @@ We previously used 8 lines to have `alex` draw the four sides of a square.
 This does exactly the same, but using just three lines:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 for i in [0,1,2,3]:
     alex.forward(50)
     alex.left(90)
@@ -289,7 +299,9 @@ Some observations:
   so popular that Python gives us special built-in `range` objects:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 for i in range(4):
     # Executes the body with i = 0, then 1, then 2, then 3
 for x in range(10):
@@ -309,7 +321,9 @@ for x in range(10):
 So to repeat something four times, a good Python programmer would do this:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 for i in range(4):
     alex.forward(50)
     alex.left(90)
@@ -321,7 +335,9 @@ By now you should be able to see how to change our previous program so that
 But now, what would happen if we made this change?
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 for c in ["yellow", "red", "purple", "blue"]:
     alex.color(c)
     alex.forward(50)
@@ -331,7 +347,9 @@ for c in ["yellow", "red", "purple", "blue"]:
 A variable can also be assigned a value that is a list.  So lists can also be used in
 more general situations, not only in the `for` loop.  The code above could be rewritten like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 # Assign a list to a variable
 clrs = ["yellow", "red", "purple", "blue"]   
 for c in clrs:
@@ -365,7 +383,9 @@ A turtle's pen can be picked up or put down.  This allows us to move a turtle
 to a different place without drawing a line.   The methods are
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 alex.penup()
 alex.forward(100)     # This moves alex, but no line is drawn
 alex.pendown()  
@@ -376,7 +396,9 @@ Every turtle can have its own shape.  The ones available "out of the box"
 are `arrow`, `blank`, `circle`, `classic`, `square`, `triangle`, `turtle`.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 alex.shape("turtle")   
 ```
 
@@ -387,7 +409,9 @@ quickly the turtle turns and moves forward).  Speed settings can be set
 between 1 (slowest) to 10 (fastest).  But if we set the speed to 0, it has
 a special meaning --- turn off animation and go as fast as possible.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}      
+```
+
+{.python .numberLines}      
 alex.speed(10)
 ```
 
@@ -397,7 +421,9 @@ Stamping works, even when the pen is up.
 Let's do an example that shows off some of these new features:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}    
+```
+
+{.python .numberLines}    
 import turtle
 wn = turtle.Screen()     
 wn.bgcolor("lightgreen")
@@ -539,7 +565,9 @@ Exercises
    anticipate correctly:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> import turtle
 >>> wn = turtle.Screen()
 >>> tess = turtle.Turtle()

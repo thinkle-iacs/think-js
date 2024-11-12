@@ -352,7 +352,9 @@ and then calling `sort()` on our array of keys. We can add this code
 to our example above in order to print out the frequency map of letters
 in alphabetical order.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines startFrom="15"}
+```
+
+{.javascript .numberLines startFrom="15"}
 let keys = Object.keys(letterCounts);
 keys.sort();
 for(let i = 0; i < keys.length; i++) {

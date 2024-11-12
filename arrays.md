@@ -843,7 +843,9 @@ Array Exercises
    ⠕ let c = combine(a, b);
    ⠕ console.log(c);
    ["catlion", "dogwolf", "birdeagle"]
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ```
+
+
 
 6. Write a function called `isSorted` which takes an array (of number)
    as a parameter. It should return `true` if the array is already

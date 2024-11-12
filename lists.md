@@ -1014,13 +1014,17 @@ Exercises
    If the lists are not equal in length, the new list will end
    with the item from the longer list. For example:
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+    ```
+
+{.python}
     a = ["cat", "dog", "bird"]
     b = ["lion", "wolf", "eagle"]
     c = combine(a,b)
     print(c)
     >>> ["catlion", "dogwolf", "birdeagle"]
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
+
+
 
 9. Write a function called `is_sorted` which takes a list (of number or strings)
    as a parameter. It should return `True` if the list is already
@@ -1028,7 +1032,9 @@ Exercises
 
     You can use this function to test your code:
    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+    ```
+
+{.python .numberLines}
     def test_sort():
        print("-----------------")
        print("testing unsorted")
@@ -1042,7 +1048,9 @@ Exercises
              "elephant", "albatross", "coyote"]
        print(is_sorted(n3))
        print(is_sorted(sorted(n3)))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
+
+
 
 10. What is the Python interpreter's response to the following?
 
@@ -1068,7 +1076,9 @@ Exercises
 
     test(replace(s, "o", "a") ==
         "I lave spam! Spam is my favarite faad. Spam, spam, yum!")
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
+
+
 
     *Hint*: use the `split` and `join` methods.
           

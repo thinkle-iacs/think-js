@@ -472,7 +472,7 @@ We're using a version of Turtle that has been written for Javascript.
 As we've seen, a program and algorithms consist of a number of commands or statements
 that execute in an order described by the program. There are many libraries
 or APIs (application programming interface) that help you useful do things in Javascript.
-Some APIsread files over a network, others choose random numbers, while others might
+Some APIs read files over a network, others choose random numbers, while others might
 encrypt data to make it more secure. The `turtle` API
 has a number of commands that you can use to move a turtle around a screen
 and to draw shapes and patterns.

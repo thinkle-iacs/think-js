@@ -116,7 +116,9 @@ important programming ideas easier to teach.
 The first example from the text illustrates this point. It is the traditional
 hello, world program, which in the Java version of the book looks like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.java}
+```
+
+{.java}
 class Hello
 {
     public static void main (String[] args)
@@ -128,7 +130,9 @@ class Hello
 
 in the Python version it becomes:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 print("Hello, World!")
 ```
 
@@ -294,7 +298,9 @@ Here are some of the key things I've approached differently:
   so rather than use the traditional command-line `input` for data, I've 
   favoured using loops and lists right up front, like this:
   
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 friends = ["Zoe", "Joe", "Bill"]
 for f in friends:
     invitation = "Hi " + f + ".  Please come to my party on Saturday!"
@@ -311,7 +317,9 @@ lists, early iteration" in its most simple form.
   you wrote up the test case with double quotes. 
   Cases like this also confused students (and instructors) quite badly: 
   
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 
 def addlist(xs):
     """

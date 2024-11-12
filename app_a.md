@@ -146,7 +146,9 @@ condition.
 For example:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 while x > 0 and y < 0:
     # Do something to x
     # Do something to y
@@ -368,7 +370,9 @@ expression into a series of assignments to temporary variables.
 For example:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 self.hands[i].add_card(self.hands[self.find_neighbor(i)].pop_card())
 
 
@@ -376,7 +380,9 @@ self.hands[i].add_card(self.hands[self.find_neighbor(i)].pop_card())
 This can be rewritten as:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 neighbor = self.find_neighbor (i)
 picked_card = self.hands[neighbor].pop_card()
 self.hands[i].add_card(picked_card)
@@ -392,7 +398,9 @@ evaluation may not be what you expect. For example, if you are translating the
 expression `x/2pi` into Python, you might write:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 y = x / 2 * math.pi
 
 
@@ -405,7 +413,9 @@ A good way to debug expressions is to add parentheses to make the order of
 evaluation explicit:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 y = x / (2 * math.pi)
 
 
@@ -424,7 +434,9 @@ chance to print the `return` value before returning. Again, you can use a
 temporary variable. For example, instead of:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 return self.hands[i].remove_matches()
 
 
@@ -432,7 +444,9 @@ return self.hands[i].remove_matches()
 you could write:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 count = self.hands[i].remove_matches()
 return count
 

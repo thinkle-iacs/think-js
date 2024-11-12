@@ -132,7 +132,9 @@ we sort it by counts using the `list_freqs` function we already defined.
 </aside>
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 # schools_analysis.py
 # by: mxc
 """

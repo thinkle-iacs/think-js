@@ -11,10 +11,6 @@
 
 3. [Functions](functions.md)  
 
-- [Exercises: Assertions](assert-exercises.md)  
-
-- [Tip Calculator Source Code](work/tip-src.md)  
-
 4. [Conditionals](conditionals.md)  
 
 5. [Iteration](iteration.md)  

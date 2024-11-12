@@ -838,14 +838,18 @@ String Exercises
 
 2. **Quack.** Modify:
 
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+   ```
+
+{.javascript .numberLines}
    let prefixes = "JKLMNOPQ";
    let suffix = "ack";
    
    for (let i = 0; i < prefixes.length; i++) {
      console.log(prefixes[i] + suffix);
    }
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ```
+
+
 
    so that `Ouack` and `Quack` are spelled correctly.
 
