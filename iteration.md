@@ -49,22 +49,22 @@ We have already played around with the `for` loop with our
 turtle graphics when we were looking at the variables in a spiral. Let's take
 a closer look at this function which contains a for loop.
 
-<figure class="figure">
+
 <img src="figs/turtle-spiral.png" class="figure-img img-fluid" alt="Square spiral created with turtle graphics code.">
-<figcaption class="figure-caption">
-Our `spiral` function (below) uses a `for` loop to draw this design. [Try it and remix it here.](https://repl.it/@mcuringa/turtle-spiral)
-</figcaption>
-</figure>
+
+> Our `spiral` function (below) uses a `for` loop to draw this design. [Try it and remix it here.](https://codepen.io/thinkle/pen/mdNvVeR?editors=0011)
+
 
 ```javascript
-function spiral () {
-  setColor("deeppink")
+function spiral() {
+  turtle.setStrokeStyle("DeepPink");  
   let distance = 2;
   let angle = 91;
-  for (let i=0; i<500; i++) {
-    fd(distance);
-    distance += 2;
-    rt(angle);
+  
+  for (let i = 0; i < 500; i++) {
+    turtle.forward(distance);  
+    distance += 2;  
+    turtle.right(angle);
   }
 }
 ```
@@ -98,14 +98,16 @@ let airTimeRemaining = 15;
 console.log(airTimeRemaining);
 airTimeRemaining = 7;
 console.log(airTimeRemaining);
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 The output of this program is:
 
 ```sh
 15
 7
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 because the first time `airTimeRemaining` is printed, its value is 15, and
 the second time, its value is 7.
@@ -129,7 +131,9 @@ let a = 5;
 let b = a;    // After executing this line, a and b are now equal
 a = 3;    // After executing this line, a and b are no longer equal
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 The third line changes the value of `a` but does not change the
 value of `b`, so they are no longer equal. (In some programming
@@ -159,7 +163,9 @@ my airtime balance, or add one run to the scoreboard.
 let n = 5;
 n = 3 * n + 1;
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Line 2 means `get the current value of n, multiply it by three and add
 one, and assign the answer to n, thus making n refer to the value`.  
@@ -171,7 +177,9 @@ If you try to get the value of a variable that has never been assigned to, you'l
 ```javascript        
 ⠕ let w = x + 1;
 ReferenceError: x is not defined
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Before you can update a variable, you have to **initialize** it to some starting value,
 usually with a simple assignment:
@@ -180,7 +188,9 @@ usually with a simple assignment:
 let runsScored = 0;
 ...
 runsScored = runsScored + 1;
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Line 3 — updating a variable by adding 1 to it — is very common.  
 It is called an **increment** of the variable; subtracting 1 is called a **decrement**.  
@@ -260,7 +270,9 @@ for (let i=0; i<13; i++) {  // Generate numbers 0 to 12
   console.log(i + "\t" + 2**i);
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 The string `"\t"` represents a **tab character**. The backslash character in
 `"\t"` indicates the beginning of an **escape sequence**. Escape sequences
@@ -295,7 +307,9 @@ of the previous program:
 11    2048
 12    4096
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Because of the tab characters between the columns, the position of the second
 column does not depend on the number of digits in the first column.
@@ -319,7 +333,9 @@ for (let i=1; i<7; i++) {
 }
 console.log(row);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Here we initialized our loop variable `i` to 1 rather than 0
 because we want to start counting from 1.
@@ -337,7 +353,9 @@ The output of the program is:
 ```sh
 2   4   6  8    10    12
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 So far, so good. The next step is to **encapsulate** and **generalize**.
 
@@ -366,7 +384,9 @@ function printMultiples (n) {
   console.log(row);
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 To encapsulate, all we had to do was add the first line, which declares the
 name of the function and the parameter list. To generalize, all we had to do
@@ -378,14 +398,18 @@ With the argument 3, the output is:
 ```sh
 3   6   9  12   15  18
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 With the argument 4, the output is:
 
 ```sh
 4   8   12   16   20   24
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 By now you can probably guess how to print a multiplication table — by
 calling `printMultiples` repeatedly with different arguments. In fact, we
@@ -396,7 +420,9 @@ for (let i=1; i<7; i++) {
   printMultiples(i);
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 Notice how similar this loop is to the one inside `printMultiples`.  All we
 did was replace the `print` function with a function call.
 
@@ -410,7 +436,9 @@ The output of this program is a multiplication table:
 5    10    15    20    25    30
 6    12    18    24    30    36
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 More encapsulation and generalization
 -------------------------------------
@@ -425,7 +453,9 @@ function printMultTable () {
   }
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 With our `printMultTable` we encapsulate the code for printing the multiplication table.
 
@@ -471,7 +501,9 @@ function printMultTable (high) {
   }
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 We replaced the loop condition `i<7` to use the parameter `high`. Because we
 want to print upt to and including `high`, we changed the Boolean operator
@@ -487,7 +519,9 @@ displays:
 6   12    18    24    30    36
 7   14    21    28    35    42
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 This is fine, except that we probably want the table to be square — with the
 same number of rows and columns. We have `high` number of rows, but our
@@ -514,7 +548,9 @@ function printMultTable (high) {
   }
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Notice that when we added a new parameter, we had to change the first line of
 the function (the function heading), and we also had to change the place where
@@ -531,7 +567,9 @@ Now, when we call `printMultTable(7)`:
 6    12    18    24    30    36    42
 7    14    21    28    35    42    49
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Solving problems with `for` loops
 ---------------------------------
@@ -560,7 +598,9 @@ function countMultiplesOf3 (start, end) {
   return count;
 }
 console.log(countMultiplesOf3(3, 12)); // the multiples are [3, 6, 9, 12], so prints 4
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 In the example above, we test to see if a number is evenly divisible by 3
 (i.e. a multiple of 3) using the `%` mode operator. We use the `count`
@@ -594,7 +634,9 @@ function isPrime (n) {
   return true;
 
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 On line 3, we make sure that `n` is a positive integer greater than 1. On line 6, we handle
 the special case of 2 -- the only even prime. On line 11 we begin our `for` loop. We do at

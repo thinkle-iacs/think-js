@@ -392,9 +392,8 @@ A value provided to a function when the function is called. This value
 **body**
 
 The second part of a compound statement. The body consists of a
-    sequence of statements all indented the same amount from the beginning
-    of the header.  The standard amount of indentation used within the
-    Python community is 4 spaces.
+    sequence of statements wrapped in curly brackets `{...}`. Each
+    statement ends with a semicolon.    
 
 ---
 **compound statement**
@@ -402,17 +401,20 @@ The second part of a compound statement. The body consists of a
 A statement that consists of two parts:
 
     1. header - which begins with a keyword determining the statement
-       type, and ends with a colon.
-    2. body - containing one or more statements indented the same amount
-       from the header.
+       type (`function`, `if`, `while`)
+    2. body - begins with a left curly bracket `{`, contains one or
+       more statements ending with a semicolon `;`, and ends with a
+       right curly bracket `}`.
 
     The syntax of a compound statement looks like this:
 
-    ~~~~~~~~~```javascript
-    keyword ... :
-        statement
-        statement ...
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```javascript
+    keyword ... {
+        statement;
+        statement; 
+        ...
+    }
+```
 
 ---
 **flow of execution**
@@ -457,15 +459,14 @@ A function that returns a value when it is called.
 ---
 **header line**
 
-The first part of a compound statement. A header line begins with a keyword and
-    ends with a colon (:)
+The first part of a compound statement. 
 
 ---
 **import statement**
 
-A statement which permits functions and variables defined in another Python
-    module to be brought into the environment of another script.  To use the
-    features of the turtle, we need to first import the turtle module.
+A statement which permits functions and variables defined in another JavaScript
+module. To import the turtle or TextInterface library, we began with an import
+statement.
 
 ---
 **lifetime**

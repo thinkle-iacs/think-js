@@ -147,32 +147,32 @@ operators each have two operands, there are only four rows in a truth table that
 describes the semantics of `&&`.
 
 
-a       b        a && b
-------- -------  --------
-False   False    False
-False   True     False
-True    False    False
-True    True     True
+| a     | b     | a && b |
+|-------|-------|--------|
+| False | False | False  |
+| False | True  | False  |
+| True  | False | False  |
+| True  | True  | True   |
 
 In a Truth Table, we sometimes use T and F as shorthand for the two
 Boolean values: here is the truth table describing `||`:
 
 
-a    b    a || b
----  ---  -------
-F    F    F
-F    T    T
-T    F    T
-T    T    T
+| a     | b     | a `||` b |
+|-------|-------|--------|
+| F     | F     | F      |
+| F     | T     | T      |
+| T     | F     | T      |
+| T     | T     | T      |
 
 The third logical operator, `!`, only takes a single operand, so its truth table
 only has two rows:
 
 
-a    !a
----  ------
-F    T
-T    F
+| a     | !a    |
+|-------|-------|
+| F     | T     |
+| T     | F     |
 
 
 Simplifying Boolean Expressions
@@ -497,15 +497,14 @@ we can *not* get the driving license when we are less than 16.
 
 Notice that the opposite of `>=` is `<`.
 
-
-operator  logical opposite     
---------  ----------------
-===       !==
-!==       ===
-<         >=
-<=        >
->         <=
->=        <
+| operator | logical opposite |
+|----------|------------------|
+| ===      | !==              |
+| !==      | ===              |
+| <        | >=               |
+| <=       | >                |
+| >        | <=               |
+| >=       | <                |
 
 Understanding these logical opposites allows us to sometimes get rid of `!`
 operators. `!` operators are often quite difficult to read in computer code, and
@@ -583,14 +582,14 @@ title *software architect* says a lot about what we do --- we are *architects*
 who engineer our products to balance beauty, functionality, simplicity and
 clarity in our creations.
 
-<aside id="polish-code-tip">
-**Tip:** Once our program works, we should play around a bit trying to polish it up.
-Write good comments. Think about whether the code would be clearer with
-different variable names. Could we have done it more elegantly?  Should
-we rather use a function?  Can we simplify the conditionals?
 
-We think of our code as our creation, our work of art! We make it great.
-</aside>
+> **Tip:** Once our program works, we should play around a bit trying to polish it up.
+> Write good comments. Think about whether the code would be clearer with
+> different variable names. Could we have done it more elegantly?  Should
+> we rather use a function?  Can we simplify the conditionals?
+>
+> We think of our code as our creation, our work of art! We make it great.
+
 
 Glossary
 --------
@@ -745,7 +744,9 @@ Conditional Exercises
      if (Math.abs(x-y) < 0.000001) {
        // x is approximately equal to y
      }     
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ```
+
+
 
    If you're intrigued by why floating point arithmetic is sometimes inaccurate, on a piece
    of paper, divide 10 by 3 and write down the decimal result. You'll find it does not terminate,
@@ -753,11 +754,15 @@ Conditional Exercises
    memory or on your calculator has similar problems: memory is finite, and some digits may have
    to be  discarded, so small inaccuracies creep in. Try this script:
 
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}   
+     ```
+
+{.javascript .numberLines}   
      let a = Math.sqrt(2.0);
      console.log(a, a*a);
      console.log(a*a === 2.0);
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ```
+
+
 
 Conditionals Lab
 ----------------
