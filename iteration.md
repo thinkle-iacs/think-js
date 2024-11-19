@@ -23,7 +23,7 @@ A basic building block of all programs is to be able to repeat some
 code, over and over again. Javascript's **for** loop solves this for
 us. The syntax for the `for` loop is:
 
-```sh
+```javascript
 for ([initialization]; [loop condition]; [final-expression]) {
   loop body
 }
@@ -208,7 +208,7 @@ for it:
 ⠕ count++;
 ⠕ count;
 1
-~~~~~~~~~~~~~~~~~~~~
+```
 
 `count++` is an abreviation for `count = count + 1`. We pronounce the operator
 as *"plus-plus"*. Javascript offers a different operator
@@ -219,7 +219,7 @@ as *"plus-plus"*. Javascript offers a different operator
 ⠕ n += 5;
 ⠕ n;
 7
-~~~~~~~~~~~~~~~~~~~~
+```
 There are similar abbreviations for `--`, `-=`, `*=`, `/=`, and `%=`:
 
 ```javascript        
@@ -236,7 +236,7 @@ There are similar abbreviations for `--`, `-=`, `*=`, `/=`, and `%=`:
 ⠕ n %= 5;
 ⠕ n;
 1
-~~~~~~~~~~~~~~~~~~~~
+```
 
 Tables
 ------
@@ -310,7 +310,6 @@ of the previous program:
 ```
 
 
-
 Because of the tab characters between the columns, the position of the second
 column does not depend on the number of digits in the first column.
 
@@ -376,7 +375,7 @@ This function encapsulates the previous loop and generalizes it to print
 multiples of `n`:
 
 ```javascript        
-function printMultiples (n) {
+const printMultiples = (n) => {
   let row = "";     
   for (let i=1; i<7; i++) {
     row += (n * i) + "\t";
@@ -447,15 +446,13 @@ To demonstrate encapsulation again, let's take the code from the last section
 and wrap it up in a function:
 
 ```javascript        
-function printMultTable () {
+const printMultTable = () => {
   for (let i=1; i<7; i++) {
     printMultiples(i);
   }
 }
 
 ```
-
-
 
 With our `printMultTable` we encapsulate the code for printing the multiplication table.
 
@@ -495,7 +492,7 @@ print a multiplication table of any size, not just the six-by-six table. You
 could add a parameter to `printMultTable`:
 
 ```javascript        
-function printMultTable (high) {
+const printMultTable = (high) => {
   for (let i=1; i <= high; i++) {
     printMultiples(i);
   }
@@ -534,7 +531,7 @@ different functions can have parameters with the same name (just like local
 variables). Here's the whole program:
 
 ```javascript        
-function printMultiples (n, high) {
+const printMultiples = (n, high) => {
   let row = "";     
   for (let i=1; i <= high; i++) {
     row += (n * i) + "\t";
@@ -542,7 +539,7 @@ function printMultiples (n, high) {
   console.log(row);
 }
 
-function printMultTable (high) {
+const printMultTable = (high) => {
   for (let i=1; i <= high; i++) {
     printMultiples(i, high);
   }
@@ -588,7 +585,7 @@ condition. In this chapter we looked at ways to iterate over a range of
 numbers. We can combine these techniques to solve our problem.
 
 ```javascript        
-function countMultiplesOf3 (start, end) {
+const countMultiplesOf3 = (start, end) => {
   let count = 0;     
   for (let i=start; i <= end; i++) {
     if (i % 3 === 0) {
@@ -615,7 +612,7 @@ any of those numbers divide evenly into the number, it's not prime. If our loop 
 without finding a divisor, our number must be prime. Here's the code:
 
 ```javascript        
-function isPrime (n) {
+const isPrime = (n) => {
 
   if (n < 2) {
     return false;

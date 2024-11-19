@@ -10,7 +10,7 @@ Here is a fragment of code that demonstrates the use of the `while` statement:
 /**
  * Return the sum of 1+2+3 ... n
  */
-function sumTo(n) {
+const sumTo = (n) => {
   let total = 0;
   let v = 1;
   while (v <= n) {
@@ -22,7 +22,7 @@ function sumTo(n) {
 
 console.log("sumTo(4) => 10", sumTo(4) === 10);
 console.log("sumTo(1000) =>500500 ", sumTo(1000) === 500500);
-~~~~~~~~~~~~~~~~~~~~
+```
 
 You can almost read the `while` statement as if it were English. It means, while
 `v` is less than or equal to `n`, continue executing the body of the loop.
@@ -63,14 +63,14 @@ instead:
 
 ```javascript
 // Return the sum of 1+2+3 ... n
-function sumTo(n) {
+const sumTo = (n) => {
   let ss  = 0;
   for (let v = 1; v <= n; v++) {
     ss = ss + v;
   }
   return ss;
 }
-~~~~~~~~~~~~~~~~~~~~
+```
 
 So why have two kinds of loop if `for` looks easier?  This next
 example shows a case where we need the extra power that we get from
@@ -95,7 +95,7 @@ This Javascript function captures that algorithm:
 ```javascript
 // Print the 3n+1 sequence from n,
 // terminating when it reaches 1.
-function seq3np1 (n) {
+const seq3np1 = (n) => {
 
   let sequence = "";
   while (n !== 1) {
@@ -110,8 +110,9 @@ function seq3np1 (n) {
   }
   console.log(sequence + 1 + ".");
 }
-~~~~~~~~~~~~~~~~~~~~
-<caption>See [Collatz repl](https://repl.it/@mcuringa/Collatz)</caption>
+```
+
+See [Collatz codepen](https://codepen.io/thinkle-iacs/pen/OJKYEWj?editors=0010)
 
 First, note that we use the accumulator pattern that we introduced in the
 last chapter to concatenate our output to the (initially empty) string,
@@ -140,7 +141,7 @@ Here are some examples:
 21, 64, 32, 16, 8, 4, 2, 1.
 ⠕ seq3np1(16)
 16, 8, 4, 2, 1.
-~~~~~~~~~~~~~~~
+```
 
 Since `n` sometimes increases and sometimes decreases, there is no obvious
 proof that `n` will ever reach 1, or that the program terminates. For some
@@ -174,29 +175,28 @@ also goes under other names (Hailstone sequence, Wonderous numbers, etc.),
 and you'll find out just how many integers have already been tested by
 computer, and found to converge!
 
-<aside id="for-or-while">
 
-**Choosing between `for` and `while`**
 
-Use a `for` loop if you know, before you start looping,
+> **Choosing between `for` and `while`**
+>
+> Use a `for` loop if you know, before you start looping,
 the maximum number of times that you'll need to execute the body. 
 For example, if you're traversing a list of elements, you know that the maximum
 number of loop iterations you can possibly need is "all the elements in the list".
 Or if you need to print the 12 times table, we know right away how many times
 the loop will need to run.
-
-So any problem like "iterate this weather model for 1000 cycles", or "search this
+>
+> So any problem like "iterate this weather model for 1000 cycles", or "search this
 list of words", "find all prime numbers up to 10000" suggest that a `for` loop is best.
-
-By contrast, if you are required to repeat some computation until some condition is
+>
+> By contrast, if you are required to repeat some computation until some condition is
 met, and you cannot calculate in advance when (or if) this will happen,
 as we did in this 3n + 1 problem, you'll need a `while` loop.
-
-We call the first case **definite iteration** — we know ahead of time some definite bounds for
+>
+> We call the first case **definite iteration** — we know ahead of time some definite bounds for
 what is needed. The latter case is called **indefinite iteration** — we're not sure
 how many iterations we'll need — we cannot even establish an upper bound!
 
-</aside>
 
 
 Tracing a program
@@ -220,18 +220,18 @@ To keep track of all this as you hand trace a program, make a column heading on
 a piece of paper for each variable created as the program runs and another one
 for output. Our trace so far would look something like this:
 
-~~~~~~~~~~~~~~~~~~~~
+```
 n         output printed so far
 --        ---------------------
 3         3,
 10
-~~~~~~~~~~~~~~~~~~~~
+```
 
 Since `10 !== 1` evaluates to `true`, the loop body is again executed,
 and 10 is printed. `10 % 2 === 0` is true, so the `if` branch is
 executed and `n` becomes 5. By the end of the trace we have:
 
-~~~~~~~~~~~~~~~~~~~~
+```
 n         output printed so far
 --        ---------------------
 3         3,
@@ -242,7 +242,7 @@ n         output printed so far
 4         3, 10, 5, 16, 8, 4,
 2         3, 10, 5, 16, 8, 4, 2,
 1         3, 10, 5, 16, 8, 4, 2, 1.
-~~~~~~~~~~~~~~~~~~~~
+```
 
 Tracing can be a bit tedious and error prone (that's why we get computers to
 do this stuff in the first place!), but it is an essential skill for a
@@ -265,7 +265,7 @@ The following function counts the number of decimal digits in a positive
 integer:
 
 ```javascript
-function numDigits(n) {
+const numDigits = (n) => {
   let count = 0;
   while (n != 0) {
     count++;
@@ -273,7 +273,7 @@ function numDigits(n) {
   }
   return count;
 }
-~~~~~~~~~~~~~~~~~~~~
+```
 
 A call to `console.log(numDigits(710))` will print `3`. Trace the execution of
 this function call (using `console.log` or just a piece of paper) to convince
@@ -289,7 +289,7 @@ If we wanted to only count digits that are either 0 or 5, adding a conditional
 before incrementing the counter will do the trick:
 
 ```javascript
-function numZeroAndNumFiveDigits(n) {
+const numZeroAndNumFiveDigits = (n) => {
   let count = 0;
   while( n > 0) {
     let digit = n % 10;
@@ -300,7 +300,7 @@ function numZeroAndNumFiveDigits(n) {
   }
   return count;
 }
-~~~~~~~~~~~~~~~~~~~~
+```
 
 Confirm that `numZeroAndNumFiveDigits(1055030250) === 7`.
 
@@ -323,7 +323,7 @@ the actual answer) with the following formula:
 
 ```sh
 better = (approx + n/approx)/2
-~~~~~~~~~~~~~~~~~~~~
+```
 
 Repeat this calculation a few times using your calculator. Can you see why
 each iteration brings your estimate a little closer?  One of the amazing
@@ -353,7 +353,8 @@ formulate the stopping test for the loop by asking "is `a` close enough to
 if (Math.abs(a-b) < 0.001) {  // Make this smaller for better accuracy
   break
 }
-~~~~~~~~~~~~~~~~~~~~
+```
+
 Notice that we take the absolute value of the difference between `a` and `b`.
 
 ```javascript
@@ -371,16 +372,17 @@ function sqrt(n) {
 console.log(sqrt(25));
 console.log(sqrt(49));
 console.log(sqrt(81));
-~~~~~~~~~~~~~~~~~~~~
+```
+
 <caption>See [Newton Square Root repl](https://repl.it/@mcuringa/Newton-Sqare-Root)</caption>
 
 The output is:
 
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 5.000000000016778
 7
 9.000000000004924
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 See if you can improve the approximations by changing the stopping condition.
 Also, step through the algorithm (perhaps by hand, using your calculator or by

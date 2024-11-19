@@ -388,7 +388,7 @@ Combining `includes` with string concatenation using `+=`, we can
 remove the vowels from a string:
 
 ```javascript
-function removeVowels(s) {
+const removeVowels = (s) => {
   let vowels = "aeiou";
   let sansVowels = "";
   for (let i = 0; i < s.length; i++) {
@@ -403,6 +403,7 @@ function removeVowels(s) {
 console.log(removeVowels("CompSci")); // CmpSc
 console.log(removeVowels("A dark and stormy night.")); //  drk nd strmy nght.
 ```
+
 [Check out this function on repl.it](https://repl.it/@mcuringa/remove-vowels)
 
 This short function uses several of the techniques and patterns we
