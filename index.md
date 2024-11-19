@@ -2,7 +2,11 @@
 - [Preface](preface.md)  
 - [Forward](forward.md)  
 
+
+
 ## Chapters
+
+0. [Table of Contents](index.md)
 
 1. [The Way of the Program](way_of_the_program.md)  
 

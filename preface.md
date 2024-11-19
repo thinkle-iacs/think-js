@@ -1,7 +1,27 @@
 Preface
 =======
+By Thomas Hinkle
 
-Preface to previous edition
+This book is a product of a community effort.  I first used the python edition
+of this book over a decade ago (see preface below). Recently, when teaching 
+the JavaScript version of this course, I discovered a JavaScript edition written
+by Matthew Curinga. I found it to be a great resource, but JavaScript is a fast-evolving
+language and the ecosystem for teaching students coding is evolving as well.
+
+One of the initial things that drew me to Curinga's edition was that, like me, he
+was using the repl.it platform to teach students. In the summer of 2024, repl.it
+discontinued its educational platform, and I have since moved to a new platform. I 
+decided during the 2024-2025 school year to undertake an update of the JavaScript edition
+of this book, migrating examples to standalone Codepen examples and making some updates
+to better fit my own course design.
+
+This is all a wonderful example of how free software and open educational resources
+can be adapted and improved by a community of educators. I hope that you find this
+book to be a useful resource for teaching JavaScript to your students, and that you
+will in turn make improvements and share them with the community.
+
+
+Preface to Python Edition
 ---------------------------
 By Jeffrey Elkner
 
