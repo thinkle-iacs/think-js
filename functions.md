@@ -61,8 +61,8 @@ let's write a function to capture the pattern of this "building block":
 */
 const calculateTip = (bill, pct) => {
   let tip = bill * (pct * .01); // convert pct to a decimal and calculate
-  tip = tip.toFixed(2); // convert tip to a number with 2 decimal places
   let total = tip + bill;
+  // convert to a number with 2 decimal places
   total = Number.parseFloat(total).toFixed(2);
 
   // now show the results to the user
