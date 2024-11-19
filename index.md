@@ -20,6 +20,4 @@
 
 8. [Arrays](arrays.md)  
 
-9. [Maps](maps.md) 
-
 - [GNU Free Documentation License](fdl-1.3.md)  
