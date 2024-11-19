@@ -1,7 +1,15 @@
 Note: we have moved from Pandoc to a simple github-pages jekyll build.
 
+To set up we need to run:
+
+```
+bundle install
+```
+
 To run, we can use:
 
+```
 bundle exec jekyll serve
+```
 
-Turlte library: https://cdn.jsdelivr.net/gh/1ntEgr8/turtlejs/turtle.js
+Turtle library: https://cdn.jsdelivr.net/gh/1ntEgr8/turtlejs/turtle.js
