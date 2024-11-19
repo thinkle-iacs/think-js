@@ -1,5 +1,4 @@
 # Table of Contents
-
 - [Preface](preface.md)  
 - [Forward](forward.md)  
 
@@ -21,18 +20,6 @@
 
 8. [Arrays](arrays.md)  
 
-- [School Report Source Code](work/school-report-src.md)  
-
-- [Exercises: School Data](school-data-exercises.md)  
-
-9. [Maps](maps.md)  
-
-10. [GUI Programming](gui.md)  
-
-- [JS GUI Demo Source Code](work/jsgui-src.md)  
-
-- [Spells Source Code](work/spells-src.md)  
-
-- [Code Listings](code-listings.md)  
+9. [Maps](maps.md) 
 
 - [GNU Free Documentation License](fdl-1.3.md)  

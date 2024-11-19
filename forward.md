@@ -1,5 +1,6 @@
 % Think Javascript
 % Matthew X. Curinga
+  Thomas M. Hinkle
   Peter Wentworth
   Jeffrey Elkner
   Allen B. Downey
@@ -37,8 +38,12 @@ for use at Innovation Academy Charter School. I have built a simple
 Text Interface library and updated the turtle examples. Matt Curinga
 had built this book to use repl.it for examples, but in the summer of
 2024, repl.it discontinued its educational offerings. As a result, I'm
-translating the examples to work as simple Codepen pages.
+translating the examples to work as simple Codepen pages. I have also
+modernized a few patterns, including transitioning the book to use 
+arrow functions and introducing async/await.
 
+Adelphi Introduction
+---------------------
 In the Ed Tech department at Adelphi, we have switched our introductory
 programming courses from Python to Javascript. Javascript has many of the
 features we like about Python, but also offers easy configuration and
