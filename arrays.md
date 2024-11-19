@@ -19,7 +19,7 @@ elements in square brackets (`[` and `]`):
 let ps = [10, 20, 30, 40];
 let qs = ["spam", "bungee", "swallow"];
 let empty = [];
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The first array contains four numbers. The second contains an array of three
 strings. The third is an **empty array** --- it's waiting for us to add
@@ -28,7 +28,7 @@ array contains a string, a number, and (amazingly) another array:
 
 ```javascript
 let zs = ["hello", 5, [10, 20]];
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 An array within another array is said to be **nested**.
 
@@ -41,7 +41,7 @@ as parameters to functions:
 ⠕ let anEmptyList = [];
 ⠕ console.log(vocabulary, numbers, an_empty_list)
 [ 'apple', 'cheese', 'dog' ] [ 17, 123 ] []
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Accessing elements
 ------------------
@@ -55,7 +55,7 @@ the index. Remember that the indices start at 0 and can be integers up to
 ```javascript
 ⠕ numbers[0];
 => 17
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Any expression evaluating to an integer can be used as an index:
 
@@ -64,7 +64,7 @@ Any expression evaluating to an integer can be used as an index:
 => 123
 ⠕ numbers["1"]
 => undefined
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If you try to access an element that does not exist, Javascript
 returns `undefined`:
@@ -72,7 +72,7 @@ returns `undefined`:
 ```javascript
 ⠕ numbers[5];
 => undefined
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If you assign a value to an element that does not exist, Javascript will add
 the value to the array at that index, and create empty elements in the
@@ -85,7 +85,7 @@ intervening indices.
 => [ 17, 123, <3 empty items>, 22 ]
 ⠕ numbers[5];
 => 22
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 It is common to use a loop variable as a list index.
 
@@ -95,7 +95,7 @@ let horsemen = ["war", "famine", "pestilence", "death"];
 for (let i = 0; i < horsemen.length; i++) {
   console.log(horsemen[i]);
 }
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Each time through the loop, the variable `i` is used as an index into the
 array, printing the `i`'th element. This pattern of computation is called a
@@ -119,7 +119,7 @@ Javascript arrays have an `includes` method which returns a Boolean
 => false
 ⠕ !horsemen.includes("debauchery");
 true
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Array methods
 -------------
@@ -133,7 +133,7 @@ concatenating an array to the end of another array:
 ⠕ let c = a.concat(b);
 ⠕ c
 => [ 1, 2, 3, 4, 5, 6 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Notice that `a` and `b` remain unchanged;
 
@@ -142,7 +142,7 @@ Notice that `a` and `b` remain unchanged;
 => [ 1, 2, 3 ]
 ⠕ b
 => [ 4, 5, 6 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
  `push` adds elements to the end of an array and returns the new
  length of the array. You can pass more than one argument to `push`
@@ -160,7 +160,7 @@ Notice that `a` and `b` remain unchanged;
 => 7
 ⠕ a
 [ 1, 2, 3, 4, 3, 2, 1 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 `pop()` returns the last element in the array and removes that element
 from the array. When `pop` is called on an empty array, `undefined` is returned.
@@ -171,7 +171,7 @@ from the array. When `pop` is called on an empty array, `undefined` is returned.
 => 4
 ⠕ a
 [ 1, 2, 3]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 `shift` and `unshift` are equivalent to `pop` and `push` except they work
 on the beginning of an array. `a.unshift(-1, 0)` puts `-1` in the 0'th element
@@ -196,7 +196,7 @@ The `slice()` method of an array returns a new sub-array. `slice` is similar to 
 => [ 'd', 'e', 'f' ]
 ⠕ t.slice();
 [ 'a', 'b', 'c', 'd', 'e', 'f' ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The `begin` and `end` arguments are optional. If only `begin` is supplied, as
 in `t.slice(3);`, `slice` returns all elements from `begin` to the end of the
@@ -216,7 +216,7 @@ update one of the elements:
 ⠕ fruit[2] = "orange";
 ⠕ fruit
 [ 'pear', 'apple', 'orange' ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The bracket operator applied to an array can appear anywhere in an expression.
 When it appears on the left side of an assignment, it changes one of the
@@ -231,7 +231,7 @@ assignment does not work for strings:
 => 'X'
 ⠕ myString
 => 'TEST'
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Javascript just ignores the illegal assignment and we see that `myString`
 remains unchanged. This is not the case for arrays:
@@ -241,7 +241,7 @@ remains unchanged. This is not the case for arrays:
 ⠕ myCharArray[2] = "X";
 ⠕ myCharArray
 => [ 'T', 'E', 'X', 'T' ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 With the `splice` method (not to be confused with `slice`), we can update,
 insert, or delete multiple array elements with a single function call.
@@ -264,7 +264,7 @@ Delete multiple items from an index:
 => [ 'b', 'c' ]
 ⠕ chars
 => [ 'a', 'd', 'e', 'f' ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Because the `numDelete` argument is zero, this inserts items
 in the middle of an array:
@@ -274,7 +274,7 @@ in the middle of an array:
 ⠕ numbers.splice(2, 0, 21, 22);
 ⠕ numbers
 => [ 10, 20, 21, 22, 30, 40 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 By passing in the number of items to delete, we can _replace_ multiple
 array elements with `splice`:
@@ -284,7 +284,7 @@ array elements with `splice`:
 ⠕ numbers.splice(1, 2, 9, 8);
 ⠕ numbers
 => [ 10, 9, 8, 40 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Objects and references
 ----------------------
@@ -294,7 +294,7 @@ After we execute these assignment statements
 ```javascript
 let a = "banana";
 let b = "banana";
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 we know that `a` and `b` will refer to a string object with the letters
 `"banana"`. But we don't know yet whether they point to the *same* string object.
@@ -312,7 +312,7 @@ value:
 ```javascript
 ⠕ a === b
 => true
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 We cannot tell if they refere to the same object or not. Since strings are
 *immutable*, Javascript can optimize resources by making two names that refer to
@@ -325,7 +325,7 @@ This is not the case with arrays:
 ⠕ let b = [1, 2, 3];
 ⠕ a === b
 => false
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The state snapshot here looks like this:
 
@@ -344,7 +344,7 @@ variables refer to the same object:
 ⠕ let b = a;
 ⠕ a === b
 => true
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In this case, the state snapshot looks like this:
 
@@ -357,7 +357,7 @@ is **aliased**. Changes made with one alias affect the other:
 ⠕ b[0] = 5
 ⠕ a
 => [ 5, 2, 3 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Although this behavior can be useful, it is sometimes unexpected or
 undesirable. In general, it is safer to avoid aliasing when you are working
@@ -384,7 +384,7 @@ The easiest way to clone an array is to call the `slice` method with zero argume
 => [ 1, 2, 3 ]
 ⠕ a === b
 => false
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Calling `slice` always creates a new array. In this case the slice happens to
 consist of the whole array. So now the relationship is like this:
@@ -415,12 +415,12 @@ argument and multiplies each element in the array by 2:
 /**
  * Overwrite each element in `t` with double its value
  */
-function doubleStuff (t) {
+const doubleStuff = (t) => {
   for (let i = 0; i < t.length; i++) {
     t[i] = t[i] * 2;
   }
 }
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If we add the following onto our script:
 
@@ -428,13 +428,13 @@ If we add the following onto our script:
 let things = [2, 5, 9];
 doubleStuff(things);
 console.log(things);
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 When we run it we'll get:
 
 ```javascript
 [ 4, 10, 18 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In the function above, the parameter `t` and the variable `things` are
 aliases for the same object. So changes to `t` or `things` are reflected in
@@ -455,14 +455,14 @@ value. Here is `doubleStuff` written as a pure function:
  * Double the value of each element in array `t`
  * and return a new array with the doubled values
  */
-function doubleStuff (t) {
+const doubleStuff = (t) => {
   let tt = [];
   for (let i = 0; i < t.length; i++) {
     tt[i] = t[i] * 2;
   }
   return tt;
 }
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This version of `doubleStuff` does not change its arguments:
 
@@ -473,7 +473,7 @@ This version of `doubleStuff` does not change its arguments:
 => [ 2, 5, 9 ]
 ⠕ xs
 => [ 4, 10, 18 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 An early rule we saw for assignment said "first evaluate the right hand side, then
 assign the resulting value to the variable". So it is quite safe to assign the function
@@ -484,23 +484,20 @@ result to the same variable that was passed to the function:
 ⠕ things = doubleStuff(things);
 ⠕ things
 => [ 4, 10, 18 ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-<aside id="pure-functions">
 
-**Which style is better?**
-
-Anything that can be done with modifiers can also be done with pure functions.
+> **Which style is better?**
+> 
+> Anything that can be done with modifiers can also be done with pure functions.
 In fact, some programming languages only allow pure functions. There is some
 evidence that programs that use pure functions are faster to develop and less
 error-prone than programs that use modifiers. Nevertheless, modifiers are
 convenient at times, and in some cases, functional programs are less efficient.
-
-In general, we recommend that you write pure functions whenever it is
+>
+> In general, we recommend that you write pure functions whenever it is
 reasonable to do so and resort to modifiers only if there is a compelling
 advantage. This approach might be called a *functional programming style*.
-
-</aside>
 
 
 Functions that produce arrays
@@ -517,7 +514,7 @@ loop
    create a new element
    append it to result
 return the result
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Let us show another use of this pattern. Assume you already have a function
 `isPrime(x)` that can test if x is prime. Write a function
@@ -536,7 +533,36 @@ function primesLessThanN(n) {
    }
    return result;
  }
- ~~~~~~~~~~~~~~~~~~~~~~~
+ ```
+
+Array Methods
+-------------
+Functions that produce arrays are so common that Javascript provides a number of
+methods that generate and return arrays. For example, the `map` method of an array
+applies a function to each element of the array and returns a new array of the results:
+
+Here is the `doubleStuff` function written using `map` instead of a loop: we will use
+the succinct, anonymous arrow function syntax to define the function that doubles each element:
+
+```javascript
+/**
+ * Double the value of each element in array `t`
+ * and return a new array with the doubled values
+ */
+const doubleStuff = (t) => t.map((x) => x * 2);
+```
+
+The `map` method takes a function as an argument. The function is called once for
+each element in the array, and the return value is used to construct a new array.
+
+The `filter` method of an array returns a new array containing only the elements
+that satisfy a predicate function. Here is an example of a quick one-liner using
+filter to keep only odd numbers:
+
+```javascript
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let odds = numbers.filter((x) => x % 2 !== 0);
+```
 
 
 Strings and arrays
@@ -554,16 +580,16 @@ whitespace pattern.
 ⠕ let words = song.split(/\s/);
 ⠕ words
 => [ 'The', 'rain', 'in', 'Spain...' ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-In this example the whitespace regex is the **delimiter** --- the toke used to
+In this example the whitespace regex is the **delimiter** --- the token used to
 specify which string to use as the boundary marker between substrings. The
 following example uses the string `ai` as the delimiter:
 
 ```javascript
 ⠕ song.split("ai");
 => [ 'The r', 'n in Sp', 'n...' ]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Notice that the delimiter doesn't appear in the result.
 
@@ -576,7 +602,7 @@ and join the array with the glue between each of the elements:
 ⠕ let s = words.join(glue);
 ⠕ s
 => 'The;rain;in;Spain...'
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The array that you glue together (`words` in this example) is not modified. Also, as these
 next examples show, you can use empty glue or multi-character strings as glue:
@@ -586,7 +612,7 @@ next examples show, you can use empty glue or multi-character strings as glue:
 => 'The --- rain --- in --- Spain...'
 ⠕ words.join("");
 => 'TheraininSpain...'
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Counting words
 ---------------
@@ -620,15 +646,7 @@ for (let i = 0; i < words.length; i++) {
 
 console.log(`The speech has ${words.length} words.
 We found "dream" ${counter} times.`);
-~~~~~~~~~~~~~~~~~~~~~~~
-
-**code walk through**
-
-<div class="embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CySJma9dBJU?rel=0" allowfullscreen></iframe>
-</div>
-
-Play with the code live at <https://repl.it/@mcuringa/DreamWordCount>
+```
 
 Nested arrays
 -------------
@@ -638,14 +656,14 @@ array, the element with index 3 is a nested array:
 
 ```javascript
 ⠕ let nested = ["hello", 2.0, 5, [10, 20]];
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 If we output the element at index 3, we get:
 
 ```javascript
 ⠕ console.log(nested[3]);
 => [10, 20]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To extract an element from the nested array, we can proceed in two steps:
 
@@ -653,14 +671,14 @@ To extract an element from the nested array, we can proceed in two steps:
 ⠕ elem = nested[3];
 ⠕ elem[0]
 => 10
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Or we can combine them:
 
 ```javascript
 ⠕ nested[3][1]
 => 20
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Bracket operators evaluate from left to right, so this expression gets the
 3'th element of `nested` and extracts the 1'th element from it.
@@ -676,7 +694,7 @@ might be represented as:
 
 ```javascript
 ⠕ let mx = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 `mx` is an array with three elements, where each element is a row of the
 matrix. We can select an entire row from the matrix in the usual way:
@@ -684,14 +702,14 @@ matrix. We can select an entire row from the matrix in the usual way:
 ```javascript
 ⠕ mx[1]
 => [4, 5, 6]
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Or we can extract a single element from the matrix using the double-index form:
 
 ```javascript
 ⠕ mx[1][2]
 => 6
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The first index selects the row, and the second index selects the column.
 Although this way of representing matrices is common, it is not the only
@@ -837,7 +855,7 @@ Array Exercises
    If the array are not equal in length, the new array will end
    with the item from the longer array. For example:
 
-   ~~~~~```javascript
+   ``````javascript
    ⠕ let a = ["cat", "dog", "bird"];
    ⠕ let b = ["lion", "wolf", "eagle"];
    ⠕ let c = combine(a, b);
@@ -853,7 +871,7 @@ Array Exercises
 
    You can use this function to test your code:
 
-   ~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+   ```{.javascript .numberLines}
    function test_isSorted() {
 
      let n1 = [4, 77, 2, 4567, 12];
@@ -862,7 +880,7 @@ Array Exercises
      console.assert(isSorted(n2), "n2 is not sorted, isSorted(n2) failed");
    }
    test_isSorted();
-   ~~~~~~~~~~~~~~~~~~~~~~~
+   ```
 
 Array Lab
 ---------

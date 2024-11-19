@@ -9,10 +9,10 @@ that belong together. Their primary purpose is to help us
 organize programs into chunks that match how we think about
 the problem.
 
-The syntax for a **function definition** is:
+The syntax for a **function definition**, using *arrow functions* is:
 
 ```javascript        
-function NAME( PARAMETERS ) {
+const NAME = ( PARAMETERS ) => {
   STATEMENTS
 }
 ```
@@ -20,6 +20,15 @@ function NAME( PARAMETERS ) {
 We can make up any names we want for the functions we create, except that
 we can't use a name that is a Javascript keyword, and the names must follow the rules
 for legal identifiers (the same rules that apply to variable names).
+
+> *Arrow Functions*
+>
+> We call these functions arrows because the `=>` characters look like an arrow.
+> JavaScript also supports another function syntax using the `function` keyword
+> which differs from Arrow Functions in subtle but important ways. To keep things
+> simple in this book, we will only use Arrow Functions, but you may find the
+> `function` keyword in examples you find elsewhere.
+
 
 There can be any number of statements inside the function, but they have to be
 between the curly braces (`{}`). These statements make up the **function body**.
@@ -36,11 +45,10 @@ pattern:
 
 We've already seen the `for` loop which follows this pattern.
 
-So looking again at the function definition, the keyword in the header is `function`, which is
-followed by the name of the function and some *parameters* enclosed in
-parentheses. The parameter list may be empty, or it may contain any number of
-parameters separated from one another by commas. In either case, the parentheses are required.
-The parameters specifies what information, if any, we have to provide in order to use the new function.
+So looking again at the function definition, the parameter list may be empty, 
+or it may contain any number of parameters separated from one another by commas. 
+In either case, the parentheses are required. The parameters specify what information, 
+if any, we have to provide in order to use the new function.
 
 Suppose we are writing a program to calculate the amount of tip due on a
 bill. We might write a function to "calculate tip". "calculate tip" is
@@ -51,10 +59,10 @@ let's write a function to capture the pattern of this "building block":
 /*
   Calculate the tip on a bill, given the pct of the tip.
 */
-function calculateTip (bill, pct) {
+const calculateTip = (bill, pct) => {
   let tip = bill * (pct * .01); // convert pct to a decimal and calculate
-  tip = tip.toFixed(tip, 2); // convert tip to a number with 2 decimal places
-  total = tip + bill;
+  tip = tip.toFixed(2); // convert tip to a number with 2 decimal places
+  let total = tip + bill;
   total = Number.parseFloat(total).toFixed(2);
 
   // now show the results to the user
@@ -72,7 +80,7 @@ the function the amount of the bill, and the other to tell it the percent
 tip to calculate.
 
 Here is the same `calculateTip` function implemented using the TextInterface library:
-{% include codepen.html id="yLmqEmw" user="thinkle" %}
+{% include codepen.html id="eYqaMMB" user="thinkle-iacs" %}
 
 
 Defining a new function does not make the function run. To do that we
@@ -277,7 +285,7 @@ formula for compound interest as an example of a fruitful function:
 Apply the compound interest formula to p
 to produce the final amount.
 */
-function finalAmt (p, r, n, t) {
+const finalAmt = (p, r, n, t) => {
   let a = p * (1 + r/n) ** (n * t);
   // This is new, and makes the function fruitful
   return a;
@@ -318,12 +326,12 @@ These short variable names are getting quite tricky, so perhaps we'd prefer one 
 versions instead:       
 
 ```javascript
-function finalAmtV2(principalAmount, nominalPercentageRate, numTimesPerYear, years) {
+const finalAmtV2 = (principalAmount, nominalPercentageRate, numTimesPerYear, years) => {
   let a = principalAmount * (1 + nominalPercentageRate / numTimesPerYear) ** (numTimesPerYear * years);
   return a;
 }
 
-function finalAmtV3(amt, rate, compounded, years) {
+const finalAmtV3 = (amt, rate, compounded, years) => {
   let a = amt * (1 + rate / compounded) ** (compounded * years);
   return a;
 }
@@ -345,7 +353,7 @@ the function, and we cannot use it outside. For example, consider again this fun
 
 ```javascript
 
-function finalAmt (p, r, n, t) {
+const finalAmt = (p, r, n, t) {
   let a = p * (1 + r/n) ** (n * t);
   return a;
 }
@@ -373,8 +381,144 @@ and the lifetime ends when the function completes its execution.
 So it is not possible for a function to set some local variable to a
 value, complete its execution, and then when it is called again next
 time, recover the local variable. Each call of the function creates
-new local variables, and their lifetimes expire when the function returns
+new local variables, and their lifetimes expire* when the function returns
 to the caller.
+
+* Unless the function returns another function, in which case the local variables
+  are kept alive as long as the returned function is still in use.
+
+> *Local Variables*
+>
+> Actually, the keyword `let` (and the keyword `const`) define what
+> are called *block-scoped* variables in JavaScript. The variable will
+> be local to whatever block it's declared in, whether that block
+> is part of a function or another structure such as an *if statement*,
+> a *for loop* or a *while loop*.
+
+Async/Await Functions
+---------------------
+JavaScript allows the keyword `async` before a function to indicate that the 
+function will be called "asynchronously," which means it is not meant to 
+return a value right away, but after a delay. This is a useful pattern when
+your function needs to wait for something to happen, like a user to type a
+message or a piece of data to load over a network.
+
+The syntax for an asynchronous function is:
+
+```javascript
+const NAME = async ( PARAMETERS ) => {
+  STATEMENTS
+}
+```
+
+This function will return a `Promise` object, which is a special kind of object
+that represents the eventual completion (or failure) of an asynchronous operation: in
+practice, we will use the `await` keyword to wait for the result of asynchronous
+functions.
+
+In our TextInterface examples, all *input* calls are *asynchronous* functions,
+which means any function you write *using* the input calls should also be 
+asynchronous. You have to add the `await` keyword before any asynchronous call
+to tell JavaScript to wait for the result, and you can *only* use the `await
+keyword inside an `async` function.
+
+```javascript
+const ti = new TextInterface();
+
+const getTotalPrice = async (price) => {
+  ti.output("The subtotal is: "+price);
+  let addTip = await ti.getYesOrNo("Do you want to add a tip?");
+  if (addTip) {
+    let percentTipAmount = await ti.promptNumber("What percentage tip will you add?");
+    let tipAmount = (percentTipAmount/100) * price;
+    return price + tipAmount;
+  } else {
+    return price;
+  }
+}
+```
+
+Anonymous Functions
+----------------------------------
+JavaScript allows what are called `anonymous functions` which means you don't have to 
+name a function to use it. An anonymous function is a function that doesn't have the
+`const` statement at all.
+
+```(PARAMETERS) => { STATEMENTS }```
+
+In addition, JavaScript arrow functions have a compact form that allows you to omit
+the brackets if your function only consists of a single statement. Arrow functions *without* 
+brackets are *all* **fruitful functions**: they return the result of the single statement.
+
+```(PARAMETERS) => RETURN_VALUE```
+
+Why would we use an anonymous function? There are numerous examples, such as when we pass
+a function to another function as a parameter. 
+
+
+Another example would be the one you've seen
+in the `TextInterface` examples in this book, where we use what's called an *immediately invoked
+function expression* to create and run a function in one statement. These are useful when we want
+to use the `async/await` syntax, which is not always allowed outside of function calls (the full
+explanation with async/await is more complicated, but beyond the scope of this chapter).
+
+Here's an example of an anonymous function being used with the `setTimeout` function, a built
+in function in JavaScript which allows us to run a function after a delay. The syntax for 
+setTimeout is:
+
+```javascript
+setTimeout(FUNCTION, DELAY_IN_MILLISECONDS)
+```
+
+```javascript
+setTimeout(
+  () => {
+    window.alert("It's been 10 seconds!");
+  },
+  10000 
+);
+```
+
+Here's the syntax for an IIFE like we've been using in the Codepen examples in this book:
+
+```javascript
+(async () => { 
+  STATEMENTS
+})();
+```
+
+Notice that the parentheses *after* the expression mean the function is called immediately after
+it is defined.
+
+Here is an example which puts together *all* of the concepts we've just introduced (IIFE, anonymous 
+functions, async/await):
+
+{%include codepen.html user='thinkle-iacs' id='qBeGoeK' %}
+
+```javascript
+// Immediately Invoked Function Expression
+(async () => {
+  const ti = new TextInterface.TextInterface();
+  // Await keyword used with TextInterface input
+  const delay = await ti.promptNumber("How many seconds should I wait?");
+  // Set timeout called with an anonymous function
+  setTimeout(
+    () => ti.output("It has been " + delay + " seconds!"),
+    delay * 1000
+  );
+  ti.output("Waiting...");
+})();
+```
+
+> *Anonymous Functions and Style*
+>
+> Any place you put an anonymous function, you can *also* put a named
+> function. So why use an anonymous function? The answer is that it can
+> make your code more readable. If the function is only used in one place,
+> and is simple, it can be easier to read if you don't have to scroll up
+> to find the function definition. If the function is more complex, or
+> used in multiple places, it is better to give it a name.
+
 
 
 Glossary
@@ -537,7 +681,7 @@ Function Exercises
    when given the length of sides `a` and `b`.
    Use the [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) `a^2 + b^2 = c^2`.<br>
    Note, you will need to be able to calculate square roots to solve this problem.
-   You can use the build in math function `Math.sqrt`.
+   You can use the built-in math function `Math.sqrt`.
 
 6. (hard bonus) Write a function called `distance(x1, y1, x2, y2)` which calculates the
    distance between the point at (x1, y1) and (x2, y2) on a Cartesian Plane. You can
