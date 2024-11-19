@@ -1,4 +1,4 @@
-# Table of Contents
+# Think JS
 - [Preface](preface.md)  
 - [Forward](forward.md)  
 

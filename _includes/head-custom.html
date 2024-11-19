@@ -1,12 +1,14 @@
 
 <style>
     body {
-        display: flex;
-        flex-direction: row;
-        padding: 8px;
-        gap: 8px;
+        display: grid;
+        grid-template-areas:
+            "sidebar banner"
+            "sidebar main";
+        padding: 8px;    
     }
     .sidebar-container {
+      grid-area: sidebar;
   display: flex;
   flex-shrink: 0;
   height: 100vh;
@@ -18,7 +20,7 @@
 .sidebar-content {
   width: 250px;
   background-color: #f8f9fa;
-  padding: 15px;
+  padding: 16px 4px;
   transition: transform 0.3s ease;
   overflow-y: auto;
   position: sticky;
@@ -30,8 +32,36 @@
     opacity: 0;
     width: 0;
 }
+.banner {
+  grid-area: banner;
+  background-color: #222;
+  color: white;  
+  text-align: center;
+  width: 100%;
+}
+.banner > div {
+  max-width: 600px;
+  margin: auto;
+}
+.banner-title {
+  font-size: 2rem;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  max-width: 18em;
+  margin: auto;
+  line-height: 1;
+}
+.banner a {
+  color: white;
+  text-decoration: underline;
+}
+.banner-title a {
+  color: white;
+  text-decoration: none;
+}
 
 .main-content {
+  grid-area: main;
   flex-grow: 1;
   padding: 20px;
 }
@@ -39,14 +69,63 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
     align-self: center;
 }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+const toggleButton = document.getElementById('toggleButton');
+const sidebarContent = document.getElementById('sidebarContent');
+
+toggleButton.addEventListener('click', () => {
+  sidebarContent.classList.toggle('hidden');
+
+  // Change the SVG direction when toggling
+  if (sidebarContent.classList.contains('hidden')) {
+    toggleButton.innerHTML = `
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>`;
+  } else {
+    toggleButton.innerHTML = `
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>`;
+  }
+});
+});
+// Make external links open in new tab
+document.addEventListener('DOMContentLoaded', () => {
+const links = document.querySelectorAll('a'); // Select all anchor tags
+const baseURL = window.location.origin; // Get the base URL (protocol + host)
+
+links.forEach(link => {
+  try {
+    const linkURL = new URL(link.href); // Parse the href as a URL
+    // Check if the link's origin differs from the current page's origin
+    if (linkURL.origin !== baseURL && !link.target) {
+      link.setAttribute('target', '_blank'); // Open in new tab
+      link.setAttribute('rel', 'noopener noreferrer'); // Enhance security
+    }
+  } catch (e) {
+    // If the href is not a valid URL, ignore (e.g., for fragment links)
+  }
+});
+document.querySelector(
+  'body > div:nth-child(3) > h1:nth-child(1)'
+).style.display = 'none';
+});
+
+// Remove built in link...
+
+
+
+</script>
 <div class="sidebar-container">
     <div class="sidebar-content" id="sidebarContent">
         <ul class="nav nav-pills flex-column">
-            {% assign index_page = site.pages | where: "title", "Table of Contents" | first %}
+            {% assign index_page = site.pages | where: "path", "index.md" | first %}
             {{ index_page.content | markdownify }}
         </ul>
     </div>
@@ -56,45 +135,10 @@
         </svg>
     </button>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.getElementById('toggleButton');
-  const sidebarContent = document.getElementById('sidebarContent');
-
-  toggleButton.addEventListener('click', () => {
-    sidebarContent.classList.toggle('hidden');
-
-    // Change the SVG direction when toggling
-    if (sidebarContent.classList.contains('hidden')) {
-      toggleButton.innerHTML = `
-        <svg width="24" height="24" viewBox="0 0 24 24">
-          <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>`;
-    } else {
-      toggleButton.innerHTML = `
-        <svg width="24" height="24" viewBox="0 0 24 24">
-          <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>`;
-    }
-  });
-});
-// Make external links open in new tab
-document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('a'); // Select all anchor tags
-  const baseURL = window.location.origin; // Get the base URL (protocol + host)
-
-  links.forEach(link => {
-    try {
-      const linkURL = new URL(link.href); // Parse the href as a URL
-      // Check if the link's origin differs from the current page's origin
-      if (linkURL.origin !== baseURL && !link.target) {
-        link.setAttribute('target', '_blank'); // Open in new tab
-        link.setAttribute('rel', 'noopener noreferrer'); // Enhance security
-      }
-    } catch (e) {
-      // If the href is not a valid URL, ignore (e.g., for fragment links)
-    }
-  });
-});
-
-</script>
+<div class="banner">
+  <h1 class="banner-title">
+    <a href="{{ site.url }}{{ site.baseurl }}">How to Think Like a Computer Scientist: JavaScript Edition</a></h1>
+  <div class="banner-links">
+      <a href="{{ site.github.repository_url }}" target="_blank" rel="noopener noreferrer">See source code here</a>
+  </div>
+</div>
