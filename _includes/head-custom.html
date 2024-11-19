@@ -1,0 +1,92 @@
+
+<style>
+    body {
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        gap: 8px;
+    }
+    .sidebar-container {
+  display: flex;
+  flex-shrink: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;  
+}
+
+.sidebar-content {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  transition: width 300ms;
+}
+
+.hidden {
+    opacity: 0;
+    width: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+.sidebar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    align-self: center;
+}
+</style>
+<div class="sidebar-container">
+    <div class="sidebar-content" id="sidebarContent">
+        <ul class="nav nav-pills flex-column">
+            {% assign index_page = site.pages | where: "title", "Table of Contents" | first %}
+            {{ index_page.content | markdownify }}
+        </ul>
+    </div>
+    <button class="sidebar-toggle" id="toggleButton">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('toggleButton');
+  const sidebarContent = document.getElementById('sidebarContent');
+
+  toggleButton.addEventListener('click', () => {
+    sidebarContent.classList.toggle('hidden');
+
+    // Change the SVG direction when toggling
+    if (sidebarContent.classList.contains('hidden')) {
+      toggleButton.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>`;
+    } else {
+      toggleButton.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>`;
+    }
+  });
+});
+// Make external links open in new tab
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a'); // Select all anchor tags
+    links.forEach(link => {
+      if (link.href.includes('https://') && !link.target) {
+        link.setAttribute('target', '_blank'); // Set target to _blank for external links
+        link.setAttribute('rel', 'noopener noreferrer'); // Optional: enhance security
+      }
+    });
+  });
+
+</script>

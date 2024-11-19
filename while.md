@@ -6,7 +6,7 @@ The `while` statement
 
 Here is a fragment of code that demonstrates the use of the `while` statement:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /**
  * Return the sum of 1+2+3 ... n
  */
@@ -61,7 +61,7 @@ completion, and then make sure you change something in the body so that the loop
 terminates. By comparison, here is an equivalent function that uses `for`
 instead:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 // Return the sum of 1+2+3 ... n
 function sumTo(n) {
   let ss  = 0;
@@ -92,7 +92,7 @@ multiplying it by three and adding 1. The sequence terminates when
 
 This Javascript function captures that algorithm:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 // Print the 3n+1 sequence from n,
 // terminating when it reaches 1.
 function seq3np1 (n) {
@@ -131,7 +131,7 @@ of deciding how to modify `n`. In this case, `while` is more suitable.
 
 Here are some examples:
 
-~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ seq3np1(3)
 3, 10, 5, 16, 8, 4, 2, 1.
 ⠕ seq3np1(19)
@@ -264,7 +264,7 @@ Counting digits
 The following function counts the number of decimal digits in a positive
 integer:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 function numDigits(n) {
   let count = 0;
   while (n != 0) {
@@ -288,7 +288,7 @@ same as the number of digits.
 If we wanted to only count digits that are either 0 or 5, adding a conditional
 before incrementing the counter will do the trick:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 function numZeroAndNumFiveDigits(n) {
   let count = 0;
   while( n > 0) {
@@ -321,7 +321,7 @@ Suppose that you want to know the square root of `n`. If you start  with
 almost any approximation, you can compute a better approximation (closer to
 the actual answer) with the following formula:
 
-~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 better = (approx + n/approx)/2
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -349,14 +349,14 @@ has an infinite number of decimal places because it is irrational), we need to
 formulate the stopping test for the loop by asking "is `a` close enough to
 `b`"? This stopping condition can be coded like this:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 if (Math.abs(a-b) < 0.001) {  // Make this smaller for better accuracy
   break
 }
 ~~~~~~~~~~~~~~~~~~~~
 Notice that we take the absolute value of the difference between `a` and `b`.
 
-~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 function sqrt(n) {
   let approx = n/2;   // Start with some or other guess at the answer
   let better = (approx + n/approx)/2;

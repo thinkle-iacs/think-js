@@ -49,17 +49,16 @@ interpreter. You can also install a stand-alone interpreter on your computer.
 
 There are two ways to use the interpreter: *interactive or immediate mode* and *script
 mode*. In immediate mode, you type Javascript expressions into the interpreter's console,
-and the interpreter immediately shows the result. This is the an example of the repl.it
-interpreter's console:
+and the interpreter immediately shows the result. You can open a JavaScript console in any browser using the developer tools (usually under "inspect," then "console"). You can also use a standalone JavaScript console at [jsconsole.com](https://jsconsole.com).
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 Babel Compiler v6.4.4
 Copyright (c) 2014-2015 Sebastian McKenzie
 
 ⠕ 2+2
 => 4
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The `2+2` is entered at the **JavaScript prompt**. The `⠕` token indicates a statement entered at the prompt.
 The interpreter uses the prompt to indicate that it is ready for
 instructions. We typed `2 + 2` and hit `enter`, the interpreter evaluated our expression, and replied `4`,
@@ -100,26 +99,31 @@ symbolic computation, such as searching and replacing text in a document or
 The details look different in different languages, but a few basic instructions
 appear in just about every language:
 
-input
+---
+**input**
 
-:    Get data from the keyboard, a file, or some other device.
+Get data from the keyboard, a file, or some other device.
 
-output
+---
+**output**
 
-:    Display data on the screen or send data to a file or other device.
+Display data on the screen or send data to a file or other device.
 
-math
+---
+**math**
 
-:    Perform basic mathematical operations like addition and multiplication.
+Perform basic mathematical operations like addition and multiplication.
 
-conditional execution
+---
+**conditional execution**
 
-:    Check for certain conditions and execute the appropriate sequence of
+Check for certain conditions and execute the appropriate sequence of
     statements.
 
-repetition
+---
+**repetition**
 
-:    Perform some action repeatedly, usually with some variation.
+Perform some action repeatedly, usually with some variation.
 
 Believe it or not, that's pretty much all there is to it. Every program you've
 ever used, no matter how complicated, is made up of instructions that look more
@@ -236,28 +240,28 @@ molecules. And most importantly:
 > *Programming languages are formal languages that have been designed to
 > express computations.*
 
-Formal languages tend to have strict rules about syntax. For example, ``3+3=6``
-is a syntactically correct mathematical statement, but ``3=+6$`` is not.
+Formal languages tend to have strict rules about syntax. For example, `3+3=6`
+is a syntactically correct mathematical statement, but `3=+6$` is not.
 H<sub>2</sub>O is a syntactically correct chemical name, but <sub>2</sub>Zz is
 not.
 
 Syntax rules come in two flavors, pertaining to **tokens** and structure.
 Tokens are the basic elements of the language, such as words, numbers, parentheses,
-commas, and so on. In Javascript, a statement like ``console.log("Happy New Year for ", 2013)``
+commas, and so on. In Javascript, a statement like `console.log("Happy New Year for ", 2013)`
 has 6 tokens: a function name, an open parenthesis (round bracket), a string, a comma, a number, and a close parenthesis.
 
 It is possible to make errors in the way one constructs tokens.  
-One of the problems with ``3=+6$`` is that ``$`` is not a
+One of the problems with `3=+6$` is that `$` is not a
 legal token in mathematics (at least as far as we know). Similarly,
 <sub>2</sub>Zz is not a legal token in chemistry notation because there is no element with the abbreviation
-``Zz``.
+`Zz`.
 
 The second type of syntax rule pertains to the **structure** of a statement—that
-is, the way the tokens are arranged. The statement ``3=+6$`` is structurally
+is, the way the tokens are arranged. The statement `3=+6$` is structurally
 illegal because you can't place a plus sign immediately after an equal sign.
 Similarly, molecular formulas have to have subscripts _after_ the element name,
 not before. And in our Javascript example, if we omitted the comma, or if we changed the two
-parentheses around to say  ``console.log)"Happy New Year for ",2013(`` our statement would still
+parentheses around to say  `console.log)"Happy New Year for ",2013(` our statement would still
 have six legal and valid tokens, but the structure is illegal.
 
 When you read a sentence in English or a statement in a formal language, you
@@ -276,22 +280,25 @@ structure, syntax, and semantics—there are many differences:
 Glossary
 ---------
 
-ambiguity
+---
+**ambiguity**
 
-:    Natural languages are full of ambiguity, which people deal with by
+Natural languages are full of ambiguity, which people deal with by
      using contextual clues and other information. Formal languages are
      designed to be nearly or completely unambiguous, which means that any
      statement has exactly one meaning, regardless of context.
 
-redundancy
+---
+**redundancy**
 
-:   In order to make up for ambiguity and reduce misunderstandings, natural
+In order to make up for ambiguity and reduce misunderstandings, natural
     languages employ lots of redundancy. As a result, they are often
     verbose.  Formal languages are less redundant and more concise.
 
-literalness
+---
+**literalness**
 
-:   Formal languages mean exactly what they say.  On the other hand, natural languages
+Formal languages mean exactly what they say.  On the other hand, natural languages
     are full of idiom and metaphor. If someone says, "The
     other shoe fell", there is probably no shoe and nothing falling.  
     You'll need to find the
@@ -303,21 +310,24 @@ time adjusting to formal languages. In some ways, the difference between formal
 and natural language is like the difference between poetry and prose, but more
 so:
 
-poetry
+---
+**poetry**
 
-:   Words are used for their sounds as well as for their meaning, and the
+Words are used for their sounds as well as for their meaning, and the
     whole poem together creates an effect or emotional response. Ambiguity
     is not only common but often deliberate.
 
-prose
+---
+**prose**
 
-:   The literal meaning of words is more important, and the structure
+The literal meaning of words is more important, and the structure
     contributes more meaning. Prose is more amenable to analysis than
     poetry but still often ambiguous.
 
-program
+---
+**program**
 
-:   The meaning of a computer program is unambiguous and literal, and can
+The meaning of a computer program is unambiguous and literal, and can
     be understood entirely by analysis of the tokens and structure.
 
 Here are some suggestions for reading programs (and other formal languages).
@@ -337,16 +347,16 @@ Traditionally, the first program written in a new language is called *Hello,
 World!* because all it does is display the words, Hello, World!  In Javascript, the script
 looks like this: (For scripts, we'll show line numbers to the left of the Javascript statements.)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 console.log("Hello, World!");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is an example of using ``console.log``, Javascript's **print function**, which doesn't actually print
+```
+This is an example of using `console.log`, Javascript's **print function**, which doesn't actually print
 anything on paper. It displays a value on the screen's console. In this case, the result shown
 is
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 Hello, World!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 The quotation marks in the program mark the beginning and end of the value;
 they don't appear in the result.
 
@@ -365,19 +375,19 @@ this class, we can use a simple "library" to enable inputs and outputs on a webp
 you can see. Here's what a "hello world" looks like using the simple TextInterface library
 (this is a library created for this class):
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 import {TextInterface} from './textInterface';
 let ti = new TextInterface();
 ti.output("Hello, World!");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This example is slightly more complicated, but for now let's just focus on 
 the last line, which enables us to say "Hello, World" onto a webpage instead
-of just into the JavaScript console. We do so by using other code written
-for this class.
+of just into the JavaScript console. Here is a Codepen which is set up with the `TextInterface` library already available so you can see a "hello world" on a page:
 
-Here is a model repl.it with the TextInterface code ready to roll:
-[Text Interface Example](https://replit.com/@ThomasHinkle/Text-Interface-Library#main.js)
+{% include codepen.html user="thinkle" id="wvVxXee" %}
+
+Here is a codepen ready to work: [Hello World Example](https://codepen.io/thinkle/pen/wvVxXee)
 
 
 Comments
@@ -397,7 +407,7 @@ In Javascript, the ` \\ ` token starts a comment.  The rest of the line
 is ignored. Here is a new version of *Hello, World!*.
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 //---------------------------------------------------
 // This demo program shows off how elegant Javascript is!
 // Based on the Python program by Joe Soap, December 2010.
@@ -406,14 +416,15 @@ is ignored. Here is a new version of *Hello, World!*.
 
 console.log("Hello, World!");     // Isn't this easy!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
 You'll also notice that we've left a blank line in the program. Blank lines
 are also ignored by the interpreter, but comments and blank lines can make your
 programs much easier for humans to parse. Use them liberally!
 
-Javascript also supports multiline comments with the ``/* */`` style.
+Javascript also supports multiline comments with the `/* */` style.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 /*
 ---------------------------------------------------
   This demo program shows off how elegant Javascript is!
@@ -424,19 +435,19 @@ Javascript also supports multiline comments with the ``/* */`` style.
 
 console.log("Hello, World!");     // Isn't this easy!
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 In addition to adding hints and suggestions for human readers,
 comments play an important role in debugging. Because the
 Javascript interpreter doesn't try to run commented lines,
 you can "comment out" sections of your code to isolate errors.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 console.log("Hello, World!");
 // console.log("I am trying to find");
 // console.log("out which line");
 // console.log("of my code isn't");
 // console.log("working the way I expect it to.);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In the above code, only line 1 is interpreted and run as Javascript.
 The other lines are ignored. To debug this program, we can uncomment
@@ -461,14 +472,14 @@ We're using a version of Turtle that has been written for Javascript.
 As we've seen, a program and algorithms consist of a number of commands or statements
 that execute in an order described by the program. There are many libraries
 or APIs (application programming interface) that help you useful do things in Javascript.
-Some APIsread files over a network, others choose random numbers, while others might
+Some APIs read files over a network, others choose random numbers, while others might
 encrypt data to make it more secure. The `turtle` API
 has a number of commands that you can use to move a turtle around a screen
 and to draw shapes and patterns.
 
 Here's a short turtle graphics program.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 // Set up the pen properties
 // Set up the pen properties
 turtle.setStrokeStyle("blue");
@@ -502,16 +513,21 @@ turtle.penDown();
 turtle.setStrokeStyle("deepPink")
 turtle.arc(10, 360);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 When we run this program, we draw this image:
 <figure class="border">
 <img src="figs/turtle-first.png" class="figure-img img-fluid" alt="2 colored lines and a circle drawn with turtle graphics">
 <figcaption class="figure-caption border-top">
 The picture drawn by this program.<br>
-**[Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)**
 </figcaption>
 </figure>
+
+{% include codepen.html  id="OJewwWb" %}
+
+
+[Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)
+
 
 ### Turtle Programs with Real-Turtle Library
 
@@ -649,16 +665,19 @@ to take on major projects.
 
 Turtle Exercises 1
 ------------------
-[Turtle Exercises 1](https://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
+[Turtle Exercises 1](https://codepen.io/thinkle-iacs/pen/abejKPb?editors=0011)
 
 1. Use `turtle` to draw a red square with a pink border
 2. Draw three circles, side-by-side. The first one should be blue, the second green, the third red.
 3. Draw a triangle.
 4. (bonus) Draw a 5-pointed star. _Hint:_ draw this on a piece of paper first
 
+
+{% include codepen.html id="abejKPb" %}
+
 First Turtle Lab
 ----------------
-[First Turtle Lab ](hhttps://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
+[First Turtle Lab ](https://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
 
 Our first lab presents an open-ended exercise, just to get you started.
 Use turtle graphics to draw a picture. We suggest you spend about
@@ -670,125 +689,151 @@ the content of your drawing is up to you.
 Glossary
 --------
 
-algorithm
+---
+**algorithm**
 
-:   A set of specific steps for solving a category of problems.
+A set of specific steps for solving a category of problems.
 
-bug
+---
+**bug**
 
-:   An error in a program.
+An error in a program.
 
-comment
+---
+**comment**
 
-:   Information in a program that is meant for other programmers (or anyone
+Information in a program that is meant for other programmers (or anyone
     reading the source code) and has no effect on the execution of the
     program.    
 
-debugging
+---
+**debugging**
 
-:   The process of finding and removing any of the three kinds of
+The process of finding and removing any of the three kinds of
     programming errors.
 
-exception
+---
+**exception**
 
-:   Another name for a runtime error.
+Another name for a runtime error.
 
-formal language
+---
+**formal language**
 
-:   Any one of the languages that people have designed for specific
+Any one of the languages that people have designed for specific
     purposes, such as representing mathematical ideas or computer programs;
     all programming languages are formal languages.
 
-high-level language
+---
+**high-level language**
 
-:   A programming language like Javascript that is designed to be easy for
+A programming language like Javascript that is designed to be easy for
     humans to read and write.
 
-immediate mode
+---
+**immediate mode**
 
-:   A style of using Javascript where we type expressions at the command prompt, and
+A style of using Javascript where we type expressions at the command prompt, and
     the results are shown immediately.  Contrast with **script**, and see the
     entry under **Javascript shell**.
 
-interpreter
+---
+**interpreter**
 
-:   The engine that executes your Javascript scripts or expressions.
+The engine that executes your Javascript scripts or expressions.
 
-low-level language
+---
+**low-level language**
 
-:   A programming language that is designed to be easy for a computer to
+A programming language that is designed to be easy for a computer to
     execute; also called machine language or assembly language.
 
-natural language
+---
+**natural language**
 
-:   Any one of the languages that people speak that evolved naturally.
+Any one of the languages that people speak that evolved naturally.
 
-object code
+---
+**object code**
 
-:   The output of the compiler after it translates the program.
+The output of the compiler after it translates the program.
 
-parse
+---
+**parse**
 
-:   To examine a program and analyze the syntactic structure.
+To examine a program and analyze the syntactic structure.
 
-portability
+---
+**portability**
 
-:   A property of a program that can run on more than one kind of computer.
+A property of a program that can run on more than one kind of computer.
 
-print function
+---
+**print function**
 
-:   A function used in a program or script that causes the Javascript interpreter to
+A function used in a program or script that causes the Javascript interpreter to
     display a value on its output device.
 
-problem solving
+---
+**problem solving**
 
-:   The process of formulating a problem, finding a solution, and
+The process of formulating a problem, finding a solution, and
     expressing the solution.
 
-program
+---
+**program**
 
-:   a sequence of instructions that specifies to a computer actions and
+a sequence of instructions that specifies to a computer actions and
     computations to be performed.
 
-Javascript console
+---
+**Javascript console**
 
-:   An interactive user interface to the Javascript interpreter. The user of a
+An interactive user interface to the Javascript interpreter. The user of a
     Javascript shell types commands at the prompt, and presses the return
     key to send these commands immediately to the interpreter for
     processing.
 
-runtime error
+---
+**runtime error**
 
-:   An error that does not occur until the program has started to execute
+An error that does not occur until the program has started to execute
     but that prevents the program from continuing.
 
-script
+---
+**script**
 
-:   A program stored in a file (usually one that will be interpreted).
+A program stored in a file (usually one that will be interpreted).
 
-semantic error
+---
+**semantic error**
 
-:   An error in a program that makes it do something other than what the
+An error in a program that makes it do something other than what the
     programmer intended.
 
-semantics
+---
+**semantics**
 
-:   The meaning of a program.
+The meaning of a program.
 
-source code
+---
+**source code**
 
-:   A program in a high-level language before being compiled.
+A program in a high-level language before being compiled.
 
-syntax
+---
+**syntax**
 
-:   The structure of a program.
+The structure of a program.
 
-syntax error
+---
+**syntax error**
 
-:   An error in a program that makes it impossible to parse --- and
+An error in a program that makes it impossible to parse --- and
     therefore impossible to interpret.
 
-token
+---
+**token**
 
-:   One of the basic elements of the syntactic structure of a program,
+One of the basic elements of the syntactic structure of a program,
     analogous to a word in a natural language.

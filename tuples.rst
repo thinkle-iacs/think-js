@@ -54,10 +54,10 @@ So like strings, tuples are immutable.  Once Python has created a tuple
 in memory, it cannot be changed.
 
 Of course, even if we can't modify the
-elements of a tuple, we can always make the ``julia`` variable reference
+elements of a tuple, we can always make the `julia` variable reference
 a new tuple holding different information.  To construct the new tuple,
 it is convenient that we can slice parts of the old tuple and join up the
-bits to make the new tuple.  So  if ``julia`` has a new recent film, we could
+bits to make the new tuple.  So  if `julia` has a new recent film, we could
 change her variable to reference a new tuple that used some information
 from the old one:
 
@@ -70,7 +70,7 @@ from the old one:
 
 To create a tuple with a single element (but you're probably not likely
 to do that too often), we have to include the final comma, because without
-the final comma, Python treats the ``(5)`` below as an integer in parentheses:
+the final comma, Python treats the `(5)` below as an integer in parentheses:
 
     .. sourcecode:: python3
 
@@ -126,7 +126,7 @@ into the variables/names on the right:
 
 Once in a while, it is useful to swap the values of two variables.  With
 conventional assignment statements, we have to use a temporary variable. For
-example, to swap ``a`` and ``b``:
+example, to swap `a` and `b`:
 
     .. sourcecode:: python3
         :linenos:
@@ -253,12 +253,12 @@ Glossary
 Exercises
 ---------
 
-#.  We've said nothing in this chapter about whether you can pass tuples as
+1.  We've said nothing in this chapter about whether you can pass tuples as
     arguments to a function. Construct a small Python example to test whether
     this is possible, and write up your findings.
 
-#.  Is a pair a generalization of a tuple, or is a tuple a generalization of a pair?
+1.  Is a pair a generalization of a tuple, or is a tuple a generalization of a pair?
 
-#.  Is a pair a kind of tuple, or is a tuple a kind of pair?
+1.  Is a pair a kind of tuple, or is a tuple a kind of pair?
 
 

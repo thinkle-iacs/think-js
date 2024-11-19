@@ -1,0 +1,7 @@
+Note: we have moved from Pandoc to a simple github-pages jekyll build.
+
+To run, we can use:
+
+bundle exec jekyll serve
+
+Turlte library: https://cdn.jsdelivr.net/gh/1ntEgr8/turtlejs/turtle.js

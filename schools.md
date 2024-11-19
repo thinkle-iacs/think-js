@@ -7,9 +7,9 @@ Case Study: Dictionaries, tuples, lists & more
 
 <aside id="teachers_clean" style="top: 420px;">
 The first step to running this analysis is to prepare the
-text. ``read_and_prep`` opens a file and reads the contents
-into a string. From there, we call ``clean`` which, in turn,
-calls ``strip_non_chars`` for each word in the text. Even
+text. `read_and_prep` opens a file and reads the contents
+into a string. From there, we call `clean` which, in turn,
+calls `strip_non_chars` for each word in the text. Even
 before the program opens the text has been manually groomed
 in a text editor. Our analysis centers around counting words — 
 punctuation and other non-alphanumeric characters throw off
@@ -22,8 +22,8 @@ our counts. Our approach is:
 </aside>
 
 <aside id="teachers_while" style="top: 1083px;">
-``strip_non_chars`` is applied to every word
-in the text. Python's built-in ``strip`` function
+`strip_non_chars` is applied to every word
+in the text. Python's built-in `strip` function
 removes spaces or other characters from the start
 or end of strings, but, in this case, we know the
 characters we want to keep, but not the ones we
@@ -45,7 +45,7 @@ but works from the last character.
 Counting word frequencies—the number of 
 times a word occurs in the text—is the main
 tool offered by this program to analyze text.
-The algorithm in ``freq`` is familiar to us 
+The algorithm in `freq` is familiar to us 
 by now: iterate over a list of words in a for loop,
 use unique words as **dictionary keys** and 
 keep a **running total** of each word as the
@@ -63,22 +63,22 @@ that we need to take extra steps to see the most common
 or least common words in a text, or to even display
 the words in alphabetical order. Previously we have seen
 how to display the contents of a dictionary by doing a
-**for loop** over the ``sorted(map.keys())``. This makes
+**for loop** over the `sorted(map.keys())`. This makes
 sense for some data, but here we are more interested in
 sorting on the values, not the dict keys.
 
-``freq_list`` solves this problem by sorting the dictionary
+`freq_list` solves this problem by sorting the dictionary
 items based on the word count. It expects a list of **tuples**
 with element-zero holding the word and item-1 holding the count.
-Luckily, this is the tuple list we get when we call ``items()``
+Luckily, this is the tuple list we get when we call `items()`
 on our word frequency map. Python offers many flexible ways
 of doing custom sorts on data. We choose a method here that
 builds on programming skills we have already learned:
 
 1. swap the tuples from (word, count) using a for loop
-2. sort them using the ``sort`` method which is part of the **list object**
-3. use the optional ``reverse=True`` parameter to ``sort`` so that we
-   get the most popular words at the ``head`` of our list
+2. sort them using the `sort` method which is part of the **list object**
+3. use the optional `reverse=True` parameter to `sort` so that we
+   get the most popular words at the `head` of our list
 4. swap the items back into a list of (word, count) tuples 
    and return that, pretending nothing ever happened (actually, this is
    a type of abstraction, where we can later change the way we choose to sort the
@@ -91,48 +91,50 @@ analysis, sometimes it is important to consider the use of common
 words. This may be useful to identify authorial patterns, such as 
 identifying authorship, or characteristics of the author. Often 
 though, common words are not germane to the analysis. 
-``common_filter`` works on lists of words and creates a new sub-list 
+`common_filter` works on lists of words and creates a new sub-list 
 that filters out all of the common words. The variable 
-``commonWords`` is defined as a list of strings containing 500 
+`commonWords` is defined as a list of strings containing 500 
 common English words is declared as an internal variable within the 
 function. Because our analysis is primarily concerned with word 
-frequency counts, ``common_filter`` takes a list of **tuples**
-—``items``—as a parameter, rather than a list of strings. This 
+frequency counts, `common_filter` takes a list of **tuples**
+—`items`—as a parameter, rather than a list of strings. This 
 allows clients of this function to pass in lists that contain words 
 and word counts. The function expects the first item in the tuple to 
 be the word.
 </aside>
 
 <aside id="teachers_neighbors" style="top: 2600px;">
-``neighbors`` helps us examine co-occurances of words in the text. This
-function defines three **parameters**: ``words`` is the list
-of tuples to analyze, ``targetWords`` is a sub-list of words we
-will run our neighbor analysis on, and the **int** ``n`` indicates
-how for away from our target word we want to investigate. if ``n == 1``,
+`neighbors` helps us examine co-occurances of words in the text. This
+function defines three **parameters**: `words` is the list
+of tuples to analyze, `targetWords` is a sub-list of words we
+will run our neighbor analysis on, and the **int** `n` indicates
+how for away from our target word we want to investigate. if `n == 1`,
 we will only count co-locations of words contiguous with our target word. For
-more on ``neighbors`` please see the example below the code listing.
+more on `neighbors` please see the example below the code listing.
 </aside>
 
 <aside id="teachers_compare" style="top: 2800px;">
-``compare`` offers a comparison of two word frequency
+`compare` offers a comparison of two word frequency
 dictionaries to find which words have the greatest 
 disparity in occurrences. In this function we see
 a new Python _data structure_, **set**. "A set is 
 an unordered collection with no duplicate elements"
 [*](http://docs.python.org/3.3/tutorial/datastructures.html#sets).
 In this case we use **set** to make a unique set of keys from
-both dictionaries. We create the set from the ``keys``
-in dictionary ``a`` on line 188 and then add any missing ``keys``
-from dict ``b`` on line 189 by calling sets ``update`` method.
+both dictionaries. We create the set from the `keys`
+in dictionary `a` on line 188 and then add any missing `keys`
+from dict `b` on line 189 by calling sets `update` method.
 In our loop (lines 193-197) we add tuples to a new list, in the format
-(word, difference in counts between a & b). We use the built-in ``abs``
+(word, difference in counts between a & b). We use the built-in `abs`
 function, because, here, we care about the difference, not _which_
 dict had the greater count. Once this list of differences is created,
-we sort it by counts using the ``list_freqs`` function we already defined.
+we sort it by counts using the `list_freqs` function we already defined.
 </aside>
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 # schools_analysis.py
 # by: mxc
 """
@@ -253,7 +255,7 @@ def common_filter(items):
     """
         Filter out the most common
         English words from from a list
-        of 500 common words. ``items``
+        of 500 common words. `items`
         is a list of tuples where the
         first element is the word.
         Returns a new list of items,
@@ -281,7 +283,7 @@ def neighbors(words, targetWords, n):
         sorted list of frequency
         2-tuples in the form (word,
         freq) with all of the words in
-        the text within ``n`` spaces
+        the text within `n` spaces
         either before or after the word.
     """
 
@@ -316,7 +318,7 @@ def neighbors(words, targetWords, n):
 def compare(a, b):
     """
         Compare the word frequency dictionaries
-        ``a`` and ``b`` by created a new sorted list
+        `a` and `b` by created a new sorted list
         of 2-tuples in the format 
         (word, difference in counts).
     """
@@ -341,7 +343,7 @@ def analyze(fName, targets):
           - split into words
           - create a frequency map for the document
           - analyze neighbors for the 
-            list of ``target`` words
+            list of `target` words
         Return the results as a tuple:
         (list of all words, freq map, freq map for neighbors)
     """
@@ -393,9 +395,9 @@ def report(header, words, freqList, neighborList):
 def print_compare(compared, a, b):
     """
         Print out a table comparing two
-        dictionaries. ``Compared`` is the
+        dictionaries. `Compared` is the
         ordered list of keys-freq to compare.
-        ``a`` and ``b`` are the two word
+        `a` and `b` are the two word
         frequency dictionaries to compare.
     """
 
@@ -408,12 +410,12 @@ def print_compare(compared, a, b):
           str(a.get(word,0)).ljust(6) + "  " + 
           str(b.get(word,0)).ljust(6))
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Neighbor details
 -----------------------
 
-``neighbors`` is more complicated than other code we have looked at
+`neighbors` is more complicated than other code we have looked at
 because it calls one of our functions in a loop and it uses nested
 **dictionaries** --- a dictionary that has more dictionaries as data.
 To unpack the function a little bit, consider this example text:
@@ -429,7 +431,7 @@ red">testing</span>, charter schools</span> and vouchers. She says
 she is trying now to make up for past errors.</p>
 
 
-If we run ``neighbors`` with ``targetWords=["testing", "education"], n=2``
+If we run `neighbors` with `targetWords=["testing", "education"], n=2`
 we would create a dictionary that looks something like this:
 
 key        value

@@ -1069,18 +1069,22 @@ the function by name. We have already seen one examples of a **function
 call**:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 >>> type(32)
 <class 'int'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-We have also been using the built-in function ``print()`` which allows
+We have also been using the built-in function `print()` which allows
 us to print a message to the console:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 >>> print("Hello, world.")
 Hello, world.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The name of the function is type. The expression in parentheses is
 called the **argument** of the function. The result, for this function,
@@ -1097,43 +1101,51 @@ another. The int function takes any value and converts it to an integer,
 if it can, or complains otherwise:
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 >>> int('32')
 32
 >>> int('Hello')
 ValueError: invalid literal for int() with base 10: 'Hello'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 can convert floating-point values to integers, but it doesn’t round off;
 it chops off the fraction part:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 >>> int(3.99999)
 3
 >>> int(-2.3)
 -2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 converts integers and strings to floating-point numbers:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> float(32)
 32.0
 >>> float('3.14159')
 3.14159
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Finally, str converts its argument to a string:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> str(32)
 '32'
 >>> str(3.14159)
 '3.14159'
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Math functions
@@ -1145,33 +1157,39 @@ functions.
 
 Before we can use the module, we have to import it:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> import math
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This statement creates a **module object** named math. If you print the
 module object, you get some information about it:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> print(math)
 <module 'math' (built-in)>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The module object contains the functions and variables defined in the
 module. To access one of the functions, you have to specify the name of
 the module and the name of the function, separated by a dot (also known
 as a period). This format is called **dot notation**.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> ratio = signal_power / noise_power
 >>> decibels = 10 * math.log10(ratio)
 
 >>> radians = 0.7
 >>> height = math.sin(radians)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The first example computes the logarithm base 10 of the signal-to-noise
 ratio. The math module also provides a function called log that computes
@@ -1183,12 +1201,14 @@ etc.) take arguments in radians. To convert from degrees to radians,
 divide by 360 and multiply by $2
 \pi$:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 >>> degrees = 45
 >>> radians = degrees / 360.0 * 2 * math.pi
 >>> math.sin(radians)
 0.7071067811865475
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The expression math.pi gets the variable pi from the math module. The
 value of this variable is an approximation of $\pi$, accurate to about
@@ -1197,11 +1217,13 @@ value of this variable is an approximation of $\pi$, accurate to about
 If you know your trigonometry, you can check the previous result by
 comparing it to the square root of two divided by two:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> math.sqrt(2) / 2.0
 0.7071067811865476
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Composition
@@ -1216,18 +1238,22 @@ ability to take small building blocks and **compose** them. For example,
 the argument of a function can be any kind of expression, including
 arithmetic operators:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 x = math.sin(degrees / 360.0 * 2 * math.pi)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 And even function calls:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 x = math.exp(math.log(x+1))
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Almost anywhere you can put a value, you can put an arbitrary
 expression, with one exception: the left side of an assignment statement
@@ -1235,13 +1261,15 @@ has to be a variable name. Any other expression on the left side is a
 syntax error[^3].
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> minutes = hours * 60                 # right
 >>> hours * 60 = minutes                 # wrong!
 SyntaxError: can't assign to operator
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 Adding new functions
@@ -1254,12 +1282,14 @@ execute when the function is called.
 
 Here is an example:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 def print_lyrics():
     print("I'm a lumberjack, and I'm okay.")
     print("I sleep all night and I work all day.")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 
@@ -1288,26 +1318,30 @@ If you type a function definition in interactive mode, the interpreter
 prints ellipses (*...*) to let you know that the definition isn’t
 complete:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
     >>> def print_lyrics():
     ...     print("I'm a lumberjack, and I'm okay.")
     ...     print("I sleep all night and I work all day.")
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To end the function, you have to enter an empty line (this is not
 necessary in a script).
 
 Defining a function creates a variable with the same name.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> print(print_lyrics)
 <function print_lyrics at 0xb7e99e9c>
 >>> print(type(print_lyrics))
 <class 'function'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 The value of `print_lyrics` is a **function object**, which has type
@@ -1316,12 +1350,14 @@ The value of `print_lyrics` is a **function object**, which has type
 The syntax for calling the new function is the same as for built-in
 functions:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> print_lyrics()
 I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Once you have defined a function, you can use it inside another
 function. For example, to repeat the previous refrain, we could write a
@@ -1330,19 +1366,21 @@ function called `repeat_lyrics`:
     def repeat_lyrics():
         print_lyrics()
         print_lyrics()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 And then call `repeat_lyrics`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> repeat_lyrics()
 I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 But that’s not really how the song goes.
@@ -1353,7 +1391,9 @@ Definitions and uses
 Pulling together the code fragments from the previous section, the whole
 program looks like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
     def print_lyrics():
         print "I'm a lumberjack, and I'm okay."
@@ -1364,7 +1404,7 @@ program looks like this:
         print_lyrics()
 
     repeat_lyrics()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This program contains two function definitions: `print_lyrics` and
 `repeat_lyrics`. Function definitions get executed just like other
@@ -1429,12 +1469,14 @@ Inside the function, the arguments are assigned to variables called
 **parameters**. Here is an example of a user-defined function that takes
 an argument:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 def print_twice(bruce):
     print(bruce)
     print(bruce)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This function assigns the argument to a parameter named bruce. When the
 function is called, it prints the value of the parameter (whatever it
@@ -1442,7 +1484,9 @@ is) twice.
 
 This function works with any value that can be printed.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> print_twice('Spam')
 Spam
@@ -1453,13 +1497,15 @@ Spam
 >>> print_twice(math.pi)
 3.14159265359
 3.14159265359
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The same rules of composition that apply to built-in functions also
 apply to user-defined functions, so we can use any kind of expression as
 an argument for `print_twice`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
 >>> print_twice('Spam '*4)
 Spam Spam Spam Spam
@@ -1467,7 +1513,7 @@ Spam Spam Spam Spam
 >>> print_twice(math.cos(math.pi))
 -1.0
 -1.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The argument is evaluated before the function is called, so in the
 examples the expressions `'Spam '*4` and math.cos(math.pi) are only
@@ -1475,13 +1521,15 @@ evaluated once.
 
 You can also use a variable as an argument:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+```
+
+ {.python}
 
     >>> michael = 'Eric, the half a bee.'
     >>> print_twice(michael)
     Eric, the half a bee.
     Eric, the half a bee.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The name of the variable we pass as an argument (michael) has nothing to
 do with the name of the parameter (bruce). It doesn’t matter what the

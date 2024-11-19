@@ -75,18 +75,18 @@ graphical elements to a web page. After importing the library,
 you can easily start adding elements. The following code creates
 a web site with the text, _Hello, world_.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 import jsgui from "./lib/jsgui.js";
 
 jsgui.add("Hello, world");
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 JS GUI provides functions to create titles, (level 1-6), images,
 and paragraphs of text. New lines can be created with `br()` and
 horizontal rules with `hr()`. This code uses titles, text, images,
 breaks, and rules.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 import jsgui from "./lib/jsgui.js";
 
 let catPic = jsgui.img("cat.jpg", "a black cat");
@@ -108,9 +108,9 @@ jsgui.add(jsgui.h4("Dog people"));
 jsgui.add(dogPic);
 jsgui.add(jsgui.br());
 jsgui.add(`Some people like dogs. Dogs are loyal friends and
-companions, sad to see you leave and ecstatic when you get home.``);
+companions, sad to see you leave and ecstatic when you get home.`);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 <figure class="figure border">
 <img src="figs/cats1.png" class="figure-img img-fluid" alt="Screenshot of a web page with an image of a cat and a dog with some text.">
@@ -146,7 +146,7 @@ map, JS GUI uses the HTML definition list element. A definition
 list (`<dl>`) describes contents that have a _term_ and a _definition_.
 The `dl()` function maps the _keys_ to terms and the _values_ to definitions.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 // ...
 
 let pet = {
@@ -157,7 +157,7 @@ let pet = {
 }
 jsgui.add(jsgui.dl(pet));
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 <figure class="figure border">
 <img src="figs/jsgui-dl.png" class="figure-img img-fluid" alt="Screenshot of a web page with a definition list with the keys on the left and terms on the right.">
@@ -175,7 +175,7 @@ that data to make bold column headers. Although not used here,
 `data` can also be an array of data maps. If this is the case, only
 the `values` from the map are displayed in the table rows.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 // ...
 
 let animalsOnScreen = [
@@ -188,7 +188,7 @@ let animalsOnScreen = [
 let table = jsgui.table(animalsOnScreen.slice(1), animalsOnScreen[0]);
 jsgui.add(table);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This example creates an array with 4 columns and 5 elements. Since the
 0-th element contains the header data, `slice(1)` is used to exclude

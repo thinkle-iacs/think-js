@@ -3294,18 +3294,18 @@ focusing on questions of his own security.''
 For the 30-year-old former security contractor -- wanted by US authorities for
 espionage after leaking documents related to the NSA's foreign and domestic
 surveillance operations -- Russia's hospitality could prove a mixed blessing.
-The Kremlin has demanded he cease his ``political activities'' in order to stay
+The Kremlin has demanded he cease his `political activities'' in order to stay
 in the country.
 
 Officials are concerned he has additional information about how the US
 penetrates foreign government computers, and may barter it for favour from
 Moscow.
 
-Mr Snowden thanked Russia in a statement released by WikiLeaks. ``Over the past
+Mr Snowden thanked Russia in a statement released by WikiLeaks. `Over the past
 eight weeks we have seen the Obama administration show no respect for
 international or domestic law, but in the end the law is winning,'' he said.
 
-Republican senator John McCain called Russia's latest move ``a disgrace and a
+Republican senator John McCain called Russia's latest move `a disgrace and a
 deliberate effort to embarrass the United States'' and said the relationship
 needed to be rethought.
 
@@ -3316,15 +3316,15 @@ to mend tattered ties.
 ``This situation is too insignificant to affect political relations,'' said
 Kremlin foreign policy aide Yuri Ushakov.
 
-US politicians saw it differently. ``Russia's stabbed us in the back and every
+US politicians saw it differently. `Russia's stabbed us in the back and every
 day that Snowden is allowed to be free they twist the knife further,'' Democrat
 senator Chuck Schumer said.
 
 ``Now that Snowden has been set free, I don't think the G20 should be meeting in
 Russia and I think we should not participate if they do.''
 
-Maryland congressman CA ``Dutch'' Ruppersberger, the top Democrat on the house
-intelligence committee, called the asylum decision a ``slap in the face'', but
+Maryland congressman CA `Dutch'' Ruppersberger, the top Democrat on the house
+intelligence committee, called the asylum decision a `slap in the face'', but
 said the US needed Russian co-operation on Syria.
 
 Mr Ruppersberger said he believed Mr Snowden had already provided all his
@@ -4663,7 +4663,7 @@ the airport.
 
 In a statement released by the WikiLeaks anti-secrecy website, Snowden thanked
 Russia for giving him asylum and slammed the administration of US President
-Barack Obama for having ``no respect"" for international or domestic law.
+Barack Obama for having `no respect"" for international or domestic law.
 
 "But in the end the law is winning," Snowden said.
 
@@ -8223,7 +8223,7 @@ MOSCOW: Vladimir Putin has accused Washington of trapping US intelligence leaker
 Edward Snowden in Moscow, saying he would leave Russia as soon as possible.
 
 ``As soon as there's the chance to move somewhere, he will certainly do this,''
-the Russian President said yesterday. ``He arrived on our territory uninvited,
+the Russian President said yesterday. `He arrived on our territory uninvited,
 he did not fly to us, he was flying in transit to other countries.
 
 ``But as soon as he was in the air, it became known, and our American partners
@@ -8239,14 +8239,14 @@ passport the same day.
 Booked on a June 24 flight from Moscow to Havana, Cuba, he never boarded the
 plane. Mr Snowden has been stranded in the airport's transit zone since then.
 
-Mr Putin said of the US: ``They themselves scared off all the other countries,
+Mr Putin said of the US: `They themselves scared off all the other countries,
 no one wants to take him, and therefore they essentially themselves trapped him
 on our territory.
 
 ``A nice gift to us for Christmas,'' he told Russian reporters travelling with
 him on a visit to the island of Gogland in the Gulf of Finland.
 
-He did not know what would become of Mr Snowden. ``How would I know? That's his
+He did not know what would become of Mr Snowden. `How would I know? That's his
 life, his fate,'' the President said.
 
 But he did note a change in position by the former National Security Agency
@@ -8261,11 +8261,11 @@ When Mr Snowden announced on Friday he was renewing his application, he said he
 had promised not to harm US interests in the future.
 
 ``Judging by his latest statement, he is somewhat changing his position,'' Mr
-Putin said. ``But the situation has not been finally clarified so far.''
+Putin said. `But the situation has not been finally clarified so far.''
 
 He said nothing about whether Mr Snowden's application would be accepted.
 
-Mr Snowden had vowed to continue his activism, Mr Putin said. ``We said, `That
+Mr Snowden had vowed to continue his activism, Mr Putin said. `We said, `That
 will be without us, then. We have other battles to fight,' '' he said with a
 smile.
 
@@ -8306,7 +8306,7 @@ LENGTH: 422  words
 
 MOSCOW: Fugitive US intelligence leaker Edward Snowden has applied for temporary
 asylum in Russia, a pro-Kremlin lawyer said last night, after President Vladimir
-Putin accused Washington of ``trapping'' him in Moscow.
+Putin accused Washington of `trapping'' him in Moscow.
 
 Mr Snowden, wanted by the US for revealing sensational details of its vast
 spying operations, is now spending a fourth week in the transit lounge at
@@ -8324,7 +8324,7 @@ Mr Kucherena participated in Mr Snowden's meeting with rights activists and
 pro-Kremlin politicians at Sheremetyevo last week and said Mr Snowden had
 contacted him for consultations after the get-together.
 
-``He is actively consulting with me,'' Mr Kucherena said. ``After the meeting,
+`He is actively consulting with me,'' Mr Kucherena said. `After the meeting,
 we've been in frequent touch.''
 
 Mr Snowden flew into Russia from Hong Kong on June 23 and has since been
@@ -8333,10 +8333,10 @@ marooned in the transit zone of Sheremetyevo.
 He was checked in for an Aeroflot flight to Cuba on June 24 but never boarded
 the plane.
 
-Mr Putin said Mr Snowden would leave Russia ``as soon as he can'', likening him
+Mr Putin said Mr Snowden would leave Russia `as soon as he can'', likening him
 to an unwanted gift.
 
-But he accused Washington of ``trapping'' the American in Moscow, saying no
+But he accused Washington of `trapping'' the American in Moscow, saying no
 country wanted to take in Mr Snowden because of US pressure.
 
 Mr Kucherena said he was helping Mr Snowden negotiate the complexities of
@@ -13268,8 +13268,8 @@ Alexei Pushkov said Mr Snowden regarded the offer of sanctuary in Caracas as the
 
 Venezuela's offer was one of three positive responses from Latin American
 countries to Mr Snowden's asylum applications. Venezuelan President Nicolas
-Maduro said this week that Mr Snowden was being ``being persecuted by the empire
-(the US)'' and urged him to ``come here''.
+Maduro said this week that Mr Snowden was being `being persecuted by the empire
+(the US)'' and urged him to `come here''.
 
 But nothing in the extraordinary story of Mr Snowden's flight from the clutches
 of US law enforcement has proved straightforward, particularly since he arrived
@@ -13295,9 +13295,9 @@ the Russian government is keen to nudge Mr Snowden, 30, towards the departure
 gate.
 
 On Monday, Mr Maduro called on Mr Snowden to decide whether he wanted to fly to
-Caracas. ``We have received the asylum request letter,'' he said after he
+Caracas. `We have received the asylum request letter,'' he said after he
 offered Mr Snowden asylum, as did the leaders of Bolivia and Nicaragua. Mr
-Maduro described the offers from the three nations as ``collective humanitarian
+Maduro described the offers from the three nations as `collective humanitarian
 political asylum''.
 
 If Mr Snowden does accept asylum in Venezuela, he still has to reach the
@@ -13312,7 +13312,7 @@ route east over friendly Russian territory and then the Pacific.
 
 Three hours after Mr Pushkov's initial tweet, WikiLeaks, which has been
 assisting Mr Snowden, suggested that a deal was close but that any announcement
-was premature. It said on Twitter: ``Edward #Snowden has not yet formally
+was premature. It said on Twitter: `Edward #Snowden has not yet formally
 accepted asylum in Venezuela. The Russian lawmaker concerned has deleted the
 tweet. The states concerned will make the announcement if and when the
 appropriate time comes.''
@@ -14974,7 +14974,7 @@ WikiLeaks, which has been assisting him, said yesterday he had begged more
 nations to take him.
 
 ``Edward Snowden has applied to another six countries for asylum,'' the website
-tweeted. ``They will not be named at this time due to attempted US
+tweeted. `They will not be named at this time due to attempted US
 interference.''
 
 This now takes the total of countries approached to 27.
@@ -14982,7 +14982,7 @@ This now takes the total of countries approached to 27.
 And his prayers finally appeared to be answered yesterday when Venezuela and
 Nicaragua responded.
 
-President Nicolas Maduro said in a speech on Venezuela's Independence Day: ``I
+President Nicolas Maduro said in a speech on Venezuela's Independence Day: `I
 have decided to offer humanitarian asylum to the young US citizen Edward Snowden
 so he can come to the fatherland of Bolivar and Chavez to live away from the
 imperial North American persecution.''
@@ -15045,10 +15045,10 @@ before moving to Hawaii.
 While in Hawaii, Snowden began a relationship with 28-year-old pole dancer
 Lindsay Mills.
 
-In an online blog Ms Mills described her boyfriend as ``E'' and her ``man of
+In an online blog Ms Mills described her boyfriend as `E'' and her `man of
 mystery''.
 
-After his departure she wrote: ``My world has opened and closed all at once.
+After his departure she wrote: `My world has opened and closed all at once.
 Leaving me lost at sea without a compass''.
 
 ``As I type this on my tear-streaked keyboard I'm reflecting on all the faces
@@ -15061,9 +15061,9 @@ that have graced my path.
 When Snowden left Hawaii for Hong Kong he told his girlfriend he had to go away
 for a while, but was deliberately vague about his trip. In her blog, written
 hours after Snowden sensationally revealed he was the source of the leaks, she
-wrote: ``Sometimes life doesn't afford proper goodbyes''.
+wrote: `Sometimes life doesn't afford proper goodbyes''.
 
-Her blog, called ``Adventures of a world-travelling, pole-dancing superhero'',
+Her blog, called `Adventures of a world-travelling, pole-dancing superhero'',
 offers intriguing insights into the couple's life in Hawaii. Snowden's job at
 the NSA saw him earn a good salary of $133,000.
 
@@ -15074,7 +15074,7 @@ winding up in Moscow.
 Friends of Ms Mills say she has been left heartbroken and feels betrayed by
 Snowden.
 
-One friend said: ``No one likes to have secrets kept from them. I don't think
+One friend said: `No one likes to have secrets kept from them. I don't think
 she would be the person that would stay with someone like that. That must
 hurt.''
 
@@ -15085,7 +15085,7 @@ about her boyfriend stealing secret data.
 The 23-year-old didn't recall anything suspicious about Ms Mills's behaviour in
 the weeks leading up to Snowden's flight from Hawaii.
 
-She said: ``I never suspected anything suspicious.
+She said: `I never suspected anything suspicious.
 
 ``Whenever we talked about her life, she just seemed normal to me.
 
@@ -15104,8 +15104,8 @@ Assange, who has found sanctuary in the Ecuadorean embassy in London, has
 attacked President Barack Obama over the Snowden situation. His comments came
 after the row over the Bolivian presidential jet.
 
-After Mr Obama said he was not going to scramble jets for ``some 29-year-old
-hacker'', Assange accused the US President of lying, and said he ``may have
+After Mr Obama said he was not going to scramble jets for `some 29-year-old
+hacker'', Assange accused the US President of lying, and said he `may have
 alienated an entire continent as a result of thin-skinned vindictiveness''.
 
 As Hollywood already starts to debate who should play the whistleblower in a
@@ -16137,7 +16137,7 @@ evade justice for revealing a vast US spying program that has strained ties with
 European allies.
 
 ``These are the old, bad tools of political aggression,'' he said in a statement
-published by the anti-secrecy WikiLeaks website. ``Their purpose is to frighten,
+published by the anti-secrecy WikiLeaks website. `Their purpose is to frighten,
 not me but those who would come after me.''
 
 WikiLeaks, which has been helping Snowden, said the 30-year-old had sent asylum
@@ -16158,7 +16158,7 @@ his work aimed at inflicting damage on our American partners, no matter how
 strange this may sound coming from me,'' Mr Putin told reporters.
 
 After learning of that condition, a Kremlin spokesman said Mr Snowden had
-withdrawn his request. ``He abandoned his intention and his request to receive
+withdrawn his request. `He abandoned his intention and his request to receive
 the chance of staying in Russia,'' Mr Putin's spokesman, Dmitry Peskov, told
 reporters.
 
@@ -16180,11 +16180,11 @@ travel on to Cuba the following day but never got on the flight because he
 apparently lacked the proper boarding papers after his US travel passport was
 revoked.
 
-Breaking his silence for the first time since then, Mr Snowden said: ``Without
+Breaking his silence for the first time since then, Mr Snowden said: `Without
 any judicial order, the administration now seeks to stop me exercising a basic
 right. A right that belongs to everybody. The right to seek asylum.''
 
-He also called Ecuador's treatment of those who stand up to the US ``an example
+He also called Ecuador's treatment of those who stand up to the US `an example
 to the world''.
 
 ``There are few world leaders who would risk standing for the human rights of an
@@ -19389,9 +19389,10 @@ ask," he said.
 
 'Our American partners'
 
-In a move likely to enrage the US, Mr Putin said yesterday
+---
+**In a move likely to enrage the US, Mr Putin said yesterday**
 
-: "If he wants to go somewhere and someone will take him, go ahead. If he wants
+"If he wants to go somewhere and someone will take him, go ahead. If he wants
 to stay here, there is one condition: he must stop his work aimed at bringing
 harm to our American partners, as strange as that sounds coming from my mouth."
 
@@ -21561,7 +21562,7 @@ LENGTH: 479  words
 
 
 HONG KONG: Rogue US intelligence contractor Edward Snowden left a back-up copy
-of his trove of secret data in Hong Kong as an ``insurance policy'' that could
+of his trove of secret data in Hong Kong as an `insurance policy'' that could
 have devastating consequences for Western security interests, say sources
 familiar with his time in the Chinese city.
 
@@ -21578,7 +21579,7 @@ The public face of Mr Snowden's legal team, which negotiated his flight from
 Hong Kong, was Albert Ho, a veteran of civil rights. Mr Ho said Mr Snowden
 believed he had found sanctuary in Hong Kong.
 
-Lawyers met Mr Snowden at a safe house on June 18. ``I went to a shop and bought
+Lawyers met Mr Snowden at a safe house on June 18. `I went to a shop and bought
 a big pizza, and several pieces of fried chicken and some sausages, some cakes
 and some Pepsis and other soft drinks,'' Mr Ho recalled. On their arrival, Mr
 Snowden indicated the fridge, where he insisted his visitors placed their mobile
@@ -21602,7 +21603,7 @@ The Hong Kong Justice Department had, to its relief, discovered clerical errors
 in the papers from the US seeking Mr Snowden's extradition on espionage charges.
 Justice Minister Yuen Kwok-keung said the documents gave Mr Snowden's middle
 name as James rather than Joseph and failed to confirm his passport number.
-There was, he said: ``No legal basis to ask the court to issue a warrant for his
+There was, he said: `No legal basis to ask the court to issue a warrant for his
 provisional arrest.''
 
 Early on June 23, a lawyer escorted Mr Snowden to the terminal. As they checked
@@ -22741,7 +22742,7 @@ LENGTH: 1421  words
 
 IN the suburbs edged by woods midway between Baltimore and the US capital,
 residents long joked that the government spy shop next door was so
-ultra-secretive its initials stood for ``No Such Agency''.
+ultra-secretive its initials stood for `No Such Agency''.
 
 But when Edward Snowden grew up There, the National Security Agency's looming
 presence was both a very visible and accepted part of everyday life.
@@ -22760,7 +22761,7 @@ such a class.
 And when he joined friends in his late teens to edit a website built around a
 shared interest in Japanese animation, they charted the venture from an
 apartment in military housing at Fort George G. Meade, the installation that
-houses the NSA centre dubbed the Puzzle Palace and calls itself the ``nation's
+houses the NSA centre dubbed the Puzzle Palace and calls itself the `nation's
 pre-eminent centre for information, intelligence and cyber.''
 
 In this setting, it's easy to see how the young Snowden was exposed to the
@@ -22772,7 +22773,7 @@ Snowden's decision to become a leaker.
 What, after all, did he think he was getting into when he signed up to work for
 the nation's espionage agencies?
 
-And what specifically triggered a ``crisis of conscience'' - as described by a
+And what specifically triggered a `crisis of conscience'' - as described by a
 friend who knew him when he worked for the CIA - so profound it convinced him to
 betray the secrets he was sworn to keep?
 
@@ -22780,7 +22781,7 @@ The latter is a question that even Snowden, in interviews since his disclosures,
 has answered piecemeal.
 
 ``I'm no different from anybody else,'' he said in a video interview with The
-Guardian newspaper. ``I don't have special skills. I'm just another guy who sits
+Guardian newspaper. `I don't have special skills. I'm just another guy who sits
 there day to day in the office, watches what's happening, and goes: This is not
 our place to decide. The public needs to decide whether these programs and
 policies are right or wrong.''
@@ -22822,7 +22823,7 @@ thread, he asked so many questions about how to hide the identity of his
 computer server that another discussion participant asked why he was being so
 paranoid.
 
-Snowden replied: ``Patriot Act. If they misinterpret that actions I perform, I
+Snowden replied: `Patriot Act. If they misinterpret that actions I perform, I
 could be a cyb4r terrorist and that would be very. . . bad.''
 
 In May 2004, he enlisted in the army.
@@ -22906,7 +22907,7 @@ begin a week of interviews with their source.
 
 JUNE 5 The Guardian publishes its first exclusive story based on Snowden's leak.
 
-JUNE 9: Snowden goes public. In a video interview, he says: ``I have no
+JUNE 9: Snowden goes public. In a video interview, he says: `I have no
 intention of hiding who I am because I know I have done nothing wrong.''
 
 JUNE 12: Hong Kong's South China Morning Post publishes the first interview with
@@ -22920,7 +22921,7 @@ JUNE 21: The US files espionage charges against Snowden, requesting Hong Kong
 detain him for extradition.
 
 JUNE 23: Snowden leaves on a flight to Moscow. The Hong Kong government says the
-US documents do not ``fully comply with the legal requirements under Hong Kong
+US documents do not `fully comply with the legal requirements under Hong Kong
 law'' and it had no legal basis to prevent him leaving.
 
 LOAD-DATE: June 28, 2013
@@ -24381,7 +24382,7 @@ Security Agency contractor wanted by US authorities for leaking information
 about domestic surveillance operations.
 
 The Russian President described Mr Snowden's arrival in Moscow on a Sunday
-flight from Hong Kong as a ``complete surprise'' and said he remained in the
+flight from Hong Kong as a `complete surprise'' and said he remained in the
 airport's transit zone.
 
 ``Mr Snowden is a free man and the sooner he chooses his final destination, the
@@ -24389,7 +24390,7 @@ better it will be for us and him,'' he said during an official trip to Finland.
 
 Asked about handing Mr Snowden to US authorities, Mr Putin noted there was no
 extradition agreement between Russia and the US. Mr Snowden had not crossed
-Russia's border and was in a ``transit hall'' for passengers with layovers, he
+Russia's border and was in a `transit hall'' for passengers with layovers, he
 said.
 
 Mr Putin's comments broke nearly two days of official obfuscation among Russian
@@ -24406,9 +24407,9 @@ But just as Mr Putin urged Mr Snowden to leave Moscow, the anti-secrecy group
 that has been guiding his escape from US authorities cast doubt on whether the
 fugitive has an exit route.
 
-WikiLeaks had said Mr Snowden was on his way to Ecuador via ``Russia and other
+WikiLeaks had said Mr Snowden was on his way to Ecuador via `Russia and other
 countries''. But he failed to board a flight to Havana on which airline
-employees said he was booked. ``Cancelling Snowden's passport and bullying
+employees said he was booked. `Cancelling Snowden's passport and bullying
 intermediary countries may keep Snowden permanently in Russia,'' read a message
 on WikiLeaks's Twitter account.
 
@@ -24424,10 +24425,10 @@ Raul Castro is hoping to increase tourism from the US and may not be eager to
 have him pass through.
 
 Venezuelan President Nicolas Maduro said his government would evaluate a formal
-request for political asylum from Mr Snowden if one came because he ``deserves
+request for political asylum from Mr Snowden if one came because he `deserves
 it''.
 
-On state television during a visit to Haiti, Mr Maduro said: ``This guy Snowden
+On state television during a visit to Haiti, Mr Maduro said: `This guy Snowden
 has given the world a surprise and he's made complaints to make humanity
 better.''
 
@@ -24444,7 +24445,7 @@ University of Miami.
 
 ``Snowden's chance of getting asylum in Ecuador is as good as it can get given
 the history of resentment, tension and lack of respect between the two
-countries,'' he said. ``Correa is . . . inclined to stick his finger in the eye
+countries,'' he said. `Correa is . . . inclined to stick his finger in the eye
 of the US.''
 
 The setting for the cat-and-mouse drama around Mr Snowden has emerged as
@@ -24827,8 +24828,8 @@ Mr Snowden is charged with violating American espionage laws. He fled Hong Kong
 on the weekend, triggering a global guessing game over his whereabouts and
 frustrating US efforts to bring him to justice.
 
-Mr Putin described the ex-intelligence contractor as a ``free man'' whose
-arrival in Russia was ``completely unexpected''.
+Mr Putin described the ex-intelligence contractor as a `free man'' whose
+arrival in Russia was `completely unexpected''.
 
 The announcement ended two days of speculation over where Mr Snowden could be.
 Mr Snowden leaked revelations of massive US surveillance programs to the media
@@ -24838,7 +24839,7 @@ He was supposed to go to Ecuador -- where President Rafael Correa is considering
 his request for asylum -- via Russia and then Cuba.
 
 ``It is true that Mr Snowden came to Moscow,'' Mr Putin said during a visit to
-Finland. ``For us, this was completely unexpected.
+Finland. `For us, this was completely unexpected.
 
 ``He arrived as a transit passenger and he does not need a visa or other
 documents. He can buy a ticket and go wherever he pleases. He did not cross the
@@ -24851,7 +24852,7 @@ the NSA, where he gained access to documents he gave to the Guardian and
 Washington Post newspapers. The papers exposed what Mr Snowden said were privacy
 violations by an authoritarian government.
 
-Mr Snowden also told Hong Kong's South China Morning Post newspaper that ``the
+Mr Snowden also told Hong Kong's South China Morning Post newspaper that `the
 NSA does all kinds of things like hack Chinese cellphone companies to steal all
 of your SMS data''. He is believed to have more than 200 additional sensitive
 documents in laptops he is carrying.
@@ -28485,7 +28486,7 @@ knew about US electronic espionage against Moscow.
 been utterly unprofessional,'' Igor Korotchenko, a former colonel in Russia's
 top military command turned security analyst, said on state TV.
 
-Interfax quoted an unidentified ``well-informed source'' in Moscow as saying
+Interfax quoted an unidentified `well-informed source'' in Moscow as saying
 Russia received a US request to extradite Mr Snowden and responded by saying it
 would consider that.
 
@@ -28632,7 +28633,7 @@ in Moscow yesterday on a direct flight from Hong Kong and was expected to head
 to Ecuador via Cuba.
 
 The US government called Hong Kong's decision to allow the former National
-Security Agency (NSA) contractor to travel ``troubling,'' as the State
+Security Agency (NSA) contractor to travel `troubling,'' as the State
 Department had revoked his passport and ordered other countries to prevent him
 from travelling.
 
@@ -28641,7 +28642,7 @@ flight. He did not emerge into the main terminal area, where crowds of
 journalists quizzed his jet-lagged and bewildered fellow passengers about
 whether they had seen the Mr Snowden on the flight.
 
-An airport source told Interfax news agency that ``transit passenger'' Mr
+An airport source told Interfax news agency that `transit passenger'' Mr
 Snowden had remained within the airport.
 
 ``He would not be able to leave the airport even in a diplomatic car - he has
@@ -28651,7 +28652,7 @@ The Ecuadorian ambassador to Russia was reportedly at the airport to meet Mr
 Snowden.
 
 Airport officials said Mr Snowden was spending the night in the Vozdushny
-Express ``capsule hotel'' inside the departures area ahead of his next flight.
+Express `capsule hotel'' inside the departures area ahead of his next flight.
 
 Russian media reports cited sources within Aeroflot as saying Mr Snowden would
 fly to Cuba.
@@ -28664,7 +28665,7 @@ document or even Ecuadorian citizenship, allowing him to continue his journey,''
 a security source told Interfax.
 
 Ecuador's foreign minister Ricardo Patino says protection for Mr Snowden is an
-issue of ``freedom of expression''.
+issue of `freedom of expression''.
 
 ``It (the request) has to do with freedom of expression and the security of
 citizens around the world,'' he said.
@@ -28750,11 +28751,11 @@ wanted people after he fled Hawaii on May 20 to leak thousands of documents
 outlining how the US monitored phone calls and internet data.
 
 National Security Council spokeswoman Caitlin Hayden said the US hoped Moscow
-would not allow Mr Snowden to leave, ``given our intensified co-operation after
+would not allow Mr Snowden to leave, `given our intensified co-operation after
 the Boston Marathon bombings and our history of working with Russia on law
 enforcement matters''.
 
-She cited America's record of ``returning numerous high-level criminals back to
+She cited America's record of `returning numerous high-level criminals back to
 Russia at the request of the Russian government''.
 
 ``We expect the Russian government to look at all options available to expel Mr
@@ -28762,8 +28763,8 @@ Snowden back to the US to face justice for the crimes with which he is
 charged,'' Ms Hayden added.
 
 She expressed disappointment with Hong Kong for allowing Mr Snowden to leave on
-Sunday ``despite the legally valid US request to arrest him for purposes of his
-extradition under the US-Hong Kong Surrender Agreement''. ``We have registered
+Sunday `despite the legally valid US request to arrest him for purposes of his
+extradition under the US-Hong Kong Surrender Agreement''. `We have registered
 our strong objections to the authorities in Hong Kong, as well as to the Chinese
 government, through diplomatic channels and noted that such behaviour is
 detrimental to US-Hong Kong and US-China bilateral relations,'' she said.
@@ -28778,7 +28779,7 @@ who is also a fugitive in Ecuador's embassy in London.
 Ecuadorean Foreign Minister Eduardo Patino said the Latin American state would
 consider Mr Snowden's asylum request.
 
-``We are analysing it with a lot of responsibility,'' he said. ``It has to do
+`We are analysing it with a lot of responsibility,'' he said. `It has to do
 with freedom of expression and the security of citizens around the world.''
 
 It is understood that Ecuador's ambassador to Moscow was at the airport to meet

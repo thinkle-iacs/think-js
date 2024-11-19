@@ -23,11 +23,11 @@ A basic building block of all programs is to be able to repeat some
 code, over and over again. Javascript's **for** loop solves this for
 us. The syntax for the `for` loop is:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 for ([initialization]; [loop condition]; [final-expression]) {
   loop body
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 We can see that `for` follows the familiar pattern for **block statements** that
 we have already seen for _functions_ and _if_/_else_ statements,
@@ -49,25 +49,25 @@ We have already played around with the `for` loop with our
 turtle graphics when we were looking at the variables in a spiral. Let's take
 a closer look at this function which contains a for loop.
 
-<figure class="figure">
-<img src="figs/turtle-spiral.png" class="figure-img img-fluid" alt="Square spiral created with turtle graphics code.">
-<figcaption class="figure-caption">
-Our `spiral` function (below) uses a `for` loop to draw this design. [Try it and remix it here.](https://repl.it/@mcuringa/turtle-spiral)
-</figcaption>
-</figure>
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
-function spiral () {
-  setColor("deeppink")
+<img src="figs/turtle-spiral.png" class="figure-img img-fluid" alt="Square spiral created with turtle graphics code.">
+
+> Our `spiral` function (below) uses a `for` loop to draw this design. [Try it and remix it here.](https://codepen.io/thinkle/pen/mdNvVeR?editors=0011)
+
+
+```javascript
+function spiral() {
+  turtle.setStrokeStyle("DeepPink");  
   let distance = 2;
   let angle = 91;
-  for (let i=0; i<500; i++) {
-    fd(distance);
-    distance += 2;
-    rt(angle);
+  
+  for (let i = 0; i < 500; i++) {
+    turtle.forward(distance);  
+    distance += 2;  
+    turtle.right(angle);
   }
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
 * The variable `i` in the `for` statement at line 5 is the **loop variable**.
@@ -93,19 +93,21 @@ As we have mentioned previously, it is legal to make more than one assignment to
 same variable. A new assignment makes an existing variable refer to a new value
 (and stop referring to the old value).
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 let airTimeRemaining = 15;
 console.log(airTimeRemaining);
 airTimeRemaining = 7;
 console.log(airTimeRemaining);
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 The output of this program is:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 15
 7
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 because the first time `airTimeRemaining` is printed, its value is 15, and
 the second time, its value is 7.
@@ -124,12 +126,14 @@ In Javascript, an assignment statement can make two variables equal, but
 because further assignments can change either of them,  they don't have to
 stay that way:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 let a = 5;
 let b = a;    // After executing this line, a and b are now equal
 a = 3;    // After executing this line, a and b are no longer equal
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 The third line changes the value of `a` but does not change the
 value of `b`, so they are no longer equal. (In some programming
@@ -155,11 +159,13 @@ One of the most common forms of assignment is an update, where the new
 value of the variable depends on its old value. Deduct 40 cents from
 my airtime balance, or add one run to the scoreboard.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 let n = 5;
 n = 3 * n + 1;
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Line 2 means `get the current value of n, multiply it by three and add
 one, and assign the answer to n, thus making n refer to the value`.  
@@ -168,19 +174,23 @@ integer 16.
 
 If you try to get the value of a variable that has never been assigned to, you'll get an error:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ let w = x + 1;
 ReferenceError: x is not defined
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Before you can update a variable, you have to **initialize** it to some starting value,
 usually with a simple assignment:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let runsScored = 0;
 ...
 runsScored = runsScored + 1;
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Line 3 — updating a variable by adding 1 to it — is very common.  
 It is called an **increment** of the variable; subtracting 1 is called a **decrement**.  
@@ -193,7 +203,7 @@ Abbreviated assignment
 Incrementing a variable is so common that Javascript provides an abbreviated syntax
 for it:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ count = 0;
 ⠕ count++;
 ⠕ count;
@@ -204,7 +214,7 @@ for it:
 as *"plus-plus"*. Javascript offers a different operator
 (`+=` pronounced _"plus-equals"_) for increment values other than 1:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ n = 2;
 ⠕ n += 5;
 ⠕ n;
@@ -212,7 +222,7 @@ as *"plus-plus"*. Javascript offers a different operator
 ~~~~~~~~~~~~~~~~~~~~
 There are similar abbreviations for `--`, `-=`, `*=`, `/=`, and `%=`:
 
-~~~~~~~~~~~~~~~~~~~~{.javascript}        
+```javascript        
 ⠕ n = 3;
 ⠕ n--;
 ⠕ n;
@@ -255,12 +265,14 @@ a good example of iteration. The following program outputs a
 sequence of values in the left column and 2 raised to the power of
 that value in the right column:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 for (let i=0; i<13; i++) {  // Generate numbers 0 to 12
   console.log(i + "\t" + 2**i);
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 The string `"\t"` represents a **tab character**. The backslash character in
 `"\t"` indicates the beginning of an **escape sequence**. Escape sequences
@@ -280,7 +292,7 @@ The tab character shifts the cursor to the right until it reaches one of the
 tab stops. Tabs are useful for making columns of text line up, as in the output
 of the previous program:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 0     1
 1     2
 2     4
@@ -295,7 +307,9 @@ of the previous program:
 11    2048
 12    4096
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Because of the tab characters between the columns, the position of the second
 column does not depend on the number of digits in the first column.
@@ -312,14 +326,16 @@ one line. Because `console.log` moves the cursor to the next line, we're
 going to accumulate our data into a string variable, and then print
 out the whole row with a call to `console.log`.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 let row = "";     
 for (let i=1; i<7; i++) {
   row += (2 * i) + "\t";
 }
 console.log(row);
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Here we initialized our loop variable `i` to 1 rather than 0
 because we want to start counting from 1.
@@ -334,10 +350,12 @@ we print the results with `console.log`.
 
 The output of the program is:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 2   4   6  8    10    12
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 So far, so good. The next step is to **encapsulate** and **generalize**.
 
@@ -357,7 +375,7 @@ and abstraction.
 This function encapsulates the previous loop and generalizes it to print
 multiples of `n`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 function printMultiples (n) {
   let row = "";     
   for (let i=1; i<7; i++) {
@@ -366,7 +384,9 @@ function printMultiples (n) {
   console.log(row);
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 To encapsulate, all we had to do was add the first line, which declares the
 name of the function and the parameter list. To generalize, all we had to do
@@ -375,34 +395,40 @@ was replace the value 2 with the parameter `n`.
 If we call this function with the argument 2, we get the same output as before.
 With the argument 3, the output is:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 3   6   9  12   15  18
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 With the argument 4, the output is:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 4   8   12   16   20   24
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 By now you can probably guess how to print a multiplication table — by
 calling `printMultiples` repeatedly with different arguments. In fact, we
 can use another loop:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 for (let i=1; i<7; i++) {
   printMultiples(i);
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 Notice how similar this loop is to the one inside `printMultiples`.  All we
 did was replace the `print` function with a function call.
 
 The output of this program is a multiplication table:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 1    2     3     4     5     6
 2    4     6     8     10    12
 3    6     9     12    15    18
@@ -410,7 +436,9 @@ The output of this program is a multiplication table:
 5    10    15    20    25    30
 6    12    18    24    30    36
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 More encapsulation and generalization
 -------------------------------------
@@ -418,14 +446,16 @@ More encapsulation and generalization
 To demonstrate encapsulation again, let's take the code from the last section
 and wrap it up in a function:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 function printMultTable () {
   for (let i=1; i<7; i++) {
     printMultiples(i);
   }
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 With our `printMultTable` we encapsulate the code for printing the multiplication table.
 
@@ -464,21 +494,23 @@ As another example of generalization, imagine you wanted a program that would
 print a multiplication table of any size, not just the six-by-six table. You
 could add a parameter to `printMultTable`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 function printMultTable (high) {
   for (let i=1; i <= high; i++) {
     printMultiples(i);
   }
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 We replaced the loop condition `i<7` to use the parameter `high`. Because we
 want to print upt to and including `high`, we changed the Boolean operator
 from `<` to `<=`. If we call `printMultTable` with the argument 7, it
 displays:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 1   2     3     4     5     6
 2   4     6     8     10    12
 3   6     9     12    15    18
@@ -487,7 +519,9 @@ displays:
 6   12    18    24    30    36
 7   14    21    28    35    42
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 This is fine, except that we probably want the table to be square — with the
 same number of rows and columns. We have `high` number of rows, but our
@@ -499,7 +533,7 @@ Just to be annoying, we call this parameter `high`, demonstrating that
 different functions can have parameters with the same name (just like local
 variables). Here's the whole program:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 function printMultiples (n, high) {
   let row = "";     
   for (let i=1; i <= high; i++) {
@@ -514,7 +548,9 @@ function printMultTable (high) {
   }
 }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Notice that when we added a new parameter, we had to change the first line of
 the function (the function heading), and we also had to change the place where
@@ -522,7 +558,7 @@ the function is called in `printMultTable`.
 
 Now, when we call `printMultTable(7)`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.bash}
+```sh
 1    2     3     4     5     6     7
 2    4     6     8     10    12    14
 3    6     9     12    15    18    21
@@ -531,7 +567,9 @@ Now, when we call `printMultTable(7)`:
 6    12    18    24    30    36    42
 7    14    21    28    35    42    49
 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 Solving problems with `for` loops
 ---------------------------------
@@ -549,7 +587,7 @@ range of numbers. We already learned how to use the `if` statement to test a
 condition. In this chapter we looked at ways to iterate over a range of
 numbers. We can combine these techniques to solve our problem.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 function countMultiplesOf3 (start, end) {
   let count = 0;     
   for (let i=start; i <= end; i++) {
@@ -560,7 +598,9 @@ function countMultiplesOf3 (start, end) {
   return count;
 }
 console.log(countMultiplesOf3(3, 12)); // the multiples are [3, 6, 9, 12], so prints 4
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 In the example above, we test to see if a number is evenly divisible by 3
 (i.e. a multiple of 3) using the `%` mode operator. We use the `count`
@@ -574,7 +614,7 @@ To test if a number is prime, we will test all of the numbers smaller than it. I
 any of those numbers divide evenly into the number, it's not prime. If our loop completes
 without finding a divisor, our number must be prime. Here's the code:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}        
+```javascript        
 function isPrime (n) {
 
   if (n < 2) {
@@ -594,7 +634,9 @@ function isPrime (n) {
   return true;
 
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+
 
 On line 3, we make sure that `n` is a positive integer greater than 1. On line 6, we handle
 the special case of 2 -- the only even prime. On line 11 we begin our `for` loop. We do at

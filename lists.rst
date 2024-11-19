@@ -24,7 +24,7 @@ List values
 -----------
 
 There are several ways to create a new list; the simplest is to enclose the
-elements in square brackets (``[`` and ``]``):
+elements in square brackets (`[` and `]`):
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -46,7 +46,7 @@ list contains a string, a float, an integer, and
 A list within another list is said to be **nested**.
 
 Finally, a list with no elements is called an empty list,
-and is denoted ``[]``.
+and is denoted `[]`.
 
 We have already seen that we can assign list values to variables or pass lists as parameters to functions:
 
@@ -64,7 +64,7 @@ Accessing elements
 ------------------
 
 The syntax for accessing the elements of a list is the same as the syntax for
-accessing the characters of a string --- the index operator: ``[]`` (not to
+accessing the characters of a string --- the index operator: `[]` (not to
 be confused with an empty list). The expression inside the brackets specifies
 the index. Remember that the indices start at 0:
 
@@ -108,12 +108,12 @@ It is common to use a loop variable as a list index.
             print(horsemen[i])
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Each time through the loop, the variable ``i`` is used as an index into the
-list, printing the ``i``'th element. This pattern of computation is called a
+Each time through the loop, the variable `i` is used as an index into the
+list, printing the `i`'th element. This pattern of computation is called a
 **list traversal**.
 
-The above sample doesn't need or use the index ``i`` for anything besides getting
-the items from the list, so this more direct version --- where the ``for`` loop gets
+The above sample doesn't need or use the index `i` for anything besides getting
+the items from the list, so this more direct version --- where the `for` loop gets
 the items --- might be preferred:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -128,7 +128,7 @@ the items --- might be preferred:
 List length
 -----------
 
-The function ``len`` returns the length of a list, which is equal to the number
+The function `len` returns the length of a list, which is equal to the number
 of its elements. If you are going to use an integer index to access the list,
 it is a good idea to use this value as the upper bound of a
 loop instead of a constant. That way, if the size of the list changes, you
@@ -143,7 +143,7 @@ correctly for any size list:
             print(horsemen[i])
 ~~~~~~~~~~~~~~~~~~~~~~~
     
-The last time the body of the loop is executed, ``i`` is ``len(horsemen) - 1``, 
+The last time the body of the loop is executed, `i` is `len(horsemen) - 1`, 
 which is the index of the last element. (But the version without the index
 looks even better now!)
 
@@ -159,7 +159,7 @@ single element in its parent list. The length of this list is 4:
 List membership
 ---------------
 
-``in`` and ``not in`` are Boolean operators that test membership in a sequence. We
+`in` and `not in` are Boolean operators that test membership in a sequence. We
 used them previously with strings, but they also work with lists and
 other sequences:
 
@@ -199,7 +199,7 @@ in the section :ref:`nested_data`:
 List operations
 ---------------
 
-The ``+`` operator concatenates lists:
+The `+` operator concatenates lists:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -210,7 +210,7 @@ The ``+`` operator concatenates lists:
         [1, 2, 3, 4, 5, 6]
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Similarly, the ``*`` operator repeats a list a given number of times:
+Similarly, the `*` operator repeats a list a given number of times:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -220,8 +220,8 @@ Similarly, the ``*`` operator repeats a list a given number of times:
         [1, 2, 3, 1, 2, 3, 1, 2, 3]
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The first example repeats ``[0]`` four times. The second example repeats the
-list ``[1, 2, 3]`` three times.
+The first example repeats `[0]` four times. The second example repeats the
+list `[1, 2, 3]` three times.
 
 
 .. index:: slice, sublist
@@ -262,8 +262,8 @@ update one of the elements:
 
 The bracket operator applied to a list can appear anywhere in an expression.
 When it appears on the left side of an assignment, it changes one of the
-elements in the list, so the first element of ``fruit`` has been changed from
-``"banana"`` to ``"pear"``, and the last from ``"quince"`` to ``"orange"``. An
+elements in the list, so the first element of `fruit` has been changed from
+`"banana"` to `"pear"`, and the last from `"quince"` to `"orange"`. An
 assignment to an element of a list is called **item assignment**. Item
 assignment does not work for strings:
 
@@ -325,7 +325,7 @@ List deletion
 
 Using slices to delete list elements can be error-prone.
 Python provides an alternative that is more readable.
-The ``del`` statement removes an element from a list:
+The `del` statement removes an element from a list:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -335,10 +335,10 @@ The ``del`` statement removes an element from a list:
         ['one', 'three']
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-As you might expect, ``del`` causes a runtime
+As you might expect, `del` causes a runtime
 error if the index is out of range.
 
-You can also use ``del`` with a slice to delete a sublist:
+You can also use `del` with a slice to delete a sublist:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -362,18 +362,18 @@ After we execute these assignment statements
         b = "banana"
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-we know that ``a`` and ``b`` will refer to a string object with the letters
-``"banana"``. But we don't know yet whether they point to the *same* string object.
+we know that `a` and `b` will refer to a string object with the letters
+`"banana"`. But we don't know yet whether they point to the *same* string object.
 
 There are two possible ways the Python interpreter could arrange its memory:
 
     .. image:: illustrations/list1.png
        :alt: List illustration 
 
-In one case, ``a`` and ``b`` refer to two different objects that have the same
+In one case, `a` and `b` refer to two different objects that have the same
 value. In the second case, they refer to the same object. 
 
-We can test whether two names refer to the same object using the ``is``
+We can test whether two names refer to the same object using the `is`
 operator: 
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -381,7 +381,7 @@ operator:
         >>> a is b
         True
 
-This tells us that both ``a`` and ``b`` refer to the same object, and that it
+This tells us that both `a` and `b` refer to the same object, and that it
 is the second of the two state snapshots that accurately describes the relationship. 
 
 Since strings are *immutable*, Python optimizes resources by making two names
@@ -403,7 +403,7 @@ The state snapshot here looks like this:
     .. image:: illustrations/mult_references2.png
        :alt: State snapshot for equal different lists 
 
-``a`` and ``b`` have the same value but do not refer to the same object.
+`a` and `b` have the same value but do not refer to the same object.
 
 .. index:: aliases
 
@@ -425,7 +425,7 @@ In this case, the state snapshot looks like this:
     .. image:: illustrations/mult_references3.png
        :alt: State snapshot for multiple references (aliases) to a list 
 
-Because the same list has two different names, ``a`` and ``b``, we say that it
+Because the same list has two different names, `a` and `b`, we say that it
 is **aliased**. Changes made with one alias affect the other:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -462,14 +462,14 @@ The easiest way to clone a list is to use the slice operator:
         >>> b
         [1, 2, 3]
 
-Taking any slice of ``a`` creates a new list. In this case the slice happens to
+Taking any slice of `a` creates a new list. In this case the slice happens to
 consist of the whole list.  So now the relationship is like this:
 
     .. image:: illustrations/mult_references2.png
        :alt: State snapshot for equal different lists 
 
-Now we are free to make changes to ``b`` without worrying that we'll inadvertently be
-changing ``a``:
+Now we are free to make changes to `b` without worrying that we'll inadvertently be
+changing `a`:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -480,10 +480,10 @@ changing ``a``:
 
 .. index:: for loop, enumerate
 
-Lists and ``for`` loops
+Lists and `for` loops
 -----------------------
 
-The ``for`` loop also works with lists, as we've already seen. The generalized syntax of a ``for``
+The `for` loop also works with lists, as we've already seen. The generalized syntax of a `for`
 loop is:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -502,7 +502,7 @@ So, as we've seen
 It almost reads like English: For (every) friend in (the list of) friends,
 print (the name of the) friend.
 
-Any list expression can be used in a ``for`` loop:
+Any list expression can be used in a `for` loop:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -518,7 +518,7 @@ The first example prints all the multiples of 3 between 0 and 19. The second
 example expresses enthusiasm for various fruits.
 
 Since lists are mutable, we often want to traverse a list, changing
-each of its elements. The following squares all the numbers in the list ``xs``:
+each of its elements. The following squares all the numbers in the list `xs`:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
 
@@ -527,7 +527,7 @@ each of its elements. The following squares all the numbers in the list ``xs``:
         for i in range(len(xs)):
             xs[i] = xs[i]**2
 
-Take a moment to think about ``range(len(xs))`` until you understand how
+Take a moment to think about `range(len(xs))` until you understand how
 it works. 
 
 In this example we are interested in both the *value* of an item, (we want to 
@@ -541,8 +541,8 @@ This pattern is common enough that Python provides a nicer way to implement it:
         for (i, val) in enumerate(xs):
             xs[i] = val**2
 
-``enumerate`` generates pairs of both (index, value) during
-the list traversal. Try this next example to see more clearly how ``enumerate``
+`enumerate` generates pairs of both (index, value) during
+the list traversal. Try this next example to see more clearly how `enumerate`
 works:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -593,7 +593,7 @@ When we run it we'll get:
 
 
 In the function above, the parameter 
-``a_list`` and the variable ``things`` are aliases for the
+`a_list` and the variable `things` are aliases for the
 same object.  So before any changes to the elements in the list, the state snapshot
 looks like this:
 
@@ -630,7 +630,7 @@ start with the most useful method for adding something onto the end of an existi
         >>> mylist
         [5, 27, 3, 12]
 
-``append`` is a list method which adds the argument passed to it to the end of
+`append` is a list method which adds the argument passed to it to the end of
 the list. We'll use it heavily when we're creating new lists.
 Continuing with this example, we show several other list methods:
 
@@ -671,7 +671,7 @@ called **modifiers** and the changes they make are called **side effects**.
 
 A **pure function** does not produce side effects. It communicates with the
 calling program only through parameters, which it does not modify, and a return
-value. Here is ``double_stuff`` written as a pure function:
+value. Here is `double_stuff` written as a pure function:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -686,7 +686,7 @@ value. Here is ``double_stuff`` written as a pure function:
                 
             return new_list
       
-This version of ``double_stuff`` does not change its arguments:
+This version of `double_stuff` does not change its arguments:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -723,7 +723,7 @@ result to the same variable that was passed to the function:
 Functions that produce lists
 ----------------------------
 
-The pure version of ``double_stuff`` above made use of an 
+The pure version of `double_stuff` above made use of an 
 important **pattern** for your toolbox. Whenever you need to
 write a function that creates and returns a list, the pattern is
 usually:
@@ -737,7 +737,7 @@ usually:
         return the result
 
 Let us show another use of this pattern.  Assume you already have a function
-``is_prime(x)`` that can test if x is prime.  Write a function
+`is_prime(x)` that can test if x is prime.  Write a function
 to return a list of all prime numbers less than n:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -758,7 +758,7 @@ Strings and lists
 
 Two of the most useful methods on strings involve conversion to
 and from lists of substrings.  
-The ``split`` method (which we've already seen)
+The `split` method (which we've already seen)
 breaks a string into a list of words.  By
 default, any number of whitespace characters is considered a word boundary:
 
@@ -771,7 +771,7 @@ default, any number of whitespace characters is considered a word boundary:
 
 An optional argument called a **delimiter** can be used to specify which
 string to use as the boundary marker between substrings. 
-The following example uses the string ``ai`` as the delimiter:
+The following example uses the string `ai` as the delimiter:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
@@ -780,7 +780,7 @@ The following example uses the string ``ai`` as the delimiter:
 
 Notice that the delimiter doesn't appear in the result.
 
-The inverse of the ``split`` method is ``join``.  You choose a
+The inverse of the `split` method is `join`.  You choose a
 desired **separator** string, (often called the *glue*) 
 and join the list with the glue between each of the elements: 
 
@@ -791,7 +791,7 @@ and join the list with the glue between each of the elements:
         >>> s
         'The;rain;in;Spain...'
 
-The list that you glue together (``wds`` in this example) is not modified.  Also, as these
+The list that you glue together (`wds` in this example) is not modified.  Also, as these
 next examples show, you can use empty glue or multi-character strings as glue:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -803,11 +803,11 @@ next examples show, you can use empty glue or multi-character strings as glue:
 
 .. index:: promise, range function
     
-``list`` and ``range``
+`list` and `range`
 ----------------------   
     
 Python has a built-in type conversion function called 
-``list`` that tries to turn whatever you give it
+`list` that tries to turn whatever you give it
 into a list.  
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -818,7 +818,7 @@ into a list.
         >>> "".join(xs)
         'Crunchy Frog'
     
-One particular feature of ``range`` is that it 
+One particular feature of `range` is that it 
 doesn't instantly compute all its values: it "puts off" the computation,
 and does it on demand, or "lazily".  We'll say that it gives a **promise**
 to produce the values when they are needed.   This is very convenient if your
@@ -841,10 +841,10 @@ computation short-circuits a search and returns early, as in this case:
 In the second test, if range were to eagerly go about building a list 
 with all those elements, you would soon exhaust your computer's available
 memory and crash the program.  But it is cleverer than that!  This computation works
-just fine, because the ``range`` object is just a promise to produce the elements
-if and when they are needed.  Once the condition in the ``if`` becomes true, no
+just fine, because the `range` object is just a promise to produce the elements
+if and when they are needed.  Once the condition in the `if` becomes true, no
 further elements are generated, and the function returns.  (Note: Before Python 3,
-``range`` was not lazy. If you use an earlier versions of Python, YMMV!)
+`range` was not lazy. If you use an earlier versions of Python, YMMV!)
 
     .. admonition:: YMMV: Your Mileage May Vary
 
@@ -855,7 +855,7 @@ further elements are generated, and the function returns.  (Note: Before Python 
         idiomatically to mean "your results may differ", 
         e.g. *The battery life on this phone is 3 days, but YMMV.*     
     
-You'll sometimes find the lazy ``range`` wrapped in a call to ``list``.  This forces
+You'll sometimes find the lazy `range` wrapped in a call to `list`.  This forces
 Python to turn the lazy promise into an actual list: 
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -900,7 +900,7 @@ Or we can combine them:
         20
 
 Bracket operators evaluate from left to right, so this expression gets the
-3'th element of ``nested`` and extracts the 1'th element from it.
+3'th element of `nested` and extracts the 1'th element from it.
 
 .. index:: matrix
 
@@ -917,7 +917,7 @@ might be represented as:
         
         >>> mx = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-``mx`` is a list with three elements, where each element is a row of the
+`mx` is a list with three elements, where each element is a row of the
 matrix. We can select an entire row from the matrix in the usual way:
 
 ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -971,8 +971,8 @@ Glossary
 
     list
         A collection of values, each in a fixed position within the list.
-        Like other types ``str``, ``int``, ``float``, etc. there is also a
-        ``list`` type-converter function that tries to turn whatever argument 
+        Like other types `str`, `int`, `float`, etc. there is also a
+        `list` type-converter function that tries to turn whatever argument 
         you give it into a list. 
 
     list traversal
@@ -1003,7 +1003,7 @@ Glossary
     promise
         An object that promises to do some work or deliver some values if
         they're eventually needed, but it lazily puts off doing the work immediately.
-        Calling ``range`` produces a promise.         
+        Calling `range` produces a promise.         
 
     pure function
         A function which has no side effects. Pure functions only make changes
@@ -1019,7 +1019,7 @@ Glossary
 
     step size
         The interval between successive elements of a linear sequence. The
-        third (and optional argument) to the ``range`` function is called the
+        third (and optional argument) to the `range` function is called the
         step size.  If not specified, it defaults to 1.
 
         
@@ -1027,18 +1027,18 @@ Exercises
 ---------
 
 
-#. What is the Python interpreter's response to the following?
+1. What is the Python interpreter's response to the following?
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
         
            >>> list(range(10, 0, -2))
 
    The three arguments to the *range* function are *start*, *stop*, and *step*, 
-   respectively. In this example, ``start`` is greater than ``stop``.  What
-   happens if ``start < stop`` and ``step < 0``? Write a rule for the
-   relationships among ``start``, ``stop``, and ``step``.
+   respectively. In this example, `start` is greater than `stop`.  What
+   happens if `start < stop` and `step < 0`? Write a rule for the
+   relationships among `start`, `stop`, and `step`.
    
-#. Consider this fragment of code: 
+1. Consider this fragment of code: 
 
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -1050,9 +1050,9 @@ Exercises
             alex.color("hotpink")
    
    Does this fragment create one or two turtle instances?  Does setting
-   the color of ``alex`` also change the color of ``tess``?  Explain in detail.
+   the color of `alex` also change the color of `tess`?  Explain in detail.
    
-#. Draw a state snapshot for ``a`` and ``b`` before and after the third line of
+1. Draw a state snapshot for `a` and `b` before and after the third line of
    the following Python code is executed:
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -1061,7 +1061,7 @@ Exercises
             b = a[:]
             b[0] = 5
 
-#. What will be the output of the following program?
+1. What will be the output of the following program?
 
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
            
@@ -1073,12 +1073,12 @@ Exercises
 
    Provide a *detailed* explanation of the results.
      
-#. Lists can be used to represent mathematical *vectors*.  In this exercise
+1. Lists can be used to represent mathematical *vectors*.  In this exercise
    and several that follow you will write functions to perform standard
-   operations on vectors.  Create a script named ``vectors.py`` and 
+   operations on vectors.  Create a script named `vectors.py` and 
    write Python code to pass the tests in each case.
 
-   Write a function ``add_vectors(u, v)`` that takes two lists of numbers of
+   Write a function `add_vectors(u, v)` that takes two lists of numbers of
    the same length, and returns a new list containing the sums of the
    corresponding elements of each:
    
@@ -1088,9 +1088,9 @@ Exercises
            test(add_vectors([1, 2], [1, 4]) == [2, 6])
            test(add_vectors([1, 2, 1], [1, 4, 3]) == [2, 6, 4])
  
-#. Write a function ``scalar_mult(s, v)`` that takes a number, ``s``, and a
-   list, ``v`` and returns the `scalar multiple
-   <http://en.wikipedia.org/wiki/Scalar_multiple>`__ of ``v`` by ``s``. : 
+1. Write a function `scalar_mult(s, v)` that takes a number, `s`, and a
+   list, `v` and returns the `scalar multiple
+   <http://en.wikipedia.org/wiki/Scalar_multiple>`__ of `v` by `s`. : 
 
     ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
                 
@@ -1098,7 +1098,7 @@ Exercises
             test(scalar_mult(3, [1, 0, -1]) == [3, 0, -3])
             test(scalar_mult(7, [3, 0, 5, 11, 2]) == [21, 0, 35, 77, 14])
 
-#. Write a function ``dot_product(u, v)`` that takes two lists of numbers of
+1. Write a function `dot_product(u, v)` that takes two lists of numbers of
    the same length, and returns the sum of the products of the corresponding
    elements of each (the `dot_product
    <http://en.wikipedia.org/wiki/Dot_product>`__).
@@ -1109,23 +1109,23 @@ Exercises
             test(dot_product([1, 2], [1, 4]) ==  9)
             test(dot_product([1, 2, 1], [1, 4, 3]) == 12)
       
-#. *Extra challenge for the mathematically inclined*: Write a function
-   ``cross_product(u, v)`` that takes two lists of numbers of length 3 and
+1. *Extra challenge for the mathematically inclined*: Write a function
+   `cross_product(u, v)` that takes two lists of numbers of length 3 and
    returns their
    `cross product <http://en.wikipedia.org/wiki/Cross_product>`__.  You should
    write your own tests.       
              
-#. Describe the relationship between ``" ".join(song.split())`` and
-   ``song`` in the fragment of code below. 
-   Are they the same for all strings assigned to ``song``? 
+1. Describe the relationship between `" ".join(song.split())` and
+   `song` in the fragment of code below. 
+   Are they the same for all strings assigned to `song`? 
    When would they be different? 
    
    ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
     
             song = "The rain in Spain..."
    
-#. Write a function ``replace(s, old, new)`` that replaces all occurrences of
-   ``old`` with ``new`` in a string ``s``: 
+1. Write a function `replace(s, old, new)` that replaces all occurrences of
+   `old` with `new` in a string `s`: 
    
     ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
     
@@ -1138,9 +1138,9 @@ Exercises
             test(replace(s, "o", "a") ==
                 "I lave spam! Spam is my favarite faad. Spam, spam, yum!")
 
-   *Hint*: use the ``split`` and ``join`` methods.
+   *Hint*: use the `split` and `join` methods.
           
-#. Suppose you want to swap around the values in two variables.  You decide
+1. Suppose you want to swap around the values in two variables.  You decide
    to factor this out into a reusable function, and write this code:
 
     ~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
@@ -1160,4 +1160,4 @@ Exercises
    Explain why not. 
    Using a Python visualizer like the one at http://netserv.ict.ru.ac.za/python3_viz 
    may help you build a good conceptual model of what is going on.  
-   What will be the values of ``a`` and ``b`` after the call to ``swap``?
+   What will be the values of `a` and `b`` after the call to `swap`?

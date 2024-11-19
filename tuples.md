@@ -7,9 +7,11 @@ Tuples are used for grouping data
 We saw earlier that we could group together pairs of values by
 surrounding with parentheses.  Recall this example:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> year_born = ("Paris Hilton", 1981)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This is an example of a **data structure** --- a mechanism for grouping and
 organizing data to make it easier to use.
@@ -19,9 +21,11 @@ be used to group any number of items into a single compound value.
 Syntactically, a tuple is a comma-separated sequence of values.
 Although it is not necessary, it is conventional to enclose tuples in parentheses:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> julia = ("Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuples are useful for representing what other languages often call *records* ---
 some related information that belongs together, like your student record.  There is
@@ -31,48 +35,56 @@ lets us "chunk" together related information and use it as a single thing.
 Tuples support the same sequence operations as strings. The index operator
 selects an element from a tuple.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> julia[2]
 1967
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 But if we try to use item assignment to modify one of the elements of the
 tuple, we get an error:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> julia[0] = "X"
 TypeError: 'tuple' object does not support item assignment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 So like strings, tuples are immutable.  Once Python has created a tuple
 in memory, it cannot be changed.
 
 Of course, even if we can't modify the elements of a tuple, we can 
-always make the ``julia`` variable reference a new tuple holding 
+always make the `julia` variable reference a new tuple holding 
 different information.  To construct the new tuple, it is convenient 
 that we can slice parts of the old tuple and join up the bits to 
-make the new tuple.  So  if ``julia`` has a new recent film, we 
+make the new tuple.  So  if `julia` has a new recent film, we 
 could change her variable to reference a new tuple that used some 
 information from the old one:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> julia = julia[:3] + ("Eat Pray Love", 2010) + julia[5:]
 >>> julia
 ("Julia", "Roberts", 1967, "Eat Pray Love", 2010, "Actress", "Atlanta, Georgia")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To create a tuple with a single element (but you're probably not likely
 to do that too often), we have to include the final comma, because without
-the final comma, Python treats the ``(5)`` below as an integer in parentheses:
+the final comma, Python treats the `(5)` below as an integer in parentheses:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> tup = (5,)
 >>> type(tup)
 <class 'tuple'>
 >>> x = (5)
 >>> type(x)
 <class 'int'>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuple assignment
 ----------------
@@ -81,9 +93,11 @@ Python has a very powerful **tuple assignment** feature that allows a tuple of v
 on the left of an assignment to be assigned values from a tuple
 on the right of the assignment.   (We already saw this used for pairs, but it generalizes.)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 (name, surname, b_year, movie, m_year, profession, b_place) = julia
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This does the equivalent of seven assignment statements, all on one easy line.
 One requirement is that the number of variables on the left must match the number
@@ -94,14 +108,18 @@ One way to think of tuple assignment is as tuple packing/unpacking.
 In tuple packing, the values on the left are 'packed' together in a
 tuple:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> b = ("Bob", 19, "CS")    # tuple packing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In tuple unpacking, the values in a tuple on the right are 'unpacked'
 into the variables/names on the right:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> b = ("Bob", 19, "CS")
 >>> (name, age, studies) = b    # tuple unpacking
 >>> name
@@ -110,23 +128,27 @@ into the variables/names on the right:
 19
 >>> studies
 'CS'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Once in a while, it is useful to swap the values of two variables.  With
 conventional assignment statements, we have to use a temporary variable. For
-example, to swap ``a`` and ``b``:
+example, to swap `a` and `b`:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 temp = a
 a = b
 b = temp
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuple assignment solves this problem neatly:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 (a, b) = (b, a)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 The left side is a tuple of variables; the right side is a tuple of values.
 Each value is assigned to its respective variable. All the expressions on the
@@ -136,10 +158,12 @@ tuple assignment quite versatile.
 Naturally, the number of variables on the left and the number of values on the
 right have to be the same:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 >>> (a, b, c, d) = (1, 2, 3)
 ValueError: need more than 3 values to unpack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Tuples as return values
 -----------------------
@@ -155,13 +179,15 @@ of wolves on an island at a given time.
 For example, we could write a function that returns both the area and the circumference
 of a circle of radius r:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python .numberLines}
+```
+
+{.python .numberLines}
 def f(r):
     """ Return (circumference, area) of a circle of radius r """
     c = 2 * math.pi * r
     a = math.pi * r * r
     return (c, a)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Composability of Data Structures
 --------------------------------
@@ -169,7 +195,9 @@ Composability of Data Structures
 We saw in an earlier chapter that we could make a list of pairs, and we had an example
 where one of the items in the tuple was itself a list:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 students = [
     ("John", ["CompSci", "Physics"]),
     ("Vusi", ["Maths", "CompSci", "Stats"]),
@@ -177,13 +205,15 @@ students = [
     ("Sarah", ["InfSys", "Accounting", "Economics", "CommLaw"]),
     ("Zuki", ["Sociology", "Economics", "Law", "Stats", "Music"])]
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Tuples items can themselves be other tuples.  For example, we could improve
 the information about our movie stars to hold the full date of birth rather
 than just the year, and we could have a list of some of her movies and dates that they
 were made, and so on:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
+```
+
+{.python}
 julia_more_info = ( ("Julia", "Roberts"), (8, "October", 1967),
     "Actress", ("Atlanta", "Georgia"),
     [ ("Duplicity", 2009),
@@ -193,7 +223,7 @@ julia_more_info = ( ("Julia", "Roberts"), (8, "October", 1967),
       ("Eat Pray Love", 2010),
       ("Mona Lisa Smile", 2003),
       ("Oceans Twelve", 2004) ])
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Notice in this case that the tuple has just five elements --- but each of those in turn
 can be another tuple, a list, a string, or any other kind of Python value.
@@ -229,17 +259,17 @@ tuple assignment
 Exercises
 ---------
 
-1.  Write a function ``merge_contacts(contact1, contact1)`` that takes two touples as
+1.  Write a function `merge_contacts(contact1, contact1)` that takes two touples as
     parameters. The tuples represent contact records in the form of
     (firstName, lastName, email, phone). This is the specification
     for your function:
     
-    1. The length of both tuples must be 4. If this isn't the case, return ``None``.
-    2. If the emails of both contacts do not match return ``None``
+    1. The length of both tuples must be 4. If this isn't the case, return `None`.
+    2. If the emails of both contacts do not match return `None`
     3. Return a new contact tuple that fills in any missing (i.e. an empty string)
        from contact1 with the information from contact2. If there is
        already data in both contact1 and contact2, leave contact1 alone.
 
-2. Write a function called ``word_len(text)``. This function should use
+2. Write a function called `word_len(text)`. This function should use
    split() to create a list of words and then return a touple with the follwing
    data: shortest word, longest word, avg word length.

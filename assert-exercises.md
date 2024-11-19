@@ -8,7 +8,7 @@ function. Make sure that it passes the test.
 meters, as well as a function that tests this code. There are 1,000 meters in
 1 kilometer. The code might look like this:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript .numberLines}
+```javascript
 
 function kmToM (km) {
   let m = km / 1000;
@@ -23,7 +23,7 @@ function test_kmToM() {
   assert(kmToM(-3) === -3000, "-3 should = -3000m");
   assert(kmToM(0) === 0, "0 should = 0");
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 1. **Tbs to cups**. There are 16 tablespoons in a cup. Write a function that converts
    Tbs to cups. It should take the number of tablespoons as an argument and return
@@ -57,7 +57,7 @@ to the number of decimal places specified by `p`.
 
 Examples:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.javascript}
+```javascript
 ⠕ round(2.457, 2);
 => 2.46
 ⠕ round(3.98746144, 4)
@@ -70,6 +70,6 @@ Examples:
 => 60
 ⠕ round(542, -2)
 => 540
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 _Your tests should test all of these examples._

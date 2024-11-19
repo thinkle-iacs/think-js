@@ -17,8 +17,8 @@ Composition
 
 By now, we have seen several examples of composition. One of the first
 examples was using a method invocation as part of an expression.  Another
-example is the nested structure of statements; we can put an ``if`` statement
-within a ``while`` loop, within another ``if`` statement, and so on.
+example is the nested structure of statements; we can put an `if` statement
+within a `while` loop, within another `if` statement, and so on.
 
 Having seen this pattern, and having learned about lists and objects, we
 should not be surprised to learn that we can create lists of objects. We can
@@ -26,10 +26,10 @@ also create objects that contain lists (as attributes); we can create lists
 that contain lists; we can create objects that contain objects; and so on.
 
 In this chapter and the next, we will look at some examples of these
-combinations, using ``Card`` objects as an example.
+combinations, using `Card` objects as an example.
 
 
-``Card`` objects
+`Card` objects
 ----------------
 
 If you are not familiar with common playing cards, now would be a good time to
@@ -42,9 +42,9 @@ Ace may be higher than King or lower than 2.
 The rank is sometimes called the face-value of the card.
 
 If we want to define a new object to represent a playing card, it is obvious
-what the attributes should be: ``rank`` and ``suit``. It is not as obvious what
+what the attributes should be: `rank` and `suit`. It is not as obvious what
 type the attributes should be. One possibility is to use strings containing
-words like ``"Spade"`` for suits and ``"Queen"`` for ranks. One problem with
+words like `"Spade"` for suits and `"Queen"` for ranks. One problem with
 this implementation is that it would not be easy to compare cards to see which
 had a higher rank or suit.
 
@@ -74,7 +74,7 @@ face cards:
 
 The reason we are using mathematical notation for these mappings is that they
 are not part of the Python program. They are part of the program design, but
-they never appear explicitly in the code. The class definition for the ``Card``
+they never appear explicitly in the code. The class definition for the `Card`
 type looks like this:
 
     .. sourcecode:: python3
@@ -96,19 +96,19 @@ To create some objects, representing say the 3 of Clubs and the Jack of Diamonds
         three_of_clubs = Card(0, 3)
         card1 = Card(1, 11)
 
-In the first case above, for example, the first argument, ``0``, represents the suit Clubs.
+In the first case above, for example, the first argument, `0`, represents the suit Clubs.
 
 
 .. admonition::  Save this code for later use ...
 
-    In the next chapter we assume that we have save the ``Cards`` class, 
-    and the upcoming ``Deck`` class in a file called ``Cards.py``. 
+    In the next chapter we assume that we have save the `Cards` class, 
+    and the upcoming `Deck` class in a file called `Cards.py`. 
 
 
-Class attributes and the ``__str__`` method
+Class attributes and the `__str__` method
 -------------------------------------------
 
-In order to print ``Card`` objects in a way that people can easily read, we
+In order to print `Card` objects in a way that people can easily read, we
 want to map the integer codes onto words. A natural way to do that is with
 lists of strings. We assign these lists to **class attributes** at the top of
 the class definition:
@@ -131,13 +131,13 @@ the class definition:
 A class attribute is defined outside of any method, and it can be accessed from
 any of the methods in the class. 
 
-Inside ``__str__``, we can use ``suits`` and ``ranks`` to map the numerical
-values of ``suit`` and ``rank`` to strings. For example, the expression
-``self.suits[self.suit]`` means use the attribute ``suit`` from the object
-``self`` as an index into the class attribute named ``suits``, and select the
+Inside `__str__`, we can use `suits` and `ranks` to map the numerical
+values of `suit` and `rank` to strings. For example, the expression
+`self.suits[self.suit]` means use the attribute `suit` from the object
+`self` as an index into the class attribute named `suits`, and select the
 appropriate string.
 
-The reason for the ``"narf"`` in the first element in ``ranks`` is to act as a
+The reason for the `"narf"` in the first element in `ranks` is to act as a
 place keeper for the zero-eth element of the list, which will never be used.
 The only valid ranks are 1 to 13. This wasted item is not entirely necessary.
 We could have started at 0, as usual, but it is less confusing to encode the
@@ -151,8 +151,8 @@ With the methods we have so far, we can create and print cards:
         >>> print(card1)
         Jack of Diamonds
 
-Class attributes like ``suits`` are shared by all ``Card`` objects. The
-advantage of this is that we can use any ``Card`` object to access the class
+Class attributes like `suits` are shared by all `Card` objects. The
+advantage of this is that we can use any `Card` object to access the class
 attributes:
 
     .. sourcecode:: python3
@@ -163,7 +163,7 @@ attributes:
         >>> print(card2.suits[1])
         Diamonds
 
-Because every ``Card`` instance references the same class attribute, we have an
+Because every `Card` instance references the same class attribute, we have an
 aliasing situation.  The disadvantage is that if we modify a class attribute, it affects every
 instance of the class. For example, if we decide that Jack of Diamonds should
 really be called Jack of Swirly Whales, we could do this:
@@ -187,14 +187,14 @@ It is usually not a good idea to modify class attributes.
 Comparing cards
 ---------------
 
-For primitive types, there are six relational operators ( ``<``, ``>``, ``==``,
+For primitive types, there are six relational operators ( `<`, `>``, `==`,
 etc.) that compare values and determine when one is greater than, less than, or
 equal to another.   If we want our own types to be comparable using the syntax
 of these relational operators, we need to define six corresponding special methods
 in our class.
 
-We'd like to start with a single method named ``cmp`` that houses the logic of ordering.
-By convention, a comparison method takes two parameters, ``self`` and ``other``, 
+We'd like to start with a single method named `cmp` that houses the logic of ordering.
+By convention, a comparison method takes two parameters, `self` and `other`, 
 and returns 1 if the first object is greater, -1 if the second object is greater, 
 and 0 if they are equal to each other.
 
@@ -217,7 +217,7 @@ rank or suit. To be honest, the choice is arbitrary. For the sake of choosing,
 we will say that suit is more important, because a new deck of cards comes
 sorted with all the Clubs together, followed by all the Diamonds, and so on.
 
-With that decided, we can write ``cmp``:
+With that decided, we can write `cmp`:
 
     .. sourcecode:: python3
         :linenos:
@@ -274,13 +274,13 @@ With this machinery in place, the relational operators now work as we'd like the
 Decks
 -----
 
-Now that we have objects to represent ``Card``\s, the next logical step is to
-define a class to represent a ``Deck``. Of course, a deck is made up of cards,
-so each ``Deck`` object will contain a list of cards as an attribute.  Many card
+Now that we have objects to represent `Card`\s, the next logical step is to
+define a class to represent a `Deck`. Of course, a deck is made up of cards,
+so each `Deck` object will contain a list of cards as an attribute.  Many card
 games will need at least two different decks --- a red deck and a blue deck.
 
-The following is a class definition for the ``Deck`` class. The initialization
-method creates the attribute ``cards`` and generates the standard pack of
+The following is a class definition for the `Deck` class. The initialization
+method creates the attribute `cards` and generates the standard pack of
 fifty-two cards:
 
     .. sourcecode:: python3
@@ -297,8 +297,8 @@ The easiest way to populate the deck is with a nested loop. The outer loop
 enumerates the suits from 0 to 3. The inner loop enumerates the ranks from 1 to
 13. Since the outer loop iterates four times, and the inner loop iterates
 thirteen times, the total number of times the body is executed is fifty-two
-(thirteen times four). Each iteration creates a new instance of ``Card`` with
-the current suit and rank, and appends that card to the ``cards`` list.
+(thirteen times four). Each iteration creates a new instance of `Card` with
+the current suit and rank, and appends that card to the `cards` list.
 
 With this in place, we can instantiate some decks:
 
@@ -313,8 +313,8 @@ Printing the deck
 -----------------
 
 As usual, when we define a new type we want a method that prints the
-contents of an instance. To print a ``Deck``, we traverse the list and print each
-``Card``:
+contents of an instance. To print a `Deck`, we traverse the list and print each
+`Card`:
 
     .. sourcecode:: python3
         :linenos:
@@ -325,17 +325,17 @@ contents of an instance. To print a ``Deck``, we traverse the list and print eac
                 for card in self.cards:
                     print(card)
 
-Here, and from now on, the ellipsis (``...``) indicates that we have omitted
+Here, and from now on, the ellipsis (`...`) indicates that we have omitted
 the other methods in the class.
 
-As an alternative to ``print_deck``, we could write a ``__str__`` method for
-the ``Deck`` class. The advantage of ``__str__`` is that it is more flexible.
+As an alternative to `print_deck`, we could write a `__str__` method for
+the `Deck` class. The advantage of `__str__` is that it is more flexible.
 Rather than just printing the contents of the object, it generates a string
 representation that other parts of the program can manipulate before printing,
 or store for later use.
 
-Here is a version of ``__str__`` that returns a string representation of a
-``Deck``. To add a bit of pizzazz, it arranges the cards in a cascade where
+Here is a version of `__str__` that returns a string representation of a
+`Deck`. To add a bit of pizzazz, it arranges the cards in a cascade where
 each card is indented one space more than the previous card:
 
     .. sourcecode:: python3
@@ -351,22 +351,22 @@ each card is indented one space more than the previous card:
 
 
 This example demonstrates several features. First, instead of traversing
-``self.cards`` and assigning each card to a variable, we are using ``i`` as a
+`self.cards` and assigning each card to a variable, we are using `i` as a
 loop variable and an index into the list of cards.
 
 Second, we are using the string multiplication operator to indent each card by
-one more space than the last. The expression ``" " * i`` yields a number of
-spaces equal to the current value of ``i``.
+one more space than the last. The expression `" " * i` yields a number of
+spaces equal to the current value of `i`.
 
-Third, instead of using the ``print`` command to print the cards, we use the
-``str`` function. Passing an object as an argument to ``str`` is equivalent to
-invoking the ``__str__`` method on the object.
+Third, instead of using the `print` command to print the cards, we use the
+`str` function. Passing an object as an argument to `str` is equivalent to
+invoking the `__str__` method on the object.
 
-Finally, we are using the variable ``s`` as an **accumulator**.  Initially,
-``s`` is the empty string. Each time through the loop, a new string is
-generated and concatenated with the old value of ``s`` to get the new value.
-When the loop ends, ``s`` contains the complete string representation of the
-``Deck``, which looks like this:
+Finally, we are using the variable `s` as an **accumulator**.  Initially,
+`s` is the empty string. Each time through the loop, a new string is
+generated and concatenated with the old value of `s` to get the new value.
+When the loop ends, `s` contains the complete string representation of the
+`Deck`, which looks like this:
 
     .. sourcecode:: python3
         
@@ -401,11 +401,11 @@ If a deck is perfectly shuffled, then any card is equally likely to appear
 anywhere in the deck, and any location in the deck is equally likely to contain
 any card.
 
-To shuffle the deck, we will use the ``randrange`` function from the ``random``
-module. With two integer arguments, ``a`` and ``b``, ``randrange`` chooses a
-random integer in the range ``a <= x < b``. Since the upper bound is strictly
-less than ``b``, we can use the length of a list as the second parameter, and
-we are guaranteed to get a legal index. For example, if ``rng`` has already
+To shuffle the deck, we will use the `randrange` function from the `random`
+module. With two integer arguments, `a` and `b``, `randrange` chooses a
+random integer in the range `a <= x < b`. Since the upper bound is strictly
+less than `b`, we can use the length of a list as the second parameter, and
+we are guaranteed to get a legal index. For example, if `rng` has already
 been instantiated as a random number source, this expression chooses
 the index of a random card in a deck:
 
@@ -433,11 +433,11 @@ order of the cards would be less than entirely random:
                     (self.cards[i], self.cards[j]) = (self.cards[j], self.cards[i])
 
 Rather than assume that there are fifty-two cards in the deck, we get the
-actual length of the list and store it in ``num_cards``.
+actual length of the list and store it in `num_cards`.
 
 For each card in the deck, we choose a random card from among the cards that
-haven't been shuffled yet. Then we swap the current card (``i``) with the
-selected card (``j``). To swap the cards we use a tuple assignment:
+haven't been shuffled yet. Then we swap the current card (`i`) with the
+selected card (`j`). To swap the cards we use a tuple assignment:
 
     .. sourcecode:: python3
         :linenos:
@@ -445,7 +445,7 @@ selected card (``j``). To swap the cards we use a tuple assignment:
         (self.cards[i], self.cards[j]) = (self.cards[j], self.cards[i])
     
 While this is a good shuffling method, a random number generator object also
-has a ``shuffle`` method that can shuffle elements in a list, in place.
+has a `shuffle` method that can shuffle elements in a list, in place.
 So we could rewrite this function to use the one provided for us:     
     
     .. sourcecode:: python3
@@ -462,9 +462,9 @@ So we could rewrite this function to use the one provided for us:
 Removing and dealing cards
 --------------------------
 
-Another method that would be useful for the ``Deck`` class is ``remove``,
-which takes a card as a parameter, removes it, and returns ``True`` if
-the card was in the deck and ``False`` otherwise:
+Another method that would be useful for the `Deck` class is `remove`,
+which takes a card as a parameter, removes it, and returns `True` if
+the card was in the deck and `False` otherwise:
 
     .. sourcecode:: python3
         :linenos:
@@ -480,14 +480,14 @@ the card was in the deck and ``False`` otherwise:
                     return False 
 
 
-The ``in`` operator returns ``True`` if the first operand is in the second. 
+The `in` operator returns `True` if the first operand is in the second. 
 If the first operand is an object, Python uses
-the object's ``__eq__`` method to determine equality with items in the list.
-Since the ``__eq__`` we provided in the ``Card`` class checks for deep equality, the
-``remove`` method checks for deep equality.
+the object's `__eq__` method to determine equality with items in the list.
+Since the `__eq__` we provided in the `Card` class checks for deep equality, the
+`remove` method checks for deep equality.
 
 To deal cards, we want to remove and return the top card. The list method
-``pop`` provides a convenient way to do that:
+`pop` provides a convenient way to do that:
 
     .. sourcecode:: python3
         :linenos:
@@ -497,11 +497,11 @@ To deal cards, we want to remove and return the top card. The list method
             def pop(self):
                 return self.cards.pop()
 
-Actually, ``pop`` removes the *last* card in the list, so we are in effect
+Actually, `pop` removes the *last* card in the list, so we are in effect
 dealing from the bottom of the deck.
 
 One more operation that we are likely to want is the Boolean function
-``is_empty``, which returns ``True`` if the deck contains no cards:
+`is_empty`, which returns `True` if the deck contains no cards:
 
     .. sourcecode:: python3
         :linenos:
@@ -534,4 +534,4 @@ Glossary
 Exercises
 ---------
 
-#. Modify ``cmp`` so that Aces are ranked higher than Kings.
+1. Modify `cmp` so that Aces are ranked higher than Kings.

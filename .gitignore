@@ -48,3 +48,4 @@ Thumbs.db
 _archive*
 work*
 node_modules/
+_site/*

@@ -31,7 +31,7 @@ As an example, we will create a dictionary to translate English words into
 Spanish. For this dictionary, the keys are strings.
 
 One way to create a dictionary is to start with the empty dictionary and add
-**key:value pairs**. The empty dictionary is denoted ``{}``:
+**key:value pairs**. The empty dictionary is denoted `{}`:
 
     .. sourcecode:: python3
         
@@ -39,7 +39,7 @@ One way to create a dictionary is to start with the empty dictionary and add
         >>> eng2sp["one"] = "uno"
         >>> eng2sp["two"] = "dos"
 
-The first assignment creates a dictionary named ``eng2sp``; the other
+The first assignment creates a dictionary named `eng2sp`; the other
 assignments add new key:value pairs to the dictionary. We can print the current
 value of the dictionary in the usual way:
 
@@ -95,7 +95,7 @@ Here is how we use a key to look up the corresponding value:
         >>> print(eng2sp["two"])
         'dos'
 
-The key ``"two"`` yields the value ``"dos"``.
+The key `"two"` yields the value `"dos"`.
 
 Lists, tuples, and strings have been called *sequences*, because their items
 occur in order.  The dictionary is the first compound type that we've
@@ -106,7 +106,7 @@ seen that is not a sequence, so we can't index or slice a dictionary.
 Dictionary operations
 ---------------------
 
-The ``del`` statement removes a key:value pair from a dictionary. For example,
+The `del` statement removes a key:value pair from a dictionary. For example,
 the following dictionary contains the names of various fruits and the number of
 each fruit in stock:
 
@@ -141,7 +141,7 @@ A new shipment of bananas arriving could be handled like this:
         >>> print(inventory)
         {'pears': 0, 'apples': 430, 'oranges': 525, 'bananas': 512}
 
-The ``len`` function also works on dictionaries; it returns the number
+The `len` function also works on dictionaries; it returns the number
 of key:value pairs:
 
     .. sourcecode:: python3
@@ -155,8 +155,8 @@ Dictionary methods
 
 Dictionaries have a number of useful built-in methods.
 
-The ``keys`` method returns what Python 3 calls a **view** of its underlying keys.  
-A view object has some similarities to the ``range`` object we saw earlier ---
+The `keys` method returns what Python 3 calls a **view** of its underlying keys.  
+A view object has some similarities to the `range` object we saw earlier ---
 it is a lazy promise, to deliver its elements when they're needed by the 
 rest of the program.  We can iterate over the view, or turn the view into a 
 list like this:
@@ -187,7 +187,7 @@ This produces this output:
         ['three', 'two', 'one']
     
 It is so common to iterate over the keys in a dictionary that we can
-omit the ``keys`` method call in the ``for`` loop --- iterating over
+omit the `keys` method call in the `for` loop --- iterating over
 a dictionary implicitly iterates over its keys:
 
     .. sourcecode:: python3
@@ -197,7 +197,7 @@ a dictionary implicitly iterates over its keys:
            print("Got key", k)     
        
 
-The ``values`` method is similar; it returns a view object which can be turned
+The `values` method is similar; it returns a view object which can be turned
 into a list:  
 
     .. sourcecode:: python3
@@ -205,7 +205,7 @@ into a list:
         >>> list(eng2sp.values())
         ['tres', 'dos', 'uno']
 
-The ``items`` method also returns a view, which promises a list of tuples --- one 
+The `items` method also returns a view, which promises a list of tuples --- one 
 tuple for each key:value pair:
 
     .. sourcecode:: python3
@@ -231,7 +231,7 @@ This produces:
         Got one that maps to uno
 
     
-The ``in`` and ``not in`` operators can test if a key is in the dictionary:
+The `in` and `not in` operators can test if a key is in the dictionary:
 
     .. sourcecode:: python3
         
@@ -263,7 +263,7 @@ aware of aliasing.  Whenever
 two variables refer to the same object, changes to one affect the other.
 
 If we want to modify a dictionary and keep a copy of the original, use the
-``copy`` method. For example, ``opposites`` is a dictionary that contains pairs
+`copy` method. For example, `opposites` is a dictionary that contains pairs
 of opposites:
 
     .. sourcecode:: python3
@@ -272,8 +272,8 @@ of opposites:
         >>> alias = opposites
         >>> copy = opposites.copy()  # Shallow copy
 
-``alias`` and ``opposites`` refer to the same object; ``copy`` refers to a
-fresh copy of the same dictionary. If we modify ``alias``, ``opposites`` is
+`alias` and `opposites` refer to the same object; `copy` refers to a
+fresh copy of the same dictionary. If we modify `alias`, `opposites` is
 also changed:
 
     .. sourcecode:: python3
@@ -282,7 +282,7 @@ also changed:
         >>> opposites["right"]
         'left'
 
-If we modify ``copy``, ``opposites`` is unchanged:
+If we modify `copy`, `opposites` is unchanged:
 
     .. sourcecode:: python3
         
@@ -323,7 +323,7 @@ the same matrix:
 We only need three key:value pairs, one for each nonzero element of the matrix.
 Each key is a tuple, and each value is an integer.
 
-To access an element of the matrix, we could use the ``[]`` operator:
+To access an element of the matrix, we could use the `[]` operator:
 
     .. sourcecode:: python3
         
@@ -342,14 +342,14 @@ because there is no entry in the dictionary with that key:
         >>> matrix[(1, 3)]
         KeyError: (1, 3)
 
-The ``get`` method solves this problem:
+The `get` method solves this problem:
 
     .. sourcecode:: python3
         
         >>> matrix.get((0, 3), 0)
         1
 
-The first argument is the key; the second argument is the value ``get`` should
+The first argument is the key; the second argument is the value `get` should
 return if the key is not in the dictionary:
 
     .. sourcecode:: python3
@@ -357,7 +357,7 @@ return if the key is not in the dictionary:
         >>> matrix.get((1, 3), 0)
         0
 
-``get`` definitely improves the semantics of accessing a sparse matrix.  Shame
+`get` definitely improves the semantics of accessing a sparse matrix.  Shame
 about the syntax.
 
 .. index:: memo
@@ -365,32 +365,32 @@ about the syntax.
 Memoization
 -----------
 
-If you played around with the ``fibo`` function from the chapter on recursion, you
+If you played around with the `fibo` function from the chapter on recursion, you
 might have noticed that the bigger the argument you provide, the longer the
 function takes to run. Furthermore, the run time increases very quickly. On one
-of our machines, ``fib(20)`` finishes instantly, ``fib(30)`` takes
-about a second, and ``fib(40)`` takes roughly forever.
+of our machines, `fib(20)` finishes instantly, `fib(30)` takes
+about a second, and `fib(40)` takes roughly forever.
 
-To understand why, consider this **call graph** for ``fib`` with
-``n = 4``:
+To understand why, consider this **call graph** for `fib` with
+`n = 4`:
 
     .. image:: illustrations/fibonacci.png
        :alt: fibonacci tree 
 
 A call graph shows some function frames (instances when the function has
 been invoked), with lines connecting each frame to
-the frames of the functions it calls. At the top of the graph, ``fib``
-with ``n = 4`` calls ``fib`` with ``n = 3`` and ``n = 2``. In turn,
-``fib`` with ``n = 3`` calls ``fib`` with ``n = 2`` and ``n = 1``.
+the frames of the functions it calls. At the top of the graph, `fib`
+with `n = 4` calls `fib` with `n = 3` and `n = 2`. In turn,
+`fib` with `n = 3` calls `fib` with `n = 2` and `n = 1`.
 And so on.
 
-Count how many times ``fib(0)`` and ``fib(1)`` are called.  This is
+Count how many times `fib(0)` and `fib(1)` are called.  This is
 an inefficient solution to the problem, and it gets far worse as the argument
 gets bigger.
 
 A good solution is to keep track of values that have already been computed by
 storing them in a dictionary. A previously computed value that is stored for
-later use is called a **memo**. Here is an implementation of ``fib``
+later use is called a **memo**. Here is an implementation of `fib`
 using memos:
 
     .. sourcecode:: python3
@@ -420,16 +420,16 @@ using memos:
             alreadyknown[n] = new_value
         return alreadyknown[n]
 
-The dictionary named ``alreadyknown`` keeps track of the Fibonacci numbers we
+The dictionary named `alreadyknown` keeps track of the Fibonacci numbers we
 already know. We start with only two pairs: 0 maps to 1; and 1 maps to 1.
 
-Whenever ``fib`` is called, it checks the dictionary to determine if it
+Whenever `fib` is called, it checks the dictionary to determine if it
 contains the result. If it's there, the function can return immediately without
 making any more recursive calls. If not, it has to compute the new value. The
 new value is added to the dictionary before the function returns.
 
-Using this version of ``fib``, our machines can compute
-``fib(100)`` in an eyeblink.
+Using this version of `fib`, our machines can compute
+`fib(100)` in an eyeblink.
 
     .. sourcecode:: python3
         
@@ -465,7 +465,7 @@ current count (possibly zero) and increment it. At the end, the dictionary
 contains pairs of letters and their frequencies.
 
 It might be more appealing to display the frequency table in alphabetical order. We
-can do that with the ``items`` and ``sort`` methods:
+can do that with the `items` and `sort` methods:
 
     .. sourcecode:: python3
         
@@ -474,9 +474,9 @@ can do that with the ``items`` and ``sort`` methods:
         >>> print(letter_items)
         [('M', 1), ('i', 4), ('p', 2), ('s', 4)]
 
-Notice in the first line we had to call the type conversion function ``list``.
-That turns the promise we get from ``items`` into a list, a step that is 
-needed before we can use the list's ``sort`` method. 
+Notice in the first line we had to call the type conversion function `list`.
+That turns the promise we get from `items` into a list, a step that is 
+needed before we can use the list's `sort` method. 
 
 Glossary
 --------
@@ -524,7 +524,7 @@ Glossary
 Exercises
 ---------
 
-#. Write a program that reads a string and returns a
+1. Write a program that reads a string and returns a
    table of the letters of the alphabet in alphabetical order which occur in
    the string together with the number of times each letter occurs. Case should 
    be ignored. A sample output of the program when the user enters the data 
@@ -547,7 +547,7 @@ Exercises
        u  1
        w  2
 
-#. Give the Python interpreter's response to each of the following from a
+1. Give the Python interpreter's response to each of the following from a
    continuous interpreter session:
 
    a.
@@ -608,8 +608,8 @@ Exercises
            add_fruit(new_inventory, "strawberries", 25)
            test(new_inventory["strawberries"] == 35)      
 
-#. Write a program called ``alice_words.py`` that creates a text file named
-   ``alice_words.txt`` containing an alphabetical listing of all the words, and the
+1. Write a program called `alice_words.py` that creates a text file named
+   `alice_words.txt` containing an alphabetical listing of all the words, and the
    number of times each occurs, in the text version of `Alice's Adventures in Wonderland`.  
    (You can obtain a free plain text version of the book, along with many others, from 
    http://www.gutenberg.org.) The first 10 lines of your output file should look
@@ -626,7 +626,7 @@ Exercises
         absence           1
         absurd            2
 
-   How many times does the word ``alice`` occur in the book?
+   How many times does the word `alice` occur in the book?
    
-#. What is the longest word in Alice in Wonderland? How many characters does it have?
+1. What is the longest word in Alice in Wonderland? How many characters does it have?
 

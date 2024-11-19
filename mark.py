@@ -42,7 +42,11 @@ def parse(lines, out=""):
 
 def parse_code(lines):
     tmpl = """
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~{{.python{}}}{}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+{{.python{}}}{}```
+
+
 """
     numbers = ""
     if ":linenos:" in lines[0]:
