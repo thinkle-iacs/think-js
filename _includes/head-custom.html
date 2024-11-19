@@ -80,13 +80,21 @@
 });
 // Make external links open in new tab
 document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('a'); // Select all anchor tags
-    links.forEach(link => {
-      if (link.href.includes('https://') && !link.target) {
-        link.setAttribute('target', '_blank'); // Set target to _blank for external links
-        link.setAttribute('rel', 'noopener noreferrer'); // Optional: enhance security
+  const links = document.querySelectorAll('a'); // Select all anchor tags
+  const baseURL = window.location.origin; // Get the base URL (protocol + host)
+
+  links.forEach(link => {
+    try {
+      const linkURL = new URL(link.href); // Parse the href as a URL
+      // Check if the link's origin differs from the current page's origin
+      if (linkURL.origin !== baseURL && !link.target) {
+        link.setAttribute('target', '_blank'); // Open in new tab
+        link.setAttribute('rel', 'noopener noreferrer'); // Enhance security
       }
-    });
+    } catch (e) {
+      // If the href is not a valid URL, ignore (e.g., for fragment links)
+    }
   });
+});
 
 </script>
