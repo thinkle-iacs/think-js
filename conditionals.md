@@ -74,20 +74,19 @@ true
 => 'boolean'
 ```
 
-<aside id="strict-equality">
-**Equality and "sameness" in Javascript**
-
-Javascript, as a programming language, is a little bit quirky when it
+> **Equality and "sameness" in Javascript**
+>
+> Javascript, as a programming language, is a little bit quirky when it
 comes to testing equality. The double equal sign `==` is a
 "loose" equality operator, while the triple equal sign `===`
 used in the examples above is the "strict" equality operator.
-
-When we looked at variables and data types in chapter 2, we saw how
+>
+> When we looked at variables and data types in chapter 2, we saw how
 Javascript does automatic type conversion. For example, it converts numbers to
 strings when you use the `+` token for string concatenation and
 strings to numbers (if it can) when we use other mathematical operators.
-
-The `==` compares values for equality _after_ type conversion, whereas
+> 
+> The `==` compares values for equality _after_ type conversion, whereas
 the `===` compares values _before_ conversion. Only values of the same
 type are equal with the strict operator.
 
@@ -100,13 +99,13 @@ type are equal with the strict operator.
 => true
 ```
 
-In addition to the loose equality with `==` there is a loose inequality operator
+> In addition to the loose equality with `==` there is a loose inequality operator
 using `!=`. Because loose equality (and inequality) is difficult to predict,
 **we will only use strict equality** in the examples in this book. However, you
 are likely to encounter both styles when reading other code, documentation, and
 tutorials.
 
-For further reading on this topic you can read
+> For further reading on this topic you can read
 [Equality comparison and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness) on the Mozilla Developer Network.
 
 </aside>
@@ -241,10 +240,9 @@ the statements indented under the `else` clause get executed.
 The syntax for an `if` statement looks like this:
 
 ```javascript
-if BOOLEAN EXPRESSION {
+if (BOOLEAN EXPRESSION) {
   STATEMENTS_1   // Executed if condition evaluates to true
-}
-else {
+} else {
   STATEMENTS_2   // Executed if condition evaluates to false
 }
 ```
@@ -301,11 +299,9 @@ conditional**:
 ```javascript
 if (x < y) {
   STATEMENTS_A
-}
-else if (x > y) {
+} else if (x > y) {
   STATEMENTS_B
-}
-else {
+} else {
   STATEMENTS_C
 }
 ```
@@ -400,7 +396,7 @@ before (or when) we reach the end. One reason to use an *early return* is if we 
 condition:
 
 ```javascript
-function printSquareRoot(x) {
+const printSquareRoot = (x) => {
   if (x <= 0) {
     console.log("Positive numbers only, please.");
     return;
@@ -459,34 +455,32 @@ even though it doesn't equal `true`. Likewise, `last` is _falsy_ --- it evaluate
 because it's an empty string, not equal to `false`.
 
 
-<aside id="curly-braces">
-
-**Optional curly braces**
-
-Curly braces in Javascript are optional of the block only has one statement.
+> **Optional curly braces**
+>
+> Curly braces in Javascript are optional of the block only has one statement.
 This is the case for all blocks --- following the `function` header, `for` header,
 `if` and `else`, and others we haven't seen yet. While it is uncommon for
 other types of blocks, it is not uncommon to see `if` statements
 without curly braces. You may see:
-
+> 
 ```javascript
 if (!oldEnoughToDrive)
   console.log("You can't rent a car.");
 ```
-
-This is identical to
-
+> 
+> This is identical to
+> 
 ```javascript
 if (!oldEnoughToDrive) {
   console.log("You can't rent a car.");
 }
 ```
-
-Some programmers consider it bad practice to omit curly braces for single statements,
+> 
+> Some programmers consider it bad practice to omit curly braces for single statements,
 because it reduces readability and can lead to bugs. We recommend always
 using curly braces for blocks and our examples in this book follow this style.
 
-</aside>
+
 
 Logical opposites
 -----------------
