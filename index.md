@@ -24,4 +24,8 @@
 
 8. [Arrays](arrays.md)  
 
+9. [Web GUIs](gui.md)
+
+10. [Interactive GUIs](react-interaction.md)
+
 - [GNU Free Documentation License](fdl-1.3.md)  
