@@ -82,7 +82,7 @@ In these examples, `doSomething` and `handleChange` are *functions* that will be
 
 Here is a simple event listener that uses `window.alert` to show you when a function runs
 
-{% include codepen.html slug="ogvbKEK" %}
+{% include codepen.html id="ogvbKEK" %}
 
 
 
@@ -104,4 +104,41 @@ const ClickCounter = () => {
 };
 ```
 
-{% include codepen.html slug="xbKZvdm" %}
+{% include codepen.html id="xbKZvdm" %}
+
+## Mutable Datatypes and State
+
+React decides when to re-render a component by comparing the current state to the previous state. If the state has changed, React will re-render the component. That means that it is easy to make mistakes if you use mutable datatypes (like arrays or objects) for state. As you will recall, if you change an array in place, the array itself has not actually changed, so React will not re-render the component.
+
+Here's an anti-example of a common mistake:
+
+```jsx
+const [cats, setCats] = useState(["🐱"]);
+const addCat = () => {
+    cats.push("🐱");
+    // This won't work, *even if we call setCats*
+    // because the array itself has not changed!
+    setCats(cats);
+  };
+```
+
+{% include codepen.html id="LEPNPpp" %}
+
+
+A good pattern is to always make a copy of a list before you make changes. You can copy a list using
+the spread operator like this `const newCats = [...cats]` or by using the `slice` method like this `const newCats = cats.slice()`.
+
+Here is a corrected example:
+
+```jsx
+const [cats, setCats] = useState(["🐱"]);
+const addCat = () => {
+    const newCats = cats.slice(); // copy the array!
+    newCats.push("🐱");    
+    setCats(newCats);
+  };
+```
+
+Here is the full working code:
+
+{% include codepen.html id="ByBKBKJ" %}
