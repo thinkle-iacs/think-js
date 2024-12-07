@@ -187,10 +187,13 @@ As a quick proof of concept, we can wire up an input field to the `userAnswer` s
 
 {% include codepen.html id="raBexbo" %}
 
+### Adding More Features = Adding More State
+
 This is a good start, but we might want to add a few more features to make it more like a real quiz. For example, rather than simply displaying the alert, we probably want to show the user the feedback to show them they got the answer right. If they get the problem wrong, we might want to give them multiple chances to get it right. And we might want to make sure to show them all of the different problems before repeating any rather than simply showing random problems each time (or we might have a more sophisticated way of choosing which problems to have the user practice).
 
 Each new feature we add will require us to add more state variables and more event handlers. We might also want to add some helper functions to make our code more readable. By the time we implement a program this complex, we will have made a number of decisions about how to break the code into parts and how to manage state, and likely no two programmers will solve the problem in exactly the same way!
 
+### A Second Example: A Multiplication Quiz with Feedback
 Here's a slightly more complete example, which introduces the following features:
 
 1. Feedback for the user showing if they're right or wrong.
@@ -241,7 +244,7 @@ Here is the full code:
 
 {% include codepen.html id="zxOqqQq" %}
 
-> ## If statements in JSX
+> ### If statements in JSX
 > There is no way to add an `if` statement in the middle of JSX, so for beginners, I recommend
 > simply pulling any logic that needs an `if` statement into a helper function.
 >
@@ -267,3 +270,10 @@ Here is the full code:
 Here's what the code would look like if written by most React developers (I think you'll agree it's harder to read, especially for beginners):
     
 {% include codepen.html id="ogvxLgG" %}
+
+## Exercises
+
+1. Make a fork of the multiplication quiz codepen and modify it so instead of the checkmark and x it shows phrases like "Good job!" or "Try again!".
+2. Make a fork of the multiplication quiz codepen and modify it so that it shows the user the correct answer if they get it wrong.
+3. Make a fork of the multiplication quiz codepen and modify it so that it shows the user the correct answer if they get it wrong, but only after they have tried to answer the problem three times.
+4. Consider how you would modify the multiplication quiz codepen to show the user only the problems they have gotten wrong, rather than all the problems they have answered.
