@@ -106,15 +106,16 @@ const ClickCounter = () => {
 
 {% include codepen.html id="xbKZvdm" %}
 
-## Mutable Datatypes and State
+## Lists (and other Mutable Datatypes) and State
 
 React decides when to re-render a component by comparing the current state to the previous state. If the state has changed, React will re-render the component. That means that it is easy to make mistakes if you use mutable datatypes (like arrays or objects) for state. As you will recall, if you change an array in place, the array itself has not actually changed, so React will not re-render the component.
 
-Here's an anti-example of a common mistake:
+Here's an example of a common mistake:
 
 ```jsx
 const [cats, setCats] = useState(["🐱"]);
 const addCat = () => {
+    // Example of a mistake: DON'T DO THIS!!!
     cats.push("🐱");
     // This won't work, *even if we call setCats*
     // because the array itself has not changed!
@@ -142,3 +143,127 @@ const addCat = () => {
 Here is the full working code:
 
 {% include codepen.html id="ByBKBKJ" %}
+
+## Getting Data from Events
+
+When you handle an event, React will pass an event object to your event handler function. This object contains information about the event, like the target element and the type of event. You can use this object to get data from the event, like the value of an input field. Here are a few common examples.
+
+### Getting the value of an input field
+
+```jsx
+const [text, setText] = useState("");
+
+const handleChange = (event) => {
+    setText(event.target.value);
+};
+
+return (  
+    <input type="text" value={text} onChange={handleChange} />
+);
+```
+
+### Getting the value of a checkbox
+
+```jsx
+const [checked, setChecked] = useState(false);
+
+const handleChange = (event) => {
+    setChecked(event.target.checked);
+};
+```
+
+## Example Application: A Multiplication Quiz
+
+Let's put these concepts together to build a simple multiplication quiz program.
+
+As a first step, we might imagine two state variables: one to keep track of the user's answer and one to keep track of the current problem (which is just the two numbers to be multiplied -- a two-item array). We can use the `useState` hook to initialize these variables:
+
+```jsx
+const [userAnswer, setUserAnswer] = useState();
+const [problem, setProblem] = useState([8, 4]);
+```
+
+As a quick proof of concept, we can wire up an input field to the `userAnswer` state variable and a button to check the answer. When the button is clicked, we can compare the user's answer to the correct answer and show an alert. Here it is:
+
+{% include codepen.html id="raBexbo" %}
+
+This is a good start, but we might want to add a few more features to make it more like a real quiz. For example, rather than simply displaying the alert, we probably want to show the user the feedback to show them they got the answer right. If they get the problem wrong, we might want to give them multiple chances to get it right. And we might want to make sure to show them all of the different problems before repeating any rather than simply showing random problems each time (or we might have a more sophisticated way of choosing which problems to have the user practice).
+
+Each new feature we add will require us to add more state variables and more event handlers. We might also want to add some helper functions to make our code more readable. By the time we implement a program this complex, we will have made a number of decisions about how to break the code into parts and how to manage state, and likely no two programmers will solve the problem in exactly the same way!
+
+Here's a slightly more complete example, which introduces the following features:
+
+1. Feedback for the user showing if they're right or wrong.
+2. A tracker that shows problems the user has gotten right and wrong.
+
+For my code, I decided to track problems and answers by adding each problem the user answers to an array and then adding each answer to a separate array. I then wanted to display to the user a list of problems they had answers, as well as a "checkmark" if they got it right or an "x" if they got it wrong. 
+
+A simple way to add this logic was to create helper functions which return JSX. In the case of the checkmark, I created a helper function which takes the index of the problem as a variable and then returns a checkmark if the answer is correct and an "x" if the answer is incorrect. here it is:
+
+```jsx
+const renderAnswerFeedback = (i) => {
+    let [number, otherNumber] = answeredProblems[i];
+    let answer = answers[i];
+    if (number * otherNumber === answer) {
+      // if it is correct
+      return <span>✅</span>;
+    } else {
+      return <span>❌</span>;
+    }
+};
+```
+
+Then, for rendering the list of problems, I created a helper function which 
+maps over the problems and returns a list of JSX elements. I wanted to start
+with the most recent problem (the last one on the list), so I reversed the
+typical order when looping over the problems:
+
+```jsx
+const renderAnsweredProblems = () => {
+    if (answeredProblems.length === 0) {
+      return <p>^^^Answer your first problem!</p>;
+    } else {
+      const feedback = [];
+      for (let i = answers.length - 1; i >= 0; i--) {
+        feedback.push(
+          <div>
+            {answeredProblems[i][0]}&times;{answeredProblems[i][1]}
+            {renderAnswerFeedback(i)}
+          </div>
+        );
+      }
+      return feedback;
+    }
+  };
+```
+
+Here is the full code:
+
+{% include codepen.html id="zxOqqQq" %}
+
+> ## If statements in JSX
+> There is no way to add an `if` statement in the middle of JSX, so for beginners, I recommend
+> simply pulling any logic that needs an `if` statement into a helper function.
+>
+> In most React code you will find on the internet, you will see programmers use a ternary
+> operator to conditionally render JSX. The ternary operator works just like a compact if 
+> statement, in which you say:
+>
+> CONDITION ? IF_TRUE : IF_FALSE
+> 
+> For example, you might see something like this:
+>
+ ```jsx
+ {number * otherNumber === answer ? <span>✅</span> : <span>❌</span>}
+```
+> That code works the same way as mine, but I find it harder to read, especially for beginners,
+> so in this book, I'll use helper functions instead.
+>
+> Note that it is also relatively rare to see a `for` loop in JSX. Instead, you will see
+> programmers use the `map` function to loop over an array and return a list of JSX elements.
+> I used a `for` loop in this example because I wanted to reverse the order of the list, but
+> you could also use a `map` function and then call `reverse` on the array to get the same effect.
+
+Here's what the code would look like if written by most React developers (I think you'll agree it's harder to read, especially for beginners):
+    
+{% include codepen.html id="ogvxLgG" %}
