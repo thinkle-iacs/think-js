@@ -1,7 +1,7 @@
 Array
 =====
 
-A **array** is an ordered collection of values. The values that make up an array
+An **array** is an ordered collection of values. The values that make up an array
 are called its **elements**, or its **items**.
 
 We will use the term `element` or `item` to mean the same thing. Arrays are
@@ -39,7 +39,7 @@ as parameters to functions:
 ⠕ let vocabulary = ["apple", "cheese", "dog"];
 ⠕ let numbers = [17, 123];
 ⠕ let anEmptyList = [];
-⠕ console.log(vocabulary, numbers, an_empty_list)
+⠕ console.log(vocabulary, numbers, anEmptyList)
 [ 'apple', 'cheese', 'dog' ] [ 17, 123 ] []
 ```
 
@@ -400,6 +400,30 @@ changing `a`:
 [ 1, 2, 3 ]
 ```
 
+#### The Spread Operator
+
+In modern JavaScript, you can *also* clone an array by using the spread operator (`...`):
+
+```javascript
+⠕ let a = [1, 2, 3];
+⠕ let b = [...a];
+```
+
+This is equivalent to using `slice`. The spread operator will also let you concisely combine two arrays or add a new item to a new array.
+
+*Adding an item with the spread operator:*
+ ```javascript
+  let a = [1, 2, 3];
+  let b = [...a, 4];
+  ```
+
+*Combining two arrays with the spread operator:*
+```javascript
+let a = [1, 2, 3];
+let b = [4, 5, 6];
+let c = [...a, ...b];
+```
+
 Array parameters
 ----------------
 
@@ -714,6 +738,186 @@ Or we can extract a single element from the matrix using the double-index form:
 The first index selects the row, and the second index selects the column.
 Although this way of representing matrices is common, it is not the only
 possibility.
+
+List of Array Methods
+-------------
+
+This chapter covered many array methods, but there are many more in JavaScript. Here is a list of some of the most useful:
+
+1. **`.push(element1, ..., elementN)`**  
+   Adds one or more elements to the end of an array and returns the new length.  
+   Example:  
+   ```js  
+   let fruits = ["apple", "banana"];  
+   fruits.push("cherry");  
+   console.log(fruits); // ['apple', 'banana', 'cherry']  
+   ```  
+
+2. **`.pop()`**  
+   Removes and returns the last element of an array.  
+   Example:  
+   ```js  
+   let fruits = ["apple", "banana", "cherry"];  
+   let last = fruits.pop();  
+   console.log(last); // 'cherry'  
+   console.log(fruits); // ['apple', 'banana']  
+   ```  
+
+3. **`.shift()`**  
+   Removes and returns the first element of an array.  
+   Example:  
+   ```js  
+   let fruits = ["apple", "banana", "cherry"];  
+   let first = fruits.shift();  
+   console.log(first); // 'apple'  
+   console.log(fruits); // ['banana', 'cherry']  
+   ```  
+
+4. **`.unshift(element1, ..., elementN)`**  
+   Adds one or more elements to the beginning of an array and returns the new length.  
+   Example:  
+   ```js  
+   let fruits = ["banana", "cherry"];  
+   fruits.unshift("apple");  
+   console.log(fruits); // ['apple', 'banana', 'cherry']  
+   ```  
+
+5. **`.slice(startIndex, endIndex)`**  
+   Returns a shallow copy of a portion of the array (up to but not including `endIndex`).  
+   Example:  
+   ```js  
+   let fruits = ["apple", "banana", "cherry", "date"];  
+   let sliced = fruits.slice(1, 3);  
+   console.log(sliced); // ['banana', 'cherry']  
+   ```  
+
+6. **`.splice(startIndex, deleteCount, item1, ..., itemN)`**  
+   Adds or removes elements from an array, starting at `startIndex`.  
+   Example (removing):  
+   ```js  
+   let fruits = ["apple", "banana", "cherry"];  
+   fruits.splice(1, 1);  
+   console.log(fruits); // ['apple', 'cherry']  
+   ```  
+
+   Example (adding):  
+   ```js  
+   fruits.splice(1, 0, "blueberry");  
+   console.log(fruits); // ['apple', 'blueberry', 'cherry']  
+   ```  
+
+7. **`.indexOf(element[, fromIndex])`**  
+   Returns the first index of `element` in the array, or `-1` if not found.  
+   Example:  
+   ```js  
+   let fruits = ["apple", "banana", "cherry"];  
+   console.log(fruits.indexOf("banana")); // 1  
+   ```  
+
+8. **`.lastIndexOf(element[, fromIndex])`**  
+   Returns the last index of `element` in the array, or `-1` if not found.  
+   Example:  
+   ```js  
+   let numbers = [1, 2, 3, 2, 1];  
+   console.log(numbers.lastIndexOf(2)); // 3  
+   ```  
+
+9. **`.includes(element[, fromIndex])`**  
+   Checks if an array contains the specified element, returning `true` or `false`.  
+   Example:  
+   ```js  
+   let fruits = ["apple", "banana", "cherry"];  
+   console.log(fruits.includes("banana")); // true  
+   console.log(fruits.includes("date")); // false  
+   ```  
+
+10. **`.join(separator)`**  
+    Joins all elements of an array into a string, separated by the specified `separator`.  
+    Example:  
+    ```js  
+    let fruits = ["apple", "banana", "cherry"];  
+    console.log(fruits.join(", ")); // "apple, banana, cherry"  
+    ```  
+
+11. **`.reverse()`**  
+    Reverses the order of the elements in the array (modifies the array in place).  
+    Example:  
+    ```js  
+    let numbers = [1, 2, 3];  
+    numbers.reverse();  
+    console.log(numbers); // [3, 2, 1]  
+    ```  
+
+12. **`.sort(compareFunction)`**  
+    Sorts the elements of an array (modifies the array in place).  
+    Example (alphabetical):  
+    ```js  
+    let fruits = ["banana", "apple", "cherry"];  
+    fruits.sort();  
+    console.log(fruits); // ['apple', 'banana', 'cherry']  
+    ```  
+
+    Example (numerical):  
+    ```js  
+    let numbers = [10, 2, 33, 4];  
+    numbers.sort((a, b) => a - b);  
+    console.log(numbers); // [2, 4, 10, 33]  
+    ```  
+
+13. **`.concat(array1, ..., arrayN)`**  
+    Combines arrays into a new array without modifying the original arrays.  
+    Example:  
+    ```js  
+    let fruits = ["apple", "banana"];  
+    let moreFruits = ["cherry", "date"];  
+    console.log(fruits.concat(moreFruits)); // ['apple', 'banana', 'cherry', 'date']  
+    ```  
+
+14. **`.map(callbackFn)`**  
+    Creates a new array with the results of calling the callback function on every element.  
+    Example:  
+    ```js  
+    let numbers = [1, 2, 3];  
+    let squared = numbers.map(x => x ** 2);  
+    console.log(squared); // [1, 4, 9]  
+    ```  
+
+15. **`.filter(callbackFn)`**  
+    Creates a new array with elements that pass the callback function's test.  
+    Example:  
+    ```js  
+    let numbers = [1, 2, 3, 4, 5];  
+    let evens = numbers.filter(x => x % 2 === 0);  
+    console.log(evens); // [2, 4]  
+    ```  
+
+16. **`.reduce(callbackFn, initialValue)`**  
+    Reduces the array to a single value using the callback function.  
+    Example (sum):  
+    ```js  
+    let numbers = [1, 2, 3, 4];  
+    let sum = numbers.reduce((acc, x) => acc + x, 0);  
+    console.log(sum); // 10  
+    ```  
+
+17. **`.find(callbackFn)`**  
+    Returns the first element that satisfies the callback function, or `undefined` if none match.  
+    Example:  
+    ```js  
+    let numbers = [1, 2, 3, 4];  
+    let firstEven = numbers.find(x => x % 2 === 0);  
+    console.log(firstEven); // 2  
+    ```  
+
+18. **`.findIndex(callbackFn)`**  
+    Returns the index of the first element that satisfies the callback function, or `-1` if none match.  
+    Example:  
+    ```js  
+    let numbers = [1, 2, 3, 4];  
+    let firstEvenIndex = numbers.findIndex(x => x % 2 === 0);  
+    console.log(firstEvenIndex); // 1  
+    ```  
+
 
 Glossary
 --------
