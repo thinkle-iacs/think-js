@@ -71,12 +71,12 @@ When we display `m`, we could get a surprise:
 a
 ```
 
-Computer scientists always start counting
+JavaScript programmers, like programmers in most languages, start counting
 from zero! The letter at subscript position zero of `"banana"` is `b`. So at
 position `[1]` we have the letter `a`.
 
 If we want to access the zero-eth letter of a string, we just place 0,
-or any expression that evaluates to 0, inbetween the brackets:
+or any expression that evaluates to 0, in between the brackets:
 
 
 ```javascript
@@ -246,9 +246,9 @@ string to create a new string.
 ⠕ let s = "Pirates of the Caribbean";
 ⠕ console.log(s.substring(0,7));
 Pirates
-⠕ console.log(s.substring(11:14));
+⠕ console.log(s.substring(11, 14));
 the
-⠕ console.log(s.substring(15:24));
+⠕ console.log(s.substring(15, 24));
 Caribbean
 ```
 
@@ -263,7 +263,7 @@ pointing *between* the characters, as in the following diagram:
 ![](figs/banana.png)
 
 If you imagine this as a piece of paper, `substring(m, n)` copies out
-the part of the paper between the `n` and `m`` positions. Provided `m`` and `n` are
+the part of the paper between the `n` and `m`` positions. Provided `m` and `n` are
 both within the bounds of the string, your result will be of length (m-n).
 
 There are a few more tricks to `substring`. If you omit the second argument (`endIndex`),
@@ -688,7 +688,7 @@ Careful readers will have noticed a new syntax for the argument to `split`, abov
 `/\s/` is a Javascript **regular expression** (aka regex) which splits the string on any
 **whitespace** --- regular spaces, tabs, and newlines. Regular expressions
 are powerful patterns for matching (and replacing) substrings in strings. Many
-of the Javascript string methods accept either plain strings are regular
+of the Javascript string methods accept either plain strings or regular
 expressions as arguments. Regular expressions are beyond the scope of this
 chapter, but we will demonstrate a few useful examples. 
 [MDN offers a guide to using Regular Expressions in Javascript.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
@@ -720,7 +720,7 @@ console.log(s2);
 
 let n1 = 4;
 let n2 = 5;
-s3 = `2**10 = ${2**10} and ${n1} * ${n2} = ${n1 * n2}`;
+let s3 = `2**10 = ${2**10} and ${n1} * ${n2} = ${n1 * n2}`;
 console.log(s3);
 ```
 
@@ -735,6 +735,134 @@ The template strings resolve any Javascript expression inside the `${}`
 placeholders to a string and then concatenate the template string into a
 single string. They can make our code both easier to read and easier to write.
 You can [learn more about template strings from the docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+
+- - - - - - - -
+
+## List of Helpful String Methods
+
+This chapter covered many string methods, but there are many more in JavaScript. Here is a list of some of the most useful (for complete documentation, see the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+
+## List of Helpful String Methods
+
+This chapter covered many string methods, but there are many more in JavaScript. Here is a list of some of the most useful:
+
+1. **`.split(separator)`**  
+   Splits a string into an array of substrings based on the specified separator.  
+   Example:  
+```javascript
+   let text = "apple,banana,cherry";  
+   console.log(text.split(",")); // ['apple', 'banana', 'cherry']
+```
+2. **`.toUpperCase()`**  
+   Converts all characters in a string to uppercase.  
+   Example:  
+```javascript
+   let greeting = "hello";  
+   console.log(greeting.toUpperCase()); // "HELLO"
+```
+3. **`.toLowerCase()`**  
+   Converts all characters in a string to lowercase.  
+   Example:  
+```javascript
+   let greeting = "HELLO";  
+   console.log(greeting.toLowerCase()); // "hello"
+```
+4. **`.startsWith(searchString[, position])`**  
+   Checks if a string starts with the specified substring.  
+   Example:  
+```javascript
+   let fruit = "banana";  
+   console.log(fruit.startsWith("ban")); // true
+```
+5. **`.endsWith(searchString[, length])`**  
+   Checks if a string ends with the specified substring.  
+   Example:  
+```javascript
+   let fruit = "banana";  
+   console.log(fruit.endsWith("na")); // true
+```
+6. **`.includes(searchString[, position])`**  
+   Checks if a string contains the specified substring.  
+   Example:  
+```javascript
+   let phrase = "hello world";  
+   console.log(phrase.includes("world")); // true
+```
+7. **`.indexOf(searchValue[, fromIndex])`**  
+   Finds the first occurrence of the specified substring and returns its index, or -1 if not found.  
+   Example:  
+```javascript
+   let fruit = "banana";  
+   console.log(fruit.indexOf("a")); // 1
+```
+8. **`.lastIndexOf(searchValue[, fromIndex])`**  
+   Finds the last occurrence of the specified substring and returns its index, or -1 if not found.  
+   Example:  
+```javascript
+   let fruit = "banana";  
+   console.log(fruit.lastIndexOf("a")); // 5
+```
+9. **`.trim()`**  
+   Removes whitespace from both ends of a string.  
+   Example:  
+   let message = "  hello world  ";  
+   console.log(message.trim()); // "hello world"
+
+10. **`.replace(searchValue, newValue)`**  
+    Replaces the first occurrence of `searchValue` with `newValue`.  
+    Example:  
+```javascript
+    let phrase = "I like apples";  
+    console.log(phrase.replace("apples", "bananas")); // "I like bananas"
+```
+11. **`.substring(startIndex[, endIndex])`**  
+    Returns a portion of the string between `startIndex` and `endIndex` (not inclusive).  
+    Example:  
+    let text = "hello world";  
+    console.log(text.substring(0, 5)); // "hello"
+
+12. **`.slice(startIndex[, endIndex])`**  
+    Similar to `substring` but allows negative indices to count from the end of the string.  
+    Example:  
+```javascript
+
+    let text = "hello world";  
+    console.log(text.slice(-5)); // "world"
+```
+13. **`.padStart(targetLength[, padString])`**  
+    Pads the start of a string with a specified character until it reaches the target length.  
+    Example: 
+```javascript
+    let number = "5";  
+    console.log(number.padStart(3, "0")); // "005"
+```   
+
+14. **`.padEnd(targetLength[, padString])`**  
+    Pads the end of a string with a specified character until it reaches the target length.  
+    Example:  
+    let number = "5";  
+    console.log(number.padEnd(3, "0")); // "500"
+
+15. **`.repeat(count)`**  
+    Repeats the string a specified number of times.  
+    Example: 
+```javascript
+    let laugh = "ha";  
+    console.log(laugh.repeat(3)); // "hahaha"
+```
+
+### for/of loops
+
+For simplicity, this book has focused on the basic `for` loop, but modern JavaScript 
+has a more concise method for traversing collections like strings and arrays. The `for/of` loop lets you iterate over the elements of a collection without needing to know the length of the collection. Here's an example:
+
+```javascript
+let fruit = "banana";
+for (let letter of fruit) {
+  console.log(letter);
+}
+```
+
 
 
 - - - - - - - -
@@ -806,7 +934,7 @@ A pattern expressed using the regular expression language to
 **short-circuit evaluation**
 
 A style of programming that shortcuts extra work as soon as the
-   outcome is know with certainty. In this chapter our `find`
+   outcome is known with certainty. In this chapter our `find`
    function returned as soon as it found what it was looking for; it
    didn't traverse all the rest of the items in the string.
 
