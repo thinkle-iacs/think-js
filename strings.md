@@ -586,7 +586,7 @@ console.log(ss.indexOf(".") === ss.length - 1);
 
 ```
 
-`indexOf` does not have the optional `end` paremeter. It always seachers until
+`indexOf` does not have the optional `end` parameter. It always searches until
 the end of the string. In the case `ss.indexOf("s", 12, 17) === 17` it does
 not create an error to pass in the third argument, however it is ignored entirely.
 
