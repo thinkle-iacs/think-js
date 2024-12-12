@@ -35,8 +35,7 @@ JS Frameworks
 Web pages *began* with simple *HTML* as a way to display documents; as the web evolved, CSS and JavaScript were added as ways to *enhance* documents by adding style (CSS) and interaction (JavaScript). Because of this, original approaches to JavaScript focused on reaching into an existing webpage (HTML) and making changes with JavaScript.
 
 As the web has evolved to include web applications, more and more programmers flip 
-this logic on its head: thinking of the application (JavaScript) first and using it to generate HTML. Generating HTML with code is usually done using some form of
-*templating language* (a language for mixing variables from your code with JavaScript).
+this logic on its head: using JavaScript to generate webpages. You can think of React and other frameworks as recipes for generating webpages. The recipe is written in the framework's language, and the framework takes care of turning the recipe into a webpage.
 
 There are *many* languages and they are constantly evolving, but in this textbook we will use the React framework, which was open-sourced by Facebook in 2014 and has been among the most popular frameworks for nearly a decade as of this writing (2024).
 
@@ -46,7 +45,6 @@ JSX
 The fundamental breakthrough of React is the use of JSX,  which enables programmers to 
 write HTML-like code directly in their JavaScript files. JSX is a syntax extension for 
 JavaScript that looks like HTML. It is used to describe what the UI should look like. 
-JSX may remind you of a template language, but it comes with the full power of JavaScript. 
 
 One of the most powerful features of JSX is that you can include JavaScript expressions directly 
 inside your HTML-like code by wrapping them in curly braces (`{}`).
@@ -59,23 +57,25 @@ const name = "Alice";
 return <h1>Hello {name}. 2 + 2 is {2 + 2}.</h1>;
 ```
 
-The only major difference between JSX and HTML is that JSX can contain JavaScript expressions 
-inside curly braces and that all tags must be closed, which means that for tags like `<img>` and `<input>`, 
-you must include a closing slash and write them as `<img />` and `<input />`.
 
-React allows JavaScript programmers to build webpages out of *components*, which are really just functions that return JSX. Just as we have used functions in the *turtle*
-library to produce drawings as output, we can use functions in React to produce HTML as output, resulting in a webpage as a user interface. If you know HTML, you can write React components using any HTML you know. If you don't know HTML, here is a quick reference with some basic elements you might want to create.
+React allows JavaScript programmers to build webpages out of a mixture of markup language and JavaScript code. The parts of a webpage can be broken into functions (or *components*, which are functions that return JSX). Just as we have used functions in the *turtle*
+library to produce drawings as output, we can use functions in React to produce HTML as output.
 
-- `<div>`: a container for other elements.
-- `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`: headers of different sizes.
-- `<p>`: a paragraph.
-- `<a href="URL">text</a>`: a link
-- `<button>text</button>`: a button
-- `<input type="text" />`: a text input box
-- `<img src="URL" alt="Alternate text"/>`: an image
+If you know HTML, you can write React components using any HTML you know. If you don't know HTML, here is a quick reference with some basic elements you might want to create.
 
-Note that these are the *open tags* for these elements. Each element must be closed with a corresponding *closing tag*. For example, `<div>` must be closed with `</div>`
-and `<p>` must be closed with `</p>`: the text between the tags is the text that will display on the webpage. Tags that don't have text, like `<img>` and `<input>`, are self-closing and in JSX you must write them with a trailing slash like `<img />` and `<input />`.
+- Structure:
+  - `<div>`: a container for other elements. You can also use `<header>`, `<footer>` and `<section>` to organize your page.
+- Text:
+  - `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`: headers of different sizes.
+  - `<p>`: a paragraph.
+  - `<a href="URL">text</a>`: a link
+- User Interface
+  - `<button>`: a button
+  - `<input type="text" />`: a text input box
+- Media
+  - `<img src="URL" alt="Alternate text"/>`: an image
+
+Note that these are the *open tags* for these elements. Each element must be closed with a corresponding *closing tag*. For example, `<div>` must be closed with `</div>` and `<p>` must be closed with `</p>`: the text between the tags is the text that will display on the webpage. 
 
 Here's a sample React component that uses these elements:
 
@@ -95,6 +95,12 @@ const HelloWorld = () => {
   );
 };
 ```
+
+> *Self-Closing Tags*
+> 
+> Tags that don't have text, like `<img>` and `<input>`, are self-closing and in JSX you must write them with a trailing slash like `<img />` and `<input />`.
+
+
 
 > #### Naming Components
 > By convention, React *components* are nouns and start with a capital letter. That is because unlike most functions, which we think of as "actions," React functions really  stand in for an part of a webpage, so we think of them as *things* (or "Objects" to : 
@@ -185,42 +191,51 @@ You could also write a custom function which returns an array of JSX elements, a
 
 ## A Multiplication Table
 
-```jsx
-const MultiplicationTable = () => {
-  const numbers = [];
-  for (let i = 2; i <= 12; i++) {
-    numbers.push(i);
-  }
-  return (
-    <div>
-      <h1>Multiplication Table</h1>
-      <table>
-        <tbody>
-          {/* Header Row */}
-          <tr>
-            <th /> {/* Empty cell first */}
-            {numbers.map((headerNumber) => (
-              <th key={headerNumber}>{headerNumber}</th>
-            ))}
-          </tr>
-          {/* Row per number */}
-          {numbers.map((rowNumber) => (
-            <tr key={rowNumber}>
-              <th>{rowNumber}</th>
-              {/* Now multiply by each number */}
-              {numbers.map((colNumber) => (
-                <td key={rowNumber * colNumber}>
-                  {rowNumber}x{colNumber}={rowNumber * colNumber}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
+We can use the `map` function to create a multiplication table. We begin by making an array of numbers we want to multiply, let's say, 2 through 12:
+
+```js
+const numbers = [];
+for (let i = 2; i <= 12; i++) {
+  numbers.push(i);
+}
 ```
+
+At the top of the table, we want a list of numbers from 2 to 12. We can use the `map` function to create a list of `<th>` elements for the header row (we'll leave a blank header in the first column where the row and column headers meet):
+
+```jsx
+<tr>
+  <th />
+  {numbers.map(headerNumber => <th>{headerNumber}</th>)}
+</tr>
+```
+
+Finally, we'll create the rows with the answers by using a *nested* loop, one for each row and one for each column. We'll use the `map` function for each part of the loop, with the outer map creating each row:
+
+```jsx
+{numbers.map(rowNumber => (
+  <tr>
+    <th>{rowNumber}</th>
+    ...
+  </tr>
+))}
+```
+
+And then we add the *inner* loop to multiply each row by each column:
+
+```jsx
+{numbers.map(rowNumber => (
+  <tr>
+    <th>{rowNumber}</th>
+    {/* Now multiply by each number */}
+    {numbers.map((colNumber) => (
+      {rowNumber * colNumber}
+    ))}
+  </tr>
+))}
+```
+
+Here's the complete code, with the `key` attributes added to each element to make fully functional React code:
+
 {%include codepen.html id="jENWjer" height="400" %}
 
 ## Exercises
