@@ -56,7 +56,6 @@ For example, if you wanted to display a message to the user that included the va
 ```jsx
 ...
 const name = "Alice";
-const message = `Hello, ${name}!`;
 return <h1>Hello {name}. 2 + 2 is {2 + 2}.</h1>;
 ```
 
