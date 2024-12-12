@@ -4,18 +4,9 @@ Web GUIs
 GUI: Graphical User Interface
 -----------------------------
 
-A GUI or _graphical user interface_ is the main way that most of us
-interact with computers most of the time. The standards for graphical
-computing are well known: clicking buttons and icons, scrolling windows,
-reading images and text, etc. When we created our Turtle programs, we
-were programming GUIs.
+A GUI or _graphical user interface_ is the main way that most of us interact with computers most of the time. The standards for graphical computing are well known: clicking buttons and icons, scrolling windows, reading images and text, etc. When we created our Turtle programs, we were programming GUIs.
 
-Most of the examples in this text, however have used _text interfaces_
-or Command Line Interfaces (CLI) (or used a special web library I built
-to imitate a CLI). With a CLI, the user receives computer
-output through text on the screen, and sends input to the program by
-entering text. In this chapter, we introduce a Javascript-based library
-for creating GUIs web applications.
+Most of the examples in this text, however have used _text interfaces_ or Command Line Interfaces (CLI) (or used a special web library I built to imitate a CLI). With a CLI, the user receives computer output through text on the screen, and sends input to the program by entering text. In this chapter, we introduce a Javascript-based library for creating GUIs web applications.
 
 How the web works (the super brief version)
 -------------------------------------------
@@ -31,46 +22,47 @@ describes the type of content on a web page. HTML describes many different types
 
 Other HTML elements are more structural, they divide web pages into sections (like headers and footers).
 
-Cascading style sheets (CSS), control the layout of the content described by the
-HTML. CSS can be used to change the font or text size, add background images to
-elements, space and size different containers, and, generally create useful and
-aesthetic interfaces. A single HTML document can work with different CSS styles,
-allowing it to adapt to different use cases. One set of styles can control
-layout for mobile phones, another for laptops, and yet another for print.
+Cascading style sheets (CSS), control the layout of the content described by the HTML. CSS can be used to change the font or text size, add background images to elements, space and size different containers, and, generally create useful and aesthetic interfaces. A single HTML document can work with different CSS styles,
+allowing it to adapt to different use cases. One set of styles can control layout for mobile phones, another for laptops, and yet another for print.
 
-Javascript is the only **programming language** of the three languages discussed
-here. It's the only of the group that uses variables and controls the flow of
-execution with loops and Boolean conditions. At this point in the book, we are
-familiar with many of the programming aspects of Javascript. For the web,
-Javascript can interact with user input, and dynamically change the content and
-HTML structure on a page. While some, small websites are **static** -- meaning
-that all of the content and HTML is written by hand in a text editor -- most websites pull the content from databases or other data
-files. We have begun to see how Javascript can interact with larger sets of
-data, now we will see how Javascript can be used to display this data on the
-web, to create **dynamic** websites that change when the data is changed.
+Javascript is the only **programming language** of the three languages discussed here. It's the only of the group that uses variables and controls the flow of execution with loops and Boolean conditions. At this point in the book, we are familiar with many of the programming aspects of Javascript. For the web,
+Javascript can interact with user input, and dynamically change the content and HTML structure on a page. While some, small websites are **static** -- meaning that all of the content and HTML is written by hand in a text editor -- most websites
+ pull the content from databases or other data files. We have begun to see how Javascript can interact with larger sets of data, now we will see how Javascript can be used to display this data on the web, to create **dynamic** websites that change when the data is changed.
 
 JS Frameworks
 ------
 
-Web pages *began* with simple *HTML* as a way to display documents; as the web
-evolved, CSS and JavaScript were added as ways to *enhance* documents by adding
-style (CSS) and interaction (JavaScript). Because of this, original approaches
-to JavaScript focused on reaching into an existing webpage (HTML) and making
-changes with JavaScript.
+Web pages *began* with simple *HTML* as a way to display documents; as the web evolved, CSS and JavaScript were added as ways to *enhance* documents by adding style (CSS) and interaction (JavaScript). Because of this, original approaches to JavaScript focused on reaching into an existing webpage (HTML) and making changes with JavaScript.
 
 As the web has evolved to include web applications, more and more programmers flip 
-this logic on its head: thinking of the application (JavaScript) first and using
-it to generate HTML. Generating HTML with code is usually done using some form of
+this logic on its head: thinking of the application (JavaScript) first and using it to generate HTML. Generating HTML with code is usually done using some form of
 *templating language* (a language for mixing variables from your code with JavaScript).
 
-There are *many* languages and they are constantly evolving, but in this
-textbook we will use the React framework, which was open-sourced by Facebook in 2014
-and has been among the most popular frameworks for nearly a decade as of this writing (2024).
+There are *many* languages and they are constantly evolving, but in this textbook we will use the React framework, which was open-sourced by Facebook in 2014 and has been among the most popular frameworks for nearly a decade as of this writing (2024).
 
 
 JSX
 --------------
-The fundamental breakthrough of React is the use of JSX,  which enables programmers to write HTML-like code directly in their JavaScript files. JSX is a syntax extension for JavaScript that looks like HTML. It is used to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript. The only major difference between JSX and HTML is that JSX can contain JavaScript expressions inside curly braces and that all tags must be closed, which means that for tags like `<img>` and `<input>`, you must include a closing slash and write them as `<img />` and `<input />`.
+The fundamental breakthrough of React is the use of JSX,  which enables programmers to 
+write HTML-like code directly in their JavaScript files. JSX is a syntax extension for 
+JavaScript that looks like HTML. It is used to describe what the UI should look like. 
+JSX may remind you of a template language, but it comes with the full power of JavaScript. 
+
+One of the most powerful features of JSX is that you can include JavaScript expressions directly 
+inside your HTML-like code by wrapping them in curly braces (`{}`).
+
+For example, if you wanted to display a message to the user that included the value of a variable or the result of a function or mathematical operation, you could write something like this:
+
+```jsx
+...
+const name = "Alice";
+const message = `Hello, ${name}!`;
+return <h1>Hello {name}. 2 + 2 is {2 + 2}.</h1>;
+```
+
+The only major difference between JSX and HTML is that JSX can contain JavaScript expressions 
+inside curly braces and that all tags must be closed, which means that for tags like `<img>` and `<input>`, 
+you must include a closing slash and write them as `<img />` and `<input />`.
 
 React allows JavaScript programmers to build webpages out of *components*, which are really just functions that return JSX. Just as we have used functions in the *turtle*
 library to produce drawings as output, we can use functions in React to produce HTML as output, resulting in a webpage as a user interface. If you know HTML, you can write React components using any HTML you know. If you don't know HTML, here is a quick reference with some basic elements you might want to create.
@@ -120,13 +112,11 @@ If you have written HTML before, you may have noticed it is very *error tolerant
 
 ## Tags for Lists and Tables
 
-In HTML, there are special tags for writing lists and tables. Here are some examples
-of what plain JSX (React) code for lists and tables might look like:
+In HTML, there are special tags for writing lists and tables. Here are some examples of what plain JSX (React) code for lists and tables might look like:
 
 ### Lists
 
-In lists, we use the outer tag `<ol>` for a numbered list (ordered) 
-or `<ul>` for a bulleted list (unordered). Each item in the list is an `<li>` tag.
+In lists, we use the outer tag `<ol>` for a numbered list (ordered) or `<ul>` for a bulleted list (unordered). Each item in the list is an `<li>` tag.
 
 ```jsx
 const FruitList = () => (
