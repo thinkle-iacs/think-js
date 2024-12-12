@@ -1,18 +1,23 @@
 # Events and State
 
-As we have seen so far, React components let you describe what the user interface (UI) should look like based on some data. However, up until now, our examples have been static. The UI we rendered did not change in response to user input or data changes.
+As we have seen so far, React components let you describe what the user interface (UI) with a mixture of HTML and JavaScript. However, up until now, our examples have been static. The UI we rendered did not change in response to user input!
 
-Real web applications need to respond to user actions and update what's displayed. For example, when you click a button, text might change, or a new element might appear. To handle these sorts of changes, React provides two core concepts:
+Real web applications need to respond to user actions and update what's displayed. For example, when you click a button, text might change, or a new element might appear. To handle these sorts of changes, we need two core concepts in web programming:
 
 1. **State**: A way to keep track of changing data inside a component.
 2. **Events**: A way to listen for and respond to user inputs (like clicks, typing, and other interactions).
 
-Fundamentally, the React model is based on the idea that a GUI program is a cycle (called the React Lifecycle): 
+> If we imagined our programming as a vending machine, the "state" would be information like *what items are in the machine* and *how much money you have added.* The "events" would be the actions you take that *change* the state, like pressing a button to select an item or inserting a coin in the slot.
 
-1. There is some initial state (the data that drives a program).
-2.  User inputs cause the state to change (events).
-3.  State changes cause the UI to update (rendering).
-4.  (repeat)
+Fundamentally, the React model is based on the idea that a GUI program is a cycle, in which each event (user input) triggers a change in the state, which in turn triggers a re-render of the UI:
+
+```mermaid
+graph TD
+    State[State] --> Render["Render UI (run React Component to produce HTML)"]
+    Render --> Events["Handle User Inputs (Events)"]    
+    Events --> UpdateState["Update State"]
+    UpdateState --> State
+```
 
 We’ll start by exploring what "state" is, then learn how to handle events, and finally combine them to build an interactive example.
 
@@ -108,7 +113,7 @@ const ClickCounter = () => {
 
 ## Lists (and other Mutable Datatypes) and State
 
-React decides when to re-render a component by comparing the current state to the previous state. If the state has changed, React will re-render the component. That means that it is easy to make mistakes if you use mutable datatypes (like arrays or objects) for state. As you will recall, if you change an array in place, the array itself has not actually changed, so React will not re-render the component.
+React decides when to re-render a component by comparing the current state to the previous state. If the state has changed, React will re-render the component. That means that it is easy to make mistakes if you use mutable datatypes (like arrays or objects) for state. Imagine an array as as a container, like a notebook with a list of items. If you change the items in the notebook, the notebook itself doesn't change, so React won't know to re-render the component. Instead, you need to create a new notebook with the changes and tell React to use the new notebook.
 
 Here's an example of a common mistake:
 
@@ -245,13 +250,11 @@ Here is the full code:
 {% include codepen.html id="zxOqqQq" %}
 
 > ### If statements in JSX
-> There is no way to add an `if` statement in the middle of JSX, so for beginners, I recommend
-> simply pulling any logic that needs an `if` statement into a helper function.
->
+> There is no way to add an `if` statement in the middle of JSX, so for beginners, I recommend simply pulling any logic that needs an `if` statement into a helper function. 
+> 
 > In most React code you will find on the internet, you will see programmers use a ternary
-> operator to conditionally render JSX. The ternary operator works just like a compact if 
-> statement, in which you say:
->
+ operator to conditionally render JSX. The ternary operator works just like a compact if statement, in which you say:
+ >
 > CONDITION ? IF_TRUE : IF_FALSE
 > 
 > For example, you might see something like this:
