@@ -145,3 +145,9 @@ document.querySelector(
       <a href="{{ site.github.repository_url }}" target="_blank" rel="noopener noreferrer">See source code here</a>
   </div>
 </div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  debugger;
+  mermaid.initialize({ startOnLoad: true });
+  console.log('Loaded mermaid!')
+</script>

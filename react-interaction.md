@@ -11,13 +11,13 @@ Real web applications need to respond to user actions and update what's displaye
 
 Fundamentally, the React model is based on the idea that a GUI program is a cycle, in which each event (user input) triggers a change in the state, which in turn triggers a re-render of the UI:
 
-```mermaid
+<pre class="mermaid">
 graph TD
     State[State] --> Render["Render UI (run React Component to produce HTML)"]
-    Render --> Events["Handle User Inputs (Events)"]    
+    Render --> Events["Handle User Inputs (Events)"]
     Events --> UpdateState["Update State"]
     UpdateState --> State
-```
+</pre>
 
 We’ll start by exploring what "state" is, then learn how to handle events, and finally combine them to build an interactive example.
 
