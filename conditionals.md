@@ -824,16 +824,13 @@ Pig             1935
 
 ### Lab 3: Bouncing ball
 
-This may be an interesting problem if you are comfortable with geometry and
-trigonometry. In this lab you'll create a `bouncingBall` program using the
+In this lab you'll create a `bouncingBall` program using the
 `SimpleCanvasLibrary`. The ball moves around the canvas with a velocity,
 and "bounces" when it reaches the edge of the screen. By bounce, the ball
-should reverse its direction along the axis where it hits the edge (using the
-[angle of reflection](https://www.physicsclassroom.com/class/refln/Lesson-1/The-Law-of-Reflection)).
+should reverse its direction along the axis where it hits the edge.
 Some hints:
 
 - Track the ball's `x`, `y` position and `dx`, `dy` velocity
 - Use the `elapsed` or `stepTime` parameter in your drawing function to update position
 - When the ball reaches an edge, reverse the appropriate velocity component (`dx` or `dy`)
 - You can use `ctx.arc()` to draw the ball as a circle
-- you may want to use the trigonometry functions in [the Javascript Math library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
