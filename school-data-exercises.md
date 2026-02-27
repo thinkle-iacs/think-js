@@ -1,6 +1,6 @@
 School Data Exercises
 ---------------------
-Fork the [SchoolData repl](https://repl.it/@mcuringa/SchoolData) <https://repl.it/@mcuringa/SchoolData>
+Start with the SchoolData example in a CodePen.
 to complete these exrcises.
 
 1. Write a function using the **search** pattern that finds

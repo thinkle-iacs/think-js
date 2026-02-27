@@ -4,7 +4,7 @@ Web GUIs
 GUI: Graphical User Interface
 -----------------------------
 
-A GUI or _graphical user interface_ is the main way that most of us interact with computers most of the time. The standards for graphical computing are well known: clicking buttons and icons, scrolling windows, reading images and text, etc. When we created our Turtle programs, we were programming GUIs.
+A GUI or _graphical user interface_ is the main way that most of us interact with computers most of the time. The standards for graphical computing are well known: clicking buttons and icons, scrolling windows, reading images and text, etc. When we created our canvas graphics programs, we were programming GUIs.
 
 Most of the examples in this text, however have used _text interfaces_ or Command Line Interfaces (CLI) (or used a special web library I built to imitate a CLI). With a CLI, the user receives computer output through text on the screen, and sends input to the program by entering text. In this chapter, we introduce a Javascript-based library for creating GUIs web applications.
 
@@ -58,7 +58,7 @@ return <h1>Hello {name}. 2 + 2 is {2 + 2}.</h1>;
 ```
 
 
-React allows JavaScript programmers to build webpages out of a mixture of markup language and JavaScript code. The parts of a webpage can be broken into functions (or *components*, which are functions that return JSX). Just as we have used functions in the *turtle*
+React allows JavaScript programmers to build webpages out of a mixture of markup language and JavaScript code. The parts of a webpage can be broken into functions (or *components*, which are functions that return JSX). Just as we have used functions in our canvas graphics
 library to produce drawings as output, we can use functions in React to produce HTML as output.
 
 If you know HTML, you can write React components using any HTML you know. If you don't know HTML, here is a quick reference with some basic elements you might want to create.

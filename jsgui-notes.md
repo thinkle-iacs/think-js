@@ -16,7 +16,7 @@ and navigation elements that can be used across several web pages.
 The examples in this code listing use many, but not all of the
 layout features of JS GUI.
 
-- [View the "JS GUI Demo" repl](https://repl.it/@mcuringa/JSGuiDemo)
+- View the "JS GUI Demo" in a CodePen.
 - [View the "JS GUI Demo" website](https://jsguidemo.mcuringa.repl.co/)
 
 ### Case Study: JSGUI Demo {.jsguidemo .codeNotes}

@@ -1039,7 +1039,7 @@ modify the original array parameter.
 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a_2M9uZ37L0?rel=0" allowfullscreen></iframe>
 </div>
 
-**Check out the live code here: <https://repl.it/@mcuringa/Array-Examples>**
+**Try running this code in a CodePen or in your browser console.**
 
 Array Exercises
 ---------------
@@ -1107,7 +1107,7 @@ Your function has a single string parameter, and returns `1` for
 a positive sentiment, `-1` for a negative sentiment, and `0` for
 a neutral sentiments.
 
-Use this repl to get started: <https://repl.it/@mcuringa/Sentiment>
+Try starting this exercise in a CodePen.
 
 You can read the [Wikipedia article on sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
 to get a better sense of this lab.

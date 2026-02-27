@@ -21,7 +21,7 @@ are likely to want to change each time we call the function: these
 should become the parameters, or changeable parts, of the functions
 we write.
 
-[View the "Tip Calculator" repl](https://repl.it/@mcuringa/tip-calculator)
+View the "Tip Calculator" example in a CodePen.
 
 ### Case Study: Tip Calculator {.tipCalculator .codeNotes}
 
@@ -61,7 +61,7 @@ calculate a new value and store it in the `tip` **variable**.
 
 `askBillAmt` is a **fruitful function** because
 it has a **return statement**. It uses the
-**built-in function** `window.prompt` to ask for data from the
+**built-in function** `ti.prompt` (from the TextInterface library) to ask for data from the
 user of the program. When this function is called, it returns
 the amount of the bill as a float, because it represents money.
 

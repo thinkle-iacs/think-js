@@ -293,9 +293,9 @@ const finalAmt = (p, r, n, t) => {
 
 
 //now that we have the function above, let's call it
-let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );
+let toInvest = Number.parseFloat( await ti.prompt("How much do you want to invest?") );
 let fnl = finalAmt(toInvest, 0.08, 12, 5);
-console.log("At the end of the period you'll have", fnl);
+ti.output("At the end of the period you'll have " + fnl);
 ```
 
 * The **return** statement is followed an expression (`a` in this case). This expression will be
@@ -311,10 +311,10 @@ console.log("At the end of the period you'll have", fnl);
   Javascript doesn't understand that we're working with money: it just does the calculation to
   the best of its ability, without rounding. Later we'll see how to format the string that
   is printed in such a way that it does get nicely rounded to two decimal places before printing.
-* The line `let toInvest = Number.parseFloat( window.prompt("How much do you want to invest?") );`
+* The line `let toInvest = Number.parseFloat( await ti.prompt("How much do you want to invest?") );`
   also shows yet another example
   of *composition* — we can call a function like `Number.parseFloat`, and its arguments
-  can be the results of other function calls (like `window.prompt`) that we've called along the way.
+  can be the results of other function calls (like `ti.prompt`) that we've called along the way.
 
 Notice something else very important here. The name of the variable we pass as an
 argument — `toInvest` — has nothing to do with the name of the parameter
@@ -473,7 +473,7 @@ setTimeout(FUNCTION, DELAY_IN_MILLISECONDS)
 ```javascript
 setTimeout(
   () => {
-    window.alert("It's been 10 seconds!");
+    ti.output("It's been 10 seconds!");
   },
   10000 
 );
@@ -609,7 +609,7 @@ The first part of a compound statement.
 **import statement**
 
 A statement which permits functions and variables defined in another JavaScript
-module. To import the turtle or TextInterface library, we began with an import
+module. To import the TextInterface library, we use a script tag or import
 statement.
 
 ---

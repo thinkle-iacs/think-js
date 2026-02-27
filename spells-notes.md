@@ -12,7 +12,7 @@ boxes are checked in the React Object **state**. The list of spells must
 update dynamically when changes are detected. This is what we mean
 by a _reactive interface_.
 
-- [View the SpellBook repl](https://repl.it/@mcuringa/SpellBookv2)
+- View the SpellBook example in a CodePen.
 - [View the SpellBook live website](https://spellbookv2--mcuringa.repl.co/)
 
 ### Case Study: SpellCaster Spells {.jsguidemo .codeNotes}

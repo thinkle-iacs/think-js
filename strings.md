@@ -39,14 +39,14 @@ original string `ss` remains unchanged.)
 There are also methods such as `toLowerCase`, `trim`, and
 `repeat` that do other interesting things.
 [To learn what methods are available and what they do, you can consult the MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
-Or, simply type the following into a Repl.it script:
+Or, simply type the following into a code editor:
 
 ```javascript
 let ss = "Hello, World!";
 let tt = ss.
 ```
 
-When you type the period to select one of the methods of `ss`, Repl.it will pop up a
+When you type the period to select one of the methods of `ss`, your code editor may pop up a
 selection window showing all the methods that could be used on your string. There are lots
 of methods. In this chapter we'll look at some of the most immediately useful ones.
 
@@ -404,7 +404,7 @@ console.log(removeVowels("CompSci")); // CmpSc
 console.log(removeVowels("A dark and stormy night.")); //  drk nd strmy nght.
 ```
 
-[Check out this function on repl.it](https://repl.it/@mcuringa/remove-vowels)
+Try running this function in a CodePen or in your browser console.
 
 This short function uses several of the techniques and patterns we
 have previously seen. We use a finite `for` loop to iterate up to `s.length`
