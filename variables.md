@@ -5,9 +5,8 @@ Values and data types
 ---------------------
 
 A **value** is one of the fundamental things --- like a letter or a number ---
-that a program manipulates. Programming `turtle` we have been using values
-like `100` when we write `fd(100)` and `"blue"` in statements like
-`setColor("blue")`.
+that a program manipulates. We have been using values
+like `100` and `"blue"` in our programs.
 
 These values are classified into different **classes**, or **data types**: `100`
 is an *number*, and `"blue"` is a *string*,
@@ -511,12 +510,14 @@ Automatic conversion can be tricky and sometimes lead to unexpected results. Con
 Input
 -----
 
-There is a built-in function in Javascript for getting input from the user:
+In this book, we use the `TextInterface` library to get input from the user.
+The `TextInterface` library provides a simple way to get text input and display output
+on a webpage. To get input, we use the `await` keyword, which tells Javascript to
+wait for the user to type something before continuing:
 
 ```javascript
-⠕ let n = window.prompt("Please enter your name: ");
+let n = await ti.prompt("Please enter your name: ");
 ```
-
 
 The user of the program can type the name and hit `enter`. When this happens
 the text that has been entered is returned from the `prompt` function, and in this
@@ -526,11 +527,10 @@ Even if you asked the user to enter their age, you would get back a string like 
 It would be your job, as the programmer, to convert that string into a integer or float before using it,
 if that was required.
 
-Most actual web applications don't use `window.prompt` but instead build user interfaces that respond to user actions. To write code like this requires slightly more advanced techniques, but with the `TextInterface` library, you can use the special `await` keyword which lets you wait for user input, like this:
-
-```javascript
-let n = await ti.prompt("Please enter your name: ");
-```
+> **Note:** Javascript also has a built-in `window.prompt` function for getting input.
+> Most actual web applications don't use `window.prompt` but instead build user interfaces
+> that respond to user actions. The `TextInterface` library gives us a simple way to do
+> text-based input and output on a webpage, using the `await` keyword to wait for user input.
 
 
 
@@ -557,29 +557,21 @@ Firstly, we'll do the four steps one at a time:
 let response = await ti.prompt("What is your radius? ");
 let r = Number.parseFloat(response);
 let area = 3.14159 * r**2;
-ti.output("The area is ", area);
-```
-
-Or in pure javascript:
-```javascript
-let response = window.prompt("What is your radius? ");
-let r = Number.parseFloat(response);
-let area = 3.14159 * r**2;
-window.alert("The area is " + area);
+ti.output("The area is " + area);
 ```
 
 Now let's compose the first two lines into a single line of code, and compose the
 second two lines into another line of code.
 
 ```javascript
-let r = Number.parseFloat(window.prompt("What is your radius? "));
+let r = Number.parseFloat(await ti.prompt("What is your radius? "));
 ti.output("The area is " + 3.14159 * r**2);
 ```
 
 If we really wanted to be tricky, we could write it all in one statement:
 
 ```javascript
-console.log("The area is ", 3.14159 * Number.parseFloat(window.prompt("What is your radius? "))**2);
+ti.output("The area is " + 3.14159 * Number.parseFloat(await ti.prompt("What is your radius? "))**2);
 
 ```
 
@@ -623,13 +615,13 @@ some seconds, and we'll convert them into hours, minutes, and remaining seconds.
 
 
 ```javascript
-⠕ let totalSecs = Number.parseInt(window.prompt("How many seconds, in total?"));
+⠕ let totalSecs = Number.parseInt(await ti.prompt("How many seconds, in total?"));
 ⠕ let hours = Math.floor(totalSecs / 3600);
 ⠕ let secsStillRemaining  = totalSecs % 3600;
 ⠕ let minutes = Math.floor(secsStillRemaining / 60);
 ⠕ let secsFinallyRemaining = secsStillRemaining  % 60;
 ⠕
-⠕ console.log("Hrs=", hours, "  mins=", minutes, "secs=", secsFinallyRemaining);
+⠕ ti.output("Hrs=" + hours + "  mins=" + minutes + " secs=" + secsFinallyRemaining);
 ```
 
 Variable Exercises

@@ -455,233 +455,207 @@ one line at a time until we find out which line has the buggy code.
 
 It is so common for programmers to comment out large blocks of code
 when they are testing their programs, that programmer's text editors
-support quickly commenting out sections of code. In repl.it, our online
-editor for this book, you can simply highlight the lines you want to
+support quickly commenting out sections of code. In most code editors,
+you can simply highlight the lines you want to
 comment or uncomment and use the <kbd>Ctrl</kbd> + <kbd>/</kbd>
 keyboard shortcut. You will see us using this technique in our example
 videos.
 
-Turtle Graphics
+Canvas Graphics
 ---------------
 
-In the late 1960s, Seymor Papert's group at MIT introduced [LOGO Turtle](https://en.wikipedia.org/wiki/Turtle_graphics)
-as a way to teach computer programming to kids. After learning the basic turtle commands (also called an API), you can make surprising computer graphics programs with only a little bit of code.
-
-We're using a version of Turtle that has been written for Javascript. 
+One of the most fun ways to learn programming is by creating graphics and animations.
+JavaScript runs in web browsers, which means we have access to the HTML
+[Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) for drawing.
+To make canvas programming simpler for beginners, we'll use a library called
+`SimpleCanvasLibrary` which provides a straightforward way to draw shapes, handle
+animations, and respond to user input.
 
 As we've seen, a program and algorithms consist of a number of commands or statements
 that execute in an order described by the program. There are many libraries
-or APIs (application programming interface) that help you useful do things in Javascript.
+or APIs (application programming interface) that help you do useful things in Javascript.
 Some APIs read files over a network, others choose random numbers, while others might
-encrypt data to make it more secure. The `turtle` API
-has a number of commands that you can use to move a turtle around a screen
-and to draw shapes and patterns.
+encrypt data to make it more secure. The `SimpleCanvasLibrary` API
+provides commands you can use to draw shapes, create animations, and build simple games.
 
-Here's a short turtle graphics program.
+Here's a short canvas graphics program that draws a colorful design:
 
 ```javascript
-// Set up the pen properties
-// Set up the pen properties
-turtle.setStrokeStyle("blue");
-turtle.setLineWidth(10);
+const game = new SimpleCanvasLibrary.GameCanvas("my-canvas");
 
-turtle.setSpeed(5);
+game.addDrawing(({ctx, width, height}) => {
+  // Draw a blue line
+  ctx.strokeStyle = "blue";
+  ctx.lineWidth = 10;
+  ctx.beginPath();
+  ctx.moveTo(100, 200);
+  ctx.lineTo(100, 100);
+  ctx.stroke();
 
-turtle.forward(100); // Up stroke
-turtle.right(180); // Back down
-turtle.forward(50);
-turtle.left(90);
-turtle.forward(50); // Across "H"
-turtle.left(90); // up stroke (left)
-turtle.forward(50);
-turtle.right(180);
-turtle.forward(100); // back down
+  // Draw a horizontal line
+  ctx.beginPath();
+  ctx.moveTo(100, 150);
+  ctx.lineTo(150, 150);
+  ctx.stroke();
 
-// Over...
-turtle.left(90);
-turtle.penUp();
-turtle.forward(50);
-turtle.left(90);
+  // Draw a second vertical line
+  ctx.beginPath();
+  ctx.moveTo(150, 100);
+  ctx.lineTo(150, 200);
+  ctx.stroke();
 
-// Draw an "i"
-turtle.penDown();
-turtle.forward(60);
-turtle.penUp();
-turtle.forward(10);
-turtle.left(90);
-turtle.penDown();
-turtle.setStrokeStyle("deepPink")
-turtle.arc(10, 360);
+  // Draw a DeepPink circle
+  ctx.strokeStyle = "DeepPink";
+  ctx.beginPath();
+  ctx.arc(200, 100, 10, 0, Math.PI * 2);
+  ctx.stroke();
+});
 
+game.run();
 ```
 
-When we run this program, we draw this image:
-<figure class="border">
-<img src="figs/turtle-first.png" class="figure-img img-fluid" alt="2 colored lines and a circle drawn with turtle graphics">
-<figcaption class="figure-caption border-top">
-The picture drawn by this program.<br>
-</figcaption>
-</figure>
-
-{% include codepen.html  id="OJewwWb" %}
+When we run this program, we draw an "H" shape and a circle on the canvas.
 
 
-[Run and remix this code on codepen](https://codepen.io/thinkle-iacs/pen/OJewwWb?editors=0011)
+### Canvas Coordinates
 
-
-### Turtle Programs with Real-Turtle Library
-
-Turtle programs use the metaphor of a turtle moving around drawing with a
-pen. To move the turtle without drawing, you call the "pen up" method, or
-`penUp()`. The turtle is plotted on an x,y plane (also called a
+The canvas uses an x,y coordinate system (also called a
 [Cartesian Plane](https://en.wikipedia.org/wiki/Cartesian_coordinate_system)).
-The `x` coordinate specifies the horizontal position of the turtle, and the `y`
-coordinate specifies the vertical position of the turtle. In this plane, (0, 0)
-is in the middle of the window. Negative `x` coordinates are to the left of the
-center, and negative `y` coordinates are below the center. We call the
-`goto(x, y)` method to move the turtle's position. If the pen is down, it draws
-while we move; if it's up, the turtle moves without a trace.
+The `x` coordinate specifies the horizontal position, and the `y`
+coordinate specifies the vertical position. In the canvas, (0, 0)
+is in the **top-left** corner. The `x` values increase to the right,
+and `y` values increase downward.
 
-Notice how we can draw a "DeepPink" circle using the `arc()` method? Because our
+Because our
 JavaScript program executes in a web browser, we can use any of the "named
 colors" that are part of the web development standard. [You can find all of the
 named colors here.](https://www.w3schools.com/colors/colors_names.asp)
 
-### Understanding Dot Syntax in Turtle Programs
+### Understanding Dot Syntax in Canvas Programs
 
-In your turtle programs, you'll see commands written like this:
-`turtle.forward(100)`. Let’s break down what this means.
+In your canvas programs, you'll see commands written like this:
+`ctx.fillRect(50, 50, 200, 100)`. Let's break down what this means.
 
-- **`turtle`**: This is the object we're working with—imagine it as the turtle
-  itself. It is provided by the library we are using. In other JavaScript
-  libraries, you will see other objects. In the browser, there are built-in
+- **`ctx`**: This is the canvas drawing **context** — think of it as your drawing
+  tool. It is provided by the `SimpleCanvasLibrary` in the callback function.
+  In other JavaScript libraries, you will see other objects. In the browser, there are built-in
   objects to represent the `window` and `document` a browser is on, for example.
-- **Dot (`.`)**: The dot connects the turtle to an action we want it to
+- **Dot (`.`)**: The dot connects the context to an action we want it to
   perform. 
-- **`forward(100)`**: This is the action or command we're giving the
-  turtle—in this case, to move forward by 100 steps.
+- **`fillRect(50, 50, 200, 100)`**: This is the action or command we're giving —
+  in this case, to draw a filled rectangle at position (50, 50) with width 200 and height 100.
 
-**So, what does `turtle.forward(100)` do?**
+**So, what does `ctx.fillRect(50, 50, 200, 100)` do?**
 
-It’s like saying, "Hey turtle, move forward by 100 steps!" The dot helps tell
-the computer that the action belongs to the turtle.
+It's like saying, "Hey drawing tool, draw a filled rectangle at these coordinates!"
+The dot helps tell the computer that the action belongs to the drawing context.
 
-### Turtle Documentation
+### Canvas Documentation
 
-To fully use the turtle API, you will need to read and understand the
+To fully use the Canvas API with `SimpleCanvasLibrary`, you will need to read and understand the
 documentation. Part of becoming a programmer and thinking like a computer
 scientist includes the ability to read (and write!) technical documentation. No
 programmer remembers every possible language feature or available commands.
-Before you begin the exercises and lab for this chapter, review the full
+Before you begin the exercises and lab for this chapter, review the key
 documentation below:
 
 ---
 
-**Movement Commands:**
+**Setting up a Canvas:**
 
-- **`forward(steps)`**
-  - Move forward the given distance in pixels.
+- **`new SimpleCanvasLibrary.GameCanvas(canvasId)`**
+  - Create a new game canvas attached to an HTML `<canvas>` element.
 
-- **`back(steps)`**
-  - Move backward the given distance in pixels.
+- **`game.addDrawing(callback)`**
+  - Add a drawing function that will be called each frame. The callback receives
+    an object with `{ctx, width, height, elapsed, stepTime}`.
 
-- **`right(degrees)`**
-  - Turn right (clockwise) by the given number of degrees.
+- **`game.run()`**
+  - Start the game/animation loop.
 
-- **`left(degrees)`**
-  - Turn left (counterclockwise) by the given number of degrees.
+**Drawing Shapes (on the `ctx` object):**
 
-- **`arc(radius, angle, counterclockwise)`**
-  - Draw an arc with the specified radius and angle. Optionally specify the
-    direction as counterclockwise with a boolean.
+- **`ctx.fillRect(x, y, width, height)`**
+  - Draw a filled rectangle.
 
-**Pen Control:**
+- **`ctx.strokeRect(x, y, width, height)`**
+  - Draw a rectangle outline.
 
-- **`penUp()`**
-  - Pick the pen up to temporarily move without drawing.
+- **`ctx.beginPath()`, `ctx.arc(x, y, radius, startAngle, endAngle)`, `ctx.fill()`, `ctx.stroke()`**
+  - Draw circles and arcs using the path API.
 
-- **`penDown()`**
-  - Put the pen down to resume drawing.
+- **`ctx.moveTo(x, y)`, `ctx.lineTo(x, y)`**
+  - Draw lines by moving to a point and drawing a line to another.
 
-**Drawing Style:**
-
-- **`setStrokeStyle(style)`**
-  - Set the pen color using a CSS color string, gradient, or pattern.
-
-- **`setLineWidth(width)`**
-  - Set the pen width in pixels.
-
-**Drawing Shapes:**
-
-- **`beginPath()`**
-  - Start a new path for drawing.
-
-- **`closePath()`**
+- **`ctx.closePath()`**
   - Close the current path.
 
-- **`stroke()`**
-  - Draw the stroke (outline) of the current path.
+**Style:**
 
-- **`fill()`**
-  - Fill the current path with the active fill style.
+- **`ctx.fillStyle = color`**
+  - Set the fill color using a CSS color string.
 
-**Turtle Appearance and Behavior:**
+- **`ctx.strokeStyle = color`**
+  - Set the outline color.
 
-- **`setIcon(icon)`**
-  - Set the turtle's appearance using an emoji or icon.
+- **`ctx.lineWidth = width`**
+  - Set the line width in pixels.
 
-- **`setSize(size)`**
-  - Set the size of the turtle in pixels.
+**Text:**
 
-- **`setSpeed(speed)`**
-  - Set the speed of the turtle's movements. Speed ranges from 0 (super slow)
-    to 1 (blazing fast).
+- **`ctx.fillText(text, x, y)`**
+  - Write filled text on the canvas.
 
-**Text Drawing:**
+- **`ctx.font = "size family"`**
+  - Set the font, e.g. `"24px sans-serif"`.
 
-- **`fillText(text)`**
-  - Write text on the canvas, filled with the current fill style.
+**Interactivity:**
 
-- **`strokeText(text)`**
-  - Write text on the canvas with a border but no fill.
+- **`game.addClickHandler(callback)`**
+  - Handle click events. The callback receives `{x, y, ctx, width, height}`.
 
+- **`game.addHandler(eventType, callback)`**
+  - Handle other events like `"mousemove"` or `"keydown"`.
+
+---
 
 **Example: Drawing a Circle**
 
 ```javascript
-turtle.setStrokeStyle("DeepPink");
-turtle.setLineWidth(5);
-turtle.beginPath();
-turtle.arc(50, 360);  // Full circle with a radius of 50 pixels
-turtle.stroke();
+const game = new SimpleCanvasLibrary.GameCanvas("my-canvas");
+
+game.addDrawing(({ctx}) => {
+  ctx.strokeStyle = "DeepPink";
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.arc(200, 200, 50, 0, Math.PI * 2);  // Full circle with a radius of 50 pixels
+  ctx.stroke();
+});
+
+game.run();
 ```
 
-Note: the library used in these examples is fully documented and updated [here](https://github.com/leonceaklin/real-turtle). 
-This is one of many turtle libraries; we are using it because it works in Codepen for our examples
-and it animates the drawings which makes understanding how your drawings work easier.
+Note: the SimpleCanvasLibrary is fully documented at [its GitHub repository](https://github.com/thinkle/simple-canvas-library).
+This library is designed for beginner learning and works in CodePen for our examples.
 
-Like all turtle libraries, this is designed for beginner learning and shouldn't be used
-to take on major projects.
+Like all beginner graphics libraries, this is designed for learning and shouldn't be used
+for major production projects.
 
-Turtle Exercises 1
+Canvas Exercises 1
 ------------------
-[Turtle Exercises 1](https://codepen.io/thinkle-iacs/pen/abejKPb?editors=0011)
 
-1. Use `turtle` to draw a red square with a pink border
+1. Draw a red square with a pink border on the canvas.
 2. Draw three circles, side-by-side. The first one should be blue, the second green, the third red.
-3. Draw a triangle.
-4. (bonus) Draw a 5-pointed star. _Hint:_ draw this on a piece of paper first
+3. Draw a triangle using `moveTo` and `lineTo`.
+4. (bonus) Draw a 5-pointed star. _Hint:_ draw this on a piece of paper first and figure out the coordinates.
 
 
-{% include codepen.html id="abejKPb" %}
-
-First Turtle Lab
+First Canvas Lab
 ----------------
-[First Turtle Lab ](https://codepen.io/thinkle-iacs/pen/eYwjLRY?editors=0011)
 
 Our first lab presents an open-ended exercise, just to get you started.
-Use turtle graphics to draw a picture. We suggest you spend about
-one hour working on this lab. Make sure that you includes some commands
+Use canvas graphics to draw a picture. We suggest you spend about
+one hour working on this lab. Make sure that you use some commands
 from the documentation that are not in the example program. Other than that,
 the content of your drawing is up to you.
 
