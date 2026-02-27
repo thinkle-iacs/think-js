@@ -42,8 +42,8 @@ function calcTip(bill, pct) {
   Ask the user to enter the amount of the bill
   and return this amount as a <float>
 */
-function askBillAmt() {
-    let amt = window.prompt("How much was your total bill?");
+async function askBillAmt() {
+    let amt = await ti.prompt("How much was your total bill?");
     amt = Number.parseFloat(amt);
 
     return amt;
@@ -52,8 +52,8 @@ function askBillAmt() {
 /*
   Allow the user to choose a tip amount from a menu.
 */
-function askTipPct() {
-  let pct = window.prompt("What percent tip do you want to leave?");
+async function askTipPct() {
+  let pct = await ti.prompt("What percent tip do you want to leave?");
   // convert the pct from a whole number to a fraction
   pct /= 100;
   pct = Number.parseFloat(pct).toFixed(2);
@@ -89,11 +89,11 @@ function showResults(bill, tip, pct) {
   Read in the basic information, calcualte the tip
   and the share, then dispaly the results to the user.
 */
-function main() {
+async function main() {
     
     welcome();
-    let myBill = askBillAmt();
-    let pct = askTipPct();
+    let myBill = await askBillAmt();
+    let pct = await askTipPct();
     let tip = calcTip(myBill, pct);
     showResults(myBill, tip, pct);
 

@@ -45,38 +45,48 @@ called. Typically this expression _increments_ (adds to) or _decrements_ (subtra
 the loop variable. After the final expression is called, the loop condition is checked
 again to see if the loop should continue or _terminate_.
 
-We have already played around with the `for` loop with our
-turtle graphics when we were looking at the variables in a spiral. Let's take
-a closer look at this function which contains a for loop.
-
-
-<img src="figs/turtle-spiral.png" class="figure-img img-fluid" alt="Square spiral created with turtle graphics code.">
-
-> Our `spiral` function (below) uses a `for` loop to draw this design. [Try it and remix it here.](https://codepen.io/thinkle/pen/mdNvVeR?editors=0011)
+Let’s take a closer look at loops by looking at a function that draws a
+spiral on a canvas. This function uses a `for` loop to draw a series of lines
+that grow longer each iteration, turning slightly each time:
 
 
 ```javascript
-function spiral() {
-  turtle.setStrokeStyle("DeepPink");  
+const game = new SimpleCanvasLibrary.GameCanvas("my-canvas");
+
+game.addDrawing(({ctx, width, height}) => {
+  ctx.strokeStyle = "DeepPink";
+  ctx.lineWidth = 2;
+  
+  let x = width / 2;
+  let y = height / 2;
   let distance = 2;
-  let angle = 91;
+  let angle = 0;
   
   for (let i = 0; i < 500; i++) {
-    turtle.forward(distance);  
-    distance += 2;  
-    turtle.right(angle);
+    let newX = x + Math.cos(angle) * distance;
+    let newY = y + Math.sin(angle) * distance;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(newX, newY);
+    ctx.stroke();
+    x = newX;
+    y = newY;
+    distance += 0.5;
+    angle += 91 * Math.PI / 180; // turn 91 degrees
   }
-}
+});
+
+game.run();
 ```
 
 
-* The variable `i` in the `for` statement at line 5 is the **loop variable**.
+* The variable `i` in the `for` statement is the **loop variable**.
   We could have chosen any other variable name instead, but `i` is a common convention,
   being short for the loop _index_.
 * The **loop initialization** assigns the loop variable its starting value: `let i = 0;`
-* The indented lines between the curly braces form the **loop body**. `spiral`'s loop body
-  contains 3 statements which (line 5) move the turtle forward, (line 6) increment the `distance` variable,
-  and (line 7) rotate the turtle.
+* The indented lines between the curly braces form the **loop body**. The loop body
+  contains statements that calculate a new position, draw a line, update the position,
+  increment the `distance` variable, and update the angle.
 * At the _beginning_ of each _iteration_ or _pass_ of the loop, the Javascript interpreter
   checks the **loop condition**. If `true` the loop
   runs for another iteration. If `false`, the loop terminates.
@@ -84,8 +94,8 @@ function spiral() {
   to the `for` header to run the **final expression**. The final expression
   here increments `i` by one, using the special `++` operator.
 * Finally, when the loop condition is false, the program continues beyond the closing
-  curly brace. In `spiral`, since there are no other statements in the function body,
-  the function returns `undefined` since it is a _void function_.
+  curly brace. Since there are no other statements in the drawing function body,
+  the function is complete.
 
 Assignment
 ----------
@@ -363,8 +373,8 @@ Encapsulation and generalization
 
 **Encapsulation** is the process of wrapping a piece of code in a
 function, allowing you to take advantage of all the things functions
-are good for. You have already seen some examples of encapsulation,
-including including the `square` function for our turtle graphics.
+are good for. You have already seen some examples of encapsulation
+in previous chapters.
 
 **Generalization** means taking something specific, such as printing the
 multiples of 2, and making it more general or **abstract**, such as printing the
@@ -705,7 +715,6 @@ reassignment
 
 For Loop Exercises
 ------------------
-[Fork this repl with empty function definitions to get started](https://repl.it/@mcuringa/function-exercises)
 
 1. Write a function that prints `We like Javascript!` 1000 times.
 
@@ -714,11 +723,11 @@ For Loop Exercises
 
 3. Write a function `countByTens` that counts to 10,000 by 10s (printing the sequence 10, 20, 30, .. 10,000).
 
-4. Write a function named `poly` that uses a `for` loop to make a turtle draw
-   any regular polygon (regular means all sides the same lengths, all angles
+4. Write a function named `poly` that uses a `for` loop to draw
+   any regular polygon on a canvas (regular means all sides the same lengths, all angles
    the same, to find the angle, divide 360 by the number of sides). The function
-   must have `size` and `numSides` as parameters. So, `poly(40, 4)` would
-   draw a square where the sides are 40 pixels long.
+   must have `ctx`, `x`, `y`, `size` and `numSides` as parameters. So, `poly(ctx, 100, 100, 40, 4)` would
+   draw a square at position (100, 100) where the sides are 40 pixels long.
 
 5. Write a function `countPrimes(a, b)` which counts all of the prime numbers
    between `a` and `b`, including `a` and `b`. Your function must _return_
@@ -741,18 +750,18 @@ For Loop Exercises
 For Loop Lab
 ------------
 
-For the `for` loop lab we're going to return to our turtle graphics
+For the `for` loop lab we're going to use canvas graphics
 programming. We've already seen many interesting shapes and patterns
-that can be made with loops. For this lab, you are going to use turtle
+that can be made with loops. For this lab, you are going to use canvas
 to draw a picture, with these simple guidelines:
 
 - all of your code is encapsulated in functions, except for the call to `main()`
   which starts your program
 - (at least) 3 different things in your picture are created by _generalized_ functions.
   Generalized functions use function parameters to allow one function to handle different
-  cases. In turtle, these parameters may control things like size, color, placement on
+  cases. These parameters may control things like size, color, placement on
   the screen, etc.
-- you use `for` loops to place more than one "think" in your picture
+- you use `for` loops to place more than one "thing" in your picture
 
 If you are unsure how to start, consider drawing a city. You can write functions for buildings, windows, using
-for loops to place the windows on a building and building inside your drawing.
+for loops to place the windows on a building and buildings inside your drawing.

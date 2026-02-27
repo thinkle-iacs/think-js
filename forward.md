@@ -35,8 +35,8 @@ A very brief forward to the Javascript edition
 
 Note: this latest JavaScript edition has been edited by Thomas Hinkle
 for use at Innovation Academy Charter School. I have built a simple
-Text Interface library and updated the turtle examples. Matt Curinga
-had built this book to use repl.it for examples, but in the summer of
+Text Interface library and a Simple Canvas Library for graphics examples.
+Matt Curinga had built this book to use repl.it for examples, but in the summer of
 2024, repl.it discontinued its educational offerings. As a result, I'm
 translating the examples to work as simple Codepen pages. I have also
 modernized a few patterns, including transitioning the book to use 

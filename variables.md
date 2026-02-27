@@ -456,8 +456,8 @@ parentheses to force exactly the order you want when exponentiation is involved:
 ⠕ (2 ** 3) ** 2   // Use parentheses to force the order you want!
 => 64
 ```
-The Javascript console in repl.it is great for exploring and experimenting
-with expressions like this. You can fork this repl to try it: <https://repl.it/@mcuringa/ES6-shell>
+The Javascript console in your browser is great for exploring and experimenting
+with expressions like this. You can try it at [jsconsole.com](https://jsconsole.com/) or in your browser's developer tools.
 
 
 Operations on strings

@@ -5,49 +5,40 @@ Appendices
 Code templates, solutions, and examples
 ---------------------------------------
 
-### Using repl.it
+### Using CodePen
 
-Online code examples in this book are hosted on <https://repl.it>. Called "repls",
-these source files and programs can be edited and run online, and can be
-easily **forked** (remixed) and shared. Several types of repls are available:
-blank templates for working on practice exercises and labs, solutions to
-exercise problems, and longer code listings that appear in the book.
+Online code examples in this book are hosted on [CodePen](https://codepen.io/). CodePen
+provides a live code editor where you can write HTML, CSS, and JavaScript and see the
+results immediately. Several types of examples are available: blank templates for working
+on practice exercises and labs, and longer code listings that appear in the book.
 
-We recommend that you make a free account on repl.it to fully work with the
-examples, however, you can run and edit the programs as an anonymous user. You
-cannot save your work without an account.
+We recommend that you make a free account on CodePen to fully work with the
+examples. With an account you can **fork** (remix) examples and save your work.
 
+The examples in this book use two main libraries:
+- **[TextInterface](https://github.com/thinkle/text-interface)** — for simple text-based input and output
+- **[SimpleCanvasLibrary](https://github.com/thinkle/simple-canvas-library)** — for canvas graphics, animations, and simple games
 
-### Turtle Graphics
-- [Starter Project](https://repl.it/@mcuringa/turtle-template) (with docs)
-- [Getting Started Exercises](https://repl.it/@mcuringa/turtle-exercises)
-- [Getting Started Exercises Solutions](https://repl.it/@mcuringa/turtle-getting-started-solutions)
-- [Lab 1](https://repl.it/@mcuringa/csc-602-lab1)
-- [Function Examples](https://repl.it/@mcuringa/turtle-functions)
-- [Function Exercises](https://repl.it/@mcuringa/week2-exercises)
-- [Function Exercise Solutions](https://repl.it/@mcuringa/week2-exercises-solutions)
-- [Lab 2](https://repl.it/@mcuringa/csc-602-lab2)
+### Canvas Graphics
+- Getting Started Exercises
+- First Canvas Lab
 
 ### Variables and expressions
-- [Javascript Shell](https://repl.it/@mcuringa/ES6-shell)
-- [Variable Examples](https://repl.it/@mcuringa/Variable-Examples)
-- [Variable Exercises](https://repl.it/@mcuringa/csc-602-lab3)
-- [Variable Exercise Solutions](https://repl.it/@mcuringa/csc-602-lab3)
+- [JavaScript Console](https://jsconsole.com)
+- Variable Examples
+- Variable Exercises
 
 ### Functions
-- [Function Exercises](https://repl.it/@mcuringa/function-exercises)
-- [Function Exercise Solutions](https://repl.it/@mcuringa/function-exercise-solutions)
-- [Tip Calculator Example](https://repl.it/@mcuringa/tip-calculator)
-- [Lemonade Lab Solution](https://repl.it/@mcuringa/lemonade-lab-solution)
+- Function Exercises
+- Tip Calculator Example
 
 ### Conditionals
-- [Boolean and Conditional Exercises](https://repl.it/@mcuringa/conditionals-exercises)
-- [Exercise Solutions](https://repl.it/@mcuringa/conditionals-exercise-solutions)
+- Boolean and Conditional Exercises
 - Conditionals Labs
-  - [BMI Lab](https://repl.it/@mcuringa/conditionals-lab5-bmi)
-  - [Animal Year Lab](https://repl.it/@mcuringa/conditionals-lab5-bmi)
-  - [Turtle Bounce Lab](https://repl.it/@mcuringa/turtle-bounce)
+  - BMI Lab
+  - Animal Year Lab
+  - Bouncing Ball Lab
 
 ### Iteration with `for`
-- [For loop exercises](https://repl.it/@mcuringa/for-loop-exercises)
-- [Iteration Lab Template](https://repl.it/@mcuringa/for-loop-turtle-lab)
+- For loop exercises
+- Iteration Lab

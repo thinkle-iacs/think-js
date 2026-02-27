@@ -364,7 +364,7 @@ for(let i = 0; i < keys.length; i++) {
 ```
 
 See the interactive example online at
-<https://repl.it/@mcuringa/MapLetterFrequency>.
+Try running this code in a CodePen or in your browser console.
 
 Glossary
 --------

@@ -72,7 +72,7 @@ The set of reporting functions at the end of program, however, are not
 pure functions. They provide user output using `console.log`. This
 printing to the console is a side effect of the function.
 
-[View the "School Data Report" repl](https://repl.it/@mcuringa/SchoolData)
+View the "School Data Report" in a CodePen.
 
 ### Case Study: school-report.js {.schoolReport .codeNotes}
 

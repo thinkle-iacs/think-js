@@ -374,7 +374,7 @@ console.log(sqrt(49));
 console.log(sqrt(81));
 ```
 
-<caption>See [Newton Square Root repl](https://repl.it/@mcuringa/Newton-Sqare-Root)</caption>
+See if you can improve the approximations by changing the stopping condition.
 
 The output is:
 
@@ -447,7 +447,7 @@ The site _Math is Fun_ [offers a straightforward definition of multiples and
 factors](https://www.mathsisfun.com/numbers/factors-multiples.html) with links
 to other pages relevant to these problems.
 
-**[You can get started by forking this repl with the function definitions](https://repl.it/@mcuringa/While-Loop-Exercises)**
+**[You can get started with these exercise function definitions in a CodePen](https://codepen.io/)**
 
 
 1. **Sum range**

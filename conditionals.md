@@ -690,7 +690,6 @@ The process of adding a function header and parameters to a sequence
 
 Conditional Exercises
 ---------------------
-[You can use this repl for your exercises](https://repl.it/@mcuringa/conditionals-exercises)
 
 1. Assume the days of the week are numbered 0,1,2,3,4,5,6 from Sunday to Saturday.
    Write a function which is given the day number, and it returns the day name (a string).
@@ -823,23 +822,18 @@ Dog             1934
 Pig             1935
 
 
-### Lab 3: Bouncing turtle
+### Lab 3: Bouncing ball
 
 This may be an interesting problem if you are comfortable with geometry and
-trigonometry. In this lab you'll revisit the `randomWalk` program that we
-worked on in our _turtle graphics_. In the `randomWalk` the turtle moves in a loop where
-it chooses a random angle to turn and a random distance for each iteration of the loop.
-You will modify `randomWalk` so that the
-turtle "bounces" when it reaches the edge of the screen. By bounce, the turtle
-should advance to the edge of the screen (aka canvas) and then turn to the [angle of reflection](https://www.physicsclassroom.com/class/refln/Lesson-1/The-Law-of-Reflection)
-away from the edge. To finish its "walk", it should then move forward for whatever distance
-remains for this iteration. Some hints:
+trigonometry. In this lab you'll create a `bouncingBall` program using the
+`SimpleCanvasLibrary`. The ball moves around the canvas with a velocity,
+and "bounces" when it reaches the edge of the screen. By bounce, the ball
+should reverse its direction along the axis where it hits the edge (using the
+[angle of reflection](https://www.physicsclassroom.com/class/refln/Lesson-1/The-Law-of-Reflection)).
+Some hints:
 
-https://repl.it/@mcuringa/Random-Walk
-
-- Determine the maximum and minimum `x` and `y` that allow the turtle to stay on the screen.
-  The turtle canvas dimensions are `1920 x 1280`
-- _Before_ the turtle moves forward, you will have to calculate the ending `x`, `y`
-  and determine if it's on the screen or off the screen
-- you will need to use `getHeading()` to make this calculation
-- you will need to use the trigonometry functions in [the Javascript Math library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- Track the ball's `x`, `y` position and `dx`, `dy` velocity
+- Use the `elapsed` or `stepTime` parameter in your drawing function to update position
+- When the ball reaches an edge, reverse the appropriate velocity component (`dx` or `dy`)
+- You can use `ctx.arc()` to draw the ball as a circle
+- you may want to use the trigonometry functions in [the Javascript Math library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
